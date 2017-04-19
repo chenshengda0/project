@@ -1,0 +1,71 @@
+{tmpl("Public:header")}
+
+
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("USERNAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="username" value="{$admin['username']}" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("PASSWORD")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="password" id="password" name="password">
+	                <i>{lang("BETWEEN6to20")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("REPEAT_PASSWORD")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="password" id="repeat_password" name="repeat_password">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ADMIN_GROUP")}:</div>
+	            <div class="right">
+	                <select name="groupid" class="cm-select">
+		            	{foreach from=$groups item=group key=k} 
+		            		<option value="{$group['id']}" {if $admin['groupid'] == $group['id']}selected="selected"{/if} >{lang($group['name'])}</option>
+		            	{/foreach}
+		            </select> 
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("form").bind("submit",function(){
+		if($.trim($("#password").val()) != "" && $("#password").val() != $("#repeat_password").val()){
+			alert(LANG['TWO_PWD_ERROR']);
+			$("#repeat_password").focus();
+			return false;
+		}
+		if($.trim($("#password").val()) != "" && $.trim($("#password").val()).length < 6){
+			alert(LANG['PWD_TOO_SHORT']);
+			$("#password").focus();
+			return false;
+		}
+		if($.trim($("#password").val()).length > 20){
+			alert(LANG['PWD_TOO_LONG']);
+			$("#password").focus();
+			return false;
+		}
+	});
+});
+</script>
+
+
+{tmpl("Public:footer")}

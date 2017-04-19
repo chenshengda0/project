@@ -1,0 +1,25 @@
+{tmpl("Public:header")}
+	<div class="cm-subHead">
+        <a class="cm-red-btn" href="__ADMIN_URL__/Category/add" >{lang("ADD")}</a>
+		<a class="cm-red-btn" href="__ADMIN_URL__/Category/trashindex" >{lang("TRASH_STORE")}</a>
+    </div>
+	<form action="__ADMIN_URL__/Category/listorder" method="post">
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+               	<th width="30">排序</th>
+                <th width="30">id</th>
+                <th width="500">{lang("NAME")}</th>
+                <th width="100">{lang("HITS")}</th>
+                <th width="100">{lang("模型")}</th>
+                <th width="300">{lang("ADD_TIME")}</th>
+                <th>{lang("ACTION")}</th>
+            </tr>
+            {$tree}
+        </table>
+     </div>
+      <div class="left fl">
+		<input type="submit" name="dosubmit" class="cm-blue-btn ml80 mr20" value="排序">
+	</div>
+	</form>
+{tmpl("Public:footer")}

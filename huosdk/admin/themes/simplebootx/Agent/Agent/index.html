@@ -1,0 +1,87 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Agent/Agent/index')}" target="_self">渠道管理</a></li>
+			<li><a href="{:U('Agent/Agent/add')}" target="_self">添加渠道</a></li>
+			</ul>
+		<form class="well form-search" method="post" action="{:U('Agent/Agent/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						渠道类型： 
+						<select class="select_2" name="roleid" id="selected_id">
+							<foreach name="roles"  key="k" item="vo">
+								<php>$r_select=$k==$roleid ?"selected":"";</php>
+								<option value="{$k}"{$r_select}>{$vo}</option>
+							</foreach>
+						</select>
+						 &nbsp;&nbsp;
+						渠道账号：
+						<input type="text" name="agentname" style="width: 200px;" value="{$agentname}" placeholder="请输入渠道账号...">
+						&nbsp;&nbsp; 
+						渠道名称：
+						<input type="text" name="nickname" style="width: 200px;" value="{$nickname}" placeholder="请输入渠道名称...">
+						&nbsp;&nbsp;
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="50">ID</th>
+						<th width="50">渠道类型</th>
+						<th width="50">渠道账号</th>
+						<th width="50">渠道名称</th>
+						<th width="50">联系人</th>
+						<th width="50">手机</th>
+						<th width="50">QQ</th>
+						<th width="50">最后登录时间</th>
+						<th width="50">状态</th>
+						<th width="60">管理操作</th>
+					</tr>
+				</thead>
+				<php>
+				$status=array("3"=>"禁用","2"=>"正常","1"=>"未验证");
+				</php>
+				<foreach name="users" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.rolename}</td>
+					<td>{$vo.user_login}</td>
+					<td>{$vo.user_nicename}</td>
+					<td>{$vo.linkman}</td>
+					<td>{$vo.mobile}</td>
+					<td>{$vo.qq}</td>
+					<td>
+						<if condition="$vo['last_login_time'] eq 0">
+								该用户还没登陆过
+						<else />
+							{$vo.last_login_time}
+						</if>
+					</td>
+					
+					<td>{$status[$vo['user_status']]}</td>
+					<td>
+						<a href="{:U('Agent/Agent/edit',array('id'=>$vo['id']))}">修改</a> | 
+						<if condition="$vo['user_status'] eq 2">
+							<a href="{:U('Agent/Agent/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn" data-msg="确定禁用吗？" >禁用</a></td>
+						<else />
+							<a href="{:U('Agent/Agent/cancelban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"  data-msg="确定启用吗？" >启用</a></td>
+						</if>
+				</tr>
+				</foreach>
+				
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

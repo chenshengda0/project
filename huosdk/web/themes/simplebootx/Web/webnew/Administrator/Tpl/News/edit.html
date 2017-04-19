@@ -1,0 +1,100 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="title"
+						value="{$news.title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CATEGORY')}:</div>
+				<div class="right">
+					<select name="catid" class="require">
+						<option value="0">选择分类</option>
+						{$tree}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('关联游戏')}:</div>
+				<div class="right">
+					<select name="game_id" class="sm-select">
+						<option value="0">选择关联游戏</option>
+						{foreach from=$games item=v}
+						<option value="{$v.id}" {if $news.game_id eq $v.id}selected{/if}>{$v.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('THUMB')}:</div>
+				<div class="right">
+					{uploadfile_html("thumb",1,1,$news.thumb)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="keywords"
+						value="{$news.keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="description" class="cm-textarea">{$news.description}</textarea>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_title" value="{$news.seo_title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_keywords" value="{$news.seo_keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="seo_description" class="cm-textarea">{$news.seo_description}</textarea>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;">{$news.content}</textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+</script>
+{/literal} {tmpl("Public:footer")}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/icon.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/base.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/outlook2.js"></script>
+	
+	<script type="text/javascript" src="__PUBLIC__/js/dp/WdatePicker.js"></script>
+
+<script>
+	$(function(){
+		$('#dg').datagrid({
+			columns:[[
+				{field:'days',title:'日期'},
+				{field:'newuser',title:'新增用户数'},
+				{field:'activeuser',title:'活跃用户数'},
+				{field:'usercount',title:'付费用户数'},
+				{field:'newamount',title:'新增用户付费金额'},
+				{field:'payamount',title:'总付费金额 '},
+				{field:'payrate',title:'总付费率'},
+				{field:'reg_apru',title:'注册APRU'},
+				{field:'act_apru',title:'活跃ARPU'},
+				{field:'pay_apru',title:'付费ARPU'},
+				{field:'amount',title:'累计总收入'}
+			]]
+		});
+	});
+
+	//查询
+	function doSearch(){
+		$('#dg').datagrid('load',{
+			start: $('#start').val(),
+			end: $('#end').val(),
+			gameid: $('#gameid').combobox('getValue'),
+		});
+	}
+	
+</script>
+
+    </head>
+    <body>
+    <div style="margin:5px 0;"></div>
+		<div  title="DataGrid">
+			<table id="dg" class="easyui-datagrid" style="height:480px" url="{:U('pay/paystatsList')}" toolbar="#toolbar" title="Load Data" pagination="true" singleSelect="true">	
+			</table>
+			
+			<div id="toolbar" style="padding:5px;height:auto">
+				<div style="margin-bottom:5px">
+					<span style="color:#FF0000"><strong>温馨提示：最多显示30天的数据，超过30天需重新选择时间段！</strong></span>
+				</div>
+				<div>
+					<table>
+						<tr>
+							<td>开始时间: </td>
+							<td><input id="start" class="easyui-my97" name="start" data-options="required:true"  onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"/></td>
+							<td>结束时间: </td>
+							<td><input id="end" class="easyui-my97" name="end" data-options="required:true" onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"></td>
+							<td>游戏: </td>
+							<td><input id="gameid" class="easyui-combobox" name="gameid" 
+								data-options="url:'{:U('Game/gameCombobox')}',
+								method:'post',
+								valueField:'id',
+								textField:'name',
+								panelHeight:'auto'" style="width:135px">
+							</td>
+						</tr>
+						<tr>
+							<td><a href="#" class="easyui-linkbutton" iconCls="icon-search" onClick="doSearch()">查询</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+    </div>
+    </body>
+    </html>

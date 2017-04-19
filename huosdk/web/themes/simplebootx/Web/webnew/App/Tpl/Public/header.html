@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="__TMPL__Common/css/style.css" rel="stylesheet" />
+<title>{$seo.title}</title>
+<meta name="keywords" content="{$seo.keywords}">
+<meta name="description" content="{$seo.description}">
+</head>
+
+<body>
+<!--头部start-->
+<div class="header">
+  <ul class="wrap">
+    <p class="fl">欢迎来到手游村！</p>
+    <div class="fr">
+      <ul class="clearfix">
+        <li><a href="{url()}" target="_self">网站首页</a></li>
+        <li><span>|</span></li>
+        {if $GLOBALS['user']}
+        <li><a href="{url('User')}" target="_blank">{$GLOBALS['user']['username']}</a></li>
+        <li><span>|</span></li>
+        <li><a href="{url('User#login_out')}" >退出</a></li>
+        {else}
+        <li><a href="{url('User#login')}" target="_blank">登录</a></li>
+        <li><span>|</span></li>
+        <li><a href="{url('User#register')}" target="_blank">注册</a></li>
+        {/if}
+      </ul>
+    </div>
+  </ul>
+</div>
+<!--头部end-->
+
+<!--搜索start-->
+<div class="wrap header-search">
+  <ul class="clearfix">
+    <li class="fl logo"><a href="{url()}" target="_blank"><img src="{$site.logo}" alt="" /></a></li>
+    <li class="fr">
+      <div>
+      	<form action="{url('Game#sreach')}" method="get">
+        <input type="text" name="keywords" value="" />
+        <input type="submit" value="搜索" />
+        </form>
+      </div>
+    </li>
+  </ul>
+</div>
+<!--搜索end-->
+
+<!--导航start-->
+<div class="nav">
+  <ul class="wrap">
+    <li><a href="{url()}" target="_self" {if $module_name eq 'Index'}class="on"{/if}>网站首页</a></li>
+    {foreach from=$header_nav item=v}
+    <li><a href="{$v.url}" {if $v.is_blank}target="_blank"{/if} {if ($module_name eq ucwords($v.module) && $catid eq $v.guide) ||($catid eq 0 && $module_name eq ucwords($v.module)) || $url eq  $v.guide || $request_uri eq $v.guide } class="on"{/if}>{$v.name}</a></li>
+    {/foreach}
+  </ul>
+</div>
+<!--导航end-->

@@ -1,0 +1,75 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('member/dataindex')}">整体数据</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Data/Member/dataindex')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						账号： 
+						<input type="text" name="username" style="width: 200px;" value="{$formget.username}" placeholder="请输入账号...">
+						&nbsp;&nbsp;
+						<input type="submit" class="btn btn-warning" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>		
+		<table class="table table-hover table-bordered table-list">
+			<thead>
+				<tr>					
+                    <!--<th>玩家ID</th> -->
+                    <th  style="vertical-align:middle; text-align:center;">玩家账号</th>
+					<th>游戏数量</th>					
+					<th>登陆次数</th>
+					<th>最近登陆时间</th>
+					<th>充值次数</th>
+					<th>充值总额</th>
+					<th>最近充值金额</th>
+					<th>最近充值时间</th>
+					<th>注册时间</th>
+				</tr>
+			</thead>
+				<tr>					
+                    <!--<th>玩家ID</th> -->
+                    <th style='color:#f00'>玩家数量汇总</th>
+					<th style='color:#f00'>{$count}</th>					
+					<th>--</th>
+					<th>--</th>
+					<th>--</th>
+					<th>--</th>
+					<th>--</th>
+					<th>--</th>
+					<th>--</th>
+				</tr>
+			<tbody>				
+				<foreach name="members" item="vo">
+				<tr>
+					<!-- <td>{$vo.mem_id}</td> -->
+					<td>{$vo.username}</td>
+					<td>{$vo.game_cnt}</td>
+					<td>{$vo.login_cnt}</td>	
+					<td>{$vo.last_login_time|date='Y-m-d H:i:s',###}</td>			
+					<td>{$vo.order_cnt}</td>
+					<td>{$vo.sum_money}</td>	
+					<td>{$vo.last_money}</td>
+					<td>
+					<empty name="vo['last_pay_time']">
+						未充值
+					<else />
+						{$vo.last_pay_time|date='Y-m-d H:i:s',###}
+					</empty>
+					
+					</td>
+					<td>{$vo.reg_time|date='Y-m-d H:i:s',###}</td>		
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$Page}</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

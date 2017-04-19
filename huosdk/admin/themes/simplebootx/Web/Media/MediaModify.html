@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>媒体中心</title>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+	<span >当前位置：媒体中心->媒体编辑</span>
+	<div style="clear:both"></div>
+</div>
+<div></div>
+
+<div class=alt_descript></div>
+<form action='<{$WEBSITE}>?m=Media&a=save' method=post enctype="multipart/form-data">
+<div class="list-div">
+<table cellspacing='1' cellpadding='3' id="table1" width="100%">
+     <tr>
+      <td align="right" style="font-family: arial">媒体名称：</td>
+	<td><input type="text" name="name" value="<{$mediadata.name}>" size="40"><font color="red">*</font></td>
+    </tr>
+    <tr>
+	      <td align="right" style="font-family: arial">媒体图标：</td>
+	      <td align="" style="font-family: arial">
+		<input type="file" name="icon" size="45"><font color="red">*图片尺寸为210*62</font></td>
+	</tr>
+     <tr>
+    	<td align="right" style="font-family: arial" width="13%">媒体路径：</td>
+        <td width="86%"><input type="text" name="url" value="<{$mediadata.url}>" size="40"><font color="red">*请添加前缀http://，如http://www.baidu.com</font></td>
+    </tr>
+    <tr>
+    <td align="right" style="font-family: arial" width="13%">&nbsp;</td>
+    <td align="" style="font-family: arial" width="86%">
+	<input type="submit" value="提交" name="B1"></td>
+  </tr>
+    </table>
+</div>
+<input type="hidden" name="action" value="save"> 
+<input type="hidden" name="mediaid" value="<{$mediadata.id}>"> 
+
+</form>

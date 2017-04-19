@@ -1,0 +1,18 @@
+*{padding: 0px;margin: 0px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+.sub{width:100%;height:100%;position: absolute;background-color:rgba(0,0,0,0.5);border:solid 1px;top:0px;}
+.sub0{margin:0px auto;width:290px;height:320px;margin-top: 45px;background-color: #ffffff;font-size: 0.875em}
+.sub1{height: 40px;width: 100%;background-color: #f0f0f0;overflow: hidden;border-bottom: solid 1px #e9e9e9;}
+.sub1>div{width: 120px;height: 25px;margin: 0px auto;margin-top: 8px;}
+.sub1>div>img{float: left;margin-right: 6px;width: 24px;height: 24px;}
+.sub1>div>span{padding-top: 5px;display: block;}
+.sub2{width: 90%;margin: 0px auto;color: #0e06be;margin-top: 15px;margin-bottom: 15px;font-size: 1em}
+.sub3{width: 90%;border: solid 1px #f5f5f5;margin: 0px auto;}
+.sub3>ul{display: block;overflow: hidden;height: 110px;}
+.sub3>ul>li:nth-child(1){padding: 20px 15px 0px 15px;line-height: 20px;color: #727272;}
+.sub3>ul>li:nth-child(2){padding: 10px 15px 0px 15px;line-height: 20px;color: #727272;}
+.sub3>ul>li>span{color: #bcbcbc;font-size: 0.875em}
+.sub4{width: 90%;margin: 0px auto;font-size: 0.875em;margin-top:18px;margin-bottom: 16px;color: #bcbcbc;}
+.sub5{width: 90%;height: 38px;margin: 0px auto;text-align: center;line-height: 38px;background-color: #3366dc;}
+.sub5>a{color:#ffffff;font-size: 0.875em;display: block;cursor: pointer;}

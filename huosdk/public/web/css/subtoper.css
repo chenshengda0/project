@@ -1,0 +1,68 @@
+
+@charset "utf-8";
+/* CSS Document */
+body,div,ul,li,p,h1,h2,h3,h4,h5,h6,em,dt,dl,dd,font,strong,b,img,i,input,textarea,table,td,tr,ol{margin:0;padding:0;outline:0 none}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+body{font-size:12px;font-family:"Arial","微软雅黑";color:#5e5a51;}
+a{font-size:12px;font-family:"Arial","微软雅黑";color:#5e5a51;text-decoration:none;outline:0 none}
+a:hover{text-decoration:underline;color:#f67c05}
+ul,li{list-style:none;}
+em{font-style:normal}
+table {border-collapse: collapse;empty-cells: show;}
+.clear{clear:both}
+.container{height:100%;width:100%;}
+img{border:none}
+/*公共块*/
+.clearfix:after{clear: both;content: " "; display: block;height: 0; visibility: hidden;}
+
+/*头部*/
+#toper{background: none repeat scroll 0 0 #3B3B3B; height: 30px; position: relative; width: 100%; z-index: 2000;}
+#top{ margin: 0 auto; width: 1000px;}
+#top .head_left{color: #AEAEAE;float: left; line-height: 30px; width:180px; font-weight:normal;}
+#top .menu_right{ float: right;}
+#top .menu_right li{ float: left;line-height: 30px; margin-left: 20px;}
+#top .game_link li a, #top .menu_right li a{ color: #AEAEAE;}
+#top .game_center a.game {background: url("../images/bg2.png") no-repeat scroll 0 0; color: #7CAF00; display: inline-block; height: 21px; line-height: 21px; padding-left: 10px; width: 71px; margin-top:5px;}
+#top .game_center a.game_h {background: url("../images/bg4.png") no-repeat scroll 0 0; color: #7CAF00; display: inline-block; height: 28px; line-height: 28px; margin-top: 2px; padding-left: 10px;text-decoration: none; width: 71px;}
+
+#top .menu_nav, #top .game_center{ float: left; position: relative;}
+#game_down{color: #555555; left: -189px; position: absolute; top: 30px; width: 270px; z-index: 999;}
+.game_center_top {background: url("../images/game_top_bg.gif") no-repeat scroll 0 0 #FFFFFF;height: 1px; overflow: hidden;}
+.game_center_center { background: none repeat scroll 0 0 #FFFFFF;border-bottom: 1px solid #A0A0A0;border-left: 1px solid #A0A0A0;border-right: 1px solid #A0A0A0;padding-bottom: 17px; width: 268px;}
+.game_center_center h2 {border-bottom: 1px solid #E3E3E3;font-weight: normal;margin-left: 20px; padding: 10px 0 5px; width: 230px;}
+.game_center_center h2 span { display: inline; float: right;}
+
+#top .game_center_center h2 a {color: #6A9600;}
+#top .game_center_center li {float: left; line-height: 24px; margin-left: 8px; margin-right: 8px; margin-top: 10px; text-align: center; width: 60px;}
+#top .game_center_center li a, #top .game_center_center .play a { color: #555555;}
+.play { border-top: 1px solid #E3E3E3; margin-left: 20px; margin-right: 20px;padding-top: 20px;}
+
+
+#top .game_link {float: left;width: 330px; color:#aeaeae;}
+#top .game_link li { float: left; line-height: 30px; margin-left: 20px;}
+#top .game_link li a{ color: #7caf00;}
+
+/*.foot*/
+.footer {background: url("../images/f_d.jpg") repeat-x;margin: 12px 0 0; padding-bottom:10px;}
+.footer .content { margin: 0 auto; width: 980px;}
+.footer .footer-col {background: url("../images/f_a.jpg") no-repeat scroll right top;float: left;margin: 10px 0 0;width: 165px; margin-right:30px;}
+.footer .c4 {background: url("../images/line-bottom-right.jpg") no-repeat scroll right top ;}
+.footer .c5 {background: none repeat scroll 0 0 ;}
+.footer .ico {background: url("../images/f_dd.jpg") no-repeat ; display: inline; float: left; height: 45px; margin: 0 10px 0 10px; width: 26px;}
+.footer .c1 .ico {background-position: 0 0px;}
+.footer .c2 .ico {background-position: 0 -44px;}
+.footer .c3 .ico {background-position: 0 -92px;}
+.footer .c4 .ico { background-position:0 -135px;}
+
+.footer .ls {float: left;}
+.footer .ls h3 { color: #333333; font-family: 微软雅黑;font-size: 16px; font-weight: bold;line-height: 26px;}
+.footer .ls ul li {line-height: 22px;}
+.footer .ls ul li a { color: #888; padding-left: 2px; font-size:13px;}
+
+
+.footer .c5 p.weibo {color: #FF6600;font: 18px 微软雅黑; margin-bottom: 10px;}
+.footer .c5 p { padding: 0 0 0 10px;}
+.footer .c5 p.weixin { color: #FF9900; line-height: 20px; margin: 0 0 2px;}
+
+.footer_d{ height:135px;background: url("../images/footer_d.jpg"); text-align:center; color:#888888; line-height:22px; font-family:"宋体"}
+.footer_d a{ color:#c4c4c4;font-family:"宋体"}

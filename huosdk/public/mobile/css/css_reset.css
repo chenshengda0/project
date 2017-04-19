@@ -1,0 +1,80 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size:100%;
+	vertical-align: baseline;
+	font-weight:normal;
+	text-decoration: none;
+}
+i,u,s{
+    font-style:normal;
+    font-weight:normal;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+button{
+	outline:none;
+	cursor:pointer;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html{
+    font-size:62.5%;
+    width: 100%;
+    max-width:900px;
+    margin:0 auto;
+    background-color:#fff;
+    font-family:Microsoft YaHei,Helvetica Neue,Helvetica,Roboto,STHeiTi,Arial,sans-serif;
+}
+body{
+    padding-bottom:10px;
+}
+.header{/*width: 100%;*/height: 42px;background-color: #F9F9F9;position:relative;;}
+.header>ul>li:nth-child(1){float: left;margin-top: 6px;margin-left: 4px;}
+.header>ul>li:nth-child(1)>a{display: block;height: 30px; }
+.header>ul>li:nth-child(1)>a>img{width: 20px;height: 20px;float: left;margin-top:5px;}
+.header>ul>li>a>span{color: #6C6C6C;font-size:1.3rem;line-height: 30px;float:right}
+.header>ul>li:nth-child(2){width: 74px;height: 34px;float: right;margin-top: 4px;margin-right: 6px;font-size: 0.9rem;text-align: center;line-height: 34px;background-color: rgba(0,0,0,0.3);}
+.header>ul>li:nth-child(2)>a{display: block;width: 74px;height: 34px;color: #ffffff}
+@media screen and (min-width:400px){
+    .header{height:50px;line-height:50px;}
+    .header>ul{height:50px;}
+    .header>ul>li:nth-child(1){height:100%;margin-top: 0px;margin-left: 0px;}
+    .header>ul>li:nth-child(1)>a{height:100%;}
+    .header>ul>li>a>span{font-size: 1.6rem;line-height:50px}
+    .header>ul>li:nth-child(1)>a>img{margin-top:15px;}
+}

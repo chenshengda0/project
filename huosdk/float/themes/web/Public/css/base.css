@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0;-webkit-text-size-adjust:none;}
+body{ background:#fff; font-size:12px; color:#555; font-family:Tahoma, Geneva, sans-serif;}
+a{ color:#555; text-decoration:none;}
+img{ border:none;}
+
+li{ list-style:none;}
+
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/*tab*/
+.tab{ line-height:56px; font-size:14px;}
+.tab a{ color:#07c;}
+.tab a:hover{ color:#c00;}
+.tab a.cur{ font-weight:bold;}
+
+
+/*商品详细页*/
+/*iteminfo*/
+.iteminfo{}
+.iteminfo_tit{ color:#333; font-size:22px; font-family:"微软雅黑",Arial, Helvetica, sans-serif; border-bottom:1px solid #e3e3e3; font-weight:normal; padding-bottom:12px; line-height:32px;}
+.iteminfo_parameter{ padding:8px 0;}
+.iteminfo_parameter_default{ color:#888;}
+.iteminfo_parameter dt{ margin-left:-70px; float:left; display:inline; width:60px; white-space:nowrap; text-align:right; color:#888;}
+
+.iteminfo_mktprice{ font-size:12px; font-family:Arial, Helvetica, sans-serif; text-decoration:line-through;}
+.lh32{ line-height:32px;}
+.iteminfo_price{ color:#c00; font-size:14px; font-family:Arial, Helvetica, sans-serif; vertical-align:middle;}
+.sys_item_price{ color:#c00; font-size:22px; vertical-align:middle;}
+.iteminfo_buying{ background:#f7f7f7; padding:12px 0;}
+
+/*规格*/
+.sys_item_spec dl.iteminfo_parameter{width:400px;margin: 0px auto;}
+.sys_item_spec dl.iteminfo_parameter dt{ line-height:32px;}
+
+/*一下正对图片*/
+.sys_spec_img{}
+.sys_spec_img li{ float:left; height:54px; position:relative; margin:2% 30px 4% 0;}
+.sys_spec_img li a{height:55px; width:55px; padding:1px; border:1px solid #ccc; background:#fff; display:inline-block; outline:none;border-radius: 12px;overflow: hidden;}
+.sys_spec_img li a img{ width:55px; height:55px; display:block;margin: 0px auto;text-align: center;}
+.sys_spec_img li a:hover{ border:2px solid #5ea91c; padding:0; text-decoration:none;}
+.sys_spec_img li i{ position:absolute; width:15px; height:15px; font-size:0; line-height:0; right:2px; top:2px; background:url(../images/sdk/10.png) no-repeat right top; z-index:99; display:none;background-size: cover;}
+.sys_spec_img li.selected a{ border:2px solid #5ea91c; padding:0;}
+.sys_spec_img li.selected i{ display:block;}
+
+.sys_spec_text{}
+.sys_spec_text li{ float:left; height:28px; position:relative; margin:2px 6px 2px 0; outline:none;}
+.sys_spec_text li a{ height:24px; padding:1px 6px; border:1px solid #ccc; background:#fff; display:inline-block; line-height:24px;}
+.sys_spec_text li a:hover{ border:2px solid #e4393c; padding:0 5px; text-decoration:none;}
+.sys_spec_text li i{ position:absolute; width:10px; height:10px; font-size:0; line-height:0; right:2px; bottom:2px; background:url(../images/sdk/righbt.png) no-repeat right bottom; z-index:99; display:none;}
+.sys_spec_text li.selected a{ border:2px solid #e4393c; padding:0 5px;}
+.sys_spec_text li.selected i{ display:block;}  
+
+
+
+body{font-family: '微软雅黑';}
+.account{width: 95%;margin: 0px auto;min-width: 320px;}
+.account>ul{margin-top: 10px;}
+.account>ul>li{color: #333333;padding-top: 12px;}
+.account1{color:#fe1010;padding-left: 5px;}
+.account2{padding-left: 8px;}
+.account3{width: 95%;margin: 0px auto;min-width: 320px;}
+.account3>ul{width: 100%}
+.account3>ul>li{font-size: 15px;}
+.account3>ul>li:nth-child(1){padding-top: 10px;}
+.account3>ul>li:nth-child(2){padding-top: 12px;}
+.account3>ul>li:nth-child(2)>span{color:#fe1010; }
+.account3>ul>li:nth-child(3){padding-top: 12px;padding-bottom: 10px;}
+
+.main_money{width: 95%;margin: 0px auto;margin-top: 20px;min-width: 320px;}
+.main_money_a{width: 25%;height: 35px;display: block;float: left;text-align: center;line-height: 35px;font-size: 15px;cursor: pointer;margin-top: 15px;background-color:#f39261;color: #ffffff;}
+.w{margin-left: 10px;}
+.other_money{width: 90px;height: 35px;margin-left:10px;font-size: 15px;color: #333333;border:solid 1px #333333;padding-left: 15px;}
+.main_other_money{min-width: 320px;}
+.on{background-color:#61BDF3;color: white;}
+.account4{width: 95%;margin:0px auto;}
+.account4>ul>div{border-radius: 5px;text-align: center;line-height: 50px;background-color: #f39261;margin-bottom: 50px;font-size: 20px;}
+.account4>ul>div>a{display: block;color: white;}
+.account4>ul>ul>li{font-size: 15px;}
+.account4>ul>ul>li:nth-child(2){padding-top: 10px;}
+.account4>ul>ul>li:nth-child(3){padding-top: 5px;}

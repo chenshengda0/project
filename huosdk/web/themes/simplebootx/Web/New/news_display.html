@@ -1,0 +1,48 @@
+<webtpl file="Index/headertwo" />
+
+	<div class="gg_game">
+		<div class="ggs_xx"></div>
+		<div id="banner_game" class="ntn">
+				<div class="ggs1">
+				<div class="ggBox1">
+				<a href="#" target="_blank"><img src="__PUBLIC__/web/images/game_1.jpg"></a>
+				</div>
+				</div>
+		</div>
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="contp">
+			<div class="contp_tit">
+				<ul id="tags">
+					<li class="selectTag"><a style="color:#e55f06;" href="{:U('Web/New/index')}">资讯中心</a></li>
+					
+				</ul>
+			</div>
+			<div id="tagContent0" class="tagContent selectTag">
+				<div class="news_detail">
+	     <div class="news_detail_title">{$newsinfo.title}</div>
+		 <div class="news_detail_title_nav">{$newsinfo.create_time|date="Y-m-d H:i:s",###} <script> document.write(parseInt(1000*Math.random())); </script>次</div>
+		 <div class="news_detail_fx">
+		 	
+			</div>
+		 <div class="news_detail_line"></div>
+		 <div class="news_detail_text">
+		  <p>
+	</p><p></p><p>{$contentdata.content}</p>
+<p></p>
+<p></p>
+		 </div>
+		 <div class="news_detail_xg">
+		   <ul>
+		   		
+		   	</ul>
+		 </div>
+	   </div>
+				
+</div></div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

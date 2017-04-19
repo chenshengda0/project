@@ -1,0 +1,77 @@
+<webtpl file="Index/headertwo" />
+
+	<div class="gg_game_hu">
+		<div class="ggs_xx"></div>
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="user_box">
+	<script type="text/javascript" src="__PUBLIC__/web/js/regformchk3.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/web/js/regformchk2.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/web/js/user.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/web/js/WdatePicker.js"></script>
+    <div class="cont_l">
+	  <div class="user_box_l">
+	    <div class="user_box_nav">个人中心</div>
+		<div class="user_box_list">
+		  <ul>
+			<li><span class="user_on"> <a href="{:U('Web/User/index',array('userinfo'=>'info'))}" class="orange3"><em>></em>个人资料</a></span></li>
+			<li><img src="__PUBLIC__/web/images/icon_paw.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'update'))}" >修改密码</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_bz.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'secret'))}">设置密保</a></li>
+			
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div class="cont_r">
+	<form name="myform" id="myform" action="{:U('Web/User/registerinfo',array('action'=>'userinfo'))}" method="post" >
+	  <div class="user_r_box">
+	    <div class="user_r_box_nav">个人资料</div>
+		<div class="user_r_box_main">
+		  <div class="user_ti"><b>温馨提示：</b>完善填写您的个人资料，能更好地保护您的帐号和得到更多的服务！</div>
+		  		   <div class="user_r_box_list">
+		    			<div class="user_box">
+            	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="user_form_table">
+                  <tr>
+                    <td class="uft_title">用户名：</td>
+                    <td class="uft_content">{$userdata.username}</td>
+                  </tr>
+				  <tr>
+                    <td class="uft_title"></td>
+                    <td class="uft_content">{$CURRENCY_NAME}余额：<span style="color:#FF6000; padding-right:20px;">{$userdata.ttb}</span><a target="_blank" class="btn btn-3" href="{:U('Web/Pay/index')}">立即充值</a></td>
+                  </tr>
+                  <tr>
+                    <td class="uft_title"><span></span>QQ：</td>
+                    <td class="uft_content"><input type="text" name="qq" value="{$userdata.qq}" id="qq" class="user_txt" size="25"  />&nbsp;&nbsp;<span id="msg_qq" class="form_msg"></span></td>
+                  </tr>
+                  <tr>
+                    <td class="uft_title">联系地址：</td>
+                    <td class="uft_content"><input type="text" name="address" value="{$userdata.address}" id="address" class="user_txt" size="25"  />&nbsp;&nbsp;<span class="form_msg">建议填写，礼品发送以此地址为准</span></td>
+                  </tr>
+                  <tr>
+                    <td class="uft_title">邮政编码：</td>
+                    <td class="uft_content"><input type="text" name="zipcode" value="{$userdata.zipcode}" id="zipcode" class="user_txt" size="25"  />&nbsp;&nbsp;<span class="form_msg"></span></td>
+                  </tr>
+              </table>
+            </div>
+		  </div>
+		  <div class="clear"></div>
+		  <div class="user_r_box_line"></div>
+		  <div class="user_r_box_tj">
+		  	<input type="submit" value="保存" class="que_btn"  id='save_user_infor_btn' />
+			</div>
+		  <div class="clear"></div>
+		</div>
+	  </div>
+	  	  <input type="hidden" name="action" value="userinfo">
+
+	  </form>
+	</div>
+  </div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

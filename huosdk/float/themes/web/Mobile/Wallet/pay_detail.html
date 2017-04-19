@@ -1,0 +1,50 @@
+<mobiletpl file="header"/>
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/consumption_detail.css"/>
+	
+<nav>
+    <ul>
+<!--         <li <if condition="$status eq 1">class="active"</if>><a href="{:U('User/Float/ptbrecharge_detail',array('status'=>1))}">未支付</a></li>
+        <li <if condition="$status eq 2">class="active"</if>><a href="{:U('User/Float/ptbrecharge_detail',array('status'=>2))}">支付成功</a></li>
+        <li <if condition="$status eq 3">class="active"</if>><a href="{:U('User/Float/ptbrecharge_detail',array('status'=>-1))}">支付失败</a></li> -->
+     
+        <li <if condition="$payflag eq 'pay'">class="active"</if>><a href="{:U('Mobile/Wallet/pay_detail',array('status'=>2))}">{$gamepaytitle}</a></li>
+        <li <if condition="$payflag eq 'wallet'">class="active"</if>><a href="{:U('Mobile/Wallet/wallet_detail',array('status'=>2))}">{$ptbpaytitle}</a></li>
+    </ul>
+</nav>
+<section>
+    <div id="ptb_data"  class="list_text">
+    	<volist name="pay_detail" id='vo'>
+	        <ul class="item">
+<!-- 	            <li><b>消费：</b><span><i>{$vo.money}</i>元</span></li>
+	            <li><b>消费情况：</b><span><i>{$vo.status}</i></span></li>
+	            <li><b>订单号：</b><span>{$vo.order_id}</span></li>
+	            <li><b>消费时间：</b><span>{$vo.create_time|date="Y-m-d H:i:s",###}</span></li> -->
+	            
+	        	<li><b>消费金额：</b><span><i>{$vo.amount}</i>元</span></li>
+	            <li><b>消费情况：</b><span><i>{$vo[status]}</i></span></li>
+	            <li><b>游戏：</b><span><i>{$vo.gamename}</i></span></li>
+	            <li><b>订单号：</b><span>{$vo.orderid}</span></li>
+	            <li><b>消费时间：</b><span>{$vo.createtime}</span></li>
+	        </ul>
+        </volist>
+    </div>
+	<div id="ajax_idx_more" rel="1" class="list_text">加载更多</div>
+	<input id="ajaxurl" name="ajaxurl" type="hidden"value="{:U('Mobile/Wallet/wallet_detail_more')}" /> 
+	<input id="status" name="status" type="hidden" value="{$status}" /> 
+	<input id="currency" name="currency" type="hidden" value="{:C('CURRENCY_NAME')}" />
+	<input id="page" name="page" type="hidden" value="{$page}" />
+</section>
+
+<div class="loading_more">
+    <div class="btn_top">
+        <img src="__PUBLIC__/mobile/images/btn_top.png" alt=""/>
+    </div>
+</div>
+
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/pay_detail.js"></script>
+</html>

@@ -1,0 +1,145 @@
+<webtpl file="Public/header" />
+
+<script type="text/javascript" src="__PUBLIC__/web/js/regformchk3.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/regformchk2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/user.js"></script>
+<script>
+    var registerInfo = "{:U('Register/checkRegisterInfo')}";
+</script>
+<div class="main">
+  <div class="reg_box">
+    <div class="reg_box_l">
+	  <div class="reg_main">
+	    <div class="reg_main_nav">用户注册</div>
+		<div class="reg_tishi"><b>温馨提示：</b>如果已在{:C('BRAND_NAME')}手机端注册了{:C('BRAND_NAME')}账号，无需再注册，可直接登录！</div>
+			<form name="myform" id="myform" action="{:U('Register/register')}" method="post" >
+			<div class="regmain">
+                <!-- //帐号 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class=yw_mreg_label>帐 号：</div>
+                    <div class=yw_mreg_int>
+                        <input class="new_txt" id="username"  onblur=checkUserName(); alt="disableEnter" onkeyup=Chkcn(this); onFocus="jQuery('#unspan').show();" name="username" autocomplete="off">
+                    </div>
+        
+                    <div class="yw_mreg_info">
+                        <div class="default" id="unspan" style="display: none">6~32位数字或字母或 _作为通行证账号</div>
+                    </div> 
+                </div>
+                <!-- //帐号 结束 -->
+    
+                <!-- 密码 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class="yw_mreg_label">密 码：</div>
+                    <div class="yw_mreg_int" style="position: relative">
+                        <input class="new_txt" onblur=ChkPwd(); onFocus="jQuery('#pwdspan').show();" type=password maxLength=16 name="password" id="usrpwd" autocomplete="off"> <!-- 密码强度与原要玩相同 -->
+                        <div style="MARGIN-TOP: 5px; RIGHT: 12px; POSITION: absolute; TOP: 0px; _margin-top: 5px">
+                            <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                    <TR style="TEXT-ALIGN: center">
+                                    <TD id=psl1 style="BORDER-RIGHT: #fff 1px solid; WIDTH: 5px; HEIGHT: 20px" bgColor="#e0e0e0"></TD>
+                                    <TD id=psl2 style="BORDER-RIGHT: #fff 1px solid; WIDTH: 5px" bgColor="#e0e0e0"></TD>
+                                    <TD id=psl3 style="BORDER-RIGHT: #fff 1px solid; WIDTH: 5px" bgColor="#e0e0e0"></TD></TR>
+                                </TBODY>
+                            </TABLE>
+                        </div><!-- //密码强度 与原要玩相同 -->
+                    </div><!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id=pwdspan style="DISPLAY: none">6-16位的字符!建议使用大小写字母和数字混合</div>
+                    </div><!-- //验证信息 --></div>
+                <!-- //密码 结束 -->
+                    
+                <!-- 确认密码 开始 -->
+                <div class="clearfix yw_mreg_item">
+    
+                    <div class=yw_mreg_label>确认密码：</div>
+                    <div class=yw_mreg_int>
+                        <input class=new_txt id="usrpwdc" onblur=ChkPwdc(); onfocus="jQuery('#pwdcspan').show();" type=password name="usrpwdc" autocomplete="off"> 
+                    </div>
+    
+                    <!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id=pwdcspan style="DISPLAY: none">再次输入密码，确保密码输入正确。</div>
+                    </div>
+                    <!-- //验证信息 -->
+    
+                </div>
+                <!-- //确认密码 结束 -->
+
+				<!-- //昵称 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class=yw_mreg_label>昵称：</div>
+                    <div class=yw_mreg_int><INPUT class=new_txt id=nickname  onblur="checkNickname();" onFocus="jQuery('#nicknamespan').show();" name="nickname" autocomplete="off"> 
+                    </div>
+                    <!-- 验证信息 -->
+    
+                    <div class=yw_mreg_info>
+                        <div class=default id=nicknamespan style="DISPLAY: none">昵称由3~15个字符组成。</div>
+                    </div><!-- //验证信息 -->  
+                </div>
+                <!-- //昵称 结束 -->
+
+                <!-- //邮件 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class=yw_mreg_label>邮 件：</div>
+                    <div class=yw_mreg_int><INPUT class=new_txt id=email  onblur="checkEmail();" onFocus="jQuery('#emailspan').show();" name="email"
+    autocomplete="off"> 
+                    </div>
+                    <!-- 验证信息 -->
+    
+                    <div class=yw_mreg_info>
+                        <div class=default id=emailspan style="DISPLAY: none">6~16位的数字或字母作为通行证账号。</div>
+                    </div><!-- //验证信息 -->  
+                </div>
+                <!-- //邮件 结束 -->
+    
+                <!-- 验证码 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class=yw_mreg_label>验证码：</div>
+                    <div class=yw_mrlog_int>
+                        <input class="d3log_yzm" id="verifycode" maxLength=4 name=verifycode autocomplete="off"  onblur="checkVerifycode()"   > 
+                        <img src="__CONTROLLER__/verify" id="codeimg" width="70" height="30" onclick='this.src="__URL__/verify?id="+Math.random();'>
+                        <span><a href="javascript::void()" class="blue_line"  id="verifycode_change"  onClick="$('#codeimg').attr('src','__URL__/verify?id='+Math.random());return false;">换一张</a></span> 
+                    </div>
+                    <!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id=codespan style="DISPLAY: none">请正确输入验证码。</div>
+                    </div><!-- //验证信息 -->
+                </div>
+                <!-- //验证码 结束 -->
+    
+                <div class="check clearfix" style="padding-left:115px;">
+                    <input type="checkbox" id="agreen" checked="checked" name="agreen" value="1" /> <span class="gray">我已看过并同意<a href="{:U('Register/agreement')}" class="blue2"  target="_blank"   >《{:C('BRAND_NAME')}网站服务使用协议》</a></span> 
+                </div>
+                <div class="reg_line"></div>
+                <div class="reg_b"><input type="button" value="立即注册" id="register_btn" ></div>
+                
+			</div>
+            <input type="hidden" name="website" id="website" value="{$WEBSITE}">
+            <input type="hidden" name="action" value="register">
+		</form>
+	  	</div>
+	</div>
+	<div class="reg_box_m"></div>
+		<div class="reg_box_r">
+	  		<div class="reg_login">
+	    		<div class="reg_login_nav">已有{:C('BRAND_NAME')}账号，登录</div>
+					<div class="reg_login_list">
+						<form action="{:U('Web/Login/login')}" method="post" id="login_form" >
+		  					<ul>
+                                <li><label>用户名：</label><input type="text" name="username" id="login_username" class="login_input"/></li>
+                                <li><label>密码：</label><input type="password" name="password" id="login_password" class="login_input"/></li>
+                                <li><label></label><div class="login_s"><a href="javascript:void()" id="login_btn" ><img src="__PUBLIC__/web/images/login_btn.gif" border="0" /></a></div>
+                                <a href="{:U('Web/Findpwd/index', array('show'=>findpwd))}" class="blue_line"  style="line-height:24px;">找回密码</a></li>
+		  					</ul>
+                            <input type="hidden" name="action" value="login">
+						</form>
+					</div>
+				<div class="clear"></div>
+				<div class="login_line"></div>
+	  		</div>
+		</div>
+  	</div>
+</div>
+<div class="clear"></div>
+
+<webtpl file="Public/footer" />

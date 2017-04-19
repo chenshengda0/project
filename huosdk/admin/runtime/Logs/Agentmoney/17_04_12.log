@@ -1,0 +1,6 @@
+[ 2017-04-12T17:18:55+08:00 ] 117.174.88.149 /admin.php/Agentmoney/Gmagent/charge.html
+ERR: 1054:Unknown column 'gmc.order_id' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM c_gm_agentcharge gmac left join c_users au ON gmac.agent_id = au.id left join c_users u ON gmac.admin_id = u.id  WHERE ( au.id=330 and gmc.order_id = '1491988011455539055' and au.user_login = 'anze0102' ) LIMIT 1  
+ERR: 1054:Unknown column 'gmc.order_id' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM c_gm_agentcharge gmac left join c_users au ON gmac.agent_id = au.id left join c_users u ON gmac.admin_id = u.id  WHERE ( au.id=330 and gmc.order_id = '1491988011455539055' and au.user_login = 'anze0102' ) LIMIT 1  
+

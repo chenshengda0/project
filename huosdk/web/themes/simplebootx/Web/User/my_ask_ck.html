@@ -1,0 +1,74 @@
+<webtpl file="Index/headertwo" />
+	<div class="gg_game_hu">
+		<div class="ggs_xx"></div>
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="user_box">
+   
+    <div class="cont_l">
+	  <div class="user_box_l">
+	    <div class="user_box_nav">用户中心</div>
+		<div class="user_box_list">
+		  <ul>
+			<li><img src="__PUBLIC__/web/images/icon_user.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'info'))}" >个人资料</a></li>
+			<!--<li><img src="images/icon_cart.gif" /> <a href="#">充值明细</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'paylog'))}">充值记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'xiaofei'))}">消费记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_games.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'mygame'))}">我的游戏</a></li>-->
+			<li><img src="__PUBLIC__/web/images/icon_paw.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'update'))}" >修改密码</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_bz.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'secret'))}">设置密保</a></li>
+			<!--<li><span class="user_on8">  <a href="{:U('Web/User/index',array('userinfo'=>'myask'))}" class="orange3"><em>></em>我的提问</a></span></li>-->
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div class="cont_r">
+		<div class="user_r_box">
+	    <div class="user_r_box_nav">我的提问 &gt; 查看问题</div>
+		<div class="user_r_box_main">
+		  <div class="tiwen_nav">333</div>
+		  
+		  <div class="tiwen_t">
+		    <div class="tiwen_t_l">
+			  <img src="__PUBLIC__/web/images/wanjia.gif">
+			  <p>{$_username}</p>
+			</div>
+			<div class="tiwen_t_r">
+			
+						  <div class="tiwen_t_r_word">
+			    <p>{$ask_data.details}</p>
+			  </div>
+			  <div class="tiwen_t_r_b">所属游戏：{$ask_data.gamename}&nbsp;&nbsp;&nbsp;状态：
+			  <if condition = "$ask_data.status eq 0">
+			  <span class="blue2">未回复 </span>
+			  <else />
+			  <span class="blue2">已回复 </span>
+			  </if>
+			  &nbsp;&nbsp;&nbsp;{$ask_data.reg_time}&#12288; 
+			  </div>
+			</div>
+		  </div>
+		  
+		  
+		  <div class="clear"></div>
+		  		  <div class="user_r_box_tj">
+		    <ul style="padding-left:150px;">
+		    <!--href="index.php?ct=user&ac=my_ask"-->
+			  <li><a class="que_btn" href="{:U('Web/User/index',array('userinfo'=>'myask'))}">返 回</a></li>
+			</ul>
+		  </div>
+
+
+		  <div class="clear"></div>
+		</div>
+	  </div>
+	</div>
+  </div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

@@ -1,0 +1,99 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('PAGE_NAME')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="page_name" value="{$page.page_name}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('PAGE_CATDIR')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="catdir" value="{$page.catdir}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('EN_NAME')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="en_name" value="{$page.en_name}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('BANNER')}:</div>
+				<div class="right">
+					{uploadfile_html("banner",1,1,$page.banner)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('PARENT')}:</div>
+				<div class="right">
+					<select name="parentid" class="cm-select">
+						<option value="0">选择分类</option>
+						{$tree}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_title" value="{$page.seo_title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="keywords" value="{$page.keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="description" class="cm-textarea">{$page.description}</textarea>
+				</div>
+			</div>
+			
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;">{$page.content}</textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('TEMPLATE_NAME')}:</div>
+				<div class="right">
+					<select class="cm-select" name="template">
+						{foreach from=$_LANG['PAGE_TEMPLATES'] item=v key=k}
+						<option value="{$k}"{if $page.template eq $k} selected{/if}>{$v}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+
+</script>
+{/literal} {tmpl("Public:footer")}

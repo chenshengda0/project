@@ -1,0 +1,61 @@
+<div class="footer">
+    <div class="content">
+        <div class="footer-col c1">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>热门游戏</h3>
+                <ul>
+				
+                <volist name='footgamelist' id='vo' key='k'>
+					<if condition="$k eq 0 ">
+						<li><a target="_blank" href="{$vo.url}">{$vo.name}</a></li>
+					</if>
+					<if condition="$k eq 1 ">
+						<li><a target="_blank" href="{$vo.url}">{$vo.name}</a></li>
+					</if>
+					<if condition="$k eq 2 ">
+						<li><a target="_blank" href="{$vo.url}">{$vo.name}</a></li>
+					</if>
+					<if condition="$k eq 3 ">
+						<li><a target="_blank" href="{$vo.url}">{$vo.name}</a></li>
+					</if>
+				</volist>     
+              </ul>
+            </div>
+        </div>
+        <div class="footer-col c2">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>玩家服务</h3>
+                <ul>
+                    <li><a target="_blank" href="{:U('Server/index',array('item'=>'zhongxin'))}">客服首页</a></li>
+                    <li><a target="_blank" href="{:U('Server/index',array('item'=>'tiwen'))}">我要提问</a></li>
+                    <li><a target="_blank" href="{:U('Server/index',array('item'=>'question'))}">常见问题</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-col c3">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>充值服务</h3>
+                <ul>
+                     <li><a target="_blank" href="{:U('Web/Pay/index')}">支付宝</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-col c5">
+            
+        </div>
+		<div class="clear"></div>
+    </div>
+</div>
+<div class="footer_d">
+    <div style="padding-top:25px;">
+        <p style=" padding-bottom:10px;"><a href="{:U('AboutUs/index',array('show'=>'us'))}">关于我们</a>  |  <a href="{:U('AboutUs/index',array('show'=>'hezuo'))}">商务合作</a>  |  <a href="{:U('AboutUs/index',array('show'=>'zhaopin'))}">人才招聘</a>  |  <a href="{:U('AboutUs/index',array('show'=>'lianxi'))}">联系我们</a></p>
+        <p>健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活<br />
+    <a href="http://www.miitbeian.gov.cn"></a>&nbsp;&nbsp;{:C('COMPANY_NAME')}版权所有</p>
+    </div>
+</div>
+</body>
+</html>

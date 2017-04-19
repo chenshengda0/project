@@ -1,0 +1,57 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<header class="header">
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/nobindPhone.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/nobindPhone.css"/>
+    <style>
+		.infoMsg{
+		    box-sizing: border-box;
+		    padding: 0px 20px;
+		    margin-bottom: 10px;
+		    font-size: 16px;
+		}
+		.notBind > .img {
+		    width: 160px;
+		    height: 116px;
+		    margin: 40px auto;
+		}
+	</style>
+    <div class="set">
+        <div>
+            <div class="set1 orange"> 验证身份 </div>
+            <span class="set2"></span>
+            <div class="set1 gray"> 设置邮箱 </div>
+            <span class="set2"></span>
+            <div class="set1 gray"> 设置完成 </div>
+        </div>
+    </div>
+<div class="notBind">
+<!--     <p class="title"><span>您正在解绑手机，可能会危害您的帐号安全！</span></p> -->
+<p class="title"><span></span></p>
+    <div class="img">
+        <img src="__PUBLIC__/mobile/images/email.jpg" alt=""/>
+    </div>
+</div>
+<p class="infoMsg">你已绑定的邮箱账号：{$userdata['email']}</p>
+<footer>
+    <div class="getCode">
+       <div>
+           <input type="text" id="code" name="code" placeholder="请输入验证码"/><button id="getCode">发送验证码</button>
+       </div>
+    </div>
+    <div class="error_box"></div>
+    <div class="confim_change">
+        <button>确定</button>
+    </div>
+    
+<!--     <p class="tishi"><span>如遇问题请及时<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2399002239&amp;site=qq&amp;menu=yes" title="客服QQ：235222111">联系客服</a></span></p>
+ --></footer>
+<input  name="sendsms" id="sendsms" type="text" value="{:U('Mobile/Security/email_send')}" style="display:none"/>
+<input  name="bindurl" id="bindurl" type="text" value="{:U('Mobile/Security/email_checkcode')}" style="display:none"/>
+
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/email_verify.js"></script>
+</html>

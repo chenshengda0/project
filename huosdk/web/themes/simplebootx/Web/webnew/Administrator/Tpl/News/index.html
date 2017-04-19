@@ -1,0 +1,144 @@
+{tmpl("Public:header")}
+<div class="cm-subHead">
+    <a class="cm-red-btn" href="__ADMIN_URL__/News/add">{lang("ADD")}</a>
+    <a class="cm-red-btn" href="__ADMIN_URL__/News/trashstore_index">{lang("TRASH")}</a>
+    <form action="" method="GET" >
+     <ul>
+     	<li>
+             {lang("CATEGORY")}
+             <select name="catid" class="cm-select">
+				<option value="0">选择分类</option>
+				{$tree}
+			</select>
+         </li>
+         <li>
+             {lang("NAME")}
+             <input class="cm-input-text" type="text" name="title" value="{$title}">
+         </li>
+         <li>
+             <input class="cm-blue-btn" type="submit" value="确定">
+         </li>
+     </ul>
+    </form>
+</div>
+<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               <th width="20"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+               <th width="30">id</th>
+               <th>{lang("TITLE")}</th>
+               <th>{lang("CATNAME")}</th>
+               <th>{lang("CLICK")}</th>
+               <th>{lang("ADD_TIME")}</th>
+               <th>{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+             	<td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+              <td>{$v['id']}</td>
+              <td>{$v['title']}</td>
+              <td>{$v['catname']}</td>
+              <td>{$v['clicks']}</td>
+              <td>{date('Y-m-d H:i:s',$v['add_time'])}</td>
+              <td class="tag5">
+              	<a href="__ADMIN_URL__/News/edit/?id={$v['id']}" class="a1">{lang("EDIT")}</a>&nbsp;
+              	<a href="__ADMIN_URL__/News/delete/?id={$v['id']}" onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>&nbsp;
+              </td>
+             </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+            <ul>
+                <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" value="">{lang("DELETE")}</a></li>
+            	<li> 
+                	<select class="cm-select" id="push_type">
+                		<option value="0">选择推送类型</option>
+                		{foreach from=$push item=p}
+                		<option value="{$p.id}">{$p.name}</option>
+                		{/foreach}
+                	</select>
+                	<a class="cm-green-btn" href="javascript:void(0)" onclick="push()" value="">{lang("推送")}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+function del_all(){
+	if(confirm("{lang('SURE_TO_DEL')}")){
+		var ids = document.getElementsByName("ids[]");
+		idArray = new Array();
+		for(var i=0;i<ids.length;i++){
+			if(ids[i].checked == true){
+				idArray.push(ids[i].value);
+			}
+		}
+		if(idArray.length == 0){
+			alert("请选择删除项");
+			return false;
+		}
+		ids = idArray.join(",");
+		
+		var ajaxurl = "__ADMIN_URL__"+"/News/delete";
+		$.ajax({
+			url: ajaxurl,
+			data:"ids="+ids,
+			type: "POST",
+			dataType: "json",
+			success: function(res){
+				if(res.result == 1){
+					alert(res.msg);
+					window.location.reload();
+				}else{
+					alert(res.msg);
+				}
+			}
+		});	
+	}
+}
+
+function push(){
+	var ids = document.getElementsByName("ids[]");
+	if($("#push_type").val() == 0){
+		alert("选择推送目标");
+		return false;
+	}
+	idArray = new Array();
+	for(var i=0;i<ids.length;i++){
+		if(ids[i].checked == true){
+			idArray.push(ids[i].value);
+		}
+	}
+	if(idArray.length == 0){
+		alert("选择推送项");
+		return false;
+	}
+	if(confirm("确认推送")){
+		ids = idArray.join(",");
+		var ajaxurl = "__ADMIN_URL__"+"/Push/ajax_add";
+		$.ajax({
+			url: ajaxurl,
+			data:"ids="+ids+"&type="+$("#push_type").val(),
+			type: "POST",
+			dataType: "json",
+			success: function(res){
+				if(res.result == 1){
+					alert(res.msg);
+					window.location.reload();
+				}else{
+					alert(res.msg);
+				}
+			}
+		});	
+	}
+}
+
+	</script>
+{tmpl("Public:footer")}

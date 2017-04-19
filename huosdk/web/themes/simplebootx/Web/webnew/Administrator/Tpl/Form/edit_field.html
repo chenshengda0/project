@@ -1,0 +1,58 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("字段名称")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="title" value="{$field.title}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">描述:</div>
+	            <div class="right">
+	               	<textarea class="cm-textarea" name="msg">{$field.msg}</textarea>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">类型:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	<option value="text">文本框</option>
+	                	<option value="select">下拉菜单</option>
+	                	<option value="radio">单选按钮</option>
+	                	<option value="checkbox">复选框</option>
+	                	<option value="textarea">文本域</option>
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">选项:</div>
+	            <div class="right">
+	               	<textarea class="cm-textarea" name="options">{$field.options}</textarea>
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf">
+	            <div class="left">{lang("默认值")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="defaultvalue" value="{$field.defaultvalue}">
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf">
+	            <div class="left">{lang("排序")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="orderid" value="{$field.orderid}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	            	<input type="hidden" name="fid" value="{$fid}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

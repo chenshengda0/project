@@ -1,0 +1,41 @@
+	<mobiletpl file="header"/>
+	<link rel="stylesheet" href="__PUBLIC__/mobile/css/consumption_detail.css" />
+	<nav>
+		<ul>
+			<li <if condition="$status eq 1"> class="active"</if>><a
+				href="{:U('Mobile/Wallet/charge_detail',array('status'=>1))}">待支付</a></li>
+			<li <if condition="$status eq 2"> class="active"</if>><a
+				href="{:U('Mobile/Wallet/charge_detail',array('status'=>2))}">支付成功</a></li>
+		</ul>
+	</nav>
+	<section>
+		<div id="ptb_data" class="list_text">
+			<volist name="ptb_detail" id='vo'>
+			<ul class="item">
+				<li><b>充值金额：</b><span><i>{$vo.amount}</i>元</span></li>
+				<li><b>{:C('CURRENCY_NAME')}数量：</b><span><i>{$vo.ptbcnt}</i></span></li>
+				<li><b>充值状态：</b><span><i>{$vo[status]}</i></span></li>
+				<li><b>订单号：</b><span>{$vo.orderid}</span></li>
+				<li><b>充值时间：</b><span>{$vo.createtime}</span></li>
+			</ul>
+			</volist>
+		</div>
+		<div id="ajax_idx_more" rel="1" class="list_text">加载更多</div>
+		<input id="ajaxurl" name="ajaxurl" type="hidden"value="{:U('Mobile/Wallet/charge_detail_more')}" /> 
+		<input id="status" name="status" type="hidden" value="{$status}" /> 
+		<input id="currency" name="currency" type="hidden" value="{:C('CURRENCY_NAME')}" />
+		<input id="page" name="page" type="hidden" value="{$page}" />
+	</section>
+
+	<div class="loading_more">
+		<div class="btn_top">
+			<img src="__PUBLIC__/mobile/images/btn_top.png" alt="" />
+		</div>
+	</div>
+	<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/consumption_detail.js"></script>
+</html>

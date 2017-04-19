@@ -1,0 +1,49 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#404
+RewriteRule ^404.html/?(.*?)$ index.php/404.htm?&%{QUERY_STRING}
+ErrorDocument 404 /404.html
+
+
+RewriteRule ^system/(.*?).html/?(.*?)$ system/$1.html?&%{QUERY_STRING} [L]
+RewriteRule ^xiuxiu/(.*?)$ xiuxiu.php/$1
+
+
+RewriteCond %{HTTP_HOST} ^youxi.com [NC] 
+RewriteRule ^(.*) http://www.youxi.com/ [R=permanent,L]
+RewriteBase /
+
+
+
+
+##手机端
+
+
+RewriteRule ^account/code/([a-z]+)/$ index.php/User/callback?code=$1
+
+RewriteRule ^download/$ index.php/Download/index
+RewriteRule ^download/(\d+).html$ index.php/Download/show/id/$1
+RewriteRule ^(news|product|picture)/([a-z]+)/$ index.php/$1/index/catdir/$2
+RewriteRule ^(news|product|picture)/([a-z]+)/index.html$ index.php/$1/index/catdir/$2
+RewriteRule ^(news|product|picture)/([a-z]+)/page-(\d+).html$ index.php/$1/index/catdir/$2/p/$3
+RewriteRule ^(news|product|picture)/([a-z]+)/(\d+).html$ $1/show/catdir/$2/id/$3
+RewriteRule ^gamecard/page-(\d+).html$ index.php/Gamecard/index/p/$1
+RewriteRule ^gamecard/(\d+).html gamecard/show/id/$1
+RewriteRule ^order/(\d+).html order/show/id/$1
+RewriteRule ^page/([a-z]*).html$ Page/index/catdir/$1
+
+RewriteRule ^game/page-(\d+).html Game/index?p=$1
+RewriteRule ^game/list-(\d+)-(\d+)-(\d+).html$ Game/index?wl=$1&pt=$2&lx=$3
+RewriteRule ^game/page-(\d+)-(\d+)-(\d+)-(\d+).html$ Game/index?wl=$1&pt=$2&lx=$3&p=$4
+
+RewriteRule ^game/sreach/page-(\d+).html?(.*?)$ index.php/Game/sreach?p=$1&%{QUERY_STRING} [L]
+
+RewriteRule ^(.*?)/(\d+).html$ $1/show?id=$2
+RewriteRule ^(.*?)/(.*?).html?(.*?)$ index.php/$1/$2?&%{QUERY_STRING} [L]
+
+##图片处理
+RewriteRule ^(thumb/.+-\d+-\d+\.(jpg|jpeg|png|gif))$ index.php/Image/index?file=$1 [L]
+
+
+</IfModule>

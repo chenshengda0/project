@@ -1,0 +1,58 @@
+<webtpl file="Index/headertwo" />
+	<div class="gg_game_hu">
+		<div class="ggs_xx"></div>
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="user_box">
+   
+    
+    <div class="cont_l">
+	  <div class="user_box_l">
+	    <div class="user_box_nav">个人中心</div>
+		<div class="user_box_list">
+		  <ul>
+			<li><img src="__PUBLIC__/web/images/icon_user.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'info'))}" >个人资料</a></li>
+			<!--<li><img src="images/icon_cart.gif" /> <a href="#">充值明细</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'paylog'))}">充值记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'xiaofei'))}">消费记录</a></li>
+			<li><span class="user_on8"> <a href="{:U('Web/User/index',array('userinfo'=>'mygame'))}"  class="orange3"><em>></em>我的游戏</a></span></li>-->
+			<li><img src="__PUBLIC__/web/images/icon_paw.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'update'))}" >修改密码</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_bz.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'secret'))}">设置密保</a></li>
+			<!-- <li><img src="__PUBLIC__/web/images/icon_tiwen.gif"/> <a href="{:U('Web/User/index',array('userinfo'=>'myask'))}" >我的提问</a></li>-->
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div class="cont_r">
+	<form name="myform" id="myform" actiom="" method="post" >
+	  <div class="user_r_box">
+	    <div class="user_r_box_nav">我的游戏</div>
+		<div class="user_r_box_main">
+		  	<div class="wgd">
+				<ul>
+
+				<if condition = "$loginfo[0].gameid lt 1">
+					<li>您还没有玩过我们的游戏</li>
+				</if>
+				<volist name="$loginfo" id="vo">
+					<if condition = "$vo.gameid gt 0">
+					<li><a href="{$vo.url}" target="_blank">
+					<img src="__UPLOAD__/image/{$vo.mobileicon}" 
+					style="width:75px;height:75px"/><br>{$vo.gamename}</a></li>
+					</if>
+				</volist>
+				</ul>
+			</div>
+		</div>
+	  </div>
+	  </form>
+	</div>
+  </div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

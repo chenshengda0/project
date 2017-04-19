@@ -1,0 +1,36 @@
+{tmpl("Public:header")}
+    <div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               <th width="20"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+               <th width="30">id</th>
+               <th width="300">表单名称</th>
+               <th width="300">内容</th>
+               <th width="200">添加时间</th>
+               <th>{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+              <td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+              <td>{$v['id']}</td>
+              <td>{$form.name}</td>
+              <td>{foreach from=$v.data item=v1 key=k1}{$k1}:{$v1}&nbsp;{/foreach}</td>
+              <td>{date('Y-m-d H:i:s',$v.create_time)}</td>
+              <td class="tag5">
+              	<a href="__ADMIN_URL__/Form/form_edit/?id={$v['id']}&fid={$v['fid']}" class="a1">{lang("EDIT")}</a>&nbsp;
+              	<a href="__ADMIN_URL__/Form/form_delete/?id={$v['id']}&fid={$v['fid']}" onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>&nbsp;
+              </td>
+             </tr>
+            {/foreach}
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+{tmpl("Public:footer")}

@@ -1,0 +1,127 @@
+{tmpl("Public:header")}
+
+<div class="cm-subHead">
+ <a class="cm-red-btn" href="__ADMIN_URL__/Link/add" >{lang("ADD")}</a>
+<form action="" method="GET" >
+ <ul>
+     <li>
+         {lang("WEB_NAME")}
+         <input class="cm-input-text" type="text" name="name" value="{$name}">
+     </li>
+     <li>
+         {lang("IS_SHOW")}
+      	 <select name="disabled" class="select">
+         	<option value="-1" {if $disabled eq -1}selected{/if}>{lang("ALL")}</option>
+         	<option value="1" {if $disabled eq 1}selected{/if}>{lang("YES")}</option>
+         	<option value="0" {if $disabled eq 0}selected{/if}>{lang("NO")}</option>
+         </select> 
+     </li>
+     <li>
+         <input class="cm-blue-btn" type="submit" value="确定">
+     </li>
+ </ul>
+</form>
+</div>
+<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               <th width="60"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+				<th width="60">id</th>
+				<th width="200">{lang("WEB_NAME")}</th>
+				<th width="200">{lang("LINK_URL")}</th>
+				<th width="150">{lang("ADD_TIME")}</th>
+				<th width="100">{lang("ORDER")}</th>
+				<th width="100">{lang("IS_SHOW")}</th>
+				<th width="100">{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+             	<td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+				<td>{$v['id']}</td>
+				<td>{$v['name']}</td>
+				<td>{$v['site_name']}</td>
+				<td>{date('Y-m-d H:i:s',$v['add_time'])}</td>
+				<td>{$v['orderid']}</td>
+				<td>
+					<a href="javascript:void(0)" onclick="change_show({$v['id']},this)">{if
+						$v['disabled'] eq 1}{lang("YES")}{else}{lang("NO")}{/if}</a>
+				</td>
+				<td>
+					<a href="__ADMIN_URL__/Link/edit/?id={$v['id']}">{lang("EDIT")}</a>
+					&nbsp;
+					<a href="__ADMIN_URL__/Link/delete/?id={$v['id']}"
+						onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>
+					&nbsp;
+				</td>
+             </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+            <ul>
+                <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" value="">{lang("DELETE")}</a></li>
+            </ul>
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+		function change_show(id,obj){
+			var ajaxurl = '__ADMIN_URL__'+"/Link/change_show";
+			
+			$.ajax({
+				url: ajaxurl,
+				data:"id="+id,
+				type: "POST",
+				dataType: "json",
+				success: function(res){
+					if(res.result == 1){
+						obj.innerHTML = "{lang("YES")}";
+					}else if(res.result == 0){
+						obj.innerHTML = "{lang("NO")}";
+					}else{
+						return false;
+					}
+				}
+			});	
+		}
+		
+		function del_all(){
+			if(confirm("{lang('SURE_TO_DEL')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择删除项");
+					return false;
+				}
+				ids = idArray.join(",");
+				var ajaxurl = "__ADMIN_URL__"+"/Link/delete";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+	</script>
+
+{tmpl("Public:footer")}

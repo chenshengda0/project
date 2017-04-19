@@ -1,0 +1,37 @@
+.main { background: url(../images/bg-main.png) no-repeat; height: 388px; margin-top: 60px; width: 716px; margin-bottom:60px;}
+.c {  margin-left: auto; margin-right: auto;}
+.s-guide { padding-top: 30px; text-align: center;}
+.s-guide .focus { background-position: 0 bottom; color: #FF9200;}
+.s-step {background: url(../images/bg-step.png) no-repeat; display: inline-block; height: 40px; margin-left: 10px; margin-right: 10px; position: relative; width: 130px;}
+.s-step span { font-size: 14px; left: 11px; margin: 0; padding: 0; position: absolute; top: 15px;}
+.s-step p { font-size: 16px; left: 28px; position: absolute; text-align: center; top: 0; width: 100px;}
+.s-p { display: none;}
+.s-panel-1 { margin-top: 60px;}
+.show { display: block;}
+.s-panel-1 p { margin-bottom: 40px;}
+.main label { display: inline-block; font-size: 16px; margin-right: 10px; text-align: right; vertical-align: middle; width: 250px;}
+.text { background-color: #E9F8FF; border: 1px solid #D0DCDE; border-radius: 2px; font-size: 14px; padding: 7px 10px; width: 216px;}
+.s-panel-1 p { margin-bottom: 40px;}
+.ac { text-align: center;}
+.space-step .btn, .ac .btn { margin-right: 20px;}
+
+.btn {background: url(../images/btn-24.png) no-repeat; display: inline-block; font-size: 12px; overflow: hidden; text-align: center; vertical-align: middle;}
+.btn-s-1, .btn-s-2 { background-position: 0 -246px; color: #4E4E4C; font-size: 18px; height: 44px; line-height: 44px; width: 112px;}
+.btn-s-1:hover {background-position: 0 -290px;}
+.s-phone { margin: 40px 50px 0;}
+.s-phone p { margin-bottom: 20px;}
+.short { width: 96px;}
+.s-panel-2 img {cursor: pointer;}
+.s-phone img, .s-phone .btn-5 { margin-left: 30px; vertical-align: middle;}
+.space-step { padding-left: 180px;}
+.s-phone p { margin-bottom: 20px;}
+.user-s-setted-mail-account { color: #291301; font-size: 18px;}
+.ac { text-align: center;}
+.f14 { font-size: 14px;}
+.btn-5 {background-image: url(../images/btn-24.png);background-position: 0 -216px; height: 28px; line-height: 28px; width: 100px;}
+.s-panel-3 { margin-top: 50px;}
+.s-panel-3 p { margin-bottom: 20px;}
+.s-result { margin-top: 100px;}
+.s-result a{ color:#FF0000}
+.f18 { font-size: 18px;}
+.hide {  display: none;}

@@ -1,0 +1,33 @@
+{tmpl("Public:header")}
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               	<th width="200px">{lang("NAME")}</th>
+                <th width="400px">{lang("SERVER_URL")}</th>
+                <th width="200px">{lang("DESCRIPTION")}</th>
+                <th width="400px">{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$sms_list item=v key=k}
+                <tr class="tr">
+	                <td>{$v['name']}&nbsp;</td>
+	                <td>{$v['server_url']}&nbsp;</td>
+	                <td>{$v['description']}&nbsp;</td>
+	                <td class="tag5">
+	                	{if $v['installed']}
+	                		<a href="__ADMIN_URL__/Sms/uninstall/?id={$v['id']}" onclick="return confirm('{lang('SURE_TO_DEL')}')">{lang("UNINSTALL")}</a>&nbsp;
+	                		<a href="__ADMIN_URL__/Sms/edit/?id={$v['id']}">{lang("EDIT")}</a>&nbsp;
+	                		{if $v['is_effect'] == 1}
+	                			{lang("USING")}
+	                		{else}
+	                			<a href="__ADMIN_URL__/Sms/set_effect/?id={$v['id']}">{lang("USE_THIS_API")}</a>
+	                		{/if}
+	                	{else}
+	                		<a href="__ADMIN_URL__/Sms/install/?class_name={$v['class_name']}">{lang("INSTALL")}</a>&nbsp;
+	                	{/if}
+	                </td>
+                </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+{tmpl("Public:footer")}

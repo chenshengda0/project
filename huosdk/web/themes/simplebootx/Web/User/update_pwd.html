@@ -1,0 +1,102 @@
+<webtpl file="Index/headertwo" />
+
+	<div class="gg_game_hu">
+		<div class="ggs_xx"></div>
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="user_box">
+	<script type="text/javascript" src="{$WEBSITE}/js/regformchk3.js"></script>
+	<script type="text/javascript" src="{$WEBSITE}/js/regformchk2.js"></script>
+	<script type="text/javascript" src="{$WEBSITE}/js/user.js"></script>
+    <div class="cont_l">
+	  <div class="user_box_l">
+	    <div class="user_box_nav">用户中心</div>
+		<div class="user_box_list">
+		  <ul>
+			
+			<li><img src="__PUBLIC__/web/images/icon_user.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'info'))}" >个人资料</a></li>
+			<!--<li><img src="images/icon_cart.gif" /> <a href="#">充值明细</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'paylog'))}">充值记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'xiaofei'))}">消费记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_games.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'mygame'))}">我的游戏</a></li>-->
+			<li><span class="user_on"> <a href="{:U('Web/User/index',array('userinfo'=>'update'))}"  class="orange3"><em>></em>修改密码</a></span></li>
+			<li><img src="__PUBLIC__/web/images/icon_bz.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'secret'))}">设置密保</a></li>
+			<!-- <li><img src="__PUBLIC__/web/images/icon_tiwen.gif"/> <a href="{:U('Web/User/index',array('userinfo'=>'myask'))}" >我的提问</a></li>-->
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div class="cont_r">
+	  <div class="user_r_box">
+	    <div class="user_r_box_nav">修改密码</div>
+	    <form method="post" action="{:U('Web/User/registerinfo',array('action'=>'updatepwd'))}" id="myform" name="myform">
+		<div class="user_r_box_main">
+		  <div class="user_ti"><b>温馨提示：</b>请尽量让你的密码保持在中到高的安排级别！</div>
+		  		  <div class="user_r_box_list">
+		    <ul>
+		       <!-- 密码 开始 -->
+			   <li></li>
+                <div class="clearfix yw_mreg_item">
+                    <div class="yw_mreg_label">原来密码：</div>
+                    <div class="yw_mreg_int" style="position: relative">
+                        <input class="new_txt" onFocus="" type='password' maxLength=16 name="old_pwd" id="old_pwd" autocomplete="off"> 
+                        
+                    </div>
+					</div>
+
+				<!-- 密码 开始 -->
+			    <div class="clearfix yw_mreg_item">
+                    <div class="yw_mreg_label">输入新密码：</div>
+                    <div class="yw_mreg_int" style="position: relative">
+                        <input class="new_txt" onblur=ChkPwd(); onFocus="jQuery('#pwdspan').show();" type='password' maxLength=16 name="usrpwd" id="usrpwd" autocomplete="off"> 
+                    </div><!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id='pwdspan' style="DISPLAY: none">6-16位的字符!建议使用大小写字母和数字混合</div>
+                    </div><!-- //验证信息 --></div>
+                <!-- //密码 结束 -->
+
+
+			   <!-- 确认密码 开始 -->
+                <div class="clearfix yw_mreg_item">
+    
+                    <div class=yw_mreg_label>确认密码：</div>
+                    <div class=yw_mreg_int>
+                        <input class=new_txt id="usrpwdc" onblur=ChkPwdc(); onfocus="jQuery('#pwdcspan').show();" type=password name="usrpwdc" autocomplete="off"> 
+                    </div>
+    
+                    <!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id=pwdcspan style="DISPLAY: none">再次输入密码，确保密码输入正确。</div>
+                    </div>
+                    <!-- //验证信息 -->
+    
+                </div>
+                <!-- //确认密码 结束 -->
+
+			</ul>
+		  </div>
+		  <div class="clear"></div>
+		  <div class="user_r_box_line"></div>
+		  <div class="user_r_box_tj">
+		  <input type="submit" id="update_pwd" value="确定" class="que_btn">
+		  <!--
+		    <ul>
+			  <li><a href="#" class="que_btn">确 定</a></li>
+			</ul>
+		  -->
+		  </div>
+		  <div class="clear"></div>
+		</div>
+		 <input type="hidden" name="action" value="updatepwd">
+		</form>
+	  </div>
+	</div>
+  </div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

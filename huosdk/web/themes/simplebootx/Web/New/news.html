@@ -1,0 +1,43 @@
+<webtpl file="Index/headertwo" />
+
+<div class="gg_game">
+	<div class="ggs_xx"></div>
+	<div id="banner_game" class="ntn">
+		<div class="ggs1">
+			<div class="ggBox1">
+				<a href="{$guanggao.url}" target="_blank"><img width="20%" height="250px" style="background-size:cover;"  src="__UPLOAD__/image/{$guanggao.img}" alt="{$guanggao.title}"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="contp">
+			<div class="contp_tit">
+				<ul id="tags">
+					<li class="selectTag"><a style="color:#e55f06;" href="{:U('Web/New/index')}">资讯中心</a></li>
+				</ul>
+			</div>
+			<div id="tagContent0" class="tagContent selectTag">
+				<div class="n_box">
+					<ul>
+						<volist name='newslist' id='vo'>
+							<li><!--img width="143" height="104" src="__UPLOAD__/image/{$newslist[i].image}"--><h2>
+							<if condition="$vo['html'] eq 1">
+								<a href="" title="{$vo.title}" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;{$vo.title}</a>
+							<else />
+								<a href="{:U('Web/New/Index',array('show'=>'display','newsid'=>$vo['id']))}" title="  {$vo.title}" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
+							</if>
+								<span>{$vo.create_time|date="Y-m-d H:i:s",###}</span></h2>
+								<p> &nbsp&nbsp&nbsp&nbsp{$vo.content}</p>
+							</li>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	<div class="mnbv">{$showpage}</div>
+	<div class="clear"></div>
+	</div>
+</div>
+<webtpl file="Index/footertwo" />

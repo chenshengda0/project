@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>密码设定</title>
+
+    <meta name="viewport" content="width=device-dpi, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="__PUBLIC__/float/css/bootstrap.css" rel="stylesheet" />
+	
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/float/js/util.js"></script>
+	<script src="__PUBLIC__/float/js/user.js"></script>
+	<script>
+		function reset(){
+			$('#lg-form')[0].reset();
+		}
+        var editpwd = "{:U('Admin/User/checkPassword')}";
+    </script>
+    <style>
+        table tr{
+            height: 20px;;
+        }
+
+    </style>
+</head>
+<body>
+
+<form id="lg-form" name="lg-form" action="{:U('Admin/User/upPwdPost')}" method="post" style="width: 80%; margin: 20px auto;" >
+    <div class="form-group">
+        <label for="exampleInputEmail">原密码</label>
+        <input type="text" class="form-control" id="oldpwd" name="oldpwd" placeholder="请输入原密码">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmai">新密码</label>
+        <input type="password" class="form-control" id="newpwd" name="newpwd" placeholder="请输入新密码">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEma">确认密码</label>
+        <input type="password" class="form-control" id="unewpwd" name="unewpwd" placeholder="请确认密码">
+    </div>
+	<div id="message"></div>
+    <div style="width: 100%; text-align: center;margin-top: 10px;">
+		<input id="url" name="url" type="hidden" value="{:U('Admin/User/ajaxPwd')}">
+		<input id="action" name="action" type="hidden" value="updatepwd">
+		<button type="button" class="btn btn-primary btn-lg btn-block" id="updatepwd" style="padding:5px 16px">确定</button>
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>切换邮箱</title>
+<link href="__PUBLIC__/float/css/bootstrap.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.js"></script>
+		<style>
+			table tr{
+				height: 20px;
+			}
+
+		</style>
+<body>
+
+<form id="updateemail" name="updateemail" action="{:U('Admin/Binding/updatemail',array('updateemail'=>'first'))}" method="post" style="width: 80%; margin: 20px auto 30px;">
+		 <div class="form-group">
+			<label class="col-sm-2 control-label">平台账号:</label>
+			<div class="col-sm-10">
+			  <p class="form-control-static">{$username}</p>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label class="col-sm-2 control-label">当前绑定邮箱:</label>
+			<div class="col-sm-10">
+			  <p class="form-control-static">{$email}</p>
+			</div>
+		  </div>
+		
+		<div style="width: 100%; text-align: center;margin-top: 10px;">
+			<input id="upemail" name="upemail" type="hidden" value="{$email}">
+			<button type="submit" class="btn btn-primary btn-lg btn-block" id="update" style="padding:5px 16px">更换邮箱</button>
+		</div>
+</form>
+
+<div class="alert alert-info" style="text-align:center">您已绑定邮箱，若需要更改，请点击更换邮箱</div>
+
+</body>
+</html>

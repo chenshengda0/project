@@ -1,0 +1,27 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('名称')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="name">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('排序')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="sort" value="0">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{tmpl("Public:footer")}

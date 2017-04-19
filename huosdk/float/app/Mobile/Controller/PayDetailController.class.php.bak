@@ -1,0 +1,114 @@
+<?php
+namespace Mobile\Controller;
+
+use Common\Controller\MobilebaseController;
+
+class PayDetailController extends MobilebaseController {
+    protected $userid,$row=10;
+    
+    /**
+     *  初始化函数
+     *  $access public
+     *  $return string
+     */
+    function _initialize() 
+    {
+        parent::_initialize();
+        $this->userid = get_current_userid();
+    }
+    
+    /**
+     *  游戏消费记录walle/pay_detail
+     *  $access public
+     *  $param string           $status 支付的状态信息
+     *  $return string
+     */
+    function payData($payway=0)
+    {
+        $arrStatus = array('-1'=>'支付失败','1'=>'待支付','2'=>'充值成功');
+        $field = "orderid,status,amount,create_time";
+        $data['mem_id'] = $this->userid;
+        
+        //获取支付的状态
+        $status = I('status',2);
+        if(!empty($status)){
+            $data['status'] = $status;
+        }
+        
+        //获取支付的方式
+        if (!empty($payway)) {
+            $data['payway'] = $payway;
+        }
+        $game_detail = M('pay')->field($field)->where($data)->limit(0,$this->row)->order('create_time desc')->select();
+        foreach($game_detail as $key=>$val){
+            $game_detail[$key]['status'] = $arrStatus[$val['status']];
+        }
+        
+        return array('status'=>$status,'game_detail'=>$game_detail);
+
+    }
+    
+    /**
+     *  下拉滑动加载充值记录
+     *  $access public
+     *  $param string           $status 支付的状态信息
+     *  $param array            $page 分页
+     *  $return string
+     */
+    public function ajaxChargeData($payway=0)
+    {
+        $page = I('post.page/d');
+        if (empty($page)) {
+            $this->error('分页数缺失');
+            exit;
+        }
+        $status = I('post.status/d');
+        if (empty($status)) {
+            $this->error('支付状态值未传');
+            exit;
+        }
+    
+        $num=($page-1)*$this->row;
+        //开始条数
+        $num = ($num == 0) ? 1 : $num;
+    
+        $arrStatus = array('-1'=>'支付失败','1'=>'待支付','2'=>'充值成功');
+        $field = "orderid,status,amount,create_time";
+        $data['mem_id'] = $this->userid;
+        
+        //获取支付的状态
+        $status = I('status',2);
+        if (!empty($status)) {
+            $data['status'] = $status;
+        }
+        
+        //获取支付的方式
+        //$payway = I('payway');
+        if (!empty($payway)) {
+            $data['payway'] = $payway;
+        }
+        
+        $game_detail = M('pay')->field($field)->where($data)->limit($num,$this->row)->order('create_time desc')->select();
+        foreach($game_detail as $key=>$val){
+            $game_detail[$key]['status'] = $arrStatus[$val['status']];
+            $game_detail[$key]['create_time'] = date("Y-m-d H:i:s",$val['create_time']);
+        }
+    
+        $html=null;
+        //整理数据
+        foreach($game_detail as $key=>$val){
+            $html=$html. "<ul class='item'>
+                            <li><b>消费：</b><span><i>".$val['amount']."</i>元</span></li>
+                            <li><b>消费情况：</b><span><i>".$val['status']."</i></span></li>
+                            <li><b>订单号：</b><span>".$val['orderid']."</span></li>
+                            <li><b>消费时间：</b><span>".$val['create_time']."</span></li>
+						  </ul>";
+        }
+        $page++;
+        if ($game_detail==null){
+            return json_encode(array('page'=>'end','html'=>$html));
+        }else{
+            return json_encode(array('page'=>$page,'html'=>$html));
+        }
+    }
+}

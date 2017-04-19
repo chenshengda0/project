@@ -1,0 +1,68 @@
+{tmpl("Public:header")}
+	<div class="cm-subHead">
+        <a class="cm-red-btn" href="__ADMIN_URL__/Menu/add" >{lang("ADD")}</a>
+    </div>
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+                <th width="30">id</th>
+                <th width="400">{lang("NAME")}</th>
+                <th width="400">{lang("CODE_NAME")}</th>
+                <th width="100">{lang("ORDER")}</th>
+                <th width="100">{lang("IS_SHOW")}</th>
+                <th>{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$menus item=v key=k}
+                <tr>
+	                <td>{$v['id']}</td>
+	                <td>{lang($v['name'])}</td>
+	                <td>{$v['name']}</td>
+	                <td>{$v['orderid']}</td>
+	                <td class="tag5">
+	                	<a href="javascript:void(0)" onclick="change_show({$v['id']},this)">{if $v['is_show'] eq 1}{lang("YES")}{else}{lang("NO")}{/if}</a>
+                	</td>
+	                <td class="tag5">
+	                	<a href="__ADMIN_URL__/Menu/edit/?id={$v['id']}">{lang("EDIT")}</a>&nbsp;
+	                	<a href="__ADMIN_URL__/Menu/delete/?id={$v['id']}" onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>&nbsp;
+	                </td>
+                </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+
+	
+     
+	<script type="text/javascript">
+		function change_show(id,obj){
+			var ajaxurl = '__ADMIN_URL__'+"/Menu/change_show?isajax=1";
+			
+			$.ajax({
+				url: ajaxurl,
+				data:"id="+id,
+				type: "POST",
+				dataType: "json",
+				success: function(res){
+					if(res.result == 1){
+						obj.innerHTML = "{lang("YES")}";
+					}else if(res.result == 0){
+						obj.innerHTML = "{lang("NO")}";
+					}else{
+						alert(res.msg);
+						return false;
+					}
+				}
+			});	
+		}
+	</script>
+	
+{tmpl("Public:footer")}

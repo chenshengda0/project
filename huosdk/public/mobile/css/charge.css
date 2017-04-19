@@ -1,0 +1,355 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size:100%;
+	vertical-align: baseline;
+	font-weight:normal;
+	text-decoration: none;
+}
+i,u,s{
+    font-style:normal;
+    font-weight:normal;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+  font-size:16px;
+}
+button{
+	outline:none;
+	cursor:pointer;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html{
+    font-size:62.5%;
+    width: 100%;
+    max-width:900px;
+    margin:0 auto;
+    background-color:#fff;
+    font-family:Microsoft YaHei,Helvetica Neue,Helvetica,Roboto,STHeiTi,Arial,sans-serif;
+}
+body{
+    padding-bottom:10px;
+}
+.header{/*width: 100%;*/height: 42px;background-color: #F9F9F9;position:relative;;}
+.header>ul>li:nth-child(1){float: left;margin-top: 6px;margin-left: 4px;}
+.header>ul>li:nth-child(1)>a{display: block;height: 30px; }
+.header>ul>li:nth-child(1)>a>img{width: 20px;height: 20px;float: left;margin-top:5px;}
+.header>ul>li>a>span{color: #6C6C6C;font-size:1.3rem;line-height: 30px;float:right}
+.header>ul>li:nth-child(2){width: 74px;height: 34px;float: right;margin-top: 4px;margin-right: 6px;font-size: 0.9rem;text-align: center;line-height: 34px;background-color: rgba(0,0,0,0.3);}
+.header>ul>li:nth-child(2)>a{display: block;width: 74px;height: 34px;color: #ffffff}
+@media screen and (min-width:400px){
+    .header{height:50px;line-height:50px;}
+    .header>ul{height:50px;}
+    .header>ul>li:nth-child(1){height:100%;margin-top: 0px;margin-left: 0px;}
+    .header>ul>li:nth-child(1)>a{height:100%;}
+    .header>ul>li>a>span{font-size: 1.6rem;line-height:50px}
+    .header>ul>li:nth-child(1)>a>img{margin-top:15px;}
+}
+
+
+.gray_title {
+  padding-left: 16px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #EEEEEE;
+  font-weight: 600;
+  font-family: "宋体";
+}
+.gray_rect {
+  height: 10px;
+  background-color: #F1F1F1;
+}
+.header {
+  height: 40px;
+  margin: 0px;
+  line-height: 40px;
+  position: relative;
+  background-color: #fff;
+  border-bottom: 2px solid #EEEEEE;
+}
+.header > ul {
+  margin: 0 10px;
+}
+.header > ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (min-width: 400px) {
+  .gray_title {
+    height: 50px;
+    line-height: 50px;
+     font-weight: 600;
+    font-size: 16px;
+  }
+  .header {
+    height: 50px;
+    line-height: 50px;
+  }
+  .header > ul {
+    margin: 0px 10px;
+  }
+}
+html {
+   font-size:16px;
+  background-color: #e7eaef;
+}
+header > div {
+  width: 25px;
+  height: 25px;
+  margin-top: 8px;
+}
+header > div > img {
+  width: 100%;
+}
+header > .close_btn {
+  float: right;
+  margin-right: 10px;
+}
+header > h3 {
+  position: absolute;
+  left: 50%;
+  font-size: 1.6rem;
+}
+header > .return_btn {
+  float: left;
+  margin-left: 10px;
+}
+/************帐号信息****************/
+.account_information {
+  padding: 3px 0px;
+  padding-left: 14px;
+  background-color: #fff;
+}
+.account_information > P {
+  height: 35px;
+  line-height: 35px;
+  font-size:16px;
+}
+.account_information > P > span {
+  color: #FE3636;
+  font-weight: bold;
+  margin-right: 3px;
+}
+/***********充值帐号******************/
+.recharge_amount {
+  background-color: #fff;
+}
+.recharge_amount > .btn_group {
+  width: 95%;
+  margin: 0 auto;
+  padding: 15px 0px;
+}
+.recharge_amount > .btn_group > li {
+  width: calc(33.3% - 10px);
+  float: left;
+  border: 1px solid #1ba4ec;
+  background-color: #fff;
+  text-align: center;
+  height: 30px;
+  color: #1ba4ec;
+  line-height: 30px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 9px;
+  font-size: 1.2rem;
+}
+.recharge_amount > .btn_group > li.active {
+  background-color: #1ba4ec;
+  color: #fff;
+}
+.recharge_amount > .btn_group > input {
+  width: calc(100% - 3px);
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0px;
+  border: 1px solid #1ba4ec;
+}
+.recharge_amount > .canGet {
+  width: 95%;
+  margin: 0 auto;
+  padding-bottom: 15px ;
+  font-size: 16px;
+}
+.recharge_amount > .canGet > span {
+  margin: 0px 3px;
+  font-weight: 600;
+  color:red;
+}
+.change_way {
+  background-color: #fff;
+}
+.change_way > ul > li {
+  height: 40px;
+  margin: 0px 15px;
+  border-bottom: 1px solid #ECECEC;
+  font-size: 16px;
+}
+.change_way > ul > li > .way_icon {
+  float: left;
+  width: 35px;
+  margin-top: 2px;
+}
+.change_way > ul > li > .way_icon > img {
+  width: 100%;
+}
+.change_way > ul > li > span {
+  line-height: 40px;
+  margin-left: 5px;
+}
+.change_way > ul > li > .right_icon {
+  float: right;
+  width: 25px;
+  margin-top: 7px;
+}
+.change_way > ul > li > .right_icon > img {
+  width: 100%;
+}
+.instant_recharge > button {
+  width: calc(100% - 30px);
+  display: block;
+  margin: 15px auto;
+  height: 40px;
+  line-height: 40px;
+  background-color: #1ba4ec;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.footer {
+  width: calc(100% - 50px);
+  margin: 10px auto;
+  color: #5F5F5F;
+}
+.footer > p {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.footer > p > a {
+  color: #13aeef;
+}
+.footer > p > a > span {
+  color: #000;
+}
+.footer > p > .QQ {
+  float: left;
+}
+.footer > p > .QQgroup {
+  float: right;
+}
+@media screen and (min-width: 400px) {
+  header {
+    height: 50px;
+  }
+  /************帐号信息****************/
+  .account_information > P {
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.6rem;
+  }
+  /***********充值帐号******************/
+  .recharge_amount {
+    background-color: #fff;
+  }
+  .recharge_amount > .btn_group > li {
+    width: calc(33.3% - 10px);
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.6rem;
+  }
+  .recharge_amount > .btn_group > li.active {
+    background-color: #1ba4ec;
+    color: #fff;
+  }
+  .recharge_amount > .btn_group > input {
+    width: calc(100% - 3px);
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 0px;
+    border: 1px solid #1ba4ec;
+  }
+  .change_way {
+    background-color: #fff;
+  }
+  .change_way > ul > li {
+    height: 50px;
+    margin: 0px 15px;
+    border-bottom: 1px solid #ECECEC;
+    font-size: 1.6rem;
+  }
+  .change_way > ul > li > .way_icon {
+    margin-top: 7px;
+  }
+  .change_way > ul > li > span {
+    line-height: 50px;
+  }
+  .change_way > ul > li > .right_icon {
+    margin-top: 12px;
+  }
+  .instant_recharge > button {
+    height: 45px;
+    line-height: 45px;
+  }
+  .footer {
+    width: calc(100% - 50px);
+    margin: 10px auto;
+    padding-bottom: 30px;
+  }
+  .footer > p {
+    font-size: 1.6rem;
+    color: #7C7C7C;
+    height: 25px;
+    line-height: 25px;
+  }
+  .footer > p > a {
+    color: #13aeef;
+  }
+  .footer > p > a > span {
+    color: #000;
+  }
+  .footer > p > .QQ {
+    float: left;
+  }
+  .footer > p > .QQgroup {
+    float: right;
+  }
+}

@@ -1,0 +1,29 @@
+<mobiletpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/forgetpwd.css"/>
+<div class="box">
+    <h3>请输入需要找回密码的帐号！</h3>
+    <input type="text" class="inputBox" id="username" name="username"  value="" placeholder="请输入需要找回密码的帐号" />
+</div>
+<div class="error_box"></div>
+<div class="confim_change">
+    <button>下一步</button>
+</div>
+<footer class="kefuFooter">
+    <p class="help">
+    <a class="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qq}&amp;site=qq&amp;menu=yes">
+    <span>客服QQ：</span>{$qq}</a>
+	<if condition="$idkey eq ''">
+		<a class="QQgroup" target="_blank" href="javascript:void();" style="color:#adadad"><span>QQ 群：</span>{$qqgroup}</a>
+	<else />
+		<a class="QQgroup" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey={$idkey}"><span>QQ 群：</span>{$qqgroup}</a>
+	</if>
+	</p>
+</footer>
+<div class="main_model_box"></div>
+<input type="hidden" value="{:U('Mobile/Forgetpwd/check')}" id="ajaxUrl">
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/forgetpwd.js"></script>
+</html>

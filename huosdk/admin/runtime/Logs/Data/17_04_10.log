@@ -1,0 +1,12 @@
+[ 2017-04-10T12:57:57+08:00 ] 117.174.46.238 /admin.php/Data/Game/gameindex.html?app_id=60137&start_time=&end_time=&date_time=30%E5%A4%A9
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( `app_id` = '60137' AND date>='2017-03-12' AND date<='2017-04-10' ) LIMIT 1  
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( `app_id` = '60137' AND date>='2017-03-12' AND date<='2017-04-10' ) LIMIT 1  
+
+[ 2017-04-10T13:01:50+08:00 ] 117.174.46.238 /admin.php/Data/Game/gameindex.html?app_id=0&start_time=&end_time=&date_time=%E4%B8%83%E6%97%A5
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( agent_id=330 AND date>='2017-04-04' AND date<='2017-04-10' ) LIMIT 1  
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( agent_id=330 AND date>='2017-04-04' AND date<='2017-04-10' ) LIMIT 1  
+

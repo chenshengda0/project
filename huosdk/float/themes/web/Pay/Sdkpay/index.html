@@ -1,0 +1,96 @@
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+  <title>支付</title> 
+  <link rel="stylesheet" href="__PUBLIC__/float/css/sdkpay.css">
+<script type="text/javascript">
+	function GetRandomNum(Min,Max)
+	{   
+		var Range = Max - Min;   
+		var Rand = Math.random();   
+		return(Min + Math.round(Rand * Range));   
+	}   
+
+    window.onload=function(){
+        var lis=document.querySelectorAll(".pay5 ul li");
+        for(var i=0;i<lis.length;i++){
+            lis[i].onclick=function(){
+                for(var j=0;j<lis.length;j++){
+                    lis[j].setAttribute("class","");
+                }
+                this.className="yListrclickem";
+            }
+        }
+
+        var payway=document.getElementById("payway");
+        var randnum=document.getElementById("randnum");
+        document.querySelector(".pay9 input").onclick=function(){
+            var form=document.getElementById("payform");
+            payway.value=document.querySelector(".yListrclickem").getAttribute("data-id");
+            randnum.value = GetRandomNum(1,1000);
+            
+            form.submit();
+        }
+    }
+
+</script>
+<script type="text/javascript">
+
+</script>
+ </head> 
+ <body> 
+<div class="pay1">
+          <div></div>
+          <div>支付</div>
+          <div><a onclick="javascript:window.callNativeFunction.webClose()"><img src="__PUBLIC__/float/images/close.png"></a></div>
+</div>
+<div class="pay2">
+    <form  class="pay50" name="payform" id = "payform" action="{:U('Pay/Sdkalipay/alipay_post')}" method="post">
+        <div  class="pay3">
+             <ul>
+                     <li>购买商品：{$payextdata['productname']}</li>
+                     <li>商品价格：{$paydata['amount']}元</li>
+<!--                      <li>钱包余额：{$remain}元 </li>
+                     <if condition = "$paydata['amount'] elt $remain">
+                     <li>需再支付：0元</li>
+                     <else />
+                     <li>需再支付：{$paydata['amount']-$remain}元</li>
+                     </if> -->
+                     
+                     
+                     
+             </ul>
+        </div>
+        <div class="pay4">选择支付方式</div>
+           <div  class="pay5">
+                <ul>
+                      <li  class="yListrclickem" data-id="alipay">
+                           <div  class="pay6"><img src="__PUBLIC__/float/images/alipay.png"></div>
+                           <div  class="pay7">支付宝（推荐）</div>
+                           <i></i>
+                        </li>
+                      <li data-id="wxpay">
+                           <div class="pay6"><img src="__PUBLIC__/float/images/wxpay.png"></div>
+                           <div class="pay7">微信支付</div>
+                          <i></i>
+                      </li>
+                      <li style="border:none" data-id="payeco">
+                           <div  class="pay6"><img src="__PUBLIC__/float/images/payeco.png"></div>
+                           <div  class="pay7">银联在线支付</div>
+                          <i></i>
+                      </li>
+                    <input type="hidden" id="payway" name="payway"/>
+                    <input type="hidden" id="randnum" name="randnum"/>
+                    <input type="hidden" id="verify" name="verify"/>
+                    <input type="hidden" id="token" name="token" value="{$paytoken}"/>
+					<input type="hidden" id="orderid" name = "orderid" value="{$paydata['order_id']}"/>
+                </ul>
+          </div>
+           <div class="pay9">
+                 <input type="button" value="立即支付"  class="pay10">
+           </div>
+        </form>
+</div>
+</body>
+</html>

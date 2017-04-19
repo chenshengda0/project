@@ -1,0 +1,88 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>{$news.title}</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <!--游戏明细start-->
+      <div class="detial-game">
+        <ul class="news-title">
+          <h1>{$news.title}</h1>
+          <p>来源网站：手游村<i>日期：{date('Y-m-d H:i:s',$news.add_time)}</i></p>
+        </ul>
+        <ul class="content">
+          {$news.content}
+        </ul>
+        {if $game}
+        <ul class="top top01 clearfix">
+          <li class="img fl"><img src="{$game.logo}" alt="" /></li>
+          <li class="con con02 fl">
+            <h1>{$game.name}</h1>
+            <p class="clearfix">
+              <span>游戏类型：<i>{$game.typename}</i></span>
+              <span>软件大小：<i>{$game.size}M</i></span>
+              <span>下载次数：<i>{$gome.down_num}次</i></span>
+              <span>软件评分：<i>10分</i></span>
+            </p>
+          </li>
+          <li class="codes fr">
+            <a href="javascript:void(0)" class="and"><img src="__TMPL__Common/images/25.jpg" alt="" /></a>
+            <ul>
+              <li class="fl code"><img src="/public/tow_wei_ma.php?data={urlencode(url('Game#download')|cat:'?id='|cat:$game.id)}&size=116x116" alt="" /></li>
+              <li class="fl infos">
+                <b>{$game.name}</b>
+                <p>版本：{$game.banben}</p>
+                <a href="{url('game#download')|cat:'?id='|cat:$game.id}" title="">立即下载</a>
+              </li>
+             </ul>
+          </li>
+        </ul> 
+        {/if}
+        {if $xgyx}
+        <ul>
+          <div class="main-title">
+            <h2 class="fl"><i class="ico06">相关游戏</i></h2>
+          </div>
+          <div class="recommend-good-game recommend-good-game01">
+            <ul class="clearfix">
+            {foreach from=$xgyx item=v}
+              <li>
+                <a href="{url('Game#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.logo}"></a>
+                <div class="fr">
+                  <h4><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                  <p>游戏：{$v.typename}</p>
+                  <ul>
+                    <span>{$v.down_num}</span>
+                    <a href="{url('Game#download','id='|cat:$v.id)}" target="_blank">安全下载</a>
+                  </ul>
+                </div>
+              </li>
+              {/foreach}
+            </ul>  
+          </div>
+        </ul>
+          {/if}
+      </div>
+      <!--游戏明细end-->
+    </li>
+    <!--左栏目end-->
+    
+    {tmpl("Public:right")}
+  </ul>
+</div>
+<!--游戏资讯end-->
+
+<!--广告位start-->
+<div class="wrap mt20">
+  <a href="##" target="_blank"><img src="__TMPL__Common/images/11.jpg" alt="" /></a>
+</div>
+<!--广告位end-->
+{tmpl("Public:footer")}

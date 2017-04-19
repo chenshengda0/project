@@ -1,0 +1,52 @@
+{tmpl("Public:header")}
+	<div class="subBody">
+	    <div class="cm-input-wrap-box">
+		    <form action="" class="jqtransform" method="POST">
+		        <div class="cm-input-wrap cf">
+		            <div class="left">{lang("CODE")}:</div>
+		            <div class="right">
+		                <span>{$data['code']}</span>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("NAME")}:</div>
+		            <div class="right">
+		                <span>{$data['name']}</span>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("DESCRIPTION")}:</div>
+		            <div class="right">
+		                <textarea class="sm-textarea">{$data.description}</textarea>
+		            </div>
+		        </div>
+		        {foreach from=$data.config item=v key=k}
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{$k}:</div>
+		            <div class="right">
+		                <input class="cm-input-text require" type="text" name="config[{$k}]" value="{$v}">
+		            </div>
+		        </div>
+		        {/foreach}
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("是否开启")}:</div>
+		            <div class="right">
+		                {lang("YES")}&nbsp;<input type="radio" name="is_open" value="1" {if $data.is_open eq 1}checked="true"{/if}>&nbsp;&nbsp;
+				        {lang("NO")}&nbsp;<input type="radio" name="is_open" value="0" {if $data.is_open eq 0}checked="true"{/if}>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf mt20 ">
+		            <div class="right">
+		            	<input type="hidden" name="id" value="{$data['id']}" />
+				     	<input type="hidden" name="code" value="{$data['code']}" />
+				     	<input type="hidden" name="name" value="{$data['name']}" />
+		                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+		                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+		            </div>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+	
+	
+{tmpl("Public:footer")}

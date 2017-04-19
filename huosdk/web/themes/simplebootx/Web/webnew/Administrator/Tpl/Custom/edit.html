@@ -1,0 +1,62 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST" onsubmit="return checkFrom(this)">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">显示名:</div>
+	            <div class="right">
+	             	{$custom.title}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">标签名:</div>
+	            <div class="right">
+	                {$custom.name}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">输入类型:</div>
+	            <div class="right">
+	               {$custom.typename}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">值:</div>
+	            <div class="right">
+	            	{if $custom.type eq 1}
+	                <input class="cm-input-text" type="text" name="value" value="{$custom.value}" >
+	                {elseif  $custom.type eq 2}
+	                <textarea class="cm-textarea" name="value">{$custom.value}</textarea>
+	                {elseif  $custom.type eq 4}
+	                <textarea class="cm-textarea" name="value">{$custom.value}</textarea>
+	                <script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="value"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+	                {elseif $custom.type eq 3}
+	                {uploadfile_html('value',1,1,$custom.value)}
+	                {/if}
+	                <i>{$custom.tip}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+{tmpl("Public:footer")}

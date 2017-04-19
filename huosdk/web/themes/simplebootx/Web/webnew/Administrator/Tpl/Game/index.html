@@ -1,0 +1,170 @@
+{tmpl("Public:header")}
+
+<div class="cm-subHead">
+ <a class="cm-red-btn" href="__ADMIN_URL__/Game/add" >{lang("ADD")}</a>
+<form action="" method="GET" >
+ <ul>
+     <li>
+         {lang("游戏类型")}
+         <select class="sm-select" name="typeid">
+         	<option value="0">{lang("ALL")}</option>
+         	{foreach from=$types item=v}
+         	<option value="{$v.id}">{$v.name}</option>
+         	{/foreach}
+         </select>
+     </li>
+     <li>
+         {lang("游戏名称")}
+         <input class="cm-input-text" type="text" name="name" value="{$name}">
+     </li>
+     <li>
+         <input class="cm-blue-btn" type="submit" value="确定">
+     </li>
+ </ul>
+</form>
+</div>
+<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               <th width="60"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+				<th width="60">id</th>
+				<th width="200">{lang("游戏名称")}</th>
+				<th width="200">{lang("游戏类型")}</th>
+				<th width="200">{lang("浏览量")}</th>
+				<th width="200">{lang("下载量")}</th>
+				<th width="100">{lang("ORDER")}</th>
+				<th width="100">{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+             	<td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+				<td>{$v['id']}</td>
+				<td>{$v['name']}</td>
+				<td>{$v['typename']}</td>
+				<td>{$v['clicks']}</td>
+				<td>{$v['num']}</td>
+				<td>{$v['orderid']}</td>
+				<td>
+					<a href="__ADMIN_URL__/Game/edit/?id={$v['id']}">{lang("EDIT")}</a>
+					&nbsp;
+					<a href="__ADMIN_URL__/Game/delete/?id={$v['id']}"
+						onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>
+					&nbsp;
+				</td>
+             </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+            <ul>
+                <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" value="">{lang("DELETE")}</a></li>
+            	<li> 
+                	<select class="cm-select" id="push_type">
+                		<option value="0">选择推送类型</option>
+                		{foreach from=$push item=p}
+                		<option value="{$p.id}">{$p.name}</option>
+                		{/foreach}
+                	</select>
+                	<a class="cm-green-btn" href="javascript:void(0)" onclick="push()" value="">{lang("推送")}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+		function change_show(id,obj){
+			var ajaxurl = '__ADMIN_URL__'+"/Game/change_show";
+			
+			$.ajax({
+				url: ajaxurl,
+				data:"id="+id,
+				type: "POST",
+				dataType: "json",
+				success: function(res){
+					if(res.result == 1){
+						obj.innerHTML = "{lang("YES")}";
+					}else if(res.result == 0){
+						obj.innerHTML = "{lang("NO")}";
+					}else{
+						return false;
+					}
+				}
+			});	
+		}
+		
+		function del_all(){
+			if(confirm("{lang('SURE_TO_DEL')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择删除项");
+					return false;
+				}
+				ids = idArray.join(",");
+				var ajaxurl = "__ADMIN_URL__"+"/Game/delete";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+		
+		function push(){
+			var ids = document.getElementsByName("ids[]");
+			if($("#push_type").val() == 0){
+				alert("选择推送目标");
+				return false;
+			}
+			idArray = new Array();
+			for(var i=0;i<ids.length;i++){
+				if(ids[i].checked == true){
+					idArray.push(ids[i].value);
+				}
+			}
+			if(idArray.length == 0){
+				alert("选择推送项");
+				return false;
+			}
+			if(confirm("确认推送")){
+				ids = idArray.join(",");
+				var ajaxurl = "__ADMIN_URL__"+"/Push/ajax_add";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids+"&type="+$("#push_type").val(),
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+	</script>
+
+{tmpl("Public:footer")}

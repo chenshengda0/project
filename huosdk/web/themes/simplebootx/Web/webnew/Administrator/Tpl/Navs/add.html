@@ -1,0 +1,160 @@
+{tmpl("Public:header")}
+<style>
+.tab { background-color:#204C89;height:46px;line-height:46px;padding-left:80px; }
+.tab a{ display:inline-block;padding:0 20px; }
+.tab a i{ color:#fff;font-size:14px; }
+.tab .active{ background-color:#fff; }
+.tab .active i{ color:#204C89; }
+</style>
+<div class="tab">
+<a href="#1F" class="active"><i>站内链接</i></a>
+<a href="#2F"><i>自定义链接</i></a>
+</div>
+<div class="subBody">
+	<!-- 站内链接 start-->
+    <div class="cm-input-wrap-box" id="1F">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">站内栏目:</div>
+	            <div class="right">
+	                <!-- <input class="cm-input-text" type="text"  name="url" > -->
+	                <select class="cm-select" name="nav_menu" id="nav_menu">
+	                	<option value="">请您选择链接项目</option>
+	                	{$tree}
+	                </select>
+	                
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("NAV_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name" id="name">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("NAV_TYPE")}:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	{foreach from=$_LANG['NAV_TYPES'] item=v key=k}
+	                	<option value="{$k}">{$v}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" value="0">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_BLANK")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_blank" value="1">&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_blank" value="0" checked="true">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_show" value="1" checked="true">&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_show" value="0">
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+    <!-- 站内链接 end-->
+    
+   	<!-- 自定义链接start  -->
+   	<div class="cm-input-wrap-box" id="2F" style="display:none;">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("NAV_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name"  >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">链接地址:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="guide" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("NAV_TYPE")}:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	{foreach from=$_LANG['NAV_TYPES'] item=v key=k}
+	                	<option value="{$k}">{$v}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" value="0">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_BLANK")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_blank" value="1">&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_blank" value="0" checked="true">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_show" value="1" checked="true">&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_show" value="0">
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="nav_menu" value="nav,0">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+   	<!-- 自定义链接end  -->
+</div>
+
+
+
+<script type="text/javascript">
+$(function(){
+	$(".tab a").click(function(){
+		$(".tab a").removeClass("active");
+        $(this).addClass("active"); 
+		$(".cm-input-wrap-box").hide();
+		var activeTab = $(this).attr("href");
+		$(activeTab).show();
+		return false;
+	});
+	$("#nav_menu").change(function(){
+		var name = $(this).find("option:selected").text();
+		if($(this).val() != ""){
+			var names = name.split('├─ ');
+			name = names.join('');
+			$("#name").val(name);
+		}else{
+			$("#name").val('');
+		}
+		
+	});
+})
+</script>    
+{tmpl("Public:footer")}

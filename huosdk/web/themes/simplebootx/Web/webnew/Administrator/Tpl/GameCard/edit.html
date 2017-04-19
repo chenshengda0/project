@@ -1,0 +1,98 @@
+{tmpl("Public:header")}
+<script language="javascript" type="text/javascript" src="__TMPL__Common/My97DatePicker/WdatePicker.js"></script>
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('游戏卡名称')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="name" value="{$game_card.name}" id="name">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+	            <div class="left">{lang("游戏")}:</div>
+	            <div class="right">
+	                <select name="game_id" class="cm-select require">
+	                	<option value="0">选择游戏</option>
+	                	{foreach from=$games item=v}
+	                	    <option value="{$v.id}" {if $game_card.game_id eq $v.id}selected{/if}>{$v.name}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('THUMB')}:</div>
+				<div class="right">
+					{uploadfile_html("thumb",1,1,$game_card.thumb)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('游戏卡类型')}:</div>
+				<div class="right">
+					<select class="cm-select" name="type">
+						{foreach from=$card_type item=v}
+						<option value="{$v.id}"{if $game_card.type eq $v.id}selected{/if}>{$v.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;">{$game_card.content}</textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('结束时间')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="end_time" onFocus="WdatePicker()" readOnly="true" value="{date('Y-m-d',$game_card.end_time)}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_title" value="{$game_card.seo_title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_keywords" value="{$game_card.seo_keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="seo_description" class="cm-textarea">{$game_card.seo_description}</textarea>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}" />
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+	$("select[name='game_id']").change(function(){
+		var name = $(this).find("option:selected").text();
+		$("#name").val(name);
+	});
+</script>
+{/literal} {tmpl("Public:footer")}

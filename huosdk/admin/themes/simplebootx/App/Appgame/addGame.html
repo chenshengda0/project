@@ -1,0 +1,90 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Appgame/gameList')}">app游戏列表</a></li>
+			<li class="active"><a href="{:U('Appgame/addGame')}">app游戏添加</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Appgame/addGame_post')}" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">游戏:</label>
+						<div class="controls">
+							<input type="text" name="name">
+						</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">栏目:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+					<select class="select_2" name="lanmu">
+						<option value='1'>单机游戏</option>
+						<option value='2'>网络游戏</option>
+					</select>
+				</div>
+				<div class="control-group">
+					<label class="control-label">分类:</label>
+					<div class="controls">
+						<select name="type">
+							<foreach name="gametype" item="vo">
+								<option value="{$vo.id}">{$vo.name}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏图标:</label>
+					<div class="controls">
+						<input type="file" class="input" name="micon[]"><font color="red">*图片尺寸：65*65</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏截图:</label>
+					<div class="controls">
+						<input type="file"  name="simage[]"><font color="red">*图片尺寸：350*600</font>
+					</div>
+					<div class="controls">
+						<input type="file"  name="simage[]"><font color="red">*图片尺寸：350*600</font>
+					</div>
+					<div class="controls">
+						<input type="file"  name="simage[]"><font color="red">*图片尺寸：350*600</font>
+					</div>
+					<div class="controls">
+						<input type="file"  name="simage[]"><font color="red">*图片尺寸：350*600</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">下载路径:</label>
+					<div class="controls">
+						<input type="text" name="link">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏大小:</label>
+					<div class="controls">
+						<input type="text" name="size">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">下载次数:</label>
+					<div class="controls">
+						<input type="text" name="count">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏简介:</label>
+					<div class="controls">
+						<textarea id="description" name="description" rows="12" cols="75" style="resize:none;width:50%;" ></textarea>
+					</div>
+				</div>
+			
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="{:U('Appgame/gameList')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+a:4:{i:0;s:2:"id";i:1;s:7:"content";i:2;s:9:"is_delete";s:5:"_type";a:3:{s:2:"id";s:7:"int(11)";s:7:"content";s:8:"longtext";s:9:"is_delete";s:11:"smallint(2)";}}

@@ -1,0 +1,30 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("表单类型")}:</div>
+	            <div class="right" style="margin-top:10px;">
+	                {$form.name}
+	            </div>
+	        </div>
+	        {foreach from=$form_data['data'] item=v key=k}
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang($k)}:</div>
+	            <div class="right" style="margin-top:10px;">
+	                {$v}
+	            </div>
+	        </div>
+	        {/foreach}
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	            	<input type="hidden" name="fid" value="{$fid}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

@@ -1,0 +1,53 @@
+{tmpl("Public:header")}
+<div class="subBody">
+   	<!-- 自定义链接start  -->
+   	<div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("SILDE_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name"  >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("SILDE_LINK")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="link" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("SILDE_TYPE")}:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	<option value="1">{$_LANG['SILDE_TYPES'][1]}</option>
+	                	<option value="2">{$_LANG['SILDE_TYPES'][2]}</option>
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("SILDE_IMG")}:</div>
+	            <div class="right">
+	            	{uploadfile_html("img",1,1)}
+					<span class="tip">pc端图片大小：1920*400</span>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" value="0">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+   	<!-- 自定义链接end  -->
+</div>
+
+</script>    
+{tmpl("Public:footer")}

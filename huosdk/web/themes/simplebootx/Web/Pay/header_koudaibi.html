@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="{$keywords}"/>
+<meta name="description" content="{$description}"/>
+<title>{$title}</title>
+<link href="__PUBLIC__/web/css/index.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div class="top_nav">
+	<div class="top_nav_main" id="top_nav_main"> 
+    	
+    	<div class="top_nav_main_l">欢迎来到{:C('BRAND_NAME')} 
+        <if condition="$Think.session.user.sdkuser eq ''" >
+        <a href="{:U('Login/index')}">登录</a>  <a href=":U('Register/index')">注册</a> 
+        <else />
+        <span class="orange">{$Think.session.user.sdkuser}</span>&nbsp;&nbsp;<a href="{:U('Web/User/index',array('userinfo'=>'info'))}" class="blue_line">进入用户中心</a>&nbsp;&nbsp;<a href="{:U('User/logout')}" class="blue_line">退出</a>
+        </if>
+        </div>
+    </div>
+  	<div class="clear"></div>
+</div>
+<div class="top">
+	<div class="top_l"><a href="{:WEBSITE}"><img src="__UPLOAD__/image/{$logo.img}" width="320px;"></a></div>
+    	<div class="top_r">
+            <div class="nav">
+               <ul>
+					<li><a href="{:U('Index/index')}" class="menu0_on" style="width:65px;"><i class="navIco navIco_1"></i>首页</a></li>
+					<li><a href="{:U('Game/index')}" class="menu1"><i class="navIco navIco_2"></i>游戏中心</a></li>
+					<li><a href="{:U('Web/Pay/index')}" class="menu3" target="_blank"><i class="navIco navIco_4"></i>充值中心</a></li>
+					<li><a href="{:U('Web/User/index',array('userinfo'=>'info'))}" class="menu2"><i class="navIco navIco_3"></i>个人中心</a></li>
+					<li><a href="{:U('Web/Server/index',array('item'=>'zhongxin'))}" class="menu4"><i class="navIco navIco_5"></i>客服中心</a></li>
+					<li><a href="{:BBSSITE}"  target="_blank" class="menu5"><i class="navIco navIco_6"></i>玩家社区</a></li>
+            	</ul>
+            </div>
+        </div>
+</div>
+<div class="clear"></div>

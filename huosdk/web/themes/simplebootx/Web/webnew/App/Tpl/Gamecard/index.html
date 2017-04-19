@@ -1,0 +1,46 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>游戏礼包</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <!--礼包列表start-->
+      <div class="goods-info">
+        <ul class="list">
+        {foreach from=$list item=v}
+          <li class="clearfix">
+            <a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.logo}" width="103" height="103" alt="" /></a>
+            <div class="con fl">
+              <h4><a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+              <p>{$v.description}</p>
+              <p><i>剩余：{$v.num-$v.make_num}</i><i>总数{$v.num}</i><i>{$v.time}</i></p>
+            </div>
+            <div class="get-goods fr">
+              <a href="##" onclick="put_card({$v.id})" title="">领取礼包</a>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+        <!--分页start-->
+        <ul class="page">
+          {$pages}
+        </ul>
+        <!--分页end-->
+      </div>
+      <!--礼包列表end-->
+    </li>
+    <!--左栏目end-->
+    
+    {tmpl("Public:right")}
+  </ul>
+</div>
+<!--游戏资讯end-->
+{tmpl("Public:footer")}

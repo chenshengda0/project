@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>手机设定</title>
+    <meta name="viewport" content="width=device-dpi, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="__PUBLIC__/float/css/bootstrap.css" rel="stylesheet" />
+	
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/float/js/util.js"></script>
+	<script src="__PUBLIC__/float/js/mobilesafe.js"></script>
+	<script>
+		var getcode = "{:U('Admin/Binding/sendMsg')}";
+	</script>
+
+<body >
+      <form  id="safe-mobile" name="safe-mobile" action="{:U('Admin/Binding/userMobilePost')}" method="post" style="width: 80%; margin: 20px auto 30px;">
+		 <div class="form-group">
+			<label for="exampleInputMobile">手机</label>
+			<input type="text" class="form-control" id="mobile" name="mobile" placeholder="请输入要绑定手机">
+		</div>
+		<div class="form-group">
+           <input type="text" class="form-control" id="sms" name="sms" placeholder="请输入短信的验证码" />
+           <input class="submit" id="btnSendCode" type="button" value="获取验证码"  onclick="sendMessage()" />
+         </div>
+		<div class="form-group">
+			<label for="exampleInputMobile">账号密码</label>
+			<input type="password" class="form-control" id="pwd" name="pwd" placeholder="请输入平台账号密码">
+		</div>
+		<div id="message"></div>
+		<div style="width: 100%; text-align: center;margin-top: 10px;">
+			<input id="action" name="action" type="hidden" value="safemobile">
+			<input id="url" name="url" type="hidden" value="{:U('Admin/Binding/ajaxMobile')}">
+			<button type="button" class="btn btn-primary btn-lg btn-block" id="safe" style="padding:5px 16px">确定</button>
+		</div>
+      </form>
+	  <div class="alert alert-info">绑定手机后可以在忘记密码或账号被盗时通过手机找回密码。</div>
+
+</body>
+</html>

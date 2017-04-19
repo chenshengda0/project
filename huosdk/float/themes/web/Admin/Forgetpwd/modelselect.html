@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="qinuoli">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="__PUBLIC__/float/css/user.css" type="text/css" />
+<title>用户中心</title>
+<link href="__PUBLIC__/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="wx_wrap">
+	<ul class="my_list"> 
+		<li class="tiao" ><a href="{:U('Admin/Forgetpwd/checkUserEmail',array('username'=>$contact['username']))}"><i class="fa fa-envelope fa-lg fa-fw" style="color:#8AA716" width="20" height="20"></i>&nbsp&nbsp邮箱找回<span style="float:left">{$emailstr}</span></a></li>
+		<li class="tiao" ><a href="{:U('Admin/Forgetpwd/checkUserPhone',array('username'=>$contact['username']))}"><i class="fa fa-envelope fa-lg fa-fw" style="color:#8AA716" width="20" height="20"></i>&nbsp&nbsp手机找回<span style="float:left">{$mobilestr}</span></a></li>
+	</ul>
+
+</div>
+
+</body>
+</html>

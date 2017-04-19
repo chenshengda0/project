@@ -1,0 +1,38 @@
+<admintpl file="header"/>
+</head>
+<body class="J_scroll_fixed">
+<div class="wrap">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="{:U('setting/paypwd')}">修改二级密码</a></li>
+	</ul>
+  	<div class="common-form">
+    	<form method="post" class="form-horizontal js-ajax-form" action="{:U('setting/paypwd_post')}">
+        	<fieldset>
+          		<div class="control-group">
+           			<label class="control-label" for="input01">原二级密码:</label>
+	            	<div class="controls">
+	              		<input type="text" class="input" id="old_password" name="old_password">
+	            	</div>
+          		</div>
+				<div class="control-group">
+					<label class="control-label" for="input01">新二级密码:</label>
+					<div class="controls">
+						<input type="text" class="input" id="password" name="password">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input01">重复新密码:</label>
+					<div class="controls">
+						<input type="text" class="input" id="repassword" name="repassword">
+					</div>
+				</div>
+         	 </fieldset>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn_submit js-ajax-submit">更新</button>
+          </div>
+      </form>
+  </div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

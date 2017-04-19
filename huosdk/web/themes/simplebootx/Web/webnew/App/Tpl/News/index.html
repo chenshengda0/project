@@ -1,0 +1,47 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>{$cate.catname}</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <!--资讯列表start-->
+      <div class="news-list">
+        <ul class="list">
+        {foreach from=$list item=v}
+          <li class="clearfix">
+            <a href="{url('News#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.thumb}" width="130" height="100" alt="{$v.title}" /></a>
+            <div class="con fr">
+              <h4><a href="{url('News#show','id='|cat:$v.id)}" target="_blank">{$v.title}<i>资讯</i></a></h4>
+              <p>{$v.description}</p>
+              <ul class="clearfix">
+                <span class="fl">{date('Y-m-d H:i:s',$v.add_time)}</span>
+                <span class="fr">已被查看：<i>{$v.clicks}</i>次</span>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+        <!--分页start-->
+        <ul class="page">
+          {$pages}
+        </ul>
+        <!--分页end-->
+      </div>
+      <!--资讯列表end-->
+    </li>
+    <!--左栏目end-->
+    
+    {tmpl("Public:right")}
+  </ul>
+</div>
+<!--游戏资讯end-->
+
+{tmpl("Public:footer")}

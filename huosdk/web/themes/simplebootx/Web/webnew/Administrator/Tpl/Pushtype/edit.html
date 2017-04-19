@@ -1,0 +1,38 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('名称')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="name" value="{$detail.name}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('模块')}:</div>
+				<div class="right">
+					<select class="sm-select require" name="module">
+						{foreach from=$GLOBALS['action']['module'] item=v key=k}
+						<option value="{$k}" {if $detail.module eq $k}selected{/if}>{$v}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('排序')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="sort" value="{$detail.sort}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{tmpl("Public:footer")}

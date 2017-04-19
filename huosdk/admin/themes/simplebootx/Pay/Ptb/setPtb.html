@@ -1,0 +1,65 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+		<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">平台币发放</a></li>
+		</ul>
+		
+		<div class="common-form">
+			<form method="post" class="form-horizontal" action="{:U('Ptb/setPtb_verify')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">账号类型:</label>
+						<div class="controls">
+							<!-- <input type="radio" id="takeclass" name="takeclass" value="1"  /><span>代理商</span>&nbsp;&nbsp;&nbsp;&nbsp;
+							 -->
+							 <input type="radio" id="takeclass" name="takeclass" value="2" checked="checked"/><span>充值玩家</span>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">请填写账号:</label>
+						<div class="controls">
+							<input type="text" class="input" name="username" id="username" value="">
+							<span id="usernamespan" style="color:#00F;display:none;">用户名不存在</span>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">已有{$ptbname}数量:</label>
+						<div class="controls">
+							<input type="text" class="input" name="oldptb" id="oldptb" style="color:blue;" value="0" readonly="readonly" >
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写充值{$ptbname}数量:</label>
+						<div class="controls">
+							<input type="text" class="input" name="newptb" value="" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写充值金额:</label>
+						<div class="controls">
+							<input type="text" class="input" name="amount" value="" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写备注:</label>
+						<div class="controls">
+							<input type="text" class="input" name="beizhu" value="" autocomplete="off">
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<input name="adminsite" type="hidden"  id="adminsite" value="{:U('Ptb/ajaxGetPtb')}">
+					<button type="submit"
+						class="btn btn-primary btn_submit">确认</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/Ptb.js"></script>
+	
+</body>
+</html>

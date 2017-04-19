@@ -1,0 +1,255 @@
+{tmpl("Public:header")}
+	<div class="subBody">
+	    <div class="cm-input-wrap-box">
+		    <form action="" class="jqtransform" method="POST" id="form_table">
+		    <input type="hidden" id="id" value="{$upload_arr['id']}" />
+		        <div class="cm-input-wrap cf">
+		            <div class="left">{lang("UPLOAD_ISSHOW")}:</div>
+		            <div class="right">
+		                {lang("YES")}&nbsp;<input type="radio" name="is_open" value="1" onclick="ftpis_open(this.value)" {if $upload_is_open == 1}checked="true"{/if} autocomplate="off" />&nbsp;&nbsp;
+						{lang("NO")}&nbsp;<input type="radio" name="is_open" onclick="ftpis_open(this.value)" value="0" {if $upload_is_open == 0}checked="true"{/if} autocomplate="off" />
+						<input type="hidden" id="is_open_show" value="1" />
+						<i>{lang("UPLOAD_ISSHOW_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("UPLOAD_ISPASV")}:</div>
+		            <div class="right">
+		                {lang("YES")}&nbsp;<input type="radio" name="is_pasv" value="1" {if $upload_pasv == 1}checked="true"{/if} autocomplate="off">&nbsp;&nbsp;
+				      	{lang("NO")}&nbsp;<input type="radio" name="is_pasv" value="0" {if $upload_pasv == 0}checked="true"{/if} autocomplate="off">
+		                <i>{lang("UPLOAD_ISPASV_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_URL")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_url" id="ftp_url" value="{$upload_arr['upload_url']}" >
+		                <i>{lang("UPLOAD_URL_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_NAME")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_name" id="ftp_name" value="{$upload_arr['upload_name']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_PWD")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="password" name="ftp_pass" id="ftp_pass" value="{$upload_arr['upload_pwd']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_SITE")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_site" id="ftp_site" value="{$upload_arr['upload_site']}" >
+		                <i>{lang("UPLOAD_SITE_ZIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_SHOWURL")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_showurl" id="ftp_showurl" value="{$upload_arr['upload_showsite']}" >
+		                <i>{lang("UPLOAD_SHOWURL_ZIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_SIZE")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_size" id="ftp_size" value="{$upload_arr['upload_size']}" >
+		                <i>{lang("UPLOAD_SIZE_ZIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_IMGURL")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_img_url" id="ftp_img_url" value="{if $upload_arr['upload_is_img'] == 1}{$upload_arr['upload_img_url']}{else}/public/uploadfile/shuiyin.png{/if}" >
+		                <i>{lang("UPLOAD_IMGURL_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_PORT")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="ftp_port" id="ftp_port" value="{$upload_arr['upload_port']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("UPLOAD_EXAMPLE")}:</div>
+		            <div class="right">
+		                 <input class="cm-gray-btn" type="reset" name="button" value="测试连接" onclick="ftpconnect_test()">
+		            </div>
+		        </div>
+		        
+		        
+		        <div class="cm-input-wrap cf mt20 ">
+		            <div class="right">
+		                <input class="cm-blue-btn ml80 mr20" type="button" name="commit" value="保存" onclick="ftp_conf()">
+		                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+		            </div>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+	
+
+	
+
+
+{uploadfile_html("uploadfile",1,1)}
+
+<textarea name="Content" id="Content" style="width:800px;height:400px;visibility:hidden;"></textarea>
+<script type="text/javascript">
+   		var root="__ROOT__";
+   		var path="__APP__";
+   		var editor1;
+   		var editor2;
+   		KindEditor.ready(function(K) {
+				editor1 = K.create('textarea[name="Content"]', {
+					allowFileManager : true
+				});
+			});
+   </script>
+
+ 
+<script>
+function ftpis_open(obj){
+	if(obj == 0){
+		$(".cm-input-text").attr("readonly", true);
+		$(".cm-input-text").attr("disabled", true);
+		$(".cm-input-text").css("background","#ebebeb");
+		document.getElementById("is_open_show").value = 0;
+	}else{
+		$(".cm-input-text").css("background","#ffffff");
+		$(".cm-input-text").addClass("require");
+		if($('.cm-input-text').attr("readonly") == "readonly"){
+			$(".cm-input-text").removeAttr("readonly");
+		}
+		if($('.cm-input-text').attr("disabled") == "disabled"){
+			$(".cm-input-text").removeAttr("disabled");
+		}
+		document.getElementById("is_open_show").value = 1;
+	}
+}
+
+
+//ajax提交
+function ftp_conf(){
+	var url = '__ADMIN_URL__'+'/System/system_upload';
+	//获取所有input的值和name
+	var query  = $("form#form_table").serialize();
+
+	var id = document.getElementById("id").value;
+	var ftp_url = document.getElementById("ftp_url").value;
+	var ftp_name = document.getElementById("ftp_name").value;
+	var ftp_pass = document.getElementById("ftp_pass").value;
+	var ftp_site = document.getElementById("ftp_site").value;
+	var ftp_showurl = document.getElementById("ftp_showurl").value;
+	var ftp_size = document.getElementById("ftp_size").value;
+	var ftp_port = document.getElementById("ftp_port").value;
+	var is_open = document.getElementsByName("is_open");
+	for(var i = 0; i < is_open.length; i++){
+		if(is_open[i].checked == true){
+			if(is_open[i].value == 0){
+				var is_open_value = 0;
+			}else{
+				var is_open_value = 1;
+			}
+		}
+	}
+	
+	if(is_open_value != 0){
+	
+		if($.trim(ftp_url) == ""){
+			alert("ftp地址不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_name) == ""){
+			alert("ftp账号不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_pass) == ""){
+			alert("ftp密码不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_site) == ""){
+			alert("ftp目录不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_showurl) == ""){
+			alert("ftp访问路径不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_size) == ""){
+			alert("ftp上传文件大小不能为空！");
+			return false;
+		}
+		
+		if($.trim(ftp_port) == ""){
+			alert("ftp端口不能为空！");
+			return false;
+		}
+	}
+	
+	$.ajax({ 
+		url: url,
+		dataType: "json",
+		type: "POST",
+		data:query+"&id="+id.toString()+"&ftp_conf=1",
+		success: function(msg){
+			alert(msg.info);
+			if(msg.success == 1){
+				location.reload();
+			}
+		}
+	});	
+}
+</script>
+
+
+<script>
+function ftpconnect_test(){
+	var url = '__ADMIN_URL__'+'/System/system_upload_example';
+	//获取所有input的值和name
+	var query  = $("form#form_table").serialize();
+	var is_open_arr = document.getElementsByName("is_open");
+	for(var i=0; i<is_open_arr.length; i++){
+		if(is_open_arr[i].checked == 'checked'){
+			if(is_open_arr[i].value == 0){
+				alert("请配置远程ftp");
+				return false;
+			}
+		}
+	}
+	$.ajax({ 
+		url: url,
+		dataType: "json",
+		type: "POST",
+		data:query+"&id="+id.toString()+"&ftp_conf=1",
+		success: function(msg){
+			alert(msg.info);
+			if(msg.success == 1){
+				location.reload();
+			}
+		}
+	});	
+}
+</script>
+
+
+{if !$upload_arr}
+<script>
+ftpis_open(1);
+</script>
+{else}
+<script>
+ftpis_open({$upload_arr['upload_is_open']});
+</script>
+{/if}
+
+
+{tmpl("Public:footer")}

@@ -1,0 +1,23 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('卡号')}:</div>
+				<div class="right">
+					<textarea class="cm-textarea" name="content"></textarea>
+					<span class="tip">多个卡号换行</span>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="card_id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{tmpl("Public:footer")}

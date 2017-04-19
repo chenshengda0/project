@@ -1,0 +1,51 @@
+{tmpl("Public:header")}
+
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("CODE_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name"  >
+	                <i>{lang("CODE_NAME_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("VIEW_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="view_name" >
+	                <i>{lang("VIEW_NAME_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" >
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_show" value="1" checked="true">&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_show" value="0">
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+    
+{tmpl("Public:footer")}

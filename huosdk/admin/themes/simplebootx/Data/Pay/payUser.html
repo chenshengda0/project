@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/icon.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/base.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/outlook2.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/dp/WdatePicker.js"></script>
+<script>
+	$(function(){
+		$('#dg').datagrid({
+			columns:[[
+				{field:'username',title:'充值帐号'},
+				{field:'agent',title:'注册渠道名称'},
+				{field:'amount',title:'累积充值金额'},
+				{field:'paytotal',title:'累积充值次数'},
+				{field:'recentlypay',title:'最近充值金额'},
+				{field:'login_time',title:'时间',
+					formatter:function(value,row,index){
+						if(value != null){
+							var tt=new Date(parseInt(value) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+							return tt; 
+						}
+					 }
+				},
+				{field:'game',title:'最近登录游戏'}
+			]],
+		});
+	});
+
+	//查询
+	function doSearch(){
+		$('#dg').datagrid('load',{
+			start: $('#start').val(),
+			end: $('#end').val(),
+			username: $('#username').val(),
+			agent: $('#agent').val(),
+			gameid: $('#gameid').combobox('getValue'),
+		});
+	}	
+</script>
+</head>
+<body>
+<div style="margin:5px 0;"></div>
+		<div  title="DataGrid">
+			<table id="dg" class="easyui-datagrid" style="height:472px" url="{:U('pay/payUserList')}" toolbar="#toolbar" title="Load Data" pagination="true" singleSelect="true">
+			</table>
+			<div id="toolbar" style="padding:5px;height:auto">
+				<!--<div style="margin-bottom:5px">
+					<a href="#" class="easyui-linkbutton" iconCls="icon-down" plain="true" onclick="newUser()">下载</a>
+				</div>-->
+				<table>
+					<tr>
+					<td>开始时间:</td>
+					<td><input id="start" class="easyui-my97" name="start" 
+					data-options="required:true,disabled:false,startDate:'%y-%M-%d 00:00:00'" datefmt="yyyy-MM-dd 00:00:00"  style="width:135px" onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"></td>
+				
+					<td>结束时间:</td> <td><input id="end" class="easyui-my97" name="end" 
+					data-options="required:true,disabled:false,startDate:'%y-%M-%d 23:59:59'" datefmt="yyyy-MM-dd 23:59:59" style="width:135px" onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"></td>
+					
+					<td>充值账号:</td> <td><input id="username" class="easyui-textbox" type="text" name="username"  style="width:135px"></td>
+
+					<td>游戏:</td>
+					<td><input id="gameid" class="easyui-combobox" name="gameid" data-options="url:'{:U('Game/gameCombobox')}', method:'post',valueField:'appid',textField:'name',panelHeight:'auto'" style="width:135px"></td>
+					</tr>
+					<tr>
+					<td><a href="#" class="easyui-linkbutton" iconCls="icon-search" onClick="doSearch()">查询</a></td>
+					</tr>
+				</div>
+			</div>
+			
+</div>
+</body>
+</html>

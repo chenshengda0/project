@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{:C('BRAND_NAME')}</title>
+<link href="__PUBLIC__/web/css/findpwd.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/findpwdchk.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/findpwd.js"></script>
+</head>
+
+<body>
+<div class="top_nav">
+  <div class="top_nav_main">
+		<div class="top_nav_main_l">欢迎来到{:C('BRAND_NAME')}
+		<if condition="$Think.session.user.sdkuser eq ''"> 
+		<a href="{:U('Login/index')}">登录</a>  <a href="{:U('Register/index')}">注册</a>
+		<else />
+		<span class="orange">{$Think.session.user.sdkuser}</span>&nbsp;&nbsp;
+		<a href="{:U('Web/User/index','userinfo=info')}" class="blue_line">进入用户中心</a>&nbsp;&nbsp;
+		<a href="{:U('Login/logout')}" class="blue_line">退出</a>
+		</if>
+		</div>
+    </div>
+  <div class="clear"></div>
+</div>
+<div class="top">
+  <div class="top_l"><a href="__ROOT__/index.php"><img src="__UPLOAD__/image/{$logo.img}" /></a></div>
+</div>
+<div class="clear"></div>
+<form name="myform" action="{:U('Findpwd/index')}" method="post"  id="myform" >
+<div class="main">
+  <div class="main c" id="main">
+
+            <div class="s-guide">
+                <div class="s-step ">
+                    <span>1</span>
+                    <p>确认帐号</p>
+                </div>
+                <div class="s-step ">
+                    <span>2</span>
+                    <p>邮箱验证</p>
+                </div>
+                <div class="s-step focus">
+                    <span>3</span>
+                    <p>重置密码</p>
+                </div>
+                <div class="s-step">
+                    <span>4</span>
+                    <p>完成</p>
+                </div>
+            </div>
+
+            <div class="s-panel">
+
+                <div class="s-panel-1 s-p ">
+                    <p>
+                        <label for="login-account">确认帐号：</label>
+                        <input type="text" class="text" id="login-account" data-message="请输入帐号" data-rule="required" name="login-account">
+                    </p>
+                    <p class="ac"><a class="btn btn-s-1" data-order="1" href="#">下一步</a></p>
+                </div>
+
+                <div class="s-panel-2 s-p ">
+                    <div class="s-phone s-mail hide" id="s-mail">
+						<div class="mail-result" id="mail-result" style="display: block;">
+                            <p class="ac user-s-setted-mail-account">验证邮件已发送至您的邮箱： <span class="orange" id="mail-result-account">27******@qq.com</span></p>
+                            <p class="ac f14">请您尽快登录邮箱，按邮件中指示完成验证</p>
+                            <p class="ac"><a href="#" class="btn btn-s-2" target="_blank" id="mail-btn-url" style="display: inline-block;">登录邮箱</a></p>
+                            <p class="user-s-setted-mail-tip f14">提示：系统已经向该邮箱发送了一封验证激活邮件，请查收邮件，并进行激活。如果没有收到验证邮件，请检查邮箱的反垃圾设置，并到垃圾邮箱查看是否收到，或者更换一个邮箱重新验证。</p>
+                            <p class="ac"><a href="javascript:;" class="btn btn-5 disabled" id="mail-btn-reset">106秒后重新验证</a></p>
+                 </div>
+                    </div>
+                </div>
+				
+                <div class="s-p s-panel-3 show">
+                    <div class="s-reset" id="s-reset">
+                        <p>
+                            <label for="password">新密码：</label>
+                           <!--<input type="password" class="text" id="password" name="usrpwd" data-message="请输入密码,密码至少六位" data-rule="required,password">--> 
+                             <input class="text" onblur="ChkPwd();" onFocus="jQuery('#pwdspan').show();" type="password" 
+                             maxLength="16" name="password" id="usrpwd" autocomplete="off">
+                             <em class="yw_mreg_info" id="pwdspan" style="display: none"></em>
+                        </p>
+                        <p>
+                            <label for="password1">密码确认：</label>
+                            <input class="text" id="usrpwdc" onblur="ChkPwdc();" onfocus="jQuery('#pwdcspan').show();" type=password name="usrpwdc" autocomplete="off"> 
+                            <em class="yw_mreg_info" id="pwdcspan" style="display: none"></em>
+                        </p>
+                        <p class="ac">
+                        	<input type="hidden" name="website" id="website" value="{:WEBSITE}">
+							<input type="hidden" name="username" id="username" value="{$username}">
+							<input type="hidden" name="mem_id" id="mem_id" value="{$mem_id}">
+							<input type="hidden" name="action" value="uppwd">
+							<input class="btn btn-s-1" style="margin:0;" data-order="1" type="button" id="upwd_btn" value="确认">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="s-p s-panel-4">
+                    <div class="s-result hide" id="s-result">
+                        <p class="ac f18">密码重置成功！点击<a href="#">返回平台</a>登录账号</p>
+                    </div>
+
+                    <div class="s-result hide" id="s-result2">
+                        <p class="ac f18">该帐号没有密保设置，去客服中心<a href="#">申请账号修复</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</div>
+</form>
+<div class="clear"></div>
+<webtpl file="Public/footer" />
+

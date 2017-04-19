@@ -1,0 +1,65 @@
+<include file="float/themes/web/Float/header.html" />
+
+<div class="vouchers">
+        <div  class="vouchers1">
+                 <div class="ky"><a href="#" class="blue">可用代金券</a></div>
+                 <div class="ckls"><a href="{:U('Pay/yxb_history')}"class="black" >查看历史  </a><div class="a"></div></div>
+
+        </div>
+        <div  class="vouchers2">可用代金劵</div>
+</div>
+<footer style="margin-bottom:15px;">
+    <button style="width:95%;margin:0 auto;display:block;height:30px;color:#fff;background-color:#00aaff;line-height:30px;outline:none;border:none;border-radius:8px;">加载更多</button>
+</footer>
+</body>
+<script src="__PUBLIC__/float/js/jquery.js"></script>
+<script>
+    var main_title=document.getElementsByClassName("main_title")[0];
+    main_title.style.transform="translateX(-"+parseInt(window.getComputedStyle(main_title).width)/2+"px)";
+    /***********代金卷ajax请求***********/
+    $(function(){
+    	var url = "{:U('Pay/yxb',array('action'=>'yxb'))}";
+        var y4=0;
+        var xlen =0;
+        var x;
+        var page = 0;
+        $.get(url+"&page="+page).success(function(data){
+        	x=JSON.parse(data);
+        	xlen = x.length;
+        	for (var i=0;i<xlen;i++){
+                y4++;
+                $(".vouchers").html($(".vouchers").html()+"<div class='vouchers3'><div  class='vouchers4'><img src='/public/float/images/10.png'></div><div  class='vouchers5'><div  class='vouchers6'><div class='vouchers7'>"+ x[i].stat+"</div><div class='vouchers8'> <ul > <li>"+ x[i].gmname+"</li> <li>金额"+ x[i].gmcnt+"</li> <li>有效期至"+ x[i].expiretime+"</li></ul></div></div></div><div class='vouchers9'><img src='/public/float/images/11.png'></div></div>")
+            }
+        	page = page+xlen;
+            btn1();
+            return;
+        });
+        $("footer button").click(function(){
+            y4=0;
+            $.get(url+"&page="+page).success(function(data){
+            	var x=JSON.parse(data);
+            	xlen = x.length;
+            	for (var i=0;i<xlen;i++){
+                    y4++;
+                    $(".vouchers").html($(".vouchers").html()+"<div class='vouchers3'><div  class='vouchers4'><img src='/public/float/images/10.png'></div><div  class='vouchers5'><div  class='vouchers6'><div class='vouchers7'>"+ x[i].stat+"</div><div class='vouchers8'> <ul > <li>"+ x[i].gmname+"</li> <li>金额"+ x[i].gmcnt+"</li> <li>有效期至"+ x[i].expiretime+"</li></ul></div></div></div><div class='vouchers9'><img src='/public/float/images/11.png'></div></div>")
+                }
+				page = page+xlen;
+            });
+            btn1();
+            return;
+        });
+        function btn1(){
+            if(y4<5){
+                console.log(1);
+                $("footer button").attr("disabled",true);
+                $("footer button").attr("class","jz_more");
+            }else{
+                console.log(2);
+                $("footer button").attr("disabled",false);
+                $("footer button").attr("class","");
+            }
+        }
+    })
+
+</script>
+ </html>

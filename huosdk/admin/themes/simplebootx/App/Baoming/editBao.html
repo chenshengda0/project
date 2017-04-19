@@ -1,0 +1,34 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Baoming/index')}">包名列表</a></li>
+			<li class="active"><a href="{:U('Baoming/addBao')}">编辑包名</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Baoming/editBao_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">请选择游戏:</label>
+					<div class="controls">
+						<input type="text" name="name" value="{$game['name']}" readonly style="color:#7373b9;">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">请填写包名:</label>
+					<div class="controls">
+						<input type="text" name="name" value="{$items['name']}">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="gameid" value="{$items['gameid']}" />
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('edit')}</button>
+				<a class="btn" href="{:U('Baoming/index')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

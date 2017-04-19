@@ -1,0 +1,62 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Appgift/giftList')}">礼包列表</a></li>
+			<li class="active"><a href="{:U('Appgift/addGift')}">编辑礼包</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Appgift/editgift_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select name="gameid">
+								<foreach name="games" item="vo">
+									<php>$game_select = $vo['id']==$gameid ?"selected":"";</php>
+									<option value="{$vo.id}" {$game_select}>{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">礼包标题:</label>
+						<div class="controls">
+							<input type="text" class="input" name="title" value="{$title}">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">礼包码:</label>
+						<div class="controls">
+							<textarea id="code" name="code" rows="12" cols="75" style="resize:none;width:50%;" >{$code}</textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">礼包内容:</label>
+						<div class="controls">
+							<textarea class="form-control comment-postbox" name="content" style="height:120px;width: 50%;">{$content}</textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">兑换期限:</label>
+						<div class="controls">
+							<input type="text" name="starttime" class="js-date" value="{:date('Y-m-d',$starttime)}" style="width: 100px;" autocomplete="off">--
+							<input type="text" class="js-date" name="endtime" value="{:date('Y-m-d',$endtime)}" style="width: 100px;" autocomplete="off"> &nbsp; &nbsp;
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<input type="hidden" name="id" value="{$id}" />
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">更新</button>
+					<a class="btn" href="{:U('Appgift/giftList')}">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

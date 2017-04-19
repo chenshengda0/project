@@ -1,0 +1,59 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" value="{$form.name}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">描述:</div>
+	            <div class="right">
+	               	<textarea class="cm-textarea" name="msg">{$form.msg}</textarea>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_title" value="{$form.seo_title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_keywords" value="{$form.seo_keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="seo_description" class="cm-textarea">{$form.seo_description}</textarea>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf " style="display:none;" id="type02">
+	            <div class="left">是否显示:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="display" value="1" {if $form.display eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="display" value="0" {if $form.display eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">验证码:</div>
+	            <div class="right">
+	                {lang("有")}&nbsp;<input type="radio" name="is_verify" value="1" {if $form.is_verify eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("无")}&nbsp;<input type="radio" name="is_verify" value="0" {if $form.is_verify eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

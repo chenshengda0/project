@@ -1,0 +1,36 @@
+*{padding: 0px;margin: 0px;}
+body{background-color: rgb(225, 242, 252);}
+.upper{width: 100%;height: 42px;background-color: #000000;}
+.upper>ul>li:nth-child(1){width: 20%;height: 42px;float: left;}
+.upper>ul>li:nth-child(1)>div{margin-left: 6px;margin-top: 13px;}
+.upper>ul>li:nth-child(1)>div>a{width: 18px;height: 18px;display: block;}
+.upper>ul>li:nth-child(1)>div>a>img{width: 100%;height: 100%;}
+.upper>ul>li:nth-child(2){width: 60%;height: 42px;float: left;}
+.upper>ul>li:nth-child(2)>div{text-align: center;line-height: 42px;color: #ffffff}
+.upper>ul>li:nth-child(3){width: 20%;height: 42px;float: right;}
+.upper>ul>li:nth-child(3)>a{float: right;margin-right: 8px;margin-top: 14px}
+.upper>ul>li:nth-child(3)>a>img{width: 16px;height: 16px;}
+.easyown{margin: 0px auto;font-size: 0.875em}
+.easyown1{margin: 0px auto;padding-bottom:12px;font-size: 0.875em;}
+.easyown2{padding-left: 15px;height: 80px;border-bottom: solid 1px #d3d2d0;background-color: #ffffff}
+.easyown2>div{padding-top: 15px;}
+.easyown3{padding-left: 15px;padding-top: 12px;}
+.easyown3>div:nth-child(1){margin-bottom: 10px;}
+.easyown3>div:nth-child(2){overflow: hidden;}
+.easyown3>div:nth-child(2)>div{float: left;margin-right: 28px;}
+.easyown3>div:nth-child(2)>div>input{margin-top: 3px;}
+.easyown4{padding-left: 15px;padding-top: 18px;}
+.easyown4>div:nth-child(1){margin-bottom: 10px;float: left;}
+.easyown4>div:nth-child(2)>input{height: 20px;}
+.easyown5{padding-left: 15px;padding-top: 12px;}
+.easyown5>div:nth-child(1){margin-bottom: 10px;float: left;}
+.easyown5>div:nth-child(2)>input{height: 20px;}
+.easyown6{padding-top: 5px;}
+.easyown6>input{margin: 0px auto;display: block;width: 65px;height: 30px;background-color:#00a0ea;;color: #ffffff;border-radius: 4px;border: none;outline: medium;cursor: pointer;font-size: 0.875em}
+
+.second{border-top:solid 1px #d3d2d0;border-bottom:solid 1px #d3d2d0;margin-top:10px;padding-bottom:15px;background-color:#ffffff;}
+.explain{margin-left: 10px;font-size: 0.875em;margin-top: 5px;}
+.explain>div{overflow: hidden;color: #ff4949}
+.explain>div>img{width: 25px;height: 25px;float: left;padding-right: 2px;}
+.explain>div>span{font-size: 0.875em;padding-top: 5px;display: block;}
+.explain>ul{overflow: hidden;margin-top: 5px;font-size: 0.75em;padding-left: 5px;line-height: 20px;color: #ff4949}

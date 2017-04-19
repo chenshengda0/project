@@ -1,0 +1,41 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location">
+  <ul class="wrap">
+    <li><h2>开服游戏</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--开服列表start-->
+<div class="wlk-list mt30">
+  <ul class="title wrap">
+    <li class="clearfix">
+      <p class="wd175">开服时间</p>
+      <p class="wd135">游戏名称</p>
+      <p class="wd195">服务器</p>
+      <p class="wd150 ml175">官网</p>
+      <p class="wd150">礼包</p>
+    </li>
+  </ul>
+  <ul class="list">
+  	{foreach from=$list item=v}
+    <li>
+      <div class="wrap">
+        <p class="wd175">{date('H:i',$v.open_time)}</p>
+        <p class="wd135">{$v.gname}</p>
+        <p class="wd195">{$v.name}</p>
+        <p class="wd150 ml175"><a href="{$v.url}" target="_blank" title="" class="join">进入游戏</a></p>
+        <p class="wd150"><a href="{url('Gamecard')}?game_id={$v.game_id}" title="" class="get-goods">领取礼包</a></p>
+      </div>
+    </li>
+    {/foreach}
+  </ul>
+  <!--分页start-->
+  <ul class="page">
+    {$pages}
+  </ul>
+  <!--分页end-->
+</div>
+<!--开服列表end-->
+{tmpl("Public:footer")}

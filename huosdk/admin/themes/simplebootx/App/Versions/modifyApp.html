@@ -1,0 +1,49 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Versions/versions')}">版本列表</a></li>
+			<li class="active"><a href="{:U('Versions/modifyApp')}">版本编辑</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Versions/modifyApp_post')}" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">版本:</label>
+					<div class="controls">
+						<input type="text" name="versions" value="{$version['versions']}">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">路径:</label>
+					<div class="controls">
+						<input type="text" name="url" value="{$version['url']}">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">大小:</label>
+					<div class="controls">
+						<input type="text" name="size" value="{$version['size']}">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">版本内容:</label>
+					<div class="controls">
+						<textarea id="code" name="content" rows="10" cols="60" style="resize:none;width:50%;">{$version['content']}</textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$version['id']}" />
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('edit')}</button>
+				<a class="btn" href="{:U('Versions/versions')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

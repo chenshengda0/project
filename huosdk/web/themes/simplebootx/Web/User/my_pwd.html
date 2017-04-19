@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="sdkuser{:C('BRAND_NAME')}手游平台,免费手机游戏平台,ios安卓手机游戏下载,热门手机游戏排行,最新手机网游开服表,安卓手机游戏,iPhone免费游戏,热门手游平台,手游资讯,游戏攻略,手游下载">
+<meta name="description" content="{:C('BRAND_NAME')}汇集了多款最新最热最火的手机游戏，免费提供下载，是游戏玩家首选的最佳服务平台。">
+<title>{:C('BRAND_NAME')}</title>
+<link href="css/toper.css" rel="stylesheet" type="text/css">
+<link href="css/index.css" rel="stylesheet" type="text/css">
+
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a-min.js" language="javascript"></script>
+<script type="text/javascript" language="javascript">DD_belatedPNG.fix('div, ul, img, li, input , a');</script>
+<![endif]--> 
+
+
+</head>
+<body>
+<!--游戏中心js-->
+<script type="text/javascript">
+// JavaScript Document
+function showNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="";
+}
+function hideNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="none";
+}
+
+function addfavorite() {
+	var url = location.href;
+	var title = document.title;
+	if (window.sidebar) { // Mozilla Firefox
+        window.sidebar.addPanel(title, url, "");
+    } else if (window.external && !window.chrome) { // IE
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) {
+        window.external.AddFavorite(url, title);
+    } else {
+        alert("加入收藏失败，请使用Ctrl+D进行添加");
+    }
+}
+
+function setHomePage(){
+	var url = '';
+	if (document.all) {
+		document.body.style.behavior = 'url(#default#homepage)';
+		document.body.setHomePage(url);
+	}
+	else if (window.sidebar) {
+		if (window.netscape) {
+			try {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			}
+			catch (e) {
+				alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+			}
+		}
+		var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+		prefs.setCharPref('browser.startup.homepage', url);
+	}else{
+		alert("您的浏览器不支持自动设置首页, 请使用浏览器菜单手动设置!");
+	}
+}
+</script>
+<div id="toper">
+	<div class="clearfix" id="top">
+    	<h1 class="head_left">game.gametanzi.com  欢迎您！</h1>
+            <ul class="game_link clearfix">
+            	<li>[<a href="#">登录</a>]</li>
+            	<li>[<a href="#" target="_blank">免费注册</a>]</li>
+            </ul>
+			<!--<ul class="game_link clearfix">
+				<li>haohali</li>
+				<li><a href="#">进入用户中心</a></li>
+				<li><a href="#">退出</a></li>
+			</ul>-->
+            <ul class="menu_right clearfix">
+            	<li><a rel="nofollow" href="javascript:addfavorite();">加入收藏</a></li>
+                <li><a rel="nofollow" target="_blank" href="#">保存到桌面</a></li>
+                <li style="margin-left:10px;">
+                	<div onmouseout="hideNav('game_down', 'drop_game_href', 'game');" onmouseover="showNav('game_down', 'drop_game_href', 'game_h');" class="game_center clearfix">
+						<a rel="nofollow" href="#" class="game" id="drop_game_href">游戏中心</a>
+						<div style="display:none;" id="game_down">
+							<div class="game_center_top"></div>
+							<div class="game_center_center">
+								<h2><span><a href="#">游戏中心</a></span> 热门游戏</h2>
+								<ul class="clearfix">
+									<li><a target="_blank" href="#"><img width="54" height="54" alt="" src="images/game_tlcs.jpg"></a><br><a target="_blank" href="#">屠龙传说</a></li>
+									<li><a target="_blank" href="#"><img width="54" height="54" alt="" src="images/game_x5.jpg"></a><br><a target="_blank" href="#">侠武英雄传</a></li>
+									<li><a target="_blank" href="#"><img width="54" height="54" alt="" src="images/game_ly.jpg"></a><br><a target="_blank" href="#">烈焰</a></li>
+									<li><a target="_blank" href="#"><img width="54" height="54" alt="" src="images/game_gcld.jpg"></a><br><a target="_blank" href="#">攻城掠地</a></li>
+								</ul>
+								<div class="play"><a href="#">你还没有玩过任何游戏，现在就去体验吧!</a></div>
+							</div>
+						</div>
+               	 	</div>
+                </li>
+                
+           </ul>
+    </div>
+</div>
+<div id="header">
+	<div class="clearfix" id="head">
+    	<div class="logo"><a href="#"><img alt="{:C('BRAND_NAME')}手游平台" src="images/logo.jpg"></a></div>
+        <div class="nav">
+        	<ul class="clearfix">
+				<li><a href="index.html" class="menu0_on" style="width:65px;"><i class="navIco navIco_1"></i>首页</a></li>
+				<li><a href="game.html" class="menu1"><i class="navIco navIco_2"></i>游戏中心</a></li>
+				<li><a href="news.html" class="menu3"><i class="navIco navIco_4"></i>资讯中心</a></li>
+				<li><a href="update_info.html" class="menu2"><i class="navIco navIco_3"></i>用户中心</a></li>
+				<li><a href="kefu.html" class="menu4"><i class="navIco navIco_5"></i>客服中心</a></li>
+				<li><a href="#" class="menu5"><i class="navIco navIco_6"></i>玩家社区</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="gg_game_hu">
+		<!--<div class="ggs_xx"></div>-->
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="zhmia">
+			<div class="user_r_box" style="margin:50px auto;">
+	    <div class="user_r_box_nav">找回密码</div>
+		<div class="user_r_box_main">
+		  
+
+		  <div class="user_r_box_list">
+		    <ul>
+		       <li><label>当前账号：</label>  <span> haohali</span> </li>
+		       <li><label>密保提示问题：</label>
+		       			         <select name="" class="login_input">
+		       			         <option>如果需要修改密保</option>
+		       			       </select></li>
+			   <li><label>密保问题答案：</label><input name="verify_num" type="text" class="login_input" id="verify_num" value="啊啊啊"></li>
+			 </ul>
+			 <ul>
+			 	 <li><label>当前账号：</label>  <span> haohali</span> </li>
+		       <li><label>新密码：</label>
+		       			        <input type="text" value="11" id="phone" name="phone" class="login_input"></li>
+			   <li><label>确认密码：</label><input name="verify_num" type="text" class="login_input" id="verify_num" value="啊啊啊"></li>
+			 </ul>
+		  </div>
+		  
+		  		  <div class="clear"></div>
+		  <div class="user_r_box_line"></div>
+		  <div class="user_r_box_tj">
+		    <input name="button" type="button" class="que_btn" id="update_pwd" value="确定" />
+		    <!--
+		    <ul>
+			  <li><a href="#" class="que_btn">确 定</a></li>
+			</ul>
+		  -->
+		  </div>
+		 
+		  <div class="clear"></div>
+		</div>
+		
+
+
+	  </div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<div class="footer">
+    <div class="content">
+        <div class="footer-col c1">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>热门游戏</h3>
+                <ul>
+                                            <li><a target="_blank" href="#">攻城掠地</a></li>
+                                            <li><a target="_blank" href="#">大闹天宫</a></li>
+                                            <li><a target="_blank" href="#">烈火战神</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-col c2">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>玩家服务</h3>
+                <ul>
+                                            <li><a target="_blank" href="#">客服首页</a></li>
+                                            <li><a target="_blank" href="#">我要提问</a></li>
+                                            <li><a target="_blank" href="#">常见问题</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-col c3">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>充值服务</h3>
+                <ul>
+                                            <li><a target="_blank" href="#">支付宝充值</a></li>
+                                            <li><a target="_blank" href="#">网上银行充值</a></li>
+                                            <li><a target="_blank" href="#">神州行充值</a></li>
+                                            <li><a target="_blank" href="#">电信卡充值</a></li>
+                                            <li><a target="_blank" href="#">联通卡充值</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-col c4">
+            <div class="ico">&nbsp;</div>
+            <div class="ls">
+                <h3>热门论坛</h3>
+                <ul>
+                                            <li><a target="_blank" href="#">攻城掠地</a></li>
+                                            <li><a target="_blank" href="#">街机三国</a></li>
+                                            <li><a target="_blank" href="#">烈火战神</a></li>
+                                            <li><a target="_blank" href="#">暗黑屠龙</a></li>
+                                            <li><a target="_blank" href="#">英雄神殿</a></li>
+                                            <li><a target="_blank" href="#">神创天下</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-col c5">
+            <p class="weibo">
+                <span>官方微信</span>
+            </p>
+            <p style="position:relative"><img width="100" height="100" alt="1073官方微信" src="{WEBSITE}/upfiles/image/wechar_qr.jpg"></p>
+            <p style="margin-top: 2px;" class="weixin">扫一扫 有惊喜 !</p>
+        </div>
+		<div class="clear"></div>
+    </div>
+</div>
+<div class="footer_d">
+	<div style="padding-top:25px;">
+		<p style=" padding-bottom:10px;"><a href="http://pc01.gametanzi.com/user/about.php?show=us">关于我们</a>  |  <a href="http://pc01.gametanzi.com/user/about.php?show=hezuo">商务合作</a>  |  <a href="http://pc01.gametanzi.com/user/about.php?show=zhaopin">人才招聘</a>  |  <a href="http://pc01.gametanzi.com/user/about.php?show=lianxi">联系我们</a></p>
+		<p>健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活<br />
+	{:C('COMPANY_NAME')}版权所有</p>
+	</div>
+</div>
+
+</body>
+</html>

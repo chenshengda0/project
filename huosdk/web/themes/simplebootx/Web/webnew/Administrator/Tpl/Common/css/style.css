@@ -1,0 +1,661 @@
+
+
+
+@charset "UTF-8";
+/* line 88, icon/*.png */
+.icon-sprite, .icon-close, .icon-down, .icon-home, .icon-name, .icon-password, .icon-up { background-image: url('../images/icon-se7620c510c.png'); background-repeat: no-repeat; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-close { background-position: 0 0; height: 17px; width: 17px; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-down { background-position: 0 -17px; height: 6px; width: 11px; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-home { background-position: 0 -23px; height: 26px; width: 30px; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-name { background-position: 0 -49px; height: 14px; width: 13px; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-password { background-position: 0 -63px; height: 14px; width: 12px; }
+
+/* line 84, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-up { background-position: 0 -77px; height: 6px; width: 11px; }
+
+/*表单*/
+/*首页*/
+/* line 9, ../sass/style.scss */
+html,body { height: 100%; }
+
+/* line 13, ../sass/style.scss */
+.menuManager { height: 100%; }
+/* line 16, ../sass/style.scss */
+.menuManager .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 23, ../sass/style.scss */
+.menuManager .subBody table .tag1 { width: 40px; }
+/* line 25, ../sass/style.scss */
+.menuManager .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 31, ../sass/style.scss */
+.menuManager .subBody table .first { line-height: 66px; }
+/* line 34, ../sass/style.scss */
+.menuManager .subBody table .tag2 { width: 160px; }
+/* line 37, ../sass/style.scss */
+.menuManager .subBody table .tag3 { width: 190px; }
+/* line 40, ../sass/style.scss */
+.menuManager .subBody table .tag4 { width: 240px; }
+/* line 43, ../sass/style.scss */
+.menuManager .subBody table .tag5 { width: 170px; }
+/* line 46, ../sass/style.scss */
+.menuManager .subBody table .tag6 { width: 190px; }
+/* line 49, ../sass/style.scss */
+.menuManager .subBody table .tag7 { width: 220px; border-right: none; }
+/* line 52, ../sass/style.scss */
+.menuManager .subBody table .tag7 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; }
+/* line 58, ../sass/style.scss */
+.menuManager .subBody table .tag7 .a1 { margin-right: 20px; }
+/* line 63, ../sass/style.scss */
+.menuManager .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 67, ../sass/style.scss */
+.menuManager .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+
+/* line 75, ../sass/style.scss */
+.administratorsGroup { height: 100%; }
+/* line 78, ../sass/style.scss */
+.administratorsGroup .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 87, ../sass/style.scss */
+.administratorsGroup .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 93, ../sass/style.scss */
+.administratorsGroup .subBody table .first { line-height: 66px; }
+/* line 105, ../sass/style.scss */
+.administratorsGroup .subBody table .tag5 { width: 220px; }
+/* line 108, ../sass/style.scss */
+.administratorsGroup .subBody table .tag5 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; }
+/* line 114, ../sass/style.scss */
+.administratorsGroup .subBody table .tag5 .a1 { margin-right: 20px; }
+/* line 119, ../sass/style.scss */
+.administratorsGroup .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 123, ../sass/style.scss */
+.administratorsGroup .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+
+/* line 131, ../sass/style.scss */
+.advertisingManagement { height: 100%; }
+/* line 134, ../sass/style.scss */
+.advertisingManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 141, ../sass/style.scss */
+.advertisingManagement .subBody table .tag1 { width: 40px; }
+/* line 143, ../sass/style.scss */
+.advertisingManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 149, ../sass/style.scss */
+.advertisingManagement .subBody table .first { line-height: 66px; }
+/* line 152, ../sass/style.scss */
+.advertisingManagement .subBody table .tag2 { width: 130px; }
+/* line 155, ../sass/style.scss */
+.advertisingManagement .subBody table .tag3 { width: 190px; }
+/* line 158, ../sass/style.scss */
+.advertisingManagement .subBody table .tag4 { width: 240px; }
+/* line 161, ../sass/style.scss */
+.advertisingManagement .subBody table .tag5 { width: 170px; }
+/* line 164, ../sass/style.scss */
+.advertisingManagement .subBody table .tag6 { width: 190px; }
+/* line 167, ../sass/style.scss */
+.advertisingManagement .subBody table .tag7 { width: 190px; }
+/* line 170, ../sass/style.scss */
+.advertisingManagement .subBody table .tag8 { width: 220px; border-right: none; }
+/* line 173, ../sass/style.scss */
+.advertisingManagement .subBody table .tag8 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; }
+/* line 179, ../sass/style.scss */
+.advertisingManagement .subBody table .tag8 .a1 { margin-right: 20px; }
+/* line 184, ../sass/style.scss */
+.advertisingManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 188, ../sass/style.scss */
+.advertisingManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 195, ../sass/style.scss */
+.advertisingManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 199, ../sass/style.scss */
+.administratorRecycleBin { height: 100%; }
+/* line 202, ../sass/style.scss */
+.administratorRecycleBin .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 209, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag1 { width: 40px; }
+/* line 211, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 217, ../sass/style.scss */
+.administratorRecycleBin .subBody table .first { line-height: 66px; }
+/* line 220, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag2 { width: 160px; }
+/* line 223, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag3 { width: 190px; }
+/* line 226, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag4 { width: 240px; }
+/* line 229, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag5 { width: 240px; }
+/* line 232, ../sass/style.scss */
+.administratorRecycleBin .subBody table .tag6 { width: 240px; border-right: none; }
+/* line 237, ../sass/style.scss */
+.administratorRecycleBin .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 241, ../sass/style.scss */
+.administratorRecycleBin .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+
+/* line 249, ../sass/style.scss */
+.recycleBin { height: 100%; }
+/* line 252, ../sass/style.scss */
+.recycleBin .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 259, ../sass/style.scss */
+.recycleBin .subBody table .tag1 { width: 40px; }
+/* line 261, ../sass/style.scss */
+.recycleBin .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 267, ../sass/style.scss */
+.recycleBin .subBody table .first { line-height: 66px; }
+/* line 270, ../sass/style.scss */
+.recycleBin .subBody table .tag2 { width: 160px; }
+/* line 273, ../sass/style.scss */
+.recycleBin .subBody table .tag3 { width: 240px; }
+/* line 276, ../sass/style.scss */
+.recycleBin .subBody table .tag4 { width: 240px; }
+/* line 280, ../sass/style.scss */
+.recycleBin .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 284, ../sass/style.scss */
+.recycleBin .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+
+/* line 292, ../sass/style.scss */
+.specialList { height: 100%; }
+/* line 295, ../sass/style.scss */
+.specialList .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 302, ../sass/style.scss */
+.specialList .subBody table .tag1 { width: 40px; }
+/* line 304, ../sass/style.scss */
+.specialList .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 310, ../sass/style.scss */
+.specialList .subBody table .first { line-height: 66px; }
+/* line 313, ../sass/style.scss */
+.specialList .subBody table .tag2 { width: 130px; }
+/* line 316, ../sass/style.scss */
+.specialList .subBody table .tag3 { width: 190px; }
+/* line 319, ../sass/style.scss */
+.specialList .subBody table .tag4 { width: 240px; }
+/* line 322, ../sass/style.scss */
+.specialList .subBody table .tag5 { width: 170px; }
+/* line 325, ../sass/style.scss */
+.specialList .subBody table .tag6 { width: 190px; }
+/* line 328, ../sass/style.scss */
+.specialList .subBody table .tag7 { width: 190px; }
+/* line 331, ../sass/style.scss */
+.specialList .subBody table .tag8 { width: 190px; }
+/* line 334, ../sass/style.scss */
+.specialList .subBody table .tag9 { width: 220px; border-right: none; }
+/* line 337, ../sass/style.scss */
+.specialList .subBody table .tag9 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; }
+/* line 343, ../sass/style.scss */
+.specialList .subBody table .tag9 .a1 { margin-right: 20px; }
+/* line 348, ../sass/style.scss */
+.specialList .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 352, ../sass/style.scss */
+.specialList .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 359, ../sass/style.scss */
+.specialList .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 363, ../sass/style.scss */
+.informationManagement { height: 100%; }
+/* line 366, ../sass/style.scss */
+.informationManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 373, ../sass/style.scss */
+.informationManagement .subBody table .tag1 { width: 40px; }
+/* line 375, ../sass/style.scss */
+.informationManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 381, ../sass/style.scss */
+.informationManagement .subBody table .first { line-height: 66px; }
+/* line 384, ../sass/style.scss */
+.informationManagement .subBody table .tag2 { width: 130px; }
+/* line 387, ../sass/style.scss */
+.informationManagement .subBody table .tag3 { width: 190px; }
+/* line 390, ../sass/style.scss */
+.informationManagement .subBody table .tag4 { width: 240px; }
+/* line 393, ../sass/style.scss */
+.informationManagement .subBody table .tag5 { width: 170px; }
+/* line 396, ../sass/style.scss */
+.informationManagement .subBody table .tag6 { width: 190px; }
+/* line 399, ../sass/style.scss */
+.informationManagement .subBody table .tag7 { width: 270px; border-right: none; text-align: center; }
+
+.tag-left { text-align: left; padding-left:20px;}
+
+/* line 403, ../sass/style.scss */
+.informationManagement .subBody table .tag7 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-right: 20px; }
+/* line 412, ../sass/style.scss */
+.informationManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 416, ../sass/style.scss */
+.informationManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 423, ../sass/style.scss */
+.informationManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 427, ../sass/style.scss */
+.financeManagement { height: 100%; }
+/* line 430, ../sass/style.scss */
+.financeManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 437, ../sass/style.scss */
+.financeManagement .subBody table .tag1 { width: 40px; }
+/* line 439, ../sass/style.scss */
+.financeManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 445, ../sass/style.scss */
+.financeManagement .subBody table .first { line-height: 66px; }
+/* line 448, ../sass/style.scss */
+.financeManagement .subBody table .tag2 { width: 130px; }
+/* line 451, ../sass/style.scss */
+.financeManagement .subBody table .tag3 { width: 190px; }
+/* line 454, ../sass/style.scss */
+.financeManagement .subBody table .tag4 { width: 240px; }
+/* line 457, ../sass/style.scss */
+.financeManagement .subBody table .tag5 { width: 170px; }
+/* line 460, ../sass/style.scss */
+.financeManagement .subBody table .tag6 { width: 190px; }
+/* line 463, ../sass/style.scss */
+.financeManagement .subBody table .tag7 { width: 190px; }
+/* line 466, ../sass/style.scss */
+.financeManagement .subBody table .tag8 { width: 190px; }
+/* line 468, ../sass/style.scss */
+.financeManagement .subBody table .tag8 img { height: 30px; width: 30px; line-height: 30px; text-align: center; border-radius: 30px; display: block; margin: 0 auto; padding-top: 3px; }
+/* line 475, ../sass/style.scss */
+.financeManagement .subBody table .tag9 { width: 190px; }
+/* line 478, ../sass/style.scss */
+.financeManagement .subBody table .tag10 { width: 190px; }
+/* line 481, ../sass/style.scss */
+.financeManagement .subBody table .tag11 { width: 220px; border-right: none; }
+/* line 484, ../sass/style.scss */
+.financeManagement .subBody table .tag11 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-right: 20px; }
+/* line 493, ../sass/style.scss */
+.financeManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 497, ../sass/style.scss */
+.financeManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 504, ../sass/style.scss */
+.financeManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 508, ../sass/style.scss */
+.adminsManagement { height: 100%; }
+/* line 511, ../sass/style.scss */
+.adminsManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 518, ../sass/style.scss */
+.adminsManagement .subBody table .tag1 { width: 40px; }
+/* line 520, ../sass/style.scss */
+.adminsManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 526, ../sass/style.scss */
+.adminsManagement .subBody table .first { line-height: 66px; }
+/* line 529, ../sass/style.scss */
+.adminsManagement .subBody table .tag2 { width: 130px; }
+/* line 532, ../sass/style.scss */
+.adminsManagement .subBody table .tag3 { width: 190px; }
+/* line 535, ../sass/style.scss */
+.adminsManagement .subBody table .tag4 { width: 240px; }
+/* line 538, ../sass/style.scss */
+.adminsManagement .subBody table .tag5 { width: 170px; }
+/* line 541, ../sass/style.scss */
+.adminsManagement .subBody table .tag6 { width: 190px; }
+/* line 543, ../sass/style.scss */
+.adminsManagement .subBody table .tag6 img { height: 30px; width: 30px; line-height: 30px; text-align: center; border-radius: 30px; display: block; margin: 0 auto; padding-top: 3px; }
+/* line 550, ../sass/style.scss */
+.adminsManagement .subBody table .tag7 { width: 190px; }
+/* line 553, ../sass/style.scss */
+.adminsManagement .subBody table .tag8 { width: 190px; }
+/* line 556, ../sass/style.scss */
+.adminsManagement .subBody table .tag9 { width: 220px; border-right: none; }
+/* line 559, ../sass/style.scss */
+.adminsManagement .subBody table .tag9 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-right: 20px; }
+/* line 568, ../sass/style.scss */
+.adminsManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 572, ../sass/style.scss */
+.adminsManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 579, ../sass/style.scss */
+.adminsManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 583, ../sass/style.scss */
+.quizManagement { height: 100%; }
+/* line 586, ../sass/style.scss */
+.quizManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 593, ../sass/style.scss */
+.quizManagement .subBody table .tag1 { width: 40px; }
+/* line 595, ../sass/style.scss */
+.quizManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 601, ../sass/style.scss */
+.quizManagement .subBody table .first { line-height: 66px; }
+/* line 604, ../sass/style.scss */
+.quizManagement .subBody table .tag2 { width: 130px; }
+/* line 607, ../sass/style.scss */
+.quizManagement .subBody table .tag3 { width: 190px; }
+/* line 610, ../sass/style.scss */
+.quizManagement .subBody table .tag4 { width: 240px; }
+/* line 613, ../sass/style.scss */
+.quizManagement .subBody table .tag5 { width: 170px; }
+/* line 616, ../sass/style.scss */
+.quizManagement .subBody table .tag6 { width: 190px; }
+/* line 618, ../sass/style.scss */
+.quizManagement .subBody table .tag6 img { height: 30px; width: 30px; line-height: 30px; text-align: center; border-radius: 30px; display: block; margin: 0 auto; padding-top: 3px; }
+/* line 625, ../sass/style.scss */
+.quizManagement .subBody table .tag7 { width: 190px; }
+/* line 628, ../sass/style.scss */
+.quizManagement .subBody table .tag8 { width: 190px; }
+/* line 631, ../sass/style.scss */
+.quizManagement .subBody table .tag9 { width: 190px; }
+/* line 634, ../sass/style.scss */
+.quizManagement .subBody table .tag10 { width: 220px; border-right: none; }
+/* line 637, ../sass/style.scss */
+.quizManagement .subBody table .tag10 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-right: 20px; }
+/* line 646, ../sass/style.scss */
+.quizManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 650, ../sass/style.scss */
+.quizManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 657, ../sass/style.scss */
+.quizManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 661, ../sass/style.scss */
+.answerManagement { height: 100%; }
+/* line 664, ../sass/style.scss */
+.answerManagement .subBody table { background: #fff; padding: 0 30px; text-align: center; line-height: 40px; width: 100%; border-bottom: 1px solid #e2e2e2; }
+/* line 671, ../sass/style.scss */
+.answerManagement .subBody table .tag1 { width: 40px; }
+/* line 673, ../sass/style.scss */
+.answerManagement .subBody table .tag1 input { width: 14px; height: 14px; margin: 0 auto; }
+/* line 679, ../sass/style.scss */
+.answerManagement .subBody table .first { line-height: 66px; }
+/* line 682, ../sass/style.scss */
+.answerManagement .subBody table .tag2 { width: 130px; }
+/* line 685, ../sass/style.scss */
+.answerManagement .subBody table .tag3 { width: 190px; }
+/* line 688, ../sass/style.scss */
+.answerManagement .subBody table .tag4 { width: 240px; }
+/* line 691, ../sass/style.scss */
+.answerManagement .subBody table .tag5 { width: 170px; }
+/* line 694, ../sass/style.scss */
+.answerManagement .subBody table .tag6 { width: 190px; }
+/* line 696, ../sass/style.scss */
+.answerManagement .subBody table .tag6 img { height: 30px; width: 30px; line-height: 30px; text-align: center; border-radius: 30px; display: block; margin: 0 auto; padding-top: 3px; }
+/* line 703, ../sass/style.scss */
+.answerManagement .subBody table .tag7 { width: 190px; }
+/* line 706, ../sass/style.scss */
+.answerManagement .subBody table .tag8 { width: 190px; }
+/* line 709, ../sass/style.scss */
+.answerManagement .subBody table .tag9 { width: 190px; }
+/* line 712, ../sass/style.scss */
+.answerManagement .subBody table .tag10 { width: 220px; border-right: none; }
+/* line 715, ../sass/style.scss */
+.answerManagement .subBody table .tag10 a { color: #4593ff; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-right: 20px; }
+/* line 724, ../sass/style.scss */
+.answerManagement .subBody table tr td { border-bottom: 1px dotted #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 728, ../sass/style.scss */
+.answerManagement .subBody table tr th { border-bottom: 1px solid #e2e2e2; border-right: 1px solid #e2e2e2; }
+/* line 735, ../sass/style.scss */
+.answerManagement .cm-select { height: 32px; width: 100px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 739, ../sass/style.scss */
+.administratorsAdd { height: 100%; }
+/* line 741, ../sass/style.scss */
+.administratorsAdd .subBody { padding: 0 30px; margin-top: 20px; width: 500px; }
+
+/* line 747, ../sass/style.scss */
+.addFinancialPlanner { height: 100%; }
+/* line 749, ../sass/style.scss */
+.addFinancialPlanner .subBody { padding: 0 30px; margin-top: 20px; }
+
+/* line 754, ../sass/style.scss */
+.addadvertisement { height: 100%; }
+/* line 756, ../sass/style.scss */
+.addadvertisement .subBody { padding: 0 30px; margin-top: 20px; }
+/* line 760, ../sass/style.scss */
+.addadvertisement .cm-input-wrap { margin-bottom: 15px; }
+/* line 762, ../sass/style.scss */
+.addadvertisement .cm-input-wrap .left { width: 94px; }
+/* line 765, ../sass/style.scss */
+.addadvertisement .cm-input-wrap .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 770, ../sass/style.scss */
+.addMenu { height: 100%; }
+/* line 772, ../sass/style.scss */
+.addMenu .subBody { padding: 0 30px; margin-top: 20px; }
+/* line 776, ../sass/style.scss */
+.addMenu i { color: #919191; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; margin-left: 20px; }
+/* line 783, ../sass/style.scss */
+.addMenu span { color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; margin-left: 6px; margin-right: 12px; }
+/* line 791, ../sass/style.scss */
+.addMenu .cm-chekbox { margin-top: 12px; width: 13px; height: 13px; }
+/* line 796, ../sass/style.scss */
+.addMenu .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 800, ../sass/style.scss */
+.problemLists { height: 100%; }
+/* line 802, ../sass/style.scss */
+.problemLists .subBody { padding: 0 30px; margin-top: 20px; }
+/* line 806, ../sass/style.scss */
+.problemLists .cm-input-wrap { margin-bottom: 15px; }
+/* line 808, ../sass/style.scss */
+.problemLists .cm-input-wrap .left { width: 98px; }
+/* line 811, ../sass/style.scss */
+.problemLists .cm-input-wrap .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+
+/* line 816, ../sass/style.scss */
+.addNews { height: 100%; }
+/* line 818, ../sass/style.scss */
+.addNews .subBody { padding: 0 30px; margin-top: 20px; }
+/* line 822, ../sass/style.scss */
+.addNews .cm-input-wrap { margin-bottom: 15px; }
+/* line 824, ../sass/style.scss */
+.addNews .cm-input-wrap .left { width: 98px; }
+/* line 827, ../sass/style.scss */
+.addNews .cm-input-wrap .right { width: 700px; }
+/* line 830, ../sass/style.scss */
+.addNews .cm-input-wrap .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+/* line 834, ../sass/style.scss */
+.addNews .cm-input-wrap ul li { float: left; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; line-height: 28px; margin-right: 20px; }
+/* line 842, ../sass/style.scss */
+.addNews .cm-input-wrap ul li span { margin-left: 4px; }
+
+/* line 849, ../sass/style.scss */
+.systemConfiguration { height: 100%; }
+/* line 851, ../sass/style.scss */
+.systemConfiguration .subBody { padding: 0 30px; margin-top: 20px; }
+/* line 855, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap { margin-bottom: 15px; }
+/* line 857, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap .left { width: 110px; }
+/* line 860, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap .right { width: 700px; }
+/* line 863, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+/* line 867, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap ul li { float: left; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; line-height: 28px; margin-right: 20px; }
+/* line 875, ../sass/style.scss */
+.systemConfiguration .cm-input-wrap ul li span { margin-left: 4px; line-height: 38px; }
+
+/* line 884, ../sass/style.scss */
+.subBody { padding: 0 30px; margin-top: 20px; width: 100%; }
+
+.jq-last-border-bottom{padding: 0 0 !important; margin-top: 0px !important; }
+
+/* line 889, ../sass/style.scss */
+ .cm-input-wrap-box { width: 1500px; }
+/* line 892, ../sass/style.scss */
+ .cm-input-wrap { margin-bottom: 15px; }
+/* line 894, ../sass/style.scss */
+ .cm-input-wrap .left { width: 110px; }
+/* line 897, ../sass/style.scss */
+ .cm-input-wrap .right { width: 1000px; }
+/* line 899, ../sass/style.scss */
+ .cm-input-wrap .right i { margin-left: 10px; }
+/* line 903, ../sass/style.scss */
+ .cm-input-wrap .cm-select { height: 32px; width: 304px; line-height: 32px; border-radius: 3px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-size: 12px; font-weight: 400; line-height: 32px; }
+/* line 907, ../sass/style.scss */
+ .cm-input-wrap dl dt,  .cm-input-wrap dl dd { line-height: 24px; }
+/* line 910, ../sass/style.scss */
+ .cm-input-wrap dl dt span, .cm-input-wrap dl dd span { color: #5e5e5e; font-size: 12px; font-weight: 400; margin-right: 18px; }
+/* line 917, ../sass/style.scss */
+ .cm-input-wrap dl dt i, .cm-input-wrap dl dd i { color: #5e5e5e; font-size: 12px; font-weight: 400; }
+/* line 923, ../sass/style.scss */
+ .cm-input-wrap dl dd { border-bottom: 1px dotted #e2e2e2; padding-bottom: 15px; padding-top: 10px; }
+/* line 928, ../sass/style.scss */
+.cm-input-wrap dl dt { padding-top: 10px; }
+
+/* line 934, ../sass/style.scss */
+.loginPage { height: 100%; width: 100%; background: url(../images/login_bg.jpg) center 0 no-repeat; background-size: 100% 100%; position: relative; }
+/* line 940, ../sass/style.scss */
+.loginPage h1 { margin-bottom: 50px; }
+/* line 941, ../sass/style.scss */
+.loginPage h1 img { display: block; margin: 0 auto; }
+
+/* line 948, ../sass/style.scss */
+.mainWrap { position: absolute; left: 50%; top: 50%; margin-left: -417.5px; margin-top: -253.5px; }
+/* line 954, ../sass/style.scss */
+.mainWrap .main { width: 755px; height: 257px; background-color: #fff; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); padding: 40px; }
+/* line 960, ../sass/style.scss */
+.mainWrap .main .left { width: 374px; height: 257px; float: left; }
+/* line 965, ../sass/style.scss */
+.mainWrap .main .right { width: 340px; float: right; }
+/* line 968, ../sass/style.scss */
+.mainWrap .main .right h2 { color: #007ec0; font-family: "Microsoft YaHei"; font-size: 16px; font-weight: 700; line-height: 45px; margin-bottom: 6px; padding-top: 2px; }
+/* line 978, ../sass/style.scss */
+.mainWrap .main .right ul li { height: 40px; margin-bottom: 15px; }
+/* line 981, ../sass/style.scss */
+.mainWrap .main .right ul li em { display: inline-block; vertical-align: middle; *vertical-align: auto; *zoom: 1; *display: inline; position: absolute; left: 10px; top: 12px; }
+/* line 988, ../sass/style.scss */
+.mainWrap .main .right ul .li1 { position: relative; }
+/* line 990, ../sass/style.scss */
+.mainWrap .main .right ul .li1 input { width: 294px; height: 22px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; line-height: 20px; padding: 8px; border: 1px solid #e2e2e2; border-radius: 3px; padding-left: 38px; color: #919191; }
+/* line 998, ../sass/style.scss */
+.mainWrap .main .right ul .li3 { height: 20px; }
+/* line 1000, ../sass/style.scss */
+.mainWrap .main .right ul .li3 span { color: #919191; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; line-height: 17px; margin-right: 5px; }
+/* line 1008, ../sass/style.scss */
+.mainWrap .main .right ul .li3 a { color: #0087d5; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; line-height: 17px; margin-left: 10px; }
+/* line 1018, ../sass/style.scss */
+.mainWrap .main .right ul .li4 .cm-blue-btn { height: 40px; padding: 0 30px; float: left; margin-top: 0; }
+/* line 1024, ../sass/style.scss */
+.mainWrap .main .right ul .li4 .cm-input-text { width: 70px; height: 22px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; line-height: 20px; padding: 8px; float: left; margin-left: 45px; }
+/* line 1029, ../sass/style.scss */
+.mainWrap .main .right ul .li4 img { float: right; cursor: pointer; }
+
+/* line 1041, ../sass/style.scss */
+.memberDemographics .main dl dt, .memberDemographics .main dl dd { height: 40px; line-height: 40px; color: #919191; font-size: 14px; font-weight: 400; }
+/* line 1049, ../sass/style.scss */
+.memberDemographics .main dl dt { text-align: center; }
+/* line 1052, ../sass/style.scss */
+.memberDemographics .main dl dd { color: #5e5e5e; font-size: 12px; border-bottom: 1px dotted #e2e2e2; }
+/* line 1058, ../sass/style.scss */
+.memberDemographics .main i { text-align: center; float: left; }
+/* line 1062, ../sass/style.scss */
+.memberDemographics .main .i1 { width: 62px; text-align: left; }
+/* line 1066, ../sass/style.scss */
+.memberDemographics .main .i2 { width: 80px; }
+/* line 1069, ../sass/style.scss */
+.memberDemographics .main .i3 { width: 122px; }
+/* line 1072, ../sass/style.scss */
+.memberDemographics .main .i4 { width: 85px; text-align: right; }
+
+/* line 1079, ../sass/style.scss */
+.memberDemographics01 table { height: 94px; border: 1px solid #e2e2e2; width: 100%; }
+/* line 1084, ../sass/style.scss */
+.memberDemographics01 table tr td { height: 50px; margin: 20px 0; width: 275px; border-right: 1px dotted #e2e2e2; text-align: center; }
+/* line 1090, ../sass/style.scss */
+.memberDemographics01 table tr td b { display: block; }
+
+/* line 1098, ../sass/style.scss */
+.formManagement table { height: 94px; border: 1px solid #e2e2e2; border-right: none; width: 100%; }
+/* line 1104, ../sass/style.scss */
+.formManagement table tr td { width: 170px; border-right: 1px solid #e2e2e2; text-align: center; }
+/* line 1108, ../sass/style.scss */
+.formManagement table tr td span { display: block; }
+
+/* line 1116, ../sass/style.scss */
+.contentUpdateManagement table { height: 94px; border: 1px solid #e2e2e2; border-bottom: none; border-right: none; width: 100%; }
+/* line 1122, ../sass/style.scss */
+.contentUpdateManagement table tr { height: 40px; }
+/* line 1124, ../sass/style.scss */
+.contentUpdateManagement table tr th { border-right: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; }
+/* line 1128, ../sass/style.scss */
+.contentUpdateManagement table tr td { width: 230px; border-right: 1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2; text-align: center; }
+
+/* line 1137, ../sass/style.scss */
+.specialList_alert { display: none; position: relative; position: fixed; left: 0; top: 0; z-index: 999999; width: 100%; height: 100%; background: url(../images/alert-bg.png) 0 0 repeat; }
+/* line 1147, ../sass/style.scss */
+.specialList_alert .alert_main { position: absolute; left: 50%; top: 50%; margin-top: -331px; margin-left: -361px; width: 722px; height: 662px; background-color: #fff; }
+/* line 1157, ../sass/style.scss */
+.specialList_alert .top { padding: 20px 0px; margin: 0 30px; border-bottom: 1px solid #e2e2e2; }
+/* line 1161, ../sass/style.scss */
+.specialList_alert .top .cm-input-text { width: 120px; height: 14px; background-color: #fff; border: 1px solid #e2e2e2; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 12px; font-weight: 400; line-height: 20px; padding: 8px; }
+/* line 1164, ../sass/style.scss */
+.specialList_alert .top .cm-input-wrap { float: left; height: 34px; margin-bottom: 0; }
+/* line 1169, ../sass/style.scss */
+.specialList_alert .top .left { line-height: 34px; width: auto; }
+/* line 1174, ../sass/style.scss */
+.specialList_alert .middle { padding: 20px 0px; margin: 0 30px; }
+/* line 1177, ../sass/style.scss */
+.specialList_alert .middle h2 { font-size: 16px; font-weight: 400; }
+/* line 1183, ../sass/style.scss */
+.specialList_alert .middle .main ul li { height: 42px; line-height: 42px; border-bottom: 1px dotted #e2e2e2; color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; }
+/* line 1191, ../sass/style.scss */
+.specialList_alert .middle .main ul li i { float: left; text-align: center; }
+/* line 1195, ../sass/style.scss */
+.specialList_alert .middle .main ul li .i1 { width: 30px; }
+/* line 1198, ../sass/style.scss */
+.specialList_alert .middle .main ul li .i2 { width: 326px; text-align: left; text-indent: 10px; }
+/* line 1202, ../sass/style.scss */
+.specialList_alert .middle .main ul li .i2 a { color: #5e5e5e; }
+/* line 1206, ../sass/style.scss */
+.specialList_alert .middle .main ul li .i3 { width: 104px; }
+/* line 1209, ../sass/style.scss */
+.specialList_alert .middle .main ul li .i4 { width: 130px; float: right; }
+/* line 1216, ../sass/style.scss */
+.specialList_alert .middle .main .more .left { height: 40px; width: 160px; line-height: 32px; }
+/* line 1220, ../sass/style.scss */
+.specialList_alert .middle .main .more .left input { margin-left: 10px; float: left; margin-top: 10px; margin-right: 5px; }
+/* line 1226, ../sass/style.scss */
+.specialList_alert .middle .main .more .left span { color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 14px; font-weight: 400; float: left; }
+
+/* line 1238, ../sass/style.scss */
+.headline-h3 { height: 50px; background-color: #fff7f7; border-bottom: 1px solid #e2e2e2; }
+/* line 1242, ../sass/style.scss */
+.headline-h3 h3 { color: #5e5e5e; font-family: "Microsoft YaHei"; font-size: 16px; font-weight: 700; line-height: 43px; margin-left: 30px; float: left; }
+/* line 1251, ../sass/style.scss */
+.headline-h3 em { float: right; margin-top: 17px; margin-right: 30px; cursor: pointer; }
+
+
+/*20151112 成功提示页*/
+
+.tips-page .main {
+    height: 88px;
+    width: 220px;
+    padding-left: 110px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 350px;
+}
+.tips-page .main em {
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.tips-page .main em.err {
+    background: url(../images/err.png) 0 0 no-repeat;
+}
+.tips-page .main em.pass {
+    background: url(../images/pass.png) 0 0 no-repeat;
+}
+.tips-page .main h3 {
+    color: #303030;
+    font-family: "Microsoft YaHei";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38px;
+    padding-top: 10px;
+}
+.tips-page .main p {
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #303030;
+}
+.tips-page .main p a {
+    color: #035cd7;
+    margin-left: 6px;
+}
+.td_left{ text-align:left;padding-left: 20px; }

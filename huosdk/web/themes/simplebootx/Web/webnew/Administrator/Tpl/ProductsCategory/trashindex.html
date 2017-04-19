@@ -1,0 +1,105 @@
+{tmpl("Public:header")}
+	<div class="cm-subHead">
+		<a href="__ADMIN_URL__/ProductsCategory/index" >{lang("PRODUCT_CATEGORY")}</a>
+	</div>
+	<div class="subBody jq-last-border-bottom">
+       <table cellpadding="0" cellspacing="0">
+           <tr class="first">
+           	<th width="60"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+			<th width="60">id</th>
+			<th width="1000">{lang("NAME")}</th>
+			<th width="100">{lang("ORDER")}</th>
+			<th width="150">{lang("ADD_TIME")}</th>
+		</tr>
+		{foreach from=$list item=v key=k}
+		<tr>
+			<td><input type="checkbox" name="ids[]" value="{$v['catid']}" autocomplated="off" /></td>
+			<td>{$v['catid']}</td>
+			<td>{$v['catname']}</td>
+			<td>{$v['orderid']}</td>
+			<td>{date('Y-m-d H:i:s',$v['add_time'])}</td>
+		</tr>
+		{/foreach}
+	</table>
+</div>
+<div class="cm-subFooter">
+    <div class="left fl">
+        <ul>
+           <li> <a class="cm-green-btn" href="javascript:void(0)" onclick="restore()" >{lang("RESTORE")}</a></li>
+           <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" >{lang("DEL_COMPLATE")}</a></li>
+       </ul>
+    </div>
+    <div class="paging fl ml220">
+        <div class="main">
+            {$pages}
+        </div>
+    </div>
+</div> 
+<script type="text/javascript">
+		function del_all(){
+			if(confirm("{lang('SURE_TO_DEL')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择删除项");
+					return false;
+				}
+				ids = idArray.join(",");
+				
+				var ajaxurl = "__ADMIN_URL__"+"/ProductsCategory/trashdelete";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+		function restore(){
+			if(confirm("{lang('SURE_TO_RESTORE')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择恢复项");
+					return false;
+				}
+				ids = idArray.join(",");
+				
+				var ajaxurl = "__ADMIN_URL__"+"/ProductsCategory/trashrestore";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+	</script>    
+     
+{tmpl("Public:footer")}

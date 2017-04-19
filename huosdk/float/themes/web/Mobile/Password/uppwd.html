@@ -1,0 +1,35 @@
+<mobiletpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/changepwd.css"/>
+<div class="changepwd_box">
+       <ul>
+       <li><p><span>原密码</span></p><input type="text" id="old_pwd" placeholder="请输入原密码"/></li>
+       <li><p><span>新密码</span></p><input type="password" id="new_pwd" placeholder="请输入新密码"/></li>
+       <li><p><span>确认密码</span></p><input type="password" id="confirm_pwd" placeholder="请输入确认密码"/></li>
+   	</ul>   	
+   	 <form action="{:U('Password/uppwd_post')}" method="post" id="ajaxform" style="display:none">
+   	 <input type="text" id="uppwdtoken" value="{$uppwdtoken}" />
+  	 </form>
+
+</div>
+<div class="error_msg"></div>
+<footer>
+    <div class="confim_change">
+        <button>提交</button>
+    </div>
+</footer>
+
+<footer class="kefuFooter">
+		<p class="help"><a class="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qq}&amp;site=qq&amp;menu=yes"><span>客服QQ：</span>{$qq}</a>
+		<if condition = "$idkey eq ''">
+        <a class="QQgroup" target="_blank" href="javascript:void();" style="color:#adadad"><span>QQ 群：</span>{$qqgroup}</a></p>
+		<else />
+		<a class="QQgroup" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey={$idkey}"><span>QQ 群：</span>{$qqgroup}</a></p>
+		</if>
+</footer>
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/changepwd.js"></script>
+</html>

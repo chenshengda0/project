@@ -1,0 +1,44 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('图片')}:</div>
+				<div class="right">
+					{uploadfile_html("img",1,1,$detail.img)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('显示文字')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="title" value="{$detail.title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('链接')}:</div>
+				<div class="right">
+					<input class="cm-input-text " type="text" name="url" value="{$detail.url}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('类型')}:</div>
+				<div class="right">
+					<select class="sm-select" name="type">
+						{foreach from=$types item=v}
+						<option value="{$v.id}" {if $detail.type eq $v.id}select{/if}>{$v.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{tmpl("Public:footer")}

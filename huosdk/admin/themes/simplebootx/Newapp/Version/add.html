@@ -1,0 +1,52 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Newapp/Version/index')}">APP版本列表</a></li>
+			<li  class="active"><a href="{:U('Newapp/Version/add')}">添加APP版本</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Version/add_post')}">
+				<fieldset>
+					<notempty name="lastver[id]">
+		
+					<div class="control-group">
+							<label class="control-label">上一版本ID:</label>
+							<div class="controls">
+								<label class="control-label" style="text-align:left">{$lastver.id}</label>
+							</div>
+					</div>
+					<div class="control-group">
+							<label class="control-label">上一版本名称:</label>
+							<div class="controls">
+								<label class="control-label" style="text-align:left">{$lastver.version}</label>
+							</div>
+					</div>
+					</notempty>
+					<div class="control-group">
+						<label class="control-label">新版本名称:</label>
+						<div class="controls">
+							<input type="text" class="input" 
+							onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d.]/g,'')"
+							name="vername" value="">*数字与小数点组合
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">新版本内容:</label>
+						<div class="controls">
+							<textarea class="form-control comment-postbox" name="content" style="height:120px;width: 50%;"></textarea>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">添加</button>
+					<a class="btn" href="{:U('Version/index')}">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

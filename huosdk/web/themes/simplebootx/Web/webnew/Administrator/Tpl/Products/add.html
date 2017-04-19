@@ -1,0 +1,70 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('PRODUCT_NAME')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="name">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CATEGORY')}:</div>
+				<div class="right">
+					<select name="catid" class="require">
+						<option value="0">选择分类</option>
+						{$tree}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('THUMB')}:</div>
+				<div class="right">
+					{uploadfile_html("thumb",1,1)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="keywords">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="description" class="cm-textarea"></textarea>
+				</div>
+			</div>
+			
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;"></textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+
+</script>
+{/literal} {tmpl("Public:footer")}

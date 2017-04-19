@@ -1,0 +1,112 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("游戏")}:</div>
+	            <div class="right">
+	                <select name="game_id" class="cm-select require">
+	                	<option value="0">选择游戏</option>
+	                	{foreach from=$games item=v}
+	                	    <option value="{$v.id}" {if $download.game_id eq $v.id}selected{/if}>{$v.name}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("名称")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" value="{$download.name}" id="name">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("横幅")}:</div>
+	            <div class="right">
+	                {uploadfile_html("banner",1,1,$download.banner)}
+	                <i>banner大小999*254</i>
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("终端")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="终端" value="{$download.zhongduan}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("QQ交流群")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="qq" value="{$download.qq}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("已入驻人数")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="num" value="{$download.num}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("标签")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="tags" value="{$download.tags}">
+	                <i>使用|分隔</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("软件大小")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="size" value="{$download.size}">
+	                <i>单位M，最多保留2位小数点</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("下载地址")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="download_url" value="{$download.download_url}">
+	            </div>
+	        </div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="keywords" value="{$download.keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="description" class="cm-textarea">{$download.description}</textarea>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;">{$download.content}</textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+	$("select[name='game_id']").change(function(){
+		var name = $(this).find("option:selected").text();
+		$("#name").val(name);
+	});
+</script>
+{tmpl("Public:footer")}

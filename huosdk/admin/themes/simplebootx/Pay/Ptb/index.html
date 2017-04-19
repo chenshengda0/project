@@ -1,0 +1,85 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<form class="well form-search" method="post" action="{:U('Ptb/index')}">		 			 
+			<div class="search_type cc mb10">			
+				<div class="mb10">
+					<span class="mr20">
+					时间： 
+						<input type="text" name="start" class="js-date" value="" style="width: 100px;"  autocomplete="off">-						
+						<input type="text" class="js-date" name="end" value="" style="width: 100px;" autocomplete="off"> &nbsp; &nbsp;
+					充值账号： 
+						<input type="text" name="title" style="width: 200px;" value="" placeholder="请输入充值账号...">
+					订单号： 
+						<input type="text" name="title" style="width: 200px;" value="" placeholder="请输入订单号...">
+					充值状态： 
+						<select class="select_2" name="status">
+							<option value='3'>请选择支付状态</option>
+							<option value='0'>待支付</option>
+							<option value='1'>支付成功</option>
+							<option value='2'>支付失败</option>
+						</select> &nbsp;&nbsp;
+						<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+		
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th>订单号</th>
+						<th>账号</th>
+						<th>充值金额</th>
+						<th>平台币数量</th>
+						<th>充值状态</th>
+						<th>充值时间</th>
+						<th>充值方式</th>
+					</tr>
+				</thead>
+					<tr>
+						<th style='color:#00f'>汇总</th>
+						<th style='color:#00f'>--</th>
+						<th style='color:#00f'>{$sumlist[0]['amount']}</th>
+						<th style='color:#00f'>--</th>
+						<th style='color:#00f'>--</th>
+						<th style='color:#00f'>--</th>
+						<th style='color:#00f'>--</th>
+					</tr>
+				<foreach name="items" item="vo">
+					<tr> 
+					    <td>{$vo['orderid']}</td>
+					    <td>{$$vo['username']}</td>
+						<td>{$vo['amount']}</td>
+						<td>{$vo['ttb']}</td>
+						<td>{$vo['status']}</td>
+						<td>{:date('Y年m月d日  H:i',$vo['create_time'])}</td>
+						<td>{$vo['payname']}</td>
+					</tr>
+				</foreach>
+				<tfoot>
+					<!-- tr>
+						<th>日期</th>
+						<th>渠道账号</th>
+						<th>新增用户数</th>
+						<th>活跃用户数</th>
+						<th>付费用户数</th>
+						<th>新用户付费金额</th>
+						<th>总付费金额</th>
+						<th>总付费率</th>
+						<th>注册APRU</th>
+						<th>活跃ARPU</th>
+						<th>付费ARPU</th>
+					</tr>-->
+				</tfoot>
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

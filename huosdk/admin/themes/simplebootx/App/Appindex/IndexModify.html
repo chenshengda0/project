@@ -1,0 +1,113 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Appindex/IndexModify')}">首页控制</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Appindex/indexModify_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">轮播图一:</label>
+						<div class="controls">
+							<input type="file" class="input" name="imageone"><font color="red">*图片大小为660*200</font>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">图片:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="__UPLOAD__/image/{$appdata.lunbotua}" width="330" height="100">
+					</div>
+					<div class="control-group">
+						<label class="control-label">对应游戏:</label>
+						<div class="controls">
+							<select name="onegameid">
+								<foreach name="gamelist" item="vo">
+									<php>$game_select = $vo['id']==$appdata['onegameid'] ?"selected":"";</php>
+									<option value="{$vo.id}" {$game_select}>{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">轮播图二:</label>
+						<div class="controls">
+							<input type="file" class="input" name="imagetwo"><font color="red">*图片大小为660*200</font>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">图片:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="__UPLOAD__/image/{$appdata.lunbotub}" width="330" height="100">
+					</div>
+					<div class="control-group">
+						<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select name="twgameid">
+								<foreach name="gamelist" item="vo">
+									<php>$game_select = $vo['id']==$appdata['twgameid'] ?"selected":"";</php>
+									<option value="{$vo.id}" {$game_select}>{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>					
+					
+					<div class="control-group">
+						<label class="control-label">轮播图三:</label>
+						<div class="controls">
+							<input type="file" class="input" name="imagethr"><font color="red">*图片大小为660*200</font>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">图片:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="__UPLOAD__/image/{$appdata.lunbotuc}" width="330" height="100">
+					</div>
+					<div class="control-group">
+						<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select name="thrgameid">
+								<foreach name="gamelist" item="vo">
+									<php>$game_select = $vo['id']==$appdata['thrgameid'] ?"selected":"";</php>
+									<option value="{$vo.id}" {$game_select}>{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>					
+					
+					<div class="control-group">
+						<label class="control-label">轮播图四:</label>
+						<div class="controls">
+							<input type="file" class="input" name="imagefour"><font color="red">*图片大小为660*200</font>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">图片:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="__UPLOAD__/image/{$appdata.lunbotud}" width="330" height="100">
+					</div>
+					<div class="control-group">
+						<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select name="fourgameid">
+								<foreach name="gamelist" item="vo">
+									<php>$game_select = $vo['id']==$appdata['fourgameid'] ?"selected":"";</php>
+									<option value="{$vo.id}" {$game_select}>{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					
+				</fieldset>
+				<div class="form-actions">
+				<input type="hidden" name="indexid" value="{$appdata.id}">
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

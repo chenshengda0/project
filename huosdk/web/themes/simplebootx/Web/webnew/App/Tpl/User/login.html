@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="__TMPL__Common/css/style.css" rel="stylesheet" />
+<title>{$seo.title}</title>
+</head>
+
+<body>
+<!--头部start-->
+<div class="wrap header-search">
+  <ul class="clearfix">
+    <li class="fl logo"><a href="{url()}" target="_blank"><img src="{$site.logo}" alt="" /></a></li>
+    <li class="fl"><b>登录</b></li>
+    <li class="fr resigers"><p>还没有手游村账号？<a href="{url('User#register')}" target="_blank">前往注册</a></p></li>
+  </ul>
+</div>
+<!--头部end-->
+
+<!--登录start-->
+<div class="form-main">
+  <div class="title">
+    <h2>登录</h2>
+  </div>
+  
+  <div class="wrap">
+  	<form action="{url('User#dologin')}" method="post">
+    <ul>
+      <li class="clearfix mt15">
+        <label>手机号码：</label>
+        <input type="text" name="username" value="" class="fl wd328" />
+      </li>
+      <li class="clearfix mt15">
+        <label>密码：</label>
+        <input type="password" name="password" value="" class="fl wd328" />
+      </li>
+      <li class="clearfix remember">
+        <label>&nbsp;</label>
+        <p class="fl"><input type="checkbox" name="get_username" value="1"/>记住用户名</p>
+        <span class="fr"><a href="{url('User#forget_pwd')}" target="_blank">忘记密码？</a></span>
+      </li>
+      <li class="clearfix">
+        <input type="submit"  value="登录" class="fr" />
+      </li>
+    </ul>
+    </form>
+  </div>
+</div>
+<!--登录end-->
+{tmpl("Public:footer")}
+<script type="text/javascript">
+$(function(){
+	$("form").submit(function(){
+		if($("input[name='username']").val() == ""){
+			alert("输入用户名");
+			return false;
+		}
+		if($("input[name='password']").val() == ""){
+			alert("输入密码");
+			return false;
+		}
+	});
+})
+</script>

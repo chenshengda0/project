@@ -1,0 +1,121 @@
+{tmpl("Public:header")}
+
+	<div class="cm-subHead">
+        <a class="cm-red-btn" href="__ADMIN_URL__/Admin/add">{lang("ADD")}</a>
+        <form action="" method="GET" >
+	        <ul>
+	            <li>
+	                {lang("USERNAME")}
+	                <input class="cm-input-text" type="text" name="username" value="{$username}">
+	            </li>
+	            <li>
+	                {lang("GROUP")}
+		            <select name="groupid" class="cm-select">
+		            	<option value="-1" {if $groupid eq -1}selected{/if}>{lang("ALL")}</option>
+		            	{foreach from=$groups item=group key=k} 
+		            		<option value="{$group['id']}" {if $groupid eq $group['id']}selected{/if}>{lang($group['name'])}</option>
+		            	{/foreach}
+		            </select> 
+	            </li>
+	            <li>
+	                <input class="cm-blue-btn" type="submit" value="确定">
+	            </li>
+	        </ul>
+        </form>
+    </div>
+    <div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+                
+               <th width="20"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+               <th width="30">id</th>
+               <th width="200">{lang("USERNAME")}</th>
+               <th width="200">{lang("ADMIN_GROUP")}</th>
+               <th width="200">{lang("LAST_LOGIN_TIME")}</th>
+               <th width="200">{lang("LAST_LOGIN_IP")}</th>
+               <th>{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+             	<td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+              <td>{$v['id']}</td>
+              <td>{$v['username']}</td>
+              <td>{lang($v['name'])}{if $v['is_del'] eq 1}&nbsp;&nbsp;({lang("HAS_DEL")}){/if}</td>
+              <td>{if $v['login_time'] > 0}{date("Y-m-d H:i:s",$v['login_time'])}{/if}</td>
+              <td>{$v['login_ip']}</td>
+              <td class="tag5">
+              	<a href="__ADMIN_URL__/Admin/edit/?id={$v['id']}" class="a1">{lang("EDIT")}</a>&nbsp;
+              	<a href="__ADMIN_URL__/Admin/delete/?id={$v['id']}" onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>&nbsp;
+              </td>
+             </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+            <ul>
+                <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" value="">{lang("DELETE")}</a></li>
+            </ul>
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+                    
+                    
+	
+	
+	
+	<script type="text/javascript">
+		function del_all(){
+			if(confirm("{lang('SURE_TO_DEL')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择删除项");
+					return false;
+				}
+				ids = idArray.join(",");
+				
+				var ajaxurl = "__ADMIN_URL__"+"/Admin/delete";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+{tmpl("Public:footer")}

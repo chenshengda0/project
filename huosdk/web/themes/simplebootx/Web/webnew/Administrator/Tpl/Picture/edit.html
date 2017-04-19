@@ -1,0 +1,89 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="title" value="{$picture.title}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('CATEGORY')}:</div>
+				<div class="right">
+					<select name="catid" class="require">
+						<option value="0">选择分类</option>
+						{$tree}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('THUMB')}:</div>
+				<div class="right">
+					{uploadfile_html("thumb",1,1,$picture.thumb)}
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="keywords" value="{$picture.keywords}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="description" class="cm-textarea">{$picture.description}</textarea>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">组图:</div>
+				<div class="right">
+					<table id="pictures">
+						<tr><span class="tip">[+]增加图片[-]减少图片</span></tr>
+						{foreach from=$picture.content item=v key=k}
+						<tr>
+							<th>{uploadfile_html("content[$k][img]",1,1,$v.img,'content_img_'|cat:$k)}</th>
+							<th><input type="text" name="content[{$k}][alt]"  class="cm-input-text" size="40" value="{$v.alt}"><span>
+							{if $k eq 0}
+							<a href="javascript:void(0);" onclick="add_picture()">[+]</span>
+							{else}
+							<a href="javascript:void(0);" onclick="del_picture(this)">[-]</span>
+							{/if}
+							</th>
+						</tr>
+						{/foreach}
+						<input type="hidden" id="index" value="{$k+1}">
+					</table>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{literal}
+<script type="text/javascript">
+function add_picture(){
+	var id = $("#index").val();
+	$.ajax({
+		url: "__ADMIN_URL__"+"/Picture/add_picture",
+		data:"id="+id,
+		type:"POST",
+		success: function(res){
+			$("#pictures").append(res);
+			$("#index").val(parseInt(id)+1);
+		}
+	});	
+}
+function del_picture(obj){
+	//var num = $("#pictures .del_picture").index($(obj));
+	$(obj).parent().parent().parent().remove(); 
+}
+</script>
+{/literal} {tmpl("Public:footer")}

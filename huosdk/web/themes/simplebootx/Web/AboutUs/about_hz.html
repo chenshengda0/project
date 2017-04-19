@@ -1,0 +1,28 @@
+<webtpl file="Public/header" />
+
+<div class="clear"></div>
+  <div class="main">
+    <div class="helpbox">
+	  <div class="cont_l">
+	    <div class="about_l">
+		  <div class="about_nav">关于{:C('BRAND_NAME')}</div>
+		  <div class="about_l_list">
+		    <ul>
+			  <li><a href="{:U('AboutUs/index',array('show'=>'us'))}" >关于我们</a></li>
+			  <li><a href="{:U('AboutUs/index',array('show'=>'hezuo'))}" class="orange">商务合作</a></li>
+			  <li><a href="{:U('AboutUs/index',array('show'=>'zhaopin'))}">人才招聘</a></li>
+			  <li><a href="{:U('AboutUs/index',array('show'=>'lianxi'))}">联系我们</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	  <div class="cont_r">
+	    <div class="about_r">
+		  <div class="about_r_nav">{$data.title}</div>
+		  <div class="about_r_word">{$data.content}</div>
+		</div>
+	  </div>
+	</div> 
+   </div>
+<div class="clear"></div>
+<webtpl file="Public/footer" />

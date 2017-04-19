@@ -1,0 +1,125 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Gamedes/gameList')}">游戏信息列表</a></li>
+			<li class="active"><a href="{:U('Gamedes/addGamedes')}">游戏信息添加</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Gamedes/addGamedes_post')}" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">游戏:</label>
+					<div class="controls">
+						<select name="app_id">
+							<foreach name="games" key="k" item="vo">
+								<option value="{$k}">{$vo}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">序列号:</label>
+					<div class="controls">
+						<input type="text" name="listorder">
+						<span class="form-required">*越大排名越高</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">栏目:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+					<select class="select_2" name="lanmu">
+						<option value='1'>单机游戏</option>
+						<option value='2'>热门游戏</option>
+						<option value='3'>最新游戏</option>
+					</select>
+				</div>
+				<div class="control-group">
+					<label class="control-label">分类:</label>
+					<div class="controls">
+						<select name="type">
+							<foreach name="gametypes" key='k' item="vo">
+								<option value="{$k}">{$vo}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">网页图标:</label>
+					<div class="controls">
+						<input type="file" class="input" name="imageicon[]"><font color="red">*图标显示大小为166*189</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">手机图标:</label>
+					<div class="controls">
+						<input type="file"  name="micon[]"><font color="red">*图标显示大小为72*72</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏宣传语:</label>
+					<div class="controls">
+						<textarea id="publicity" name="publicity" rows="1" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏简介:</label>
+					<div class="controls">
+						<textarea id="description" name="description" rows="5" cols="75" style="width:50%;" ></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">官方网址</label>
+					<div class="controls">
+						<textarea id="url" name="url" rows="2" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">安卓版下载地址</label>
+					<div class="controls">
+						<textarea id="androidurl" name="androidurl" rows="2" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">ios版下载地址</label>
+					<div class="controls">
+						<textarea id="iosurl" name="iosurl" rows="2" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">安卓版适用系统</label>
+					<div class="controls">
+						<textarea id="androidurl" name="adxt" rows="2" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">ios版适用系统</label>
+					<div class="controls">
+						<textarea id="iosurl" name="iosxt" rows="2" cols="75" style="width:50%;" ></textarea>
+						<span class="form-required">*</span>
+					</div>
+				</div>				
+				<div class="control-group">
+					<label class="control-label">游戏大小</label>
+					<div class="controls">
+						<input type="text" name="size">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="{:U('Gamedes/gameList')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

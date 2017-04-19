@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>绑定手机</title>
+<link href="__PUBLIC__/float/css/web_gift.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/float/js/findpwd.js"></script>
+<script>
+	var checkCode = "{:U('Admin/Forgetpwd/checkMobileCode')}";
+	var getcode = "{:U('Admin/Forgetpwd/sendMsg')}";
+	var editpwd = "{:U('Admin/Forgetpwd/editPassword')}";
+</script>
+<body>
+<div class="safe_su">
+   <p>
+      <span class="p_span_left">{$BRAND_NAME}账号:</span>
+      <span class="p_span_right">{$username}</span>
+   </p>
+   <p>
+      <span class="p_span_left">已绑定手机:</span>
+      <span class="p_span_right">{$smobile}</span>
+   </p>
+</div>
+<div class="safe_sure">
+   <ul>
+      <form  id="ok-form" name="ok-form" action="{:U('Admin/Forgetpwd/editPassword')}" method="post">
+         <li class="li_11">
+            <input class="input" name="sms" id="sms" type="text" value="请输入验证码" /> 
+           <input class="submit" id="btnSendCode" type="button" value="获取验证码" onclick="sendMessage()"/>
+         </li>
+		 <li class="li_9">
+            <input type="text" name="pwd" id="pwd" value="请输入新密码" />
+         </li>
+		 <li class="li_9">
+            <input type="text" name="newpwd" id="newpwd" value="请再次输入新密码" />
+         </li>
+		 <div id="message"></div>
+         <li class="li_10">
+		 <input type="button" id="findok" value="确定" style="background-color:green;border:0px;"/></li>
+		 <input type="hidden" name="action" value="findok" />
+		 <input id='username' type="hidden" name="username" value="{$username}" />
+		 <input id="smobile" name="smobile" type="hidden" value="{$smobile}">
+      </form>
+   </ul>
+</div>
+</body>
+</html>

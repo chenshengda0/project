@@ -1,0 +1,69 @@
+<include file="float/themes/web/Float/header.html" />
+
+<div class="set">
+    <div>
+        <div  class="set1 orange"> 验证身份 </div>
+        <span  class="set2"></span>
+        <div  class="set1 gray"> 设置号码 </div>
+        <span  class="set2"></span>
+        <div  class="set1 gray"> 设置完成 </div>
+    </div>
+</div>
+
+<div class="form4">
+        <form   name="codeform" id="codeform"  action="{:U('Binding/mobile_set')}" method="post">
+            <div class="user_num_1">
+            <span>帐号:</span><b>{$Think.session.username}</b>
+            <br>
+            <br>
+            <span>手机号:</span><b>{$userdata.mobile}</b>
+            </div>
+             <div class="yzm">
+                    <div><img src="__PUBLIC__/float/images/14.png"></div>
+                    <input  name="code" id="code" type="text" placeholder="请输入短信的验证码"/>
+                    <div class="getcode">获取验证码</div>
+              </div>
+		        <div id="msg_box">
+		        </div>
+              <input type="button" value="确定" class="form1">
+        </form>
+</div>
+
+</body>
+<script src="__PUBLIC__/float/js/main.js"></script>
+<script src="__PUBLIC__/float/js/jquery.js"></script>
+<script src="__PUBLIC__/float/js/float.js"></script>
+<script>
+	$(function  () {
+		var url ="{:U('Binding/verify_mmsend')}";
+		var mobile;
+	  	$(".getcode").click (
+				function f2(){
+					mobile = $('#mobile').val();
+					var form_data = {
+			  	  		};
+					_getCode(url,form_data,this,120,f2,1000)
+		})
+	})
+	
+	var btn1=document.querySelector(".form1");
+	var vurl ="{:U('Binding/verifycode')}";
+	var vmobile;
+	var vcode;
+	btn1.onclick=function(){
+		vcode = $('#code').val();
+		$("#msg_box").css("display","none");
+		
+		if('' == vcode){
+			showmsg("请输入验证码");
+			return;
+		}
+			
+		var form_data = {
+			code: vcode,
+		};
+		sendDate(vurl,form_data,succ,err,"POST","JSON");
+	}
+
+</script>
+ </html>

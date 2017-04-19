@@ -1,0 +1,48 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Media/index')}">合作媒体</a></li>
+			<li><a href="{:U('Media/add')}">合作媒体添加</a></li>
+		</ul>
+		<form method="post" class="js-ajax-form" action="{:U('Link/listorders')}">
+			<!-- <div class="table-actions">
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit">{:L('SORT')}</button>
+			</div> -->
+			<php>$status=array("1"=>L('DISPLAY'),"0"=>L('HIDDEN'));</php>
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<!--<th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+						<th width="50">{:L('SORT')}</th>-->
+						<th width="50">ID</th>
+						<th>媒体名称</th>
+						<th>跳转链接</th>
+						<th>图片</th>
+						<!-- <th width="45">{:L('STATUS')}</th> -->
+						<th width="120">{:L('ACTIONS')}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="items" item="vo">
+					<tr>
+						<!--<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.link_id}"></td>
+						<td><input name='listorders[{$vo.link_id}]' class="input input-order mr5" type='text' size='3' value='{$vo.listorder}'></td>-->
+						<td>{$vo.id}</td>
+						<td>{$vo.name}</td>
+						<td><a href="{$vo.url}" target="_blank">{$vo.url}</a></td>
+						<td><img src="__UPLOAD__/image/{$vo.icon}" width="150" height="70"></td>
+						<td>
+							<a href="{:U('Media/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a>|
+							<a href="{:U('Media/remove',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						</td>
+					</tr>
+					</foreach>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

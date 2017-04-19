@@ -1,0 +1,306 @@
+{tmpl("Public:header")}
+<!--幻灯片start-->
+<div class="banner" id="demo01">
+  <ul class="slides">
+  	{foreach from=$silde item=v}
+    <li><a href="{$v.link}" target="_blank" style="background-image:url({$v.img});"></a></li>
+    {/foreach}
+  </ul>
+</div>
+<!--幻灯片end-->
+
+<!--热门start-->
+<div class="hot-game">
+	{assign var='hot' value=push('id,name,logo',1,8)}
+  <ul class="wrap clearfix">
+  	{foreach from=$hot item=v}
+    <li><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" width="103" height="103" alt="{$v.name}" /><b>{$v.name}</b></a></li>
+    {/foreach}
+  </ul>
+</div>
+<!--热门end-->
+
+<!--好评、热门、推荐start-->
+<div class="wrap recommend-good">
+  <ul>
+    <li>
+      <span class="ico01"><i>好评</i></span>
+      {assign var='haoping' value=push('id,name',2,9)}
+      {foreach from=$haoping item=v}
+      <div><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></div>
+      {/foreach}
+    </li>
+    <li>
+      <span class="ico02"><i>热门</i></span>
+      {assign var='reming' value=push('id,name',3,9)}
+      {foreach from=$reming item=v}
+      <div><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></div>
+      {/foreach}
+    </li>
+    <li>
+      <span class="ico03"><i>推荐</i></span>
+      {assign var='tuijian' value=push('id,name',4,9)}
+      {foreach from=$tuijian item=v}
+      <div><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></div>
+      {/foreach}
+    </li>
+  </ul>
+</div>
+<!--好评、热门、推荐end-->
+
+<!--图片位start-->
+<div class="wrap">
+  {adv(1)}
+</div>
+<!--图片位end-->
+
+<!--活动start-->
+<div class="wrap active mt30">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <div class="active_banner" id="demo02">
+        <ul class="slides">
+        {foreach from=$silde2 item=v}
+          <li><a href="{$v.link}" target="_blank"><img src="{$v.img}" alt="" /><p>{$v.title}</p></a></li>
+        {/foreach} 
+        </ul>  
+      </div>
+    </li>
+    <!--左栏目end-->
+    <!--右栏目start-->
+    <li class="right fr">
+      <div> {adv(2)}</div>
+      
+      <div class="mt20">
+        <ul class="clearfix">
+          <li class="bg01"><a href="##" target="_blank"><p>模拟下载</p></a></li>
+          <li class="bg02"><a href="##" target="_blank"><p>试玩活动</p></a></li>
+          <li class="bg03"><a href="##" target="_blank"><p>微信福利</p></a></li>
+        </ul>
+      </div>
+    </li>
+    <!--右栏目end-->
+  </ul>
+</div>
+<!--活动end-->
+
+<!--精品推荐、游戏礼包start-->
+<div class="main wrap mt30">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico04">精品推荐</i></h2>
+        <p class="fr"><a href="{url('Game')}" target="_blank">查看更多>></a></p>
+      </div>
+      <div class="recommend-good-game">
+      {assign var='jingping' value=push('id,name,logo,typeid,down_num',5,9)}
+        <ul class="clearfix">
+        {foreach from=$jingping item=v}
+          <li>
+            <a href="{url('Game#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.logo}" width="85" height="85"></a>
+            <div class="fr">
+              <h4><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+              {assign var="typename" value=get_data_from_table('name','gametype','id='|cat:$v.typeid)}
+              <p>游戏：{$typename}</p>
+              <ul>
+                <span>{$v.down_num}</span>
+                <a href="{url('Game#download','id='|cat:$v.id)}" target="_blank">安全下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--左栏目end-->
+    <!--右栏目start-->
+    <li class="right fr">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico05">游戏礼包</i></h2>
+        <p class="fr"><a href="{url('Gamecard')}" target="_blank">更多礼包>></a></p>
+      </div>
+      <div class="goods-list">
+        <ul>
+        {foreach from=$cards2 item=v}
+          <li class="clearfix">
+            <div class="img fl"><a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></div>
+            <div class="con fl">
+              <h4><a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+              {if $v.end_time}<p>有效日期：{date('Y-m-d',$v.end_time)}</p>{/if}
+            </div>
+            <div class="get fr"><a href="##" onclick="put_card({$v.id})" >获取</a></div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--右栏目end-->
+  </ul>
+</div>
+<!--精品推荐、游戏礼包end-->
+
+<!--新游上线、排行榜start-->
+<div class="main wrap mt30">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico06">新游上线</i></h2>
+        <p class="fr"><a href="{url('Game')}" target="_blank">更多新游>></a></p>
+      </div>
+      <div class="new-game">
+        <ul class="clearfix">
+         {foreach from=$new_game item=v}
+          <li>
+            <a href="{url('Game#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="{$v.name}" width="95" height="95" /></a>
+            <a href="{url('Game#download','id='|cat:$v.id)}" target="_self" class="down">安全下载</a>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--左栏目end-->
+    <!--右栏目start-->
+    <li class="right fr">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico07">排行榜</i></h2>
+        <p class="fr"><a href="{url('Page','id=7')}" target="_blank">更多排行>></a></p>
+      </div>
+      <div class="game-tair">
+      {assign var='ph' value=paihang('',0,4)}
+        <ul>
+        {foreach from=$ph item=v key=k}
+          <li class="clearfix">
+            <div class="num fl"><i>{$k+1}</i></div>
+            <div class="img fl"><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></div>
+            <div class="con fl"><h4><a href="##" target="_blank">{$v.name}</a></h4></div>
+            <div class="score fr"><p>{$v.num}</p></div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--右栏目end-->  
+  </ul>
+</div>  
+<!--新游上线、排行榜end-->
+
+<!--图片位start-->
+<div class="wrap mt30">
+   {adv(3)}
+</div>
+<!--图片位end-->
+
+<!--游戏开发、游戏规则、疯抢礼包start-->
+<div class="wrap mt30 add-game">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico06">游戏开测</i></h2>
+      </div>
+      <div class="rile-list">
+        <ul>
+         {foreach from=$kaifu2 item=v}
+          <li class="clearfix">
+            <div class="time fl"><p><i>{date('m-d',$v.open_time)}</i>{date('H:i',$v.open_time)}</p></div>
+            <div class="img fl"><a href="{$v.url}" target="_blank"><img src="{$v.logo}" alt="" /></a></div>
+            <div class="con fl">
+              <h4><a href="{url('Game#show','id='|cat:$v.game_id)}" target="_blank">{$v.gname}</a></h4>
+              <p>{$v.name}</p>
+            </div>
+            <div class="goods fr">
+              <a href="{url('Gamecard')}?game_id={$v.game_id}" title=""></a>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--左栏目end-->
+    <!--中栏目start-->
+    <li class="middle fl">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico06">游戏开服</i></h2>
+      </div>
+      <div class="rile-list">
+        <ul>
+         {foreach from=$kaifu1 item=v}
+          <li class="clearfix">
+            <div class="time fl"><p><i>{date('m-d',$v.open_time)}</i>12:21</p></div>
+            <div class="img fl"><a href="{$v.url}" target="_blank"><img src="{$v.logo}" alt="" /></a></div>
+            <div class="con fl">
+              <h4><a href="{url('Game#show','id='|cat:$v.game_id)}" target="_blank">{$v.gname}</a></h4>
+              <p>{$v.name}</p>
+            </div>
+            <div class="goods fr">
+              <a href="{url('Gamecard')}?game_id={$v.game_id}" title=""></a>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>    
+    </li>
+    <!--中栏目end-->
+    <!--右栏目start-->
+    <li class="right fr">
+      <div class="main-title">
+        <h2 class="fl"><i class="ico08">疯抢礼包</i></h2>
+      </div>
+      <div class="rile-list rile-list01">
+        <ul>
+        {foreach from=$cards item=v}
+          <li class="clearfix">
+            <div class="img fl"><a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></div>
+            <div class="con fl">
+              <h4><a href="{url('Gamecard#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+              <p></p>
+            </div>
+            <div class="berserk-packs fr">
+              <a  href="##" onclick="put_card({$v.id})" title="">抢礼包</a>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+    </li>
+    <!--右栏目end-->
+  </ul>
+</div>
+<!--游戏开发、游戏规则、疯抢礼包end-->
+
+<!--热门视频start-->
+<div class="main wrap mt30">
+  <div class="main-title">
+    <h2 class="fl"><i class="ico09">热门视频</i></h2>
+    <p><a href="{url('News','id=20')}" target="_blank">更多视频>></a></p>
+  </div>  
+  {assign var='video' value=push('id,title,thumb',7,5)}  
+  <div class="video-list">
+    <ul class="clearfix">
+      {if $video}<li class="fl"><a href="{url('News#show','id='|cat:$video[0]['id'])}" target="_blank"><img src="{$video[0]['thumb']}" width="560" height="300" alt="" /><i></i></a></li>{/if}
+      <li class="list fr">
+        <div>
+          <ul class="clearfix">
+          	{foreach from=$video item=v key=k}
+          	{if $k gt 0}
+            <li><a href="{url('News#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.thumb}" width="200" height="140" alt="" /><i></i></a></li>
+            {/if}
+            {/foreach}
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--热门视频end-->
+
+
+<!--图片位start-->
+<div class="wrap mt30">
+  {adv(4)}
+</div>
+<!--图片位end-->
+{tmpl("Public:footer")}

@@ -1,0 +1,60 @@
+<webtpl file="Index/headertwo" />
+
+	<div class="gg_game_hu">
+		<div class="ggs_xx"></div>
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="user_box">
+   
+    <div class="cont_l">
+	  <div class="user_box_l">
+	    <div class="user_box_nav">个人中心</div>
+		<div class="user_box_list">
+		  <ul>
+			<li><img src="__PUBLIC__/web/images/icon_user.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'info'))}" >个人资料</a></li>
+			<!--<li><img src="images/icon_cart.gif" /> <a href="#">充值明细</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'paylog'))}">充值记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_jl.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'xiaofei'))}">消费记录</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_games.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'mygame'))}">我的游戏</a></li>-->
+			<li><img src="__PUBLIC__/web/images/icon_paw.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'update'))}" >修改密码</a></li>
+			<li><img src="__PUBLIC__/web/images/icon_bz.gif" /> <a href="{:U('Web/User/index',array('userinfo'=>'secret'))}">设置密保</a></li>
+			<!--<li><span class="user_on8">  <a href="{:U('Web/User/index',array('userinfo'=>'myask'))}" class="orange3"><em>></em>我的提问</a></span></li>-->
+		  </ul>
+		</div>
+	  </div>
+	</div>
+
+	<div class="cont_r">
+	<div class="user_r_box_nav">我的提问</div>
+
+
+	    <div class="c_table">
+	    <table width="100%" cellspacing="1" cellpadding="0" border="0" bgcolor="#E0E0E0" name="table" id="table" class="list">
+  <tbody><tr>
+    <td width="65%" class="td_nav">问题标题</td>
+    <td width="21%" class="td_nav">提交时间</td>
+    <td width="14%" class="td_nav">状态</td>
+    </tr>
+	<volist name="ask_data" id='vo'>
+    <tr class="color2" style="background-color: rgb(248, 248, 248);">
+    <td class="td20">{$vo.title}</td>
+    <td class="td_jz">{$vo.reg_time}</td>
+   <if condition = "$vo.status eq 0">
+		<td class="td_jz"><span class="orange">未回复</span></td>
+	<else />
+		<td class="td_jz"><span class="orange">已回复</span></td>
+	</if>
+    </tr>
+	</volist>
+        </tbody></table>
+		 <div class="clear"></div>
+	  </div>
+	</div>
+  </div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

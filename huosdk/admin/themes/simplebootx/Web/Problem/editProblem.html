@@ -1,0 +1,52 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Problem/index')}" target="_self">问题列表</a></li>
+			<li class="active"><a href="{:U('Problem/editProblem')}">问题处理</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Problem/editProblem_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">标题:</label>
+						<div class="controls">
+							<input type="text" class="input" name="title" value="{$myask.title}">
+						</div>
+					</div>
+					<php>
+					$status=array("0"=>"待处理","1"=>"处理");
+					</php>
+					<div class="control-group">
+						<label class="control-label">状态:</label>&nbsp&nbsp&nbsp&nbsp
+						<select class="select_2" name="status">
+							<option value="{$myask.status}">{$status[$myask['status']]}</option>
+							<option value='0'>待处理</option>
+							<option value='1'>处理</option>
+						</select>
+					</div>
+					<div class="control-group">
+						<label class="control-label">内容:</label>
+						<div class="controls">
+							<textarea class="form-control comment-postbox" name="details" style="height:120px;width: 50%;">{$myask.details}</textarea>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">相关截图:</label>
+						<img src="__UPLOAD__/ask/{$myask.image}">
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<input type="hidden" name="id" value="{$myask.id}" />
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">处理</button>
+					<a class="btn" href="__URL__">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,512 @@
+@charset "utf-8";
+/* CSS Document */
+body,html {margin:0; padding:0;  color:#5e5e5e;  font:12px/180% "微软雅黑", Arial, Helvetica, sans-serif;}
+body{width:100%;background:#fff;}
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {margin: 0;padding: 0; list-style:none;}
+li {list-style:none; vertical-align:bottom;}
+img {border:none; display:block;}
+em,i {font-style:normal;}
+a{text-decoration:none; color:#5e5e5e; }
+a:hover{ color:#cb1b1b !important;}
+.disable {display:none;}
+.fl {float:left;}
+.fr {float:right;}
+.clearfix:after {content:""; height:0; display:block; clear:both; visibility:hidden;}
+* html .clearfix {height:1%;}
+* +html .clearfix {height:1%;}
+.clearfix {display:block; clear:both;}
+input,textarea{ resize:none; font-family:"微软雅黑"; outline:none;}
+select{height:22px; line-height:18px; padding:2px 0; outline:none;}
+
+.wrap{ width:1000px; margin:0 auto;}
+
+.mt10{ margin-top:10px;}
+.mt15{ margin-top:15px;}
+.mt30{ margin-top:30px;}
+.mt20{ margin-top:20px;}
+.mt80{ margin-top:80px;}
+
+.bt{ border-bottom:none !important;}
+
+/*头部*/
+.header{ min-width:1000px; height:32px; background-color:#e8e8e8; overflow:hidden; line-height:32px;}
+.header li{ float:left;}
+.header li span{ margin:0 10px;}
+
+/*搜索*/
+.header-search{ height:97px; overflow:hidden;}
+.header-search .logo{ padding-top:27px;}
+.header-search div{ width:389px; height:37px; border:2px #23ac38 solid; overflow:hidden; margin-top:28px;}
+.header-search div input[type="text"]{ display:block; border:0; float:left; width:310px; padding-left:9px; height:37px; line-height:37px; font-size:14px; color:#5e5e5e;}
+.header-search div input[type="submit"]{ display:block; border:0; width:70px; height:37px; cursor:pointer; background-color:#23ac38; color:#fff; font-size:14px;}
+
+/*导航*/
+.nav{ min-width:1000px; background-color:#23ac38; overflow:hidden;}
+.nav .wrap{ height:48px;}
+.nav .wrap li{ float:left;}
+.nav .wrap li a{ display:block; height:48px; line-height:48px; font-size:16px; color:#fff; padding:0 22px;}
+.nav .wrap li a:hover,.nav .wrap li a.on{ background-color:#128e25; color:#fff !important;}
+
+/*幻灯片*/
+.banner{ min-width:1000px; height:420px; overflow:hidden; position:relative; z-index:1;}
+.flex-viewport{ -webkit-transition:all 1s ease; -moz-transition:all 1s ease; transition:all 1s ease;}
+.banner .slides{zoom:1;}
+.banner .slides a{ display:block; width:100%; height:420px; background-position:center center; background-repeat:no-repeat;}
+.banner .flex-direction-nav{ position:absolute; width:1000px; left:50%; margin-left:-500px; top:50%; margin-top:-15.5px; height:0;}
+.banner .flex-direction-nav a{ width:56px; height:56px; line-height:99em; overflow:hidden; display:block; }
+.banner .flex-direction-nav .flex-next{ background:url(../images/b_02.png) no-repeat; background-size:cover;}
+.banner .flex-direction-nav .flex-prev{ background:url(../images/b_01.png) no-repeat; background-size:cover;} 
+.banner .flexslider:hover .flex-next:hover, .banner .flexslider:hover .flex-prev:hover{opacity:1; filter:alpha(opacity=50);}
+.banner .flex-control-nav{width:100%; position:absolute; bottom:15px; text-align:center; line-height:25px; height:25px; overflow:hidden;}
+.banner .flex-control-nav li{ margin:0 3px; display:inline-block; zoom:1; *display:inline; overflow:hidden; vertical-align:middle;}
+.banner .flex-control-paging li a{ display:block; height:12px; overflow:hidden; text-indent:-99em; width:12px; cursor:pointer; background-color:#fff;}
+.banner .flex-control-paging li a.flex-active{ background-color:#2a2826;}
+
+/*热门游戏*/
+.hot-game{ padding:30px 0 17px; border-bottom:1px #f1f1f1 solid;}
+.hot-game li{ float:left; padding-right:25px; overflow:hidden; width:103px; text-align:center;}
+.hot-game li img{ border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px;}
+.hot-game li b{ display:block; width:100%; font-size:14px; color:#323232; line-height:40px;}
+
+/*好评、热门、推荐*/
+.recommend-good{ padding:10px 0;}
+.recommend-good li{ height:34px; padding:20px 0; border-bottom:1px #e8e8e8 dotted; overflow:hidden;}
+.recommend-good li span{ display:block; float:left; height:34px; line-height:34px; width:85px; font-size:14px; color:#fff; margin-right:10px; *margin-right:10px;}
+.recommend-good li span i{ padding-left:33px; display:block;}
+.recommend-good li div{ float:left; line-height:34px; height:34px; text-align:center; width:100px;}
+.recommend-good li div a{ font-size:14px; color:#323232;}
+.ico01{ background-image:url(../images/4.jpg);}
+.ico02{ background-image:url(../images/5.jpg);}
+.ico03{ background-image:url(../images/6.jpg);}
+.ico01 i{ background:url(../images/i_01.png) no-repeat 14px center;}
+.ico02 i{ background:url(../images/i_02.png) no-repeat 14px center;}
+.ico03 i{ background:url(../images/i_03.png) no-repeat 14px center;}
+
+/*活动*/
+.active .left{ width:615px; overflow:hidden;}
+.active .right{ width:365px;}
+
+.active_banner{ position:relative; z-index:1;}
+.active_banner .slides{zoom:1;}
+.active_banner .flex-direction-nav{ display:none;}
+.active_banner .slides a{ display:block; width:100%; position:relative;}
+.active_banner .slides a p{ position:absolute; left:0; bottom:0; width:92%; padding:0 4%; height:45px; line-height:45px; background:url(../images/bg-02.png); font-size:16px; color:#fff;}
+.active_banner .flex-control-nav{position:absolute; right:15px; bottom:10px; text-align:center; line-height:25px; height:25px; overflow:hidden;}
+.active_banner .flex-control-nav li{ margin:0 4px; display:inline-block; zoom:1; *display:inline; overflow:hidden; vertical-align:middle;}
+.active_banner .flex-control-paging li a{ display:block; height:10px; overflow:hidden; text-indent:-99em; width:10px; cursor:pointer; background-color:#fff; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%;}
+.active_banner .flex-control-paging li a.flex-active{ background-color:#23ac38;}
+
+.active .right li{ float:left; margin-right:25px; *margin-right:25px;}
+.bg01{ background-color:#00a0e9;}
+.bg02{ background-color:#f19149;}
+.bg03{ background-color:#23ac38; margin-right:0 !important;}
+.active .right li a{ display:block; width:105px; height:105px; font-size:16px; color:#fff; text-align:center; background-repeat:no-repeat; background-position:center 22px;}
+.bg01 a{ background-image:url(../images/i_09.png);}
+.bg02 a{ background-image:url(../images/i_10.png);}
+.bg03 a{ background-image:url(../images/i_11.png);}
+.active .right li a p{ padding-top:68px;}
+
+/*精品推荐、游戏礼包*/
+.main .left{ width:670px;}
+.main .right{ width:310px;}
+
+.main-title{ height:40px; background-color:#f1f1f1; overflow:hidden;}
+.main-title h2{ float:left; width:113px; height:40px; line-height:40px; background-image:url(../images/i_00.png); font-weight:normal; font-size:14px; color:#fff;}
+.main-title h2 i{ display:block; padding-left:37px; background-repeat:no-repeat; background-position:15px center;}
+.main-title p{ line-height:40px; float:right; font-size:12px; color:#6a6a6a; padding-right:15px;}
+.ico04{ background-image:url(../images/i_04.png);}
+.ico05{ background-image:url(../images/i_05.png);}
+.ico06{ background-image:url(../images/i_06.png);}
+.ico07{ background-image:url(../images/i_07.png);}
+.ico08{ background-image:url(../images/i_05.png);}
+.ico09{ background-image:url(../images/i_08.png);}
+
+/*精品推荐*/
+.recommend-good-game ul li{ float:left; width:210px; height:85px; overflow:hidden; margin-top:25px; margin-right:20px; *margin-right:20px;}
+.recommend-good-game ul li img{ width:85px; border-radius:8px; -webkit-border-radius:8px; -moz-border-radius:8px;}
+.recommend-good-game ul li div{ width:105px; overflow:hidden;}
+.recommend-good-game ul li div h4{ font-size:16px; font-weight:normal; line-height:30px; height:30px; overflow:hidden;}
+.recommend-good-game ul li div h4 a{ color:#323232;}
+.recommend-good-game ul li div p{ font-size:14px; color:#323232; line-height:22px;}
+.recommend-good-game ul li div ul{ padding-top:7px;}
+.recommend-good-game ul li div ul span{ display:block; padding-left:30px; height:24px; line-height:24px; background:url(../images/i_12.png) no-repeat left center;}
+.recommend-good-game ul li div ul a{ display:none; width:70px; height:23px; background-color:#00a0e9; text-align:center; line-height:23px; font-size:12px; color:#fff;}
+.recommend-good-game ul li:hover{ background-color:#f6f6f6;}
+.recommend-good-game ul li:hover div ul span{ display:none;}
+.recommend-good-game ul li:hover div ul a{ display:block;}
+.recommend-good-game ul li div ul a:hover{ color:#fff !important;}
+
+/*游戏礼包*/
+.goods-list{ padding-top:8px;}
+.goods-list ul li{ border-bottom:1px #e2e2e2 dotted; padding:17px 0;}
+.goods-list ul li img{ width:50px;}
+.goods-list ul li .img{ padding-right:10px;}
+.goods-list ul li h4{ font-size:14px; font-weight:600; line-height:25px;}
+.goods-list ul li h4 a{color:#323232;}
+.goods-list ul li p{ color:#6a6a6a; line-height:25px;}
+.goods-list ul li .get a{ display:block; width:60px; height:30px; text-align:center; line-height:30px; color:#fff; background-color:#00a0e9; margin-top:10px;}
+
+/*新游上线*/
+.new-game ul li{ float:left; overflow:hidden; margin-top:25px; margin-right:20px; *margin-right:20px;}
+.new-game ul li img{ width:95px;}
+.new-game ul li  a.down{ display:block; width:93px; height:30px; border:1px #00a0e9 solid; text-align:center; line-height:30px; font-size:14px; color:#00a0e9; margin-top:15px;}
+.new-game ul li  a.down:hover{ color:#fff !important; background-color:#00a0e9;}
+
+/*排行榜*/
+.game-tair{ padding-top:10px;}
+.game-tair ul li{ padding:15px 0; border-bottom:1px #e2e2e2 dotted;}
+.game-tair ul li img{ width:50px;}
+.game-tair ul li i{ display:block; width:25px; height:25px; text-align:center; line-height:25px; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; background-color:#d4d4d4;  font-family:Arial; font-size:16px; color:#fff; margin-top:12px;}
+.game-tair ul li .img{ padding:0 10px 0 15px;}
+.game-tair ul li h4{ font-size:14px; line-height:50px; font-weight:600;}
+.game-tair ul li h4 a{ color:#323232;}
+.game-tair ul li p{ line-height:50px; color:#323232;}
+
+/*开发游戏，游戏规则*/
+.add-game .left,.add-game .middle{ width:325px; overflow:hidden;}
+.add-game .right{ width:310px;}
+.add-game .left{ margin-right:20px;}
+
+.rile-list ul{ background:url(../images/12.jpg) no-repeat 0px 25px; padding-left:19px;}
+.rile-list ul li{ padding-top:25px;}
+.rile-list ul li img{ width:70px;}
+.rile-list ul li .time{ width:75px;}
+.rile-list ul li .time p{ font-size:16px; color:#6a6a6a; font-weight:lighter; line-height:25px; padding-top:12px;}
+.rile-list ul li .time p i{ display:block; font-size:22px;}
+.rile-list ul li .con{ padding-left:15px;}
+.rile-list ul li .con h4{ font-size:16px; font-weight:normal; line-height:30px; padding-top:9px;}
+.rile-list ul li .con h4 a{ color:#323232; }
+.rile-list ul li .con p{ font-size:14px; color:#323232;}
+.rile-list ul li .goods a{ display:block; width:30px; height:30px; overflow:hidden; background-image:url(../images/i_13.png); margin-top:21px;}
+.rile-list ul li .goods a:hover{ background-image:url(../images/i_14.png);}
+
+.rile-list01 ul{ padding-left:0; background:none;}
+.rile-list01 .berserk-packs a{ display:block; width:70px; height:30px; text-align:center; line-height:30px; color:#fff; background-color:#f19149; margin-top:20px;}
+.rile-list01 .berserk-packs a:hover{ color:#fff !important;}
+
+/*热门视频*/
+.video-list{ margin-top:25px;}
+.video-list a{ display:block; position:relative; width:100%; height:100%;}
+.video-list a i{ display:none; width:100%; height:100%; background:url(../images/bg_01.png) no-repeat center center; position:absolute; left:0; top:0;}
+.video-list a:hover i{ display:block;}
+.video-list .list{ width:420px; overflow:hidden; height:300px;}
+.video-list .list li{ width:200px; float:left; overflow:hidden; margin-bottom:20px;}
+
+/*底部*/
+.footer{ min-width:1000px; background-color:#060606; padding:15px 0; text-align:center; font-size:12px; color:#9c9999; line-height:25px;}
+.footer a{ color:#9c9999;}
+.footer span{ padding:0 20px;}
+.footer i{ color:#003f71;}
+
+/*当前位置*/
+.location{ min-width:1000px; height:75px; border-bottom:1px #f1f1f1 solid;}
+.location h2{ line-height:75px; font-weight:normal; font-size:16px; color:#323232; padding-left:19px; background:url(../images/15.jpg) no-repeat left center;}
+
+/*游戏大全筛选*/
+.all-select{ padding-top:3px;}
+.all-select .list li,.all-select .clearall{ padding-top:22px;}
+.all-select span{ display:block; float:left; font-size:14px; color:#323232; line-height:24px;}
+.all-select .list li a{ display:block; float:left; padding:0 8px; height:24px; line-height:24px; font-size:14px; color:#323232; margin-right:32px; *margin-right:32px;}
+.all-select .list li a:hover,.all-select .list li a.on{ color:#fff !important; background-color:#23ac38;}
+.all-select .clearall i{ display:block; float:left; height:24px; line-height:24px; font-size:14px; color:#23ac38; font-family:Arial; background-color:#e8e8e8; padding:0 8px; margin-right:10px; *margin-right:10px;}
+
+/*游戏大全列表*/
+.game-list .list{ padding-top:30px;}
+.game-list .list li{ width:440px; padding:22px; border:1px #e8e8e8 solid; margin-bottom:20px; height:103px; overflow:hidden;}
+.game-list .list li .img{ width:103px; border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px;}
+.game-list .list li .con{ width:315px;}
+.game-list .list li .con h4{ font-size:16px; color:#323232; font-weight:600; line-height:25px; margin-bottom:2px;}
+.game-list .list li .con h4 a{ color:#323232;}
+.game-list .list li .con p{ font-size:14px; color:#919191; line-height:23px;height:23px;overflow:hidden;}
+.game-list .list li .con p i{ color:#323232; padding-right:30px;}
+.game-list .list li .con ul{ padding-top:5px;}
+.game-list .list li .con ul a{ display:block; float:left; padding:0 10px; height:23px; border:1px #e9e9e9 solid; background-color:#f1f1f1; text-align:center; overflow:hidden; line-height:23px; color:#6a6a6a; margin-right:10px;}
+.game-list .list li .con ul a i{ padding-left:17px; background-repeat:no-repeat; background-position:left center;}
+.game-list .list li .con .upload i{ background-image:url(../images/i_15.png);}
+.game-list .list li .con .get-goods i{ background-image:url(../images/i_16.png);}
+.game-list .list li .con .game-down i{ background-image:url(../images/i_17.png);}
+.game-list .list li .con .game-time i{ background-image:url(../images/i_21.png);}
+.game-list .list li:hover{ background-color:#f9f9f9;}
+.game-list .list li .con ul a:hover{ color:#fff !important;}
+.game-list .list li .con .upload:hover{ border-color:#23ac38; background-color:#23ac38;}
+.game-list .list li .con .upload:hover i{ background-image:url(../images/i_18.png);}
+.game-list .list li .con .get-goods:hover{ border-color:#f19149; background-color:#f19149;}
+.game-list .list li .con .get-goods:hover i{ background-image:url(../images/i_19.png);}
+.game-list .list li .con .game-down:hover{ border-color:#00a0e9; background-color:#00a0e9;}
+.game-list .list li .con .game-down:hover i{ background-image:url(../images/i_20.png);}
+.game-list .list li .con .game-time:hover{border-color:#00a0e9; background-color:#00a0e9;}
+.game-list .list li .con .game-time:hover i{ background-image:url(../images/i_22.png);}
+
+/*开服列表*/
+.wlk-list .title{ background-color:#f9f9f9; padding-top:14px;}
+.wlk-list .title p{ float:left; text-align:center; font-size:14px; color:#323232; line-height:32px;}
+.wd175{ width:175px;}
+.wd135{ width:135px;}
+.wd195{ width:195px;}
+.wd150{ width:150px;}
+.ml175{ margin-left:175px;}
+.wlk-list .list{ padding-bottom:20px;}
+.wlk-list .list li{ min-width:1000px;}
+.wlk-list .list li:hover{ background-color:#f9f9f9;}
+.wlk-list .list li .wrap{ height:63px; line-height:63px; font-size:14px; color:#323232; text-align:center; border-bottom:1px #e2e2e2 dotted;}
+.wlk-list .list li .wrap p{ float:left;}
+.wlk-list .list li .wrap p.wd175{ font-weight:lighter;}
+.wlk-list .list li .wrap a{ display:block; width:68px; height:21px; line-height:21px; text-align:center; overflow:hidden; margin:20px auto 0; font-size:12px;}
+.wlk-list .list li .wrap .join{ border:1px #00a0e9 solid; color:#00a0e9;}
+.wlk-list .list li .wrap .get-goods{ border:1px #f19149 solid; color:#f19149;}
+.wlk-list .list li .wrap a:hover{ color:#fff !important;}
+.wlk-list .list li .wrap .join:hover{ background-color:#00a0e9;}
+.wlk-list .list li .wrap .get-goods:hover{ background-color:#f19149;}
+
+/*分页*/
+.page{ text-align:center; width:100%; padding-top:20px; line-height:30px;}
+.page a{ display:inline-block; padding:0 8px; border:1px #dedede solid; color:#323232; margin:0 3px;}
+.page a:hover,.page span{ display:inline-block; border:1px #23ac38 solid; background-color:#23ac38; color:#fff  !important; padding:0 8px; margin:0 3px;}
+
+/*游戏推荐列表*/
+.game-recommend .list{ padding-bottom:20px;}
+.game-recommend .list li{ min-width:1000px;}
+.game-recommend .list li:hover{background-color:#f9f9f9;}
+.game-recommend .list li .wrap{ height:103px; padding:25px 0; border-bottom:1px #e2e2e2 dotted; overflow:hidden;}
+.game-recommend .list img{ border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px;}
+.game-recommend .list .con{ padding-left:25px; width:728px; overflow:hidden;}
+.game-recommend .list .con h4{ font-size:16px; font-weight:600; line-height:34px;}
+.game-recommend .list .con h4 a{ color:#323232;}
+.game-recommend .list .con p{ font-size:14px; color:#919191; line-height:22px;}
+.game-recommend .list .con p i{ color:#323232; padding-right:40px;}
+.game-recommend .list .save,.game-recommend .list .down{ padding-top:65px; height:88px;}
+.game-recommend .list .save span,.game-recommend .list .down span{ display:block; height:23px; line-height:23px; padding-left:30px; background-position:left center; background-repeat:no-repeat;}
+.game-recommend .list .save span{ background-image:url(../images/i_23.png);}
+.game-recommend .list .down span{ background-image:url(../images/i_12.png);}
+.game-recommend .list .save a,.game-recommend .list .down a{display:none; width:70px; height:23px; line-height:23px; text-align:center; color:#fff; font-size:12px;}
+.game-recommend .list .down a{ background-color:#00a0e9; }
+.game-recommend .list .save a{ background-color:#f19149; }
+.game-recommend .list .save a:hover,.game-recommend .list .down a:hover{ color:#fff !important;}
+.game-recommend .list .down:hover span,.game-recommend .list .save:hover span{ display:none;}
+.game-recommend .list .down:hover a,.game-recommend .list .save:hover a{ display:block;}
+
+/*登录头部*/
+.header-search b{ display:block; font-size:22px; color:#6a6a6a; font-weight:normal; line-height:30px; height:30px; border-left:2px #6a6a6a solid; padding-left:15px; margin-top:34px; margin-left:28px;}
+.header-search .resigers p{ line-height:97px; font-size:14px; color:#6a6a6a;}
+.header-search .resigers p a{ color:#00a0e9;}
+
+/*登录*/
+.form-main{ min-width:1000px; overflow:hidden;}
+.form-main .title,.form-main .title-update{ background-color:#f2f4f5;}
+.form-main .title h2{ background:url(../images/1.png) no-repeat center center; font-size:24px; color:#666; font-weight:normal; line-height:139px; text-align:center;}
+.form-main .wrap ul{ padding:80px 180px 180px;}
+.form-main .wrap li{ padding-right:110px; position:relative;}
+.form-main .wrap label{ display:block; float:left; width:179px; padding-right:10px; text-align:right; font-size:14px; color:#666; line-height:40px;}
+.form-main .wrap input[type="text"],.form-main .wrap input[type="password"]{ display:block; border:1px #e8e8e8 solid; height:38px; line-height:38px; font-size:14px; color:#666; padding-left:10px;}
+.wd328{ width:328px;}
+.form-main .wrap .remember p{ height:46px; line-height:46px; padding-left:21px; color:#666; position:relative;}
+.form-main .wrap .remember input{ position:absolute; width:14px; height:14px; left:0; top:50%; margin-top:-7px;}
+.form-main .wrap .remember span{ display:block; line-height:46px;}
+.form-main .wrap .remember a{ color:#00a0e9;}
+.form-main .wrap input[type="submit"]{ display:block; border:0; width:340px; height:40px; background-color:#00a0e9; color:#fff; font-size:14px; cursor:pointer;}
+
+/*注册*/
+.form-main .wrap li i{ display:block; white-space:nowrap; line-height:40px; color:#666; position:absolute; top:0; left:550px;}
+.form-main .wrap img{ margin-left:10px; cursor:pointer;}
+.form-main .wrap .code{ line-height:40px;}
+.form-main .wrap .code a{ color:#666;}
+.form-main .wrap .code a em{ color:#00a0e9;}
+.form-main .wrap .tel{ line-height:40px; font-size:14px; color:#666;}
+.wd178{ width:178px;}
+.form-main .wrap .get-code{ display:block; height:38px; width:133px; border:1px #e8e8e8 solid; background-color:#f6f6f6; text-align:center; line-height:38px; color:#323232;}
+.form-main .wrap .get-code em{ color:#00a0e9; padding-right:3px;}
+.form-main .success{ width:1000px; margin:0 auto; padding:90px 0 300px; text-align:center;}
+.form-main .success h3{ font-size:22px; color:#669900; font-weight:normal; line-height:60px;}
+.form-main .success h3 i{ display:inline-block; padding-left:48px; background:url(../images/17.jpg) no-repeat left center;}
+.form-main .success p{ font-size:16px; color:#666; line-height:30px;}
+.form-main .success p a{ color:#00a0e9;}
+.form-main .success span{ display:block; width:100%;}
+.form-main .success span a{ display:block; margin:0 auto; width:89px; height:30px; margin:0 auto; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; background-color:#00a0e9; color:#fff; line-height:30px; font-size:14px;}
+
+/*修改密码*/
+.form-main .title-update ul{ width:1000px; margin:0 auto; height:139px; background:url(../images/2.png) no-repeat center 56px;}
+.form-main .title-update ul li{ float:left; width:130px; padding-top:37px; padding-left:35px; padding-right:92px;}
+.form-main .title-update ul li i{ padding-left:12px; display:block; margin:0 auto; font-size:22px; color:#fff; font-family:Impact; font-style:italic; width:26px; height:38px; background-image:url(../images/3.png); line-height:38px;}
+.form-main .title-update ul li p{ text-align:center; font-size:14px; color:#666; line-height:40px;}
+.step47{ padding-left:47px !important;}
+.step53{ padding-left:53px !important;}
+.form-main .title-update ul li.on i{ background-image:url(../images/4.png);}
+.form-main .title-update ul li.on p{ color:#ff5a00;}
+
+/*资讯列表*/
+.main-list .left{ width:670px;}
+.main-list .right{ width:310px; overflow:hidden;}
+
+/*资讯广告位*/
+.ad ul{ margin-bottom:20px;}
+
+/*资讯推荐游戏*/
+.recommned-game,.game-comapre{ border:1px #dedede solid;}
+.recommned-game h2,.game-comapre h2{ font-weight:normal; height:43px; line-height:43px; border-bottom:1px #f1f1f1 solid; font-size:16px; color:#323232; padding:0 20px; background-color:#f9f9f9;}
+.recommned-game ul{ padding:20px 0 0 19px; overflow:hidden;}
+.recommned-game ul li{ float:left; width:80px; padding-right:15px; text-align:center; margin-bottom:10px;}
+.recommned-game ul li img{ width:80px;}
+.recommned-game ul li p{ font-size:14px; color:#323232; font-weight:600; line-height:33px;}
+
+/*游戏排行*/
+.game-comapre > ul{ padding:5px 20px 0;}
+.game-comapre ul li{ padding:15px 0; border-bottom:1px #f1f1f1 dotted;}
+.game-comapre ul li .num{ width:40px;}
+.game-comapre ul li .num i{ display:block; width:25px; height:25px; line-height:25px; text-align:center; font-size:16px; font-family:Arial; color:#fff; background-color:#d4d4d4; overflow:hidden; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%;}
+.game-comapre ul li .tair01 .con{ width:112px; overflow:hidden;}
+.game-comapre ul li .tair01 .con h4{ font-size:14px; color:#323232; font-weight:normal; line-height:25px;}
+.game-comapre ul li .tair01 p{ line-height:25px; color:#6a6a6a;}
+.game-comapre ul li .tair01 p em{ color:#323232;}
+
+.game-comapre ul li .tair02{ display:none;}
+.game-comapre ul li .tair02 .num i{ margin-top:12.5px;}
+.game-comapre ul li .tair02 img{ width:50px;}
+.game-comapre ul li .tair02 .con{ padding-left:14px;}
+.game-comapre ul li .tair02 .con h4{ font-size:14px; font-weight:normal; line-height:28px;}
+.game-comapre ul li .tair02 .con h4 a{ color:#323232;}
+.game-comapre ul li .tair02 .con p{ color:#6a6a6a; line-height:19px;}
+.game-comapre ul li .tair02 .down span{ display:block; height:50px; line-height:50px; padding-left:30px; background:url(../images/i_12.png) no-repeat left center; color:#323232;}
+.game-comapre ul li .tair02 .down a{ display:none; padding:0 10px; height:25px; line-height:25px; background-color:#00a0e9; color:#fff; margin-top:12.5px;}
+.game-comapre ul li .tair02 .down a:hover{ color:#fff !important;}
+.game-comapre ul li .tair02 .down:hover span{ display:none;}
+.game-comapre ul li .tair02 .down:hover a{ display:block;}
+
+.game-comapre ul li.on .tair01{ display:none;}
+.game-comapre ul li.on .tair02{ display:block;}
+
+/*资讯列表*/
+.news-list{ border:1px #f2f2f2 solid; padding:0 29px 40px;}
+.news-list .list li{ padding:25px 0; border-bottom:1px #dedede dotted;}
+.news-list .list .con{ width:460px; overflow:hidden;}
+.news-list .list .con h4{ font-size:18px; font-weight:600; line-height:25px;}
+.news-list .list .con h4 a{ position:relative; color:#323232;}
+.news-list .list .con h4 a i{ display:block; position:absolute; width:40px; height:20px; padding-left:5px; background-image:url(../images/i_24.png); text-align:center; color:#fff; line-height:20px; right:-55px; top:2px; font-size:12px; font-weight:normal;}
+.news-list .list .con p{ font-size:14px; color:#6a6a6a; line-height:22px; padding-top:5px;height:44px;overflow:hidden;}
+.news-list .list .con span{ display:block; font-size:14px; color:#6a6a6a; line-height:20px; padding-top:7px;}
+.news-list .list .con span i{ color:#f19149;}
+
+/*游戏礼包*/
+.goods-info{ border:1px #f2f2f2 solid; padding:0 29px 40px;}
+.goods-info .list li{ padding:25px 0; border-bottom:1px #dedede dotted;}
+.goods-info .list li img{ border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px;}
+.goods-info .list li .con{ width:411px; padding-left:25px;}
+.goods-info .list li .con h4{ font-size:16px; color:#323232; font-weight:normal; line-height:35px; padding-top:5px;}
+.goods-info .list li .con h4 a{ color:#323232;}
+.goods-info .list li .con p{ font-size:14px; color:#323232; line-height:26px;}
+.goods-info .list li .con p i{ padding-right:20px;}
+.goods-info .list li .get-goods a{ display:block; width:68px; height:21px; line-height:21px; text-align:center; border:1px #f19149 solid; color:#f19149; overflow:hidden; margin-top:40px;}
+.goods-info .list li .get-goods a:hover{ color:#fff !important; background-color:#f19149;}
+
+/*游戏排行榜*/
+.game-compare-list .info{ width:313px; overflow:hidden; border-bottom:1px #dedede dotted; margin-top:30px;}
+.game-compare-list .info.fl{ margin-right:30px;}
+.game-comapre01{ border:none;}
+.game-comapre01 ul{ padding:0;}
+.game-compare-list .info .title{ height:40px; overflow:hidden; background-color:#f1f1f1;}
+.game-compare-list .info .title h2{ line-height:40px; width:126px; height:40px; font-weight:normal; color:#fff; font-size:14px;}
+.game-compare-list .info .title h2 i{ display:block; padding-left:37px; background-repeat:no-repeat; background-position:15px center;}
+.ico10{ background-image:url(../images/i_25.png);}
+.ico11{ background-image:url(../images/i_26.png);}
+.ico12{ background-image:url(../images/i_27.png);}
+.ico13{ background-image:url(../images/i_28.png);}
+.game-compare-list .info .title p{ height:26px; padding-top:7px; color:#323232;}
+.game-compare-list .info .title p em{ float:left; height:26px; line-height:26px; padding:0 12px; cursor:pointer;}
+.game-compare-list .info .title p em.on{ color:#fff; background-color:#23ac38;}
+
+/*会员中心*/
+.center ul{ padding:39px; border:1px #f1f1f1 solid; height:80px; overflow:hidden;}
+.center ul img{ width:80px; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%;}
+.center ul li.con{ padding-left:20px; padding-top:8px;}
+.center ul li.con p{ font-size:14px; color:#323232; line-height:33px;}
+.center ul li.fr{ height:80px; line-height:80px; font-size:14px; color:#323232;}
+.center ul li.fr p{ margin-left:50px; padding-left:28px; background-repeat:no-repeat; background-position:left center;}
+.center ul li.fr p a{ margin-left:12px; color:#00a0e9;}
+.ico14{ background-image:url(../images/22.jpg);}
+.ico15{ background-image:url(../images/23.jpg);}
+.ico16{ background-image:url(../images/20.jpg);}
+.ico17{ background-image:url(../images/21.jpg);}
+
+/*我的礼包*/
+.my-goods .title{ padding-top:16px;}
+.my-goods .title h2{ padding-left:19px; line-height:60px; background:url(../images/15.jpg) no-repeat left center; font-weight:normal; font-size:16px; color:#323232;}
+.my-goods .list-title{ background-color:#f9f9f9; overflow:hidden;}
+.my-goods .list-title p{height:46px; line-height:46px; font-size:14px; color:#323232; text-align:center;}
+.wd190{ width:190px;}
+.wd145{ width:145px;}
+.wd350{ width:350px;}
+.my-goods .list .wrap{ height:63px; border-bottom:1px #e2e2e2 dotted; line-height:63px; font-size:14px; color:#323232; text-align:center;}
+.my-goods .list li:hover{ background-color:#f9f9f9;}
+
+/*弹窗*/
+.box{ display:none; width:280px; height:188px; border:1px #f1f1f1 solid; overflow:hidden; position:fixed; left:50%; margin-left:-140px; top:50%; margin-top:-94px; background-color:#fff; z-index:9;}
+.box h2{ font-size:14px; color:#323232; font-weight:600; line-height:46px; height:46px; border-bottom:1px #f1f1f1 solid; background-color:#f9f9f9; padding:0 25px;}
+.box ul{ padding:10px 25px 0;}
+.box ul input{ margin-top:20px; display:block;}
+.box ul input[type="text"]{ width:220px; height:36px; padding-left:8px; line-height:36px; font-size:14px; color:#323232; border:1px #f1f1f1 solid;}
+.box ul input[type="button"]{ border:0; width:89px; height:34px; background-color:#23ac38; font-size:14px; color:#fff; cursor:pointer;}
+
+/*游戏明细*/
+.detial-game{ border:1px #e2e2e2 solid; padding:0 29px;}
+.detial-game .top{ padding:29px 0; border-bottom:1px #dedede dotted;}
+.detial-game .top .img img{ border-radius:12px; -webkit-border-radius:12px; -moz-border-radius:12px;}
+.detial-game .top .con{ width:450px;}
+.detial-game .top .con h1{ font-size:20px; color:#323232; font-weight:600; line-height:45px;}
+.detial-game .top .con p{ font-size:14px; color:#323232; line-height:20px;}
+.detial-game .top .con p i{ padding-left:20px;}
+.detial-game .top .con div{ padding-top:13px; position:relative;}
+.detial-game .top .con div a{ float:left; margin-right:25px;}
+.detial-game .top .con div ul,.detial-game .top01 .codes ul{ display:none; position:absolute; height:160px; padding-top:10px; background-image:url(../images/5.png); width:296px; left:0; top:65px;}
+.detial-game .top .con .code,.detial-game .top01 .codes .code{ padding:22px;}
+.detial-game .top .con .infos,.detial-game .top01 .codes .infos{ width:130px; padding-top:22px;}
+.detial-game .top .con .infos b,.detial-game .top01 .codes .infos b{ display:block; font-size:20px; color:#323232; font-weight:600; line-height:35px;}
+.detial-game .top .con .infos p,.detial-game .top01 .codes .infos p{ font-size:14px; line-height:25px;}
+.detial-game .top .con .infos a,.detial-game .top01 .codes .infos a{ display:block; width:114px; height:34px; border:1px #23ac38 dotted; text-align:center; line-height:34px; font-size:16px; color:#23ac38; margin-top:10px;}
+.detial-game .top .con .infos a:hover,.detial-game .top01 .codes .infos a:hover{ background-color:#23ac38; border-style:solid; color:#fff !important;}
+
+.detial-game .content{ font-size:16px; color:#6a6a6a; line-height:33px; padding:20px 0;}
+.detial-game .content b{ display:block; font-size:16px; color:#323232; line-height:33px;}
+.detial-game .content p{ text-indent:2em;}
+
+.detial-game .detial-link{ border-top:1px #dedede dotted; padding:20px 0;}
+.detial-game .detial-link p{ font-size:14px; color:#323232; line-height:33px;}
+.detial-game .detial-link p a{ color:#323232;}
+
+/*礼包明细*/
+.detial-game .content01{ border-bottom:1px #dedede dotted;}
+.detial-game .content01 p{ text-indent:0;}
+.detial-game .top .con01{ width:450px;}
+.detial-game .top .con01 p{ font-size:12px; color:#323232; line-height:24px;}
+.detial-game .top .con01 p em{ color:#f19149;}
+.detial-game .top .con01 p i{ font-size:14px;}
+.detial-game .top .con01 div{ padding:10px 0;}
+.detial-game .top .con01 div a{ display:block; width:70px; height:23px; line-height:23px; text-align:center; font-size:12px; color:#fff; background-color:#f19149; overflow:hidden;}
+.detial-game .top .con01 div a:hover{ color:#fff !important;}
+.detial-game .top .con01 div ul{ padding-top:8px; width:340px;}
+.detial-game .top .con01 div ul span{ display:block; width:100%; height:7px; background-color:#f9f9f9; overflow:hidden;}
+.detial-game .top .con01 div ul span i{ display:block; height:7px; background-color:#00a0e9;}
+
+/*游戏资讯明细*/
+.detial-game .content img{ margin:15px auto;}
+.detial-game .news-title{ border-bottom:1px #dedede dotted; padding:15px 0; text-align:center;}
+.detial-game .news-title h1{ font-size:24px; color:#323232; font-weight:600; line-height:50px;}
+.detial-game .news-title p{ font-size:14px;}
+.detial-game .news-title p i{ padding-left:20px;}
+
+.detial-game .top01{ border-top:1px #dedede dotted; border-bottom:none;}
+.detial-game .top01 .img img{ width:95px;}
+.detial-game .top01 .con02{ width:330px; padding-left:20px;}
+.detial-game .top01 .con02 span{ display:block; float:left; width:40%; color:#6a6a6a; line-height:23px;}
+.detial-game .top01 .con02 span i{ padding-left:0; color:#323232;}
+
+.detial-game .top01 .codes{ padding-top:28px; position:relative;}
+
+.recommend-good-game01 ul{ padding-bottom:20px;}
+.recommend-good-game01 ul li{ margin-right:5px; width:200px;}
+
+/*提示弹窗*/
+.mmtips { width: 998px; margin: 0 auto; height: 290px; border: 1px solid #ecedef; margin-top: 20px; }
+.mmtips .main{ padding-left:100px; background:url(../images/icon_tips.png) no-repeat left 0;min-height:78px; margin-top:100px; margin-left:355px;}
+.mmtips .main b { color: #5E5E5E; font-family: "Microsoft YaHei"; font-size: 18px; font-weight: 400; display: block; line-height: 32px; padding-top:2px; }
+.mmtips .main p { color: #303030; font-family: "Microsoft YaHei"; font-size: 20px; font-weight: 400; width:200px; }
+.mmtips .main p a{ color:#303030; font-size:14px;}

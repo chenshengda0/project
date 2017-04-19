@@ -1,0 +1,22 @@
+<include file="float/themes/web/Mobile/header.html" />
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/kefu.css"/>
+<div class="kefu">
+    <div class="kefuImg">
+        <img src="__PUBLIC__/mobile/images/QQ1.jpg"/>
+        <p>客服QQ:<a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$data.qq}&amp;site=qq&amp;menu=yes" title="{$data.qq}">{$data.qq}</a></p>
+        <img src="__PUBLIC__/mobile/images/phone1.jpg"/>
+        <p>客服电话:<a href="javascript:void();">{$data.tel}</a></p>
+    </div>
+</div>
+<footer class="footer_info">
+    <p class="kefu_time">客服时间：{$data.service_time}</p>
+    <p>Copyright © 2016 {:DOCDOMAIN}, 版权所有</p>
+    <p>版权所有：{:C('COMPANY_NAME')}</p>
+</footer>
+
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/recharge.js"></script>
+</html>

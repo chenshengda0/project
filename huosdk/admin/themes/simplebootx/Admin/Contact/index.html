@@ -1,0 +1,57 @@
+<admintpl file="header"/>
+</head>
+<body class="J_scroll_fixed">
+<div class="wrap jj">
+  <ul class="nav nav-tabs">
+  </ul>
+  <div class="common-form">
+    <form class="form-horizontal js-ajax-form" method="post" action="{:U('Contact/editContact')}">
+        <fieldset>
+          <div class="control-group">
+            <label class="control-label" for="input01">客服QQ:</label>
+            <div class="controls">
+              <input type="text" name="qq" value="{$contact.qq}" placeholder="QQ">
+            </div>
+          </div>
+
+		  <div class="control-group">
+            <label class="control-label" for="input01">客服电话:</label>
+            <div class="controls">
+              <input type="text" name="tel" value="{$contact.tel}" placeholder="电话">
+            </div>
+          </div>
+
+		  <div class="control-group">
+            <label class="control-label" for="input01">客服邮箱:</label>
+            <div class="controls">
+              <input type="text" name="email" value="{$contact.email}" placeholder="邮箱">
+            </div>
+          </div>
+		  
+		  <div class="control-group">
+            <label class="control-label" for="input01">客服QQ群:</label>
+            <div class="controls">
+              <input type="text" name="qqgroup" value="{$contact.qqgroup}" placeholder="QQ群">
+            </div>
+          </div>
+          
+		  <div class="control-group">
+            <label class="control-label" for="input01">客服时间:</label>
+            <div class="controls">
+              <input type="text" name="sertime" value="{$contact.service_time}" placeholder="9:00～18:00(周一到周五)">
+              *9:00～18:00(周一到周五)
+            </div>
+          </div>
+			
+          <div class="form-actions">
+			<td><input name="action" type="hidden" value="contact"></td>
+            <button type="submit" class="btn btn-primary btn_submit  js-ajax-submit">更新</button>
+          </div>
+        </fieldset>
+      </form>
+  </div>
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+<admintpl file="footer"/>
+</body>
+</html>

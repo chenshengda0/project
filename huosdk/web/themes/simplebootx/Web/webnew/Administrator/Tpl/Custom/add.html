@@ -1,0 +1,53 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST" onsubmit="return checkFrom(this)">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">显示名:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="title" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">标签名:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">类型:</div>
+	            <div class="right">
+	                <select class="cm-select require" name="type">
+	                	<option value="0">选择类型</option>
+	                	<option value="1">单行文本框</option>
+	                	<option value="2">多行文本框</option>
+	                	<option value="3">图片类型</option>
+	                	<option value="4">html代码</option>
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">标签提示:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="tip" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+function checkFrom(f){
+	var res = /^(?!_)(?!.*?_$)[a-z0-9_]+$/;
+	if(!res.test(f.name.value)){
+		alert("标签只能为小写字母,数字和下划线，不能以下划线开头和结尾");
+		return false;
+	}
+}
+</script>
+{tmpl("Public:footer")}

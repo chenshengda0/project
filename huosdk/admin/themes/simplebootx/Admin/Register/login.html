@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-easyui-1.4.3/themes/icon.css">
+	<link rel="stylesheet" href="__PUBLIC__/css/base.css">
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/outlook2.js"></script>
+	
+	<script type="text/javascript" src="__PUBLIC__/js/dp/WdatePicker.js"></script>
+
+<script>
+	$(function(){
+		$('#dg').datagrid({
+			columns:[[
+				{field:'login_time',title:'登录时间'},
+				{field:'username',title:'登录账号'},
+				{field:'imei',title:'imeil码'},
+				{field:'game',title:'登陆游戏'},
+				{field:'agentgame',title:'渠道号'},
+				{field:'owner',title:'渠道专员'}
+			]]
+		});
+	});
+
+	//查询
+	function doSearch(){
+		$('#dg').datagrid('load',{
+			start: $('#start').val(),
+			end: $('#end').val(),
+			username: $('#username').val(),
+			imeil: $('#imeil').val(),
+			agent: $('#agent').val(),
+			gameid: $('#gameid').combobox('getValue'),
+			owner: $('#owner').val()
+		});
+	}
+	
+</script>
+</head>
+<body>
+<div style="margin:5px 0;"></div>
+	<div  title="DataGrid">
+		<table id="dg" class="easyui-datagrid" style="height:480px" url="{:U('register/loginList')}" toolbar="#toolbar" title="Load Data" pagination="true" singleSelect="true">	
+		</table>
+			
+		<div id="toolbar" style="padding:5px;height:auto">
+				<!--<div style="margin-bottom:5px">
+					<a href="#" class="easyui-linkbutton" iconCls="icon-down" plain="true" onclick="newUser()">下载</a>
+				</div>-->
+			<div>
+				<table>
+					<tr>
+						<td>开始时间:</td>
+						<td><input id="start" class="easyui-my97" name="start"  onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"/></td>
+						<td>结束时间:</td>
+						<td><input id="end" class="easyui-my97"  name="end"  onClick="new WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'});"></td>
+						<td>账号:</td>
+						<td> <input id="username" class="easyui-textbox" type="text" name="username"  style="width:110px"></td>
+						<td>imeil码:</td>
+						<td><input id="imeil" class="easyui-textbox" type="text" name="imeil" style="width:110px"></td>
+					</tr>
+					
+					<tr>
+						<td>渠道号:</td>
+						<td><input id="agent" class="easyui-textbox" type="text" name="agent"  style="width:110px"></td>
+						<td>渠道专员 :</td>
+						<td><input id="owner" class="easyui-textbox" type="text" name="agent" style="width:110px"></td>
+						<td> 游戏: </td>
+						<td>
+							<input id="gameid" class="easyui-combobox" name="gameid" 
+							data-options="url:'{:U('Game/gameCombobox')}',
+							method:'post',
+							valueField:'appid',
+							textField:'name',
+							panelHeight:'auto'" style="width:110px">
+						</td>
+					</tr>
+				</table>
+
+					 
+					<a href="#" class="easyui-linkbutton" iconCls="icon-search" onClick="doSearch()">查询</a>
+				</div>
+			</div>
+			
+</div>
+</body>
+</html>

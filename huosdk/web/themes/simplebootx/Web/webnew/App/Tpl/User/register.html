@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="__TMPL__Common/css/style.css" rel="stylesheet" />
+<title>{$seo.title}</title>
+</head>
+
+<body>
+<!--头部start-->
+<div class="wrap header-search">
+  <ul class="clearfix">
+    <li class="fl logo"><a href="{url()}" target="_self"><img src="{$site.logo}" alt="" /></a></li>
+    <li class="fl"><b>注册</b></li>
+    <li class="fr resigers"><p>已有手游村账号！<a href="{url('User#login')}" target="_self">前往登录</a></p></li>
+  </ul>
+</div>
+<!--头部end-->
+
+<!--登录start-->
+<div class="form-main">
+  <div class="title">
+    <h2>注册</h2>
+  </div>
+  
+  <div class="wrap">
+  	<form action="{url('User#do_register')}" method="post">
+    <ul>
+      <li class="clearfix mt15">
+        <label>用户名：</label>
+        <input type="text" name="username" value="" class="fl wd328" />
+      </li>
+      <li class="clearfix mt15">
+        <label>邮箱地址：</label>
+        <input type="text" name="email" value="" class="fl wd328" />
+        <i>密码找回凭证</i>
+      </li>
+      <li class="clearfix mt15">
+        <label>密码：</label>
+        <input type="password" name="password" value="" class="fl wd328" />
+        <i>8-20位字符</i>
+      </li>
+      <li class="clearfix mt15">
+        <label>重复密码：</label>
+        <input type="password" name="respassword" value="" class="fl wd328" />
+      </li>
+      <li class="clearfix mt15">
+        <label>验证码：</label>
+        <input type="text" value="" name="verify" class="fl wd135" />
+        <img id="verify_img" src="{url('Verify')}?width=101&height=40&rand={rand(10000,99999)}" width="101" height="40" alt="" class="fl" />
+        <div class="fr code"><a href="javascript:void(0)">看不清<em>换一张</em></a></div>
+      </li>
+      <li class="clearfix remember">
+        <label>&nbsp;</label>
+        <p class="fl"><input type="checkbox" value="1" checked="checked" name="" />我已阅读并同意<a href="##" target="_blank">《手游村服务协议》</a></p>
+      </li>
+      <li class="clearfix">
+        <input type="submit"  value="注册" class="fr" />
+      </li>
+    </ul>
+    </form>
+  </div>
+</div>
+<!--登录end-->
+{tmpl("Public:footer")}
+<script type="text/javascript">
+$(function(){
+	var is_username  = is_password = is_email = is_respassword = is_verify = false;
+	$(".code a em").on('click',function(){
+		$("#verify_img").attr('src',"{url('Verify')}?width=101&height=40&rand="+Math.random());
+	});
+	$("input[name='username']").blur(function(){
+		reg_check('username');
+	});
+	$("input[name='email']").blur(function(){
+		reg_check('email');
+	});
+	$("input[name='password']").blur(function(){
+		reg_check('password');
+	});
+	$("input[name='respassword']").blur(function(){
+		reg_check('respassword');
+	});
+	$("input[name='verify']").blur(function(){
+		reg_check('verify');
+	});
+	$("form").on('submit',function(){
+		if(!is_username){
+			reg_check('username');
+			return false;
+		}
+		if(!is_email){
+			reg_check('email');
+			return false;
+		}
+		if(!is_password){
+			reg_check('password');
+			return false;
+		}
+		if(!is_username){
+			reg_check('username');
+			return false;
+		}
+		if(!is_respassword){
+			reg_check('respassword');
+			return false;
+		}
+		if(!is_verify){
+			reg_check('verify');
+			return false;
+		}
+	});
+	
+	function reg_check(name){
+		var obj = "input[name='"+name+"']";
+		switch(name){
+			case 'username':
+				var username = $(obj).val();
+				if(username == ""){
+					error(obj,"请输入用户名！");
+					is_username = false;
+					return false;
+				}
+				if ($.trim($(obj).val()).length < 4
+						|| $.trim($(obj)
+								.val()).length > 16) {
+					error(obj,"用户名需在4-16位之间");
+					is_username = false;
+					return false;
+				}
+				break;			
+			case 'username':
+				var email = $(obj).val();
+				if(eamil == ""){
+					error(obj,"请输入邮箱地址！");
+					is_eamil = false;
+					return false;
+				}
+				var reg = /\w+[@]{1}\w+[.]\w+/;
+				if(!reg.test(email)){
+					error(obj,"邮箱地址不正确！");
+					is_eamil = false;
+					return false;
+				}
+				break;			
+			case 'password':
+				var password = $(obj).val();
+				if(password == ""){
+					error(obj,"请输入登录密码！");
+					is_password = false;
+					return false;
+				}
+				console.log(password.length);
+				if(password.length < 6){
+					error(obj,"密码不能小于6位！");
+					is_password = false;
+					return false;
+				}
+				$(obj).parent().find('i').remove();
+				is_password = true;
+				break;
+			case 'respassword':
+				if($("input[name='password']").val() != $("input[name='respassword']").val()){
+					error("input[name='respassword']","密码不一致");
+					is_respassword = false;
+					return false;
+				}
+				$(obj).parent().find('i').remove();
+				is_respassword = true;
+				break;
+			case 'verify':
+				var verify = $(obj).val();
+				if(verify == ""){
+					error(obj,"请输入右侧验证码！");
+					is_verify_check = 0;
+					return false;
+				}
+				break;
+		}
+		if(name == "username" || name == "verify" || name == "email" ){
+			$.ajax({
+				url:"{url('Ajax#check_field')}?random="+Math.random().toString(),
+				type:"post",
+				data:{ field_name:name,field_data:$(obj).val() },
+				dataType:"Json",
+				success:function(data){
+					if(data.result == 1){
+						if(name == "username"){
+							is_username = true;
+						}else if(name == "verify"){
+							is_verify = true;
+						}else if(name == "email"){
+							is_email = true;
+						}
+						$(obj).parent().find('i').remove();
+						return true;
+					}else{
+						error(obj,data.msg);
+						if(name == "username"){
+							is_username = false;
+						}else if(name == "verify"){
+							is_verify = false;
+						}else if(name == "email"){
+							is_email = false;
+						}
+						return false;
+					}
+				}
+			});
+		}
+	}
+	
+	function error(obj,msg){
+		$(obj).parent().find('i').remove();
+		$(obj).after("<i style='color:red;'>"+msg+"</i>");
+	}
+	
+})
+</script>

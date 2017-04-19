@@ -1,0 +1,59 @@
+﻿<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Game/serverList')}">开服列表</a></li>
+			<li class="active"><a href="{:U('Game/addServer')}" target="_self">添加开服信息</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajaxForm" action="{:U('Game/addServer_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select name="appid">
+								<foreach name="games" item="vo">
+									<option value="{$vo.appid}">{$vo.name}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">新服名称:</label>
+						<div class="controls">
+							<input type="text" class="input" name="sername" value="">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">状态:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select class="select_2" name="serstatus">
+								<option value='1'>预告</option>
+								<option value='2'>开服</option>
+							</select> &nbsp;&nbsp;
+					</div>
+
+					<div class="control-group">
+						<label class="control-label">开服时间:</label>
+						<div class="controls">
+							<input type="text" name="sertime" class="js-datetime" value="" style="width: 100px;" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">图标:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="file" name="image[]" size="45"><font color="red">*图标显示大小为40*40</font>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax_submit_btn">添加</button>
+					<a class="btn" href="{:U('Game/serverList')}">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

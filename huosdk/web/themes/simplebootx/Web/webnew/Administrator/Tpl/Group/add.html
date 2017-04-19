@@ -1,0 +1,70 @@
+{tmpl("Public:header")}
+
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("CODE_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name" >
+	                <i>{lang("CODE_NAME_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("VIEW_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="view_name" >
+	                <i>{lang("VIEW_NAME_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ROLE_ACCESS")}:</div>
+	            <div class="right">
+	            	{foreach from=$modules item=module key=k}
+		                <dl>
+	                        <dt><span>{lang($module['name'])}</span>
+	                            <input class="cm-checkbox2" type="checkbox" name="module_access[]" value="{$module['id']}" onchange="access_all(this)"><i>{lang("SELECT_ALL")}</i></dt>
+	                        <dd>
+	                        	{foreach from=$module['actions'] item=action key=kk}
+	                            	<input class="cm-checkbox" type="checkbox" name="group_access[]" value="{$action['id']}"> <span>{lang($action['name'])}</span>
+	                            {/foreach}
+	                        </dd>
+	                    </dl>
+                    {/foreach}
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+	function access_all(obj){
+		if($(obj).attr("checked"))
+		{
+			$(obj).parent().parent().find(".cm-checkbox").attr("disabled",true);
+			$(obj).parent().parent().find(".cm-checkbox").attr("disabled",true);
+		}
+		else
+		{
+			$(obj).parent().parent().find(".cm-checkbox").attr("disabled",false);
+			$(obj).parent().parent().find(".cm-checkbox").attr("disabled",false);	
+		}
+	}
+</script>
+    
+{tmpl("Public:footer")}

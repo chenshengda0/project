@@ -1,0 +1,46 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li ><a href="{:U('Newapp/Version/index')}">APP版本列表</a></li>
+			<li class="active"><a href="#">APP版本参数</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Game/editurl_post')}">
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label">app_id(APPID):</label>
+						<div class="controls">
+							<label class="control-label" style="text-align:left">{$params[app_id]}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">ver_id(版本ID):</label>
+						<div class="controls">
+							<label class="control-label" style="text-align:left">{$params[ver_id]}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">client_id(客户端ID):</label>
+						<div class="controls">
+							<label class="control-label" style="text-align:left">{$params[client_id]}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">client_key(客户端KEY):</label>
+						<div class="controls">
+							<label class="control-label" style="text-align:left">{$params[client_key]}</label>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<a class="btn" href="{:U('Version/index')}">返回</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

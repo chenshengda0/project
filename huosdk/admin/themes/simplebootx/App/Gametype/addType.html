@@ -1,0 +1,37 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Gametype/index')}">游戏类型</a></li>
+			<li class="active"><a href="{:U('Gametype/addType')}">类型添加</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Gametype/addType_post')}" enctype="multipart/form_data">
+				<fieldset>
+					<div class="control-group" >
+						<label class="control-label">类型名称:</label>
+						<div class="controls">
+							<input type="text" class="input" name="name" value="">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">类型图标:</label>
+						<div class="controls">
+							<input type="file" class="input" name="micon[]"><font color="red">*图片尺寸为120*120</font>
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+				<input type="hidden" name="action" value="add">
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">提交</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

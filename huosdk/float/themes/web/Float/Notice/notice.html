@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1"/>
+    <meta charset="UTF-8">
+    <title>我的消息</title>
+    <link rel="stylesheet" href="__PUBLIC__/float/css/mymsg_detail.css"/>
+</head>
+<body>
+<!--<header class="header">
+    <ul class="main_layout">
+        <li class="back_btn"></li>
+        <li class="text">我的消息</li>
+        <li class="close_btn"><img src="__PUBLIC__/float/images/closebtn.png" alt=""/></li>
+    </ul>
+</header>-->
+<div class="detail_text">
+    <div class="title">
+        <h3>{$notice.title}</h3>
+        <p>{$notice.update_time|date='Y-m-d  H:i:s',###}</p>
+    </div>
+    <div class="active">
+	{$notice.content}
+    </div>
+</div>
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/float/js/jquery.js"></script>
+<script src="__PUBLIC__/float/js/public.js"></script>
+<script src="__PUBLIC__/float/js/mymsg_detail.js"></script>
+</html>

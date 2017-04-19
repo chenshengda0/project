@@ -1,0 +1,39 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Baoming/index')}">游戏类型</a></li>
+			<li><a href="{:U('Baoming/addBao')}">添加包名</a></li>
+		</ul>
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>创建时间</th>
+						<th>包名</th>
+						<th>游戏</th>
+						<th width="150">管理操作</th>
+					</tr>
+				</thead>
+			
+				<foreach name="items" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.create_time|date='Y-m-d  H:i:s',###}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.game}</td>
+					<td>
+					    <a href="{:U('Baoming/editBao',array('id'=>$vo['id']))}">修改</a> 
+						<a href="{:U('Baoming/remove',array('id'=>$vo['id']))}" class="js-ajax-delete">删除</a></td>
+				</tr>
+				</foreach>
+			</table>
+			<div class="pagination">{$page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

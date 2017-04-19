@@ -1,0 +1,77 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location">
+  <ul class="wrap">
+    <li><h2>个人中心</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--绑定start-->
+<div class="center wrap mt30">
+  <ul>
+   <!--  <li class="fl"><img src="images/3.jpg" alt="" /></li> -->
+    <li class="con fl">
+      <p>账号ID：{$GLOBALS['user']['id']}</p>
+      <p>登录账号：{$GLOBALS['user']['username']}</p>
+    </li>
+    <li class="fr">
+      <!-- <p class="fl ico15">15615116515</p>ico14 -->
+      <p class="fl ico16"> {$GLOBALS['user']['email']}<a href="javascript:void(0)">修改邮箱</a></p><!--ico17-->
+    </li>
+  </ul>
+</div>
+<!--绑定end-->
+
+<!--弹窗start-->
+<div class="box">
+  <h2>绑定邮箱</h2>
+  <ul>
+    <input type="text" value="" />
+    <input type="button" value="提交" />
+  </ul>
+</div>
+<!--弹窗end-->
+
+<!--我的礼包start-->
+<div class="my-goods">
+  <ul class="title wrap">
+    <h2>我的礼包</h2>
+  </ul>
+  <ul class="list-title wrap">
+    <li class="clearfix">
+      <p class="fl wd190">礼包名称</p>
+      <p class="fl wd145">兑换时间</p>
+      <p class="fl wd145">有效期至</p>
+      <p class="fr wd350">礼包码</p>
+    </li>
+  </ul>
+  <ul class="list">
+  	{foreach from=$list item=v}
+    <li>
+      <div class="wrap">
+        <p class="fl wd190">{$v.name}</p>
+        <p class="fl wd145">{date('Y-m-d',$v.collection_time)}</p>
+        <p class="fl wd145">{if $v.end_time}{date('Y-m-d',$v.end_time)}{else}永久{/if}</p>
+        <p class="fr wd350">{$v.card_idno}</p>
+      </div>
+    </li>
+    {/foreach}
+  </ul>
+  
+  <!--分页start-->
+  <ul class="page">
+    {$pages}
+  </ul>
+  <!--分页end-->
+</div>
+<!--我的礼包end-->
+{tmpl("Public:footer")}
+<script>
+$(".center .fr p a").click(function(){
+  $(".box").show();	  
+});
+$(".box ul input[type=button]").click(function(){
+  $(".box").hide();
+});
+</script>

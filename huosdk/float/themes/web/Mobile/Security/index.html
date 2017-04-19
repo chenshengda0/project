@@ -1,0 +1,34 @@
+<mobiletpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/user.css" />
+	<section>
+		<div>已绑定方式</div>
+		<if condition="!empty($userdata['mobile'])">
+		<div class="tenGrayBox"></div>
+		<ul class="funcList">
+			<li class="list qb"><a href="{:U('Forgetpwd/mobile')}"><div
+						class="left">
+						<b></b><span>手机</span>
+					</div>
+					<div class="right">
+						<i><b>{$userdata.mobile}</b></i><s></s>
+					</div></a></li>
+		</ul>
+		</if>
+		
+		<if condition="!empty($userdata['email'])">
+		<div class="tenGrayBox"></div>
+		<ul class="funcList">
+			<li class="list qb"><a href="{:U('Forgetpwd/email')}"><div
+						class="left">
+						<b></b><span>邮箱</span>
+					</div>
+					<div class="right">
+						<i><b>{$userdata.email}</b></i><s></s>
+					</div></a></li>
+		</ul>
+		</if>
+		<div class="tenGrayBox"></div>
+	</section>
+	<div class="main_model_box"></div>
+</body>
+</html>

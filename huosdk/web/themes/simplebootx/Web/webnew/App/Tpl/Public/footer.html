@@ -1,0 +1,36 @@
+<!--底部start-->
+<div class="footer mt80">
+  <ul class="wrap">
+    <li>
+      <a href="##" target="_blank">联系我们</a><span>|</span>
+      <a href="##" target="_blank">公司简介</a><span>|</span>
+      <a href="##" target="_blank">诚聘英才</a><span>|</span>
+      <a href="##" target="_blank">唯恋论坛</a>
+    </li>
+    <li><p>手游村版权所有   weilian.com2016-2016  信产部备案号：<br/>京ICP备14002920号-3 <i>CNZZ统计</i></p></li>
+    <li><p>抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防上当受骗。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活</p></li>
+  </ul>
+</div>
+<!--底部end-->
+<script type="text/javascript">
+   	var make_card_url = "{url('Gamecard#make_card')}";
+   	var user_url = "{url('User#index')}";
+   	var login_url = "{url('User#login')}";
+   	var del_card_url = "{url('Gamecard#del_card')}";
+</script>
+<script type="text/javascript" src="__TMPL__Common/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="__TMPL__Common/js/slider.js"></script>
+<script type="text/javascript" src="__TMPL__Common/js/global.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("a").each(function(){
+		var href = $(this).attr("href");
+		if(href == "" || href == "#" || href == "##"){
+			$(this).attr("href","javascript:;");
+			$(this).removeAttr("target");
+		}
+	});
+})
+</script>
+</body>
+</html>

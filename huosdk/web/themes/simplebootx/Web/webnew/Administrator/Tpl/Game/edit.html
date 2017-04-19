@@ -1,0 +1,127 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("游戏名称")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" value="{$game.name}">
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf">
+	            <div class="left">{lang("栏目")}:</div>
+	            <div class="right">
+	                <select name="catid" class="sm-select require">
+	                	{$tree}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("LOGO")}:</div>
+	            <div class="right">
+	                {uploadfile_html("logo",1,1,$game.logo)}
+	                <i>logo大小112*116</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("游戏类型")}:</div>
+	            <div class="right">
+	                <select name="typeid" class="sm-select require">
+	                	{foreach from=$types item=v}
+	                	<option value="{$v.id}" {if $game.typeid eq $v.id}selected{/if}>{$v.name}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("网络类型")}:</div>
+	            <div class="right">
+	                <select name="network" class="sm-select require">
+	                	{foreach from=$network item=v}
+	                	<option value="{$v.id}" {if $game.network eq $v.id}selected{/if}>{$v.name}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("关键词")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="keywords" value="{$game.keywords}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("描述")}:</div>
+	            <div class="right">
+	                <textarea class="sm-textarea" name="description" style="width:300px;height:100px;">{$game.description}</textarea>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("下载地址")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="download" value="{$game.download}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("版本")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="banben" value="{$game.banben}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("大小")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="size" value="{$game.size}">
+	                <i>单位(M)</i>
+	            </div>
+	        </div>
+	        <!-- <div class="cm-input-wrap cf">
+	            <div class="left">&nbsp;</div>
+	            <div class="right">
+	                	<i style="font-size: 18px">游戏下载</i>
+	            </div>
+	        </div>
+	        {foreach from=$plat item=v}
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{$v.name}:</div>
+	            <div class="right">
+			              软件地址：<input class="cm-input-text" type="text" name="download[{$v.id}][url]" value="{$download[{$v.id}]['url']}">
+			              版本：<input class="cm-input-text" style="width:100px" type="text" name="download[{$v.id}][banben]" value="{$download[{$v.id}]['banben']}">
+			                软件大小：<input class="cm-input-text" style="width:100px" type="text" name="download[{$v.id}][size]" value="{$download[{$v.id}]['size']}">
+	                <i>单位(M)</i>
+	            </div>
+	        </div>
+	        {/foreach} -->
+	        <div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;">{$game.content}</textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="orderid" value="{$game.orderid}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

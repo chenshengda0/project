@@ -1,0 +1,68 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location">
+  <ul class="wrap">
+    <li><h2>游戏大全</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--筛选start-->
+<div class="all-select wrap">
+  <ul class="list">
+    <li class="clearfix">
+      <span>网络类型：</span>
+      <a href="{if $pt || $lx}{url()}game/list-0-{$pt}-{$lx}.html{else}{url('Game')}{/if}" {if $wl eq 0}class="on"{/if}>全部</a>
+      {foreach from=$networks item=v}
+      <a href="{url()}game/list-{$v.id}-{$pt}-{$lx}.html" {if $wl eq $v.id}class="on"{/if}>{$v.name}</a>
+      {/foreach}
+    </li>
+    <li class="clearfix">
+      <span>网络平台：</span>
+      <a href="{if $wl || $lx}{url()}game/list-{$wl}-0-{$lx}.html{else}{url('Game')}{/if}" {if $pt eq 0}class="on"{/if}>全部</a>
+      <a href="{url()}game/list-{$wl}-1-{$lx}.html" {if $pt eq 1}class="on"{/if}>安卓</a>
+    </li>
+    <li class="clearfix">
+      <span>游戏类型：</span>
+      <a href="{if $wl || $pt}{url()}game/list-{$wl}-{$pt}-0.html{else}{url('Game')}{/if}" {if $lx eq 0}class="on"{/if}>全部</a>
+      {foreach from=$types item=v}
+      <a href="{url()}game/list-{$wl}-{$pt}-{$v.id}.html" {if $lx eq $v.id}class="on"{/if}>{$v.name}</a>
+      {/foreach}
+    </li>
+  </ul>
+  <ul class="clearall clearfix">
+    <span>符合您的条件游戏：</span>
+    <i>{$count}</i>
+    <span>个游戏</span>
+  </ul>
+</div>
+<!--筛选end-->
+
+<!--游戏大全列表start-->
+<div class="wrap game-list">
+  <ul class="clearfix list">
+  	{foreach from=$list item=v}
+    <li>
+      <a href="{url('Game#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.logo}" width="103" height="103" alt="{$v.name}" class="img" /></a>
+      <div class="con fr">
+        <h4><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+        <p><i>游戏类型：{$v.typename}</i><i>大小：{$v.size}M</i></p>
+        <p>简介：{$v.description}</p>
+        <ul class="clearfix">
+          <a href="##" title="" class="upload"><i>已经上线</i></a>
+          <a href="{url('Gamecard')}?game_id={$v.id}" title="" class="get-goods"><i>礼包领取</i></a>
+          <a href="{url('Game#download','id='|cat:$v.id)}" title="" class="game-down"><i>游戏下载</i></a> 
+        </ul>
+      </div>
+    </li>
+    {/foreach}
+  </ul>
+  <!--分页start-->
+  <ul class="page">
+  	{$pages}
+	</ul>
+  <!--分页end-->
+  
+</div>
+<!--游戏大全列表end-->
+{tmpl("Public:footer")}

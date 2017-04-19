@@ -1,0 +1,303 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location">
+  <ul class="wrap">
+    <li><h2>手游排行榜</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏排行榜start-->
+<div class="game-compare-list wrap">
+  <ul class="clearfix">
+    <li class="info fl">
+      <div class="title">
+        <h2 class="fl ico10"><i class="ico07">综合排行榜</i></h2>
+      </div>
+      <div class="game-comapre game-comapre01">
+        <ul>
+        {assign var="list1" value=paihang('year')}
+        {foreach from=$list1 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    <li class="info fl">
+      <div class="title">
+        <h2 class="fl ico11"><i class="ico07">近期排行榜</i></h2>
+      </div>
+      <div class="game-comapre game-comapre01">
+        <ul>
+        {assign var="list2" value=paihang('week')}
+        {foreach from=$list2 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    <li class="info fr">
+      <div class="title">
+        <h2 class="fl ico12"><i class="ico07">下载排行榜</i></h2>
+      </div>
+      <div class="game-comapre game-comapre01">
+        <ul>
+          {assign var="list3" value=paihang()}
+        {foreach from=$list3 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    
+    <li class="info fl">
+      <div class="title">
+        <h2 class="fl ico13"><i class="ico07">角色排行榜</i></h2>
+        <p id="tab01" class="fr">
+          <em class="on">周排行</em>
+          <em>月排行</em>
+        </p>
+      </div>
+      <div class="game-comapre game-comapre01" id="reviews01">
+        <ul>
+          {assign var="list4" value=paihang('week',1)}
+        {foreach from=$list4 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+        <ul class="disable">
+          {assign var="list5" value=paihang('month',1)}
+        {foreach from=$list5 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    <li class="info fr">
+      <div class="title">
+        <h2 class="fl ico13"><i class="ico07">休闲排行榜</i></h2>
+        <p id="tab03" class="fr">
+          <em class="on">周排行</em>
+          <em>月排行</em>
+        </p>
+      </div>
+      <div class="game-comapre game-comapre01" id="reviews03">
+        <ul>
+          {assign var="list6" value=paihang('week',3)}
+        {foreach from=$list6 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+        <ul class="disable">
+          {assign var="list7" value=paihang('month',3)}
+        {foreach from=$list7 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    <li class="info fl">
+      <div class="title">
+        <h2 class="fl ico13"><i class="ico07">策略排行榜</i></h2>
+        <p id="tab02" class="fr">
+          <em class="on">周排行</em>
+          <em>月排行</em>
+        </p>
+      </div>
+      <div class="game-comapre game-comapre01" id="reviews02">
+        <ul>
+          {assign var="list8" value=paihang('week',2)}
+        {foreach from=$list8 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+        <ul class="disable">
+          {assign var="list9" value=paihang('month',2)}
+        {foreach from=$list9 item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id = '|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.num}</span>
+                <a href="{url('Game#download','id = '|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>   
+    </li>
+    
+    
+  </ul>
+</div>
+<!--游戏排行榜end-->
+{tmpl("Public:footer")}

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="{$keywords}"/>
+<meta name="description" content="{$description}"/>
+<title>个人中心_{:C('BRAND_NAME')}手游联运平台</title>
+<link href="__PUBLIC__/web/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/slider.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/slides.js"></script>
+</head>
+<body>
+<div class="top_nav">
+	<div class="top_nav_main" id="top_nav_main"> 
+    	<div class="top_nav_main_l">欢迎来到{:C('BRAND_NAME')}
+
+        <if condition="$Think.session.user.sdkuser == ''">
+            <a href="{:U('Login/index')}">登录</a>  <a href="{:U('Register/index')}">注册</a> 
+        <else />
+            <span class="orange">{$Think.session.user.sdkuser}</span>&nbsp;&nbsp;<a href="{:U('Web/User/index',array('userinfo'=>'info'))}" class="blue_line">进入用户中心</a>&nbsp;&nbsp;<a href="{:U('Login/index'),array('action'=>'loginout')}" class="blue_line">退出</a>
+        </if>
+
+        </div>
+    </div>
+  	<div class="clear"></div>
+</div>
+<div class="top">
+	<div class="top_l"><a href="{:WEBSITE}"><img src="__UPLOAD__/image/{$logo.img}"></a></div>
+    	<div class="top_r">
+            <div class="nav">
+                <ul>
+                    <li><a href="{:U('Web/Index/index')}" >首   页</a></li>
+                    <li><a href="{:U('Web/Game/index')}"  >游戏大全</a></li>
+                    <li><a href="{:U('Web/Pay/index')}" target="_blank">充值中心</a></li>
+                    <li><a href="{:U('Web/User/index?userinfo=info')}">个人中心</a></li>
+                    <li><a href="{:U('Web/Server/index?item=zhongxin')}">客服中心</a></li>
+                    <li><a href="{:BBSSITE}" target="_blank">手游社区</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+<div class="clear"></div>

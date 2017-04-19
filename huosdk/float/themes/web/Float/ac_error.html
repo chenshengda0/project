@@ -1,0 +1,14 @@
+<include file="float/themes/web/Float/header.html" />
+
+<div class="set_statu">
+    <div class="find show">
+        <div><img src="__PUBLIC__/float/images/tick_err.png"></div>
+        <div>{$msg}</div>
+    </div>
+</div>
+</body>
+<script>
+    var main_title=document.getElementsByClassName("main_title")[0];
+    main_title.style.transform="translateX(-"+parseInt(window.getComputedStyle(main_title).width)/2+"px)";
+</script>
+</html>

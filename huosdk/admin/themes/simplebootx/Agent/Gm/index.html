@@ -1,0 +1,69 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#">游戏币列表</a></li>
+			<li ><a href="{:U('Gm/add')}">添加游戏币</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Gm/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+					游戏: 
+					<select class="select_2" name="app_id" id="selected_id">
+						<foreach name="games"  key="k" item="vo">
+							<php>$g_select=$k==$formget['app_id'] ?"selected":"";</php>
+							<option value="{$k}"{$g_select}>{$vo}</option>
+						</foreach>
+					</select>	
+					&nbsp; &nbsp;
+					<input type="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th>游戏ID</th>
+						<th>游戏名称</th>
+						<th>游戏币名称</th>
+						<th>发放最大限额</th>
+						<th>官方发放总数</th>
+						<th>代理剩余总数</th>
+						<th>玩家剩余总数</th>
+						<th>使用代理数量</th>
+						<th>使用玩家数量</th>
+						<th>备注</th>
+						<th>管理操作</th>
+					</tr>
+				</thead>
+				<foreach name="items" item="vo">
+				<tr>
+					<td>{$vo.app_id}</td>
+					<td>{$games[$vo['app_id']]}</td>
+					<td>{$vo['payname']}</td>
+					<td>{$vo.give_max_cnt}</td>
+					<td>{$vo.office_total}</td>
+					<td>{$vo.agent_remain}</td>
+					<td>{$vo.mem_remain}</td>
+					<td>{$vo.agent_cnt}</td>
+					<td>{$vo.mem_cnt}</td>
+					<td>{$vo.description}</td>
+					<td>
+						<a href="{:U('gm/edit',array('app_id'=>$vo['app_id']))}">编辑 </a>
+						<if condition="$vo['is_delete'] eq 2">
+							<a href="{:U('gm/del',array('app_id'=>$vo['app_id']))}" class="js-ajax-delete"> | 删除</a>
+						</if>
+					</td>
+				</tr>
+				</foreach>
+			</table>
+			<div class="pagination">{$page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

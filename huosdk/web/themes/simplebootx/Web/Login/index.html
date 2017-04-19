@@ -1,0 +1,97 @@
+<webtpl file="Public/header" />
+
+<link type="text/css" href="__PUBLIC__/web/css/style.css" rel="stylesheet" media="screen" />
+<script type="text/javascript" src="__PUBLIC__/web/js/regformchk3.js"></script>
+<script type="text/javascript" src="__PUBLIC__/web/js/regformchk2.js"></script>
+<div class="main">
+  <div class="login_box">
+    <div class="login_box_l">
+	  <div class="denglu_l">
+	    <div class="denglu_l_main">
+		 <div class="you_l">
+		<div id="example">
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+						<a><img src="__UPLOAD__/image/{$splash.img}" /></a></div>
+				</div>
+                
+				<!--a href="#" class="prev"><img src="__PUBLIC__/web/images/pre.gif" /></a>
+				<a href="#" class="next"><img src="__PUBLIC__/web/images/next.gif" /></a-->
+            </div>
+
+		</div>
+	    </div>
+		  <div class="you_r">
+		    <h1>{:C('BRAND_NAME')}</h1>
+			<p>{:C('BRAND_NAME')}由安卓手机客户端、IOS版及wap版组成，涵盖了角色扮演、战争策略、模拟经营、休闲竞技及动作角色扮演等,让各类玩家都能在{:C('BRAND_NAME')}平台找到适合的游戏!</p>
+
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="login_box_r">
+	  <div class="denglu_r">
+		<div class="denglu_r_main">
+		<form name="myform" id="login_form" action="{:U('Login/login')}" method="post" >
+		<div class="reg_login_list">
+		  <ul>
+		    <li><label>用户名：</label><input type="text" id="login_username" name="username" value="{$username}"  class="login_input" maxlength="20" autocomplete="off"/>  </li>
+			<li><label>密码：</label><input type="password" id="login_password" name="password"  class="login_input"
+			 value="{$password}" autocomplete="off"/></li>
+			<li><span id="nameMsg" style="display: none;color: red;">账号必须在6-20位之间，只能包含字母、数字!</span></li>
+			<li><label></label><div class="login_s">
+			<input type="submit" value="登录" id="login_btn"/>
+			</div>
+			<a href="{:U('Findpwd/Index',array('show'=>findpwd))}" class="blue_line"  style="line-height:24px;">找回密码</a></li>
+		  </ul>
+		</div>
+        <input type="hidden" name="action" value="login">
+		</form>
+		<div class="clear"></div>
+		<if condition = "$isshow == '1'">
+			<div id="light" class="white_content" style="display:block">
+			<form name="nickform" id="nickform" action="{$WEBSITE}/user/login.php" method="post" >
+			  <div class="text"><h2> 激活论坛帐号</h2><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';document.getElementById('lusername').value='';document.getElementById('lpassword').value='';" class="ui_close">x</a></div>
+				<div class="download_main">
+					<div class="r-dialog-panel" style="display: block;">
+						<if condition = "$nickname == ''" >
+						<p><label for="rr-username" class="r-right"><span class="star">*</span>论坛昵称:</label><input
+						type="text" onclick="checkNickname();" onFocus="jQuery('#nicknamespan').show();" name="nickname" 
+						 id="nickname" class="r-dialog-text r-dialog-text-error"  autocomplete="off">
+						 </p>
+							<p class=default id="nicknamespan" style="DISPLAY: none;color:#F00">昵称由3~15个字符组成。</p>
+						<else /> <input type="hidden" name="nickname" value="{$nickname}">
+						</if>
+						<if condition = "$email == ''">
+							<p><label for="rr-username" class="r-right"><span class="star">*</span>邮箱:</label><input
+							type="text"  onblur="checkEmail();" onFocus="jQuery('#nicknamespan').show();" name="email" 
+							 id="email"  class="r-dialog-text r-dialog-text-error"  autocomplete="off">
+							 </p>
+								<p class=default id="emailspan" style="DISPLAY: none;color:#F00"></p>
+						<else /> <input type="hidden" name="email" value="{$email}">
+						</if>
+						<p class="ac"><input type="button" value="登录论坛" id="login_ltn" class="btn btn-s-2"/></p></div>
+				</div>
+				 <input type="hidden" name="website" id="website" value="{:U('Index/index')}">
+				 <input type="hidden" name="skip" id="skip" value="luntan">
+				 <input type="hidden" id="lusername" name="lusername" value="{$username}">
+				 <input type="hidden" id="lpassword" name="lpassword" value="{$password}">
+				 <input type="hidden" name="action" value="login">
+		</form>
+			</div>
+		</if>
+
+		<div class="login_line"></div>
+		<div class="reg_login_b">
+		  <div class="clear"></div>
+		  <p style="line-height:36px;">您还没有{:C('BRAND_NAME')}账号，<a href="{:U('Web/Register/index')}" class="blue_line" style="font-size:14px; font-weight:bold;">立即注册</a></p>
+		  </div>
+	  </div>
+	</div>
+  </div>
+  <div class="clear"></div>
+</div></div>
+<div class="clear"></div>
+
+<webtpl file="Public/footer" />

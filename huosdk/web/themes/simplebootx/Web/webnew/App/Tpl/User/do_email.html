@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="__TMPL__Common/css/style.css" rel="stylesheet" />
+<title>{$seo.title}</title>
+</head>
+
+<body>
+<!--头部start-->
+<div class="wrap header-search">
+  <ul class="clearfix">
+    <li class="fl logo"><a href="{url()}" target="_self"><img src="{$site.logo}" alt="" /></a></li>
+    <li class="fl"><b>邮箱认证</b></li>
+    <li class="fr resigers"><p>已有手游村账号！<a href="{url('User#login')}" target="_self">前往登录</a></p></li>
+  </ul>
+</div>
+<!--头部end-->
+
+<!--登录start-->
+<div class="form-main">
+  <div class="title">
+    <h2>邮箱认证</h2>
+  </div>
+  
+  <div class="wrap">
+    <ul>
+      <li class="clearfix mt15">
+        <label>邮箱地址：</label>
+        <label>{$GLOBALS['user']['email']}</label>
+      </li>
+      <li class="clearfix mt10">
+        <a href="javascript:void(0)" class="get-code" style="margin-left:200px;">发送邮件</a> <!-- <em>59</em>秒后重新发送 -->
+      </li>
+    </ul>
+  </div>
+</div>
+<!--登录end-->
+{tmpl("Public:footer")}
+<script type="text/javascript">
+$(function(){
+	var wait=60;
+	function time(o) {
+        if (wait == 0) { 
+            $(o).removeClass("end");        
+            $(o).html("重新发送");
+            wait = 60;
+        } else { 
+        	$(o).addClass("end"); 
+        	$(o).html("<em>"+wait+"</em>秒后重新发送");
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }
+    }
+	$(".get-code").click(function(){
+		if($(this).hasClass("end")){
+			return false;
+		}
+		var email = "{$GLOBALS['user']['email']}";
+		$.ajax({
+			url:"{url('User#emailpassed')}",
+			type:"post",
+			data:{ email:email },
+			dataType:"json",
+			success:function(res){
+				alert(res.msg);
+				if(res.result == 1){
+					$(".wrap h2").text("邮件发送成功,请查看邮箱！！");
+					time(".get-code");
+				}
+			}
+		})
+	});
+})
+</script>

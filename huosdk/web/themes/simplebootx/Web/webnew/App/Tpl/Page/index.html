@@ -1,0 +1,30 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>游戏明细</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl" style="width:100%;">
+      <!--游戏明细start-->
+      <div class="detial-game">
+        <ul class="top clearfix">
+          <h1>{$page.page_name}</h1>
+        </ul>
+        <ul class="content">
+         {$page.content}
+        </ul>
+      </div>
+      <!--游戏明细end-->
+    </li>
+    <!--左栏目end-->
+  </ul>
+</div>
+<!--游戏资讯end-->
+{tmpl("Public:footer")}

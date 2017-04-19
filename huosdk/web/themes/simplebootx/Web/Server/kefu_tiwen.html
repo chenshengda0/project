@@ -1,0 +1,66 @@
+<webtpl file="Index/headertwo" />
+
+<div class="gg_game">
+	<div class="ggs_xx"></div>
+	<div id="banner_game" class="ntn">
+			<div class="ggs1">
+			<div class="ggBox1">
+			<a href="#" target="_blank"><img src="__PUBLIC__/web/images/game_2.jpg"></a>
+			</div>
+			</div>
+	</div>
+</div>
+<div id="middle">
+	<div class="content mt">
+			<div class="kefu_ll">
+				<img border="0" alt="" usemap="#Map" src="__PUBLIC__/web/images/left_title.jpg">
+				<div style="background-position: center top; width: 225px; padding-left: 31px; background-image: url(images/left_nav_y.jpg);background-repeat: repeat-y; height: auto;">
+					<div id="Left1_Accordion1" style="height: auto; overflow: auto;">
+						<div class="kefu_a1 "><a href="{:U('Server/index',array('item'=>'question'))}">注册的常见问题</a></div>
+						<div class="kefu_a2" ><a href="{:U('Server/index',array('item'=>'findpwd'))}">如何找回密码</a></div>
+						<div class="kefu_a3" ><a href="{:U('Server/index',array('item'=>'modifypwd'))}">修改密码的流程</a></div>
+						<div class="kefu_a4" ><a href="{:U('Server/index',array(item=>'secretpwd'))}">如何设置密保</a></div>
+					</div>
+    			</div>
+				<img alt="" src="__PUBLIC__/web/images/left_nav_bottom.jpg">
+			</div>
+			<div class="kefu_r">
+					<div class="help_r_nav"><a href="kefu.com">客服中心</a> > 提交问题
+		</div>
+					<div class="kefu_box">
+					  	<div class="kefu_tj_box">
+		    <p style="padding-top:12px;
+			padding-left:80px;">温馨提示：带<span class="orange">*</span>为必填</p>
+			<form name="myform" id="myform" action="{:U('Server/index')}" method="post" enctype="multipart/form-data"   >
+		    <div class="kefu_tj_box_list">
+
+			  <ul>
+			    <li>
+			    <label><span class="orange">*</span> 选择游戏：</label>
+			    <select class="zhi_selet" name="game" id="game" >
+				<volist name='gamelist' id='vo'>
+                    <option value="{$vo.id}">{$vo.name}</option>
+				</volist>
+                </select>
+			    </li>
+				<li><label><span class="orange">*</span> 问题标题：</label><input type="text" name="title" id="title" class="zhi_input"/></li>
+				<li><label><span class="orange">*</span> 详细内容：</label><textarea name="details" id="details"  style="width:450px; height:120px;"></textarea></li>
+				<li><label>联系方式：</label><input type="text" name="content"  id="content" class="zhi_input"/> <span class="gray">可以输入您的手机或者邮箱、QQ等联系方式</span></li>
+				<li><label>相关截图：</label><input type="file" name="screenshot" id="screenshot" style="width:250px;" /> </li>
+				<li style="padding-top:5px;"><label></label><span class="gray">图片格式为jpg、gif、 PNG,图片大小控制在50K以内</span></li>
+				<li style="padding-left:300px;"><input type="submit" class="que_btn" value="立即提交"  id="submit_ask_btn"   /></li>
+				<li style="padding-left:100px; padding-bottom:20px;">如果您需要咨询游戏设置玩法、活动情况、游戏更新交流f，建议您登录到<a href={:BBSSITE} target="_blank"    class="blue">玩家论坛</a>进行咨询! </li>
+
+
+			  </ul>
+			</div>
+			<input type="hidden" name="action" value="myask">
+			</form>
+		  </div>
+					</div>
+			</div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Index/footertwo" />

@@ -1,0 +1,51 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>游戏明细</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <!--游戏明细start-->
+      <div class="detial-game">
+        <ul class="top clearfix">
+          <li class="img fl"><img src="{$game.logo}" width="140" height="140" alt="" /></li>
+          <li class="con01 fr">
+            <p><i>游戏类型：{$game.typename}</i></p>
+            <p><i>剩余礼包：{$card.sy}%&nbsp;&nbsp;&nbsp;&nbsp;{if $make_num lt $card.num && $card.num gt 0}发放中{else}已结束{/if}</i></p>
+            <div class="clearfix">
+              <ul class="fl">
+                <span><i style="width:{$card.sy}%;"></i></span>
+              </ul>
+              <a href="##" onclick="put_card({$card.id})" title="" class="fr">立即领取</a>
+            </div>
+            <p>使用时间：{if $card.start_time && $card.end_time}{date('Y-m-d H:i:s',$card.start_time)}至{/if}{if $card.end_time}{date('Y-m-d H:i:s',$card.end_time)}{/if}</p>
+            <p><em>请领取礼包的用户尽快使用！</em></p>
+          </li>
+        </ul> 
+        
+        <ul class="content content01">
+         <b>礼包说明：</b>   
+         {$card.content}
+        </ul>
+        
+        <ul class="content">
+          <b>游戏介绍：</b>
+          {$game.content}
+        </ul> 
+      </div>
+      <!--游戏明细end-->
+    </li>
+    <!--左栏目end-->
+    
+    {tmpl("Public:right")}
+  </ul>
+</div>
+<!--游戏资讯end-->
+{tmpl("Public:footer")}

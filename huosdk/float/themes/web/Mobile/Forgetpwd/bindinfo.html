@@ -1,0 +1,40 @@
+<mobiletpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/user.css" />
+	<section>
+		<div class="bindWay">已绑定方式</div>
+		<if condition="!empty($userdata['mobile'])">
+		<div class="tenGrayBox"></div>
+		<ul class="funcList">
+			<li class="list qb"><a href="{:U('Forgetpwd/mobile')}"><div
+						class="left">
+						<b></b><span>手机</span>
+					</div>
+					<div class="right">
+						<i><b>{$userdata.mobile}</b></i><s></s>
+					</div></a></li>
+		</ul>
+		</if>
+		
+		<if condition="!empty($userdata['email'])">
+		<div class="tenGrayBox"></div>
+		<ul class="funcList">
+			<li class="list qb"><a href="{:U('Forgetpwd/email')}"><div
+						class="left">
+						<b style="background-image:none;position:relative"><img style="width:100%;height:100%;position:absolute;top:0px;left:0px;" src="/public/mobile/images/btn_getCodeBlue.png" alt=""></b><span>邮箱</span>
+					</div>
+					<div class="right">
+						<i><b>{$userdata.email}</b></i><s></s>
+					</div></a></li>
+		</ul>
+		</if>
+		<div class="tenGrayBox"></div>
+	</section>
+	<div class="main_model_box"></div>
+	<style>
+		section .funcList > .list > a > .left > b{
+			background: url("/public/mobile/images/icon_list2.png");
+			    background-position: 0px -24px;
+		}
+	</style>
+</body>
+</html>

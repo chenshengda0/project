@@ -1,0 +1,116 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<!-- <ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">所有文章</a></li>
+			<li><a href="{:U('AdminPost/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}" target="_self">添加文章</a></li>
+		</ul> -->
+		<div></div>
+		<form class="well form-search" method="get" action="{:U('Data/Game/gameindex')}">		 			 
+			<div class="search_type cc mb10">			
+				<div class="mb10">
+				游戏： 					
+					<select class="select_2" name="app_id" id="selected_id">
+							<foreach name="games"  key="k" item="vo">
+							<php>$gid_select=$k==$formget[app_id]?"selected":"";</php>
+							<option value="{$k}"{$gid_select}>{$vo}</option>
+							</foreach>
+					    </select>
+					    
+					 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+					<span class="mr20">
+						时间：
+						<input type="text" name="start_time" class="js-date" value="{$formget.start_time|default=''}" style="width: 100px;"  autocomplete="off">-						
+						<input type="text" class="js-date" name="end_time" value="{$formget.end_time}" style="width: 100px;" autocomplete="off"> &nbsp; &nbsp;
+						<input type="submit" class="btn btn-warning" name='date_time' value="搜索" />
+						<input type="submit" class="btn btn-warning" name='date_time' value="七日" />
+						<input type="submit" class="btn btn-warning" name='date_time' value="当月" />
+						<input type="submit" class="btn btn-warning" name='date_time' value="30天" />
+						
+						
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="js-ajax-form" action="" method="get">		
+			<table class="table table-hover table-bordered table-list">
+					<tr>
+						<th style='color:#f00'>*隔天数据*</th>
+					</tr>
+			</table>
+			&nbsp;&nbsp; 
+			
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th>游戏</th>
+						<th>新增用户数</th>
+						<th>活跃用户数</th>
+						<th>付费用户数</th>
+						<th>订单数量</th>
+						<th>新用户付费金额</th>
+						<th>总付费金额</th>
+						<th>总付费率</th>
+						<th>注册APRU</th>
+						<th>活跃ARPU</th>
+						<th>付费ARPU</th>
+					</tr>
+					</tr>
+				</thead>
+					<tr>
+						<th style='color:#f00'>汇总</th>
+						<th style='color:#00f'>--</th>
+						<th style='color:#f00'>{$totalpays[0]['reg_cnt']}</th>
+						<th style='color:#f00'>{$totalpays[0]['user_cnt']}</th>
+						<th style='color:#f00'>{$totalpays[0]['pay_user_cnt']}</th>
+						<th style='color:#f00'>{$totalpays[0]['order_cnt']}</th>
+						<th style='color:#f00'>{$totalpays[0]['sum_reg_money']|floor}</th>
+						<th style='color:#f00'>{$totalpays[0]['sum_money']|floor}</th>
+						<th style='color:#f00'>{$totalpays[0]['pay_user_cnt']/$totalpays[0]['user_cnt']*100|number_format=2}%</th>
+						<th style='color:#f00'>{$totalpays[0]['sum_reg_money']/$totalpays[0]['reg_cnt']|number_format=2}</th>
+						<th style='color:#f00'>{$totalpays[0]['sum_money']/$totalpays[0]['user_cnt']|number_format=2}</th>
+						<th style='color:#f00'>{$totalpays[0]['sum_money']/$totalpays[0]['pay_user_cnt']|number_format=2}</th>
+					</tr>
+					<if condition=" 1 eq $current_page AND !empty($todaypays['date'])" >
+					<tr>
+						<td>{$todaypays['date']}</td>
+						<td>{$games[$todaypays['app_id']]}</td>
+						<td>{$todaypays['reg_cnt']}</td>
+						<td>{$todaypays['user_cnt']}</td>
+						<td>{$todaypays['pay_user_cnt']}</td>
+						<td>{$todaypays['order_cnt']}</td>
+						<td>{$todaypays['sum_reg_money']|floor}</td>
+						<td>{$todaypays['sum_money']|floor}</td>
+						<td>{$todaypays['pay_user_cnt']/$todaypays['user_cnt']*100|number_format=2}%</td>
+						<td>{$todaypays['sum_reg_money']/$todaypays['reg_cnt']|number_format=2}</td>
+						<td>{$todaypays['sum_money']/$todaypays['user_cnt']|number_format=2}</td>
+						<td>{$todaypays['sum_money']/$todaypays['pay_user_cnt']|number_format=2}</td>
+					</tr>
+					</if>
+				<foreach name="pays" item="vo">
+					<tr> 
+					    <td>{$vo['date']}</td>
+					    <td>{$games[$vo['app_id']]}</td>
+						<td>{$vo['reg_cnt']}</td>
+						<td>{$vo['user_cnt']}</td>
+						<td>{$vo['pay_user_cnt']}</td>
+						<td>{$vo['order_cnt']}</td>
+						<td>{$vo['sum_reg_money']|floor}</td>
+						<td>{$vo['sum_money']|floor}</td>
+						<td>{$vo['pay_user_cnt']/$vo['user_cnt']*100|number_format=2}%</td>
+						<td>{$vo['sum_reg_money']/$vo['reg_cnt']|number_format=2}</td>
+						<td>{$vo['sum_money']/$vo['user_cnt']|number_format=2}</td>
+						<td>{$vo['sum_money']/$vo['pay_user_cnt']|number_format=2}</td>
+					</tr>					
+				</foreach>
+
+			</table>
+			<div class="pagination">{$Page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

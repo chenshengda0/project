@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>密码账号找回</title>
+<link href="__PUBLIC__/float/css/web_gift.css" rel="stylesheet" />
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/float/js/findpwd.js"></script>
+<script>
+	var checkusername = "{:U('Admin/Forgetpwd/checkUserName')}";
+</script>
+</head>
+<body>
+<div class="get">
+   <ul>
+      <form  id="find-pwd" name="find-pwd" action="{:U('Admin/Forgetpwd/modelSelect')}" method="post">
+         <li class="li_100">请输入需要找回密码的账号</li>
+         <li class="li_200">
+		<input id="username" name="username" type="text" value="请输入账号" /></li>
+         <div id="message"></div>
+		 <li class="li_300">
+		 <input id="find" type="button" value="提交" style="background-color:green;border:0px;"/></li>
+		 <input name="action" type="hidden" value="findpwd" />
+      </form>
+   </ul>
+</div>
+<div class="get_qq">
+   <p><span>求助客服，QQ：</span><span class="color">{$QQ}</span></p>
+</div>
+</body>
+</html>

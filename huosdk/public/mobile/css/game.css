@@ -1,0 +1,905 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+a,
+button,
+i,
+b {
+  outline: none;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+}
+/*********主题**********/
+.clearFloat {
+  content: "";
+  display: table;
+  clear: both;
+}
+.yh {
+  font-family: "微软雅黑", microsoft YaHei;
+}
+.white {
+  background-color: #fff;
+}
+.borderBox {
+  box-sizing: border-box;
+}
+.tagNav {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.confim_change {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  background-color: #ebebeb;
+}
+.confim_change > button {
+  width: 100%;
+  height: 40px;
+  letter-spacing: 2px;
+  padding: 0px;
+  background: transparent;
+  border: 1px solid #A5A5A5;
+  border-radius: 5px;
+  font-size: 14px;
+}
+html {
+  font-size: 62.5%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "microsoft YaHei","微软雅黑";
+}
+* {
+  font-family: "microsoft YaHei","微软雅黑";
+}
+.main_model_box {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #EEEDED;
+  z-index: -1;
+}
+.header {
+  height: 40px;
+  line-height: 40px;
+  background-color: #393a3f;
+}
+.header > .main_layout {
+  margin: 0px 15px;
+}
+.header > .main_layout > li {
+  width: 33.33333%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.header > .main_layout > li > img {
+  width: 12px;
+  height: 12px;
+  margin-top: 14px;
+}
+.header > .main_layout > .text {
+  text-align: center;
+  font-size: 16px;
+  font-family: "微软雅黑", microsoft YaHei;
+}
+.header > .main_layout > .backbtn > img {
+  float: left;
+}
+.header > .main_layout > .close_btn > img {
+  float: right;
+}
+.header > .main_layout:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#footer {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #EEEDED;
+  padding-bottom: 30px;
+}
+#footer > .aboutUs {
+  text-align: center;
+  display: inline-block;
+  margin: 10px 0px;
+}
+#footer > .aboutUs > li {
+  float: left;
+  padding: 0px 6px;
+}
+#footer > .aboutUs > li > a {
+  text-decoration: none;
+  color: #8A8A8A;
+}
+#footer > .aboutUs > .game_cooperation > a {
+  color: red;
+}
+#footer > p {
+  color: #8A8A8A;
+}
+#footer > .aboutUs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer_nav {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0px;
+}
+.footer_nav > ul {
+  height: 100%;
+}
+.footer_nav > ul > li {
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+.footer_nav > ul > li > a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #afafaf;
+  top: 0px;
+}
+.footer_nav > ul > li > a > b {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.footer_nav > ul > li > a > p {
+  height: 20px;
+  line-height: 20px;
+  font-family: "微软雅黑", microsoft YaHei;
+}
+.footer_nav > ul > li.zh > a > b {
+  background: url("../../huoapk/icon/1.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.msg > a > b {
+  background: url("../../huoapk/icon/2.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.lb > a > b {
+  background: url("../../huoapk/icon/3.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.dt > a > b {
+  background: url("../../huoapk/icon/4.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.zh.active > a > b {
+  background: url("../../huoapk/icon/11.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.msg.active > a > b {
+  background: url("../../huoapk/icon/22.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.lb.active > a > b {
+  background: url("../../huoapk/icon/33.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.dt.active > a > b {
+  background: url("../../huoapk/icon/44.png");
+  background-size: 100% 100%;
+}
+.footer_nav > ul > li.active > a > p {
+  color: #43bf17;
+}
+.footer_info {
+  margin-top: 15px;
+}
+.footer_info > p {
+  line-height: 20px;
+  color: #828282;
+  text-align: center;
+}
+.funcList {
+  box-sizing: border-box;
+  padding: 0px 20px;
+  background-color: #fff;
+}
+.funcList > .list {
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.funcList > .list > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.funcList > .list > a > div {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.funcList > .list > a > .left > b {
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-right: 6px;
+  float: left;
+}
+.funcList > .list > a > .right {
+  text-align: right;
+}
+.funcList > .list > a > .right > i {
+  color: #909090;
+  letter-spacing: 1px;
+}
+.funcList > .list > a > .right > i > b {
+  color: #ff0000;
+}
+.funcList > .list > a > .right > s {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+  margin-left: 5px;
+  background: url("../../huoapk/img/arrow_r.png");
+  background-size: 100% 100%;
+}
+.funcList > li:last-child {
+  border-bottom: none;
+}
+.loading_more {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ebebeb;
+}
+.loading_more > .loadBtn {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+.loading_more > .loadBtn > li {
+  width: 33.3%;
+  height: 100%;
+  float: left;
+  color: #AAAAAA;
+}
+.loading_more > .loadBtn > .line {
+  position: relative;
+}
+.loading_more > .loadBtn > .line > b {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #DBDBDB;
+  position: absolute;
+  top: 50%;
+}
+.loading_more > .btn_top {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+.loading_more > .btn_top > img {
+  width: 100%;
+}
+.orange {
+  color: #f68336;
+}
+.set {
+  width: 100%;
+  height: 40px;
+  font-size: 0.875em;
+  background-color: #ffffff;
+}
+.set > div {
+  width: 260px;
+  margin: 0px auto;
+  height: 30px;
+  padding-top: 4px;
+}
+.set > div > span {
+  display: block;
+}
+.set1 {
+  float: left;
+  width: 60px;
+  line-height: 30px;
+}
+.set2 {
+  border-bottom: solid 1px #e0e0e0;
+  padding-top: 15px;
+  display: block;
+  float: left;
+  width: 40px;
+}
+.prompt {
+  margin: 10px;
+  font-size: 0.875em;
+}
+.prompt > form > ul > li {
+  line-height: 25px;
+  font-size: 0.875em;
+}
+.prompt1 {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  background-color: #0c9de0;
+  border: none;
+  color: #ffffff;
+  font-size: 0.875em;
+  border-radius: 4px;
+}
+.prompt2 {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.875em;
+}
+.prompt2 > a {
+  cursor: none;
+}
+@media screen and (min-width: 400px) {
+  .header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #393a3f;
+  }
+  .header > .main_layout {
+    margin: 0px 15px;
+  }
+  .header > .main_layout > li {
+    width: 33.33333%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    color: #fff;
+  }
+  .header > .main_layout > li > img {
+    width: 16px;
+    height: 16px;
+    margin-top: 17px;
+  }
+  .header > .main_layout > .text {
+    text-align: center;
+    font-size: 16px;
+  }
+  .header > .main_layout > .backbtn > img {
+    float: left;
+  }
+  .header > .main_layout > .close_btn > img {
+    float: right;
+  }
+  .header > .main_layout:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .funcList > .list {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .funcList > .list > div {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .funcList > .list > .left > b {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: left;
+  }
+  .funcList > .list > .left > span {
+    font-size: 16px;
+  }
+  .funcList > .list > .right > i {
+    font-size: 1.4rem;
+  }
+  .funcList > .list > .right > s {
+    margin-top: 17px;
+  }
+}
+#header {
+  height: 50px;
+}
+#header > .logo {
+  width: 100px;
+  float: left;
+  margin-top: 9px;
+  margin-left: 8px;
+}
+#header > .logo > img {
+  width: 100%;
+}
+#header > .search_box {
+  width: calc(100% - 118px);
+  height: 32px;
+  float: right;
+  margin-top: 9px;
+  margin-left: 8px;
+}
+#header > .search_box > div {
+  border: 1px solid #aaa;
+  height: 28px;
+  width: calc(100% - 50px);
+  border-radius: 14px;
+  float: left;
+}
+#header > .search_box > div > input {
+  border: none;
+  width: calc(100% - 30px);
+  height: 94%;
+  border-radius: 14px;
+  outline: none;
+  text-indent: 10px;
+}
+#header > .search_box > div > b {
+  width: 22px;
+  height: 34px;
+  float: right;
+  margin-right: 5px;
+  transform: scale(0.7);
+  background: url("../img/icon_list1.png") no-repeat -11px -111px;
+}
+#header > .search_box > span {
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  margin-right: 17px;
+  background: url("../img/user.png") no-repeat 0px 0px;
+  background-size: 100% 100%;
+}
+#header:after,
+.nav:after,
+.back:after,
+.gameList:after,
+.hotList:after,
+.plane {
+  content: "";
+  display: table;
+  clear: both;
+}
+.nav {
+  width: 100%;
+  background-color: #fea500;
+  height: 40px;
+  line-height: 40px;
+}
+.nav > li {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.nav > li > a {
+  text-decoration: none;
+  color: #FFF9B9;
+}
+.back {
+  padding: 3px 0px;
+}
+.back > .btn {
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+.back > .btn > span {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  position: relative;
+}
+.back > .btn > span > img {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.back > .box {
+  width: calc(100% - 82px);
+  float: right;
+  margin-right: 10px;
+  margin-top: 4px;
+  height: 30px;
+  border: 1px solid #aaa;
+}
+.back > .box > input {
+  border: none;
+  width: calc(100% - 50px);
+  height: 91%;
+  text-indent: 10px;
+}
+.back > .box > span {
+  float: right;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center;
+}
+.tagNav {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  height: 35px;
+}
+.tagNav > li {
+  width: 100%;
+  max-width: 110px;
+  text-align: center;
+  height: calc(33px);
+  border-bottom: 2px solid #13ACEF;
+}
+section > .gary_box {
+  width: 100%;
+  height: 10px;
+  background-color: #f5f5f5;
+}
+section > .recommend_game > .gameList {
+  padding: 13px 0px;
+}
+section > .recommend_game > .gameList > li {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+section > .recommend_game > .gameList > li > img {
+  width: 70%;
+  max-width: 100px;
+  margin: 0 auto;
+}
+section > .recommend_game > .gameList > li > p {
+  box-sizing: border-box;
+  padding: 0 8px;
+  margin-top: 10px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+section > .recommend_game > .gameList > li > p > a {
+  color: #000;
+}
+section > .hot_search > .plane {
+  width: 100%;
+  background-color: #fff;
+}
+section > .hot_search > .plane > .hotList {
+  width: calc(100% - 80px);
+  box-sizing: border-box;
+  float: left;
+  padding: 10px;
+  padding-right: 0px;
+}
+section > .hot_search > .plane > .hotList > li {
+  float: left;
+  width: 30%;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #aaa;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px 0px;
+  margin-right: 3%;
+}
+section > .hot_search > .plane > .hotList > li > a {
+  color: #000;
+}
+section > .hot_search > .plane > .plane_img {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+  margin-top: 21px;
+  float: right;
+}
+section > .hot_search > .plane > .plane_img > img {
+  width: 100%;
+}
+section > .small_nav {
+  padding-top: 25px;
+  background-color: #eeeeee;
+}
+section > .small_nav > .nav1 {
+  height: 30px;
+  line-height: 30px;
+}
+@media screen and (min-width: 375px) {
+  #header {
+    height: 80px;
+  }
+  #header > .logo {
+    margin-top: 14px;
+  }
+  #header > .search_box {
+    margin-top: 14px;
+  }
+  #header > .search_box > span {
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    margin-right: 17px;
+    background: url("../img/user.png") no-repeat 0px 0px;
+    background-size: 100% 100%;
+  }
+  .nav {
+    width: 100%;
+    background-color: #fea500;
+    height: 50px;
+    line-height: 50px;
+  }
+  .nav > li {
+    width: 25%;
+    float: left;
+    text-align: center;
+  }
+  .nav > li > a {
+    text-decoration: none;
+    color: #FFF9B9;
+    font-size: 16px;
+  }
+  .back {
+    padding: 3px 0px;
+    margin: 2px 0px;
+  }
+  .back > .btn {
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 14px;
+  }
+  .back > .btn > span {
+    margin-top: 15px;
+  }
+  .back > .box {
+    width: calc(100% - 82px);
+    float: right;
+    margin-right: 10px;
+    margin-top: 9px;
+    height: 30px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+  }
+  .back > .box > input {
+    border: none;
+    width: calc(100% - 50px);
+    height: 91%;
+    text-indent: 10px;
+  }
+  .back > .box > span {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    width: 50px;
+    text-align: center;
+  }
+  .tagNav {
+    height: 45px;
+    font-size: 16px;
+  }
+  .tagNav > li {
+    width: 100%;
+    max-width: 110px;
+    text-align: center;
+    height: calc(43px);
+    border-bottom: 2px solid #13ACEF;
+  }
+  section > .gary_box {
+    width: 100%;
+    height: 10px;
+    background-color: 50;
+  }
+  section > .recommend_game > .gameList {
+    padding: 13px 0px;
+    background-color: #fff;
+  }
+  section > .recommend_game > .gameList > li {
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+  }
+  section > .recommend_game > .gameList > li > img {
+    width: 70%;
+    max-width: 100px;
+    margin: 0 auto;
+  }
+  section > .recommend_game > .gameList > li > p {
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-top: 10px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  section > .recommend_game > .gameList > li > p > a {
+    color: #000;
+  }
+  section > .hot_search > .plane {
+    width: 100%;
+  }
+  section > .hot_search > .plane > .hotList > li {
+    height: 40px;
+    border: none;
+    line-height: 40px;
+  }
+  section > .hot_search > .plane > .hotList > li > a {
+    color: #000;
+    font-size: 14px;
+  }
+  section > .hot_search > .plane > .plane_img {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    margin-top: 40px;
+    float: right;
+  }
+  section > .hot_search > .plane > .plane_img > img {
+    width: 100%;
+  }
+  section > .small_nav {
+    padding-top: 25px;
+  }
+  section > .small_nav > .nav1 {
+    height: 40px;
+    line-height: 40px;
+  }
+  #footer {
+    padding-top: 15px;
+  }
+  #footer > .aboutUs > li > a {
+    font-size: 14px;
+  }
+  #footer > p {
+    font-size: 14px;
+  }
+}

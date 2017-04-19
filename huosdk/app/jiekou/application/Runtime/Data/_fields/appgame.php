@@ -1,0 +1,35 @@
+<?php
+return array (
+  0 => 'id',
+  1 => 'name',
+  2 => 'type',
+  3 => 'image',
+  4 => 'status',
+  5 => 'link',
+  6 => 'create_time',
+  7 => 'lanmu',
+  8 => 'isdelete',
+  9 => 'xulie',
+  10 => 'count',
+  11 => 'pinyin',
+  12 => 'initial',
+  '_autoinc' => true,
+  '_pk' => 'id',
+  '_type' => 
+  array (
+    'id' => 'int(11) unsigned',
+    'name' => 'varchar(30)',
+    'type' => 'varchar(11)',
+    'image' => 'varchar(100)',
+    'status' => 'smallint(1)',
+    'link' => 'varchar(200)',
+    'create_time' => 'int(11)',
+    'lanmu' => 'smallint(2)',
+    'isdelete' => 'smallint(2)',
+    'xulie' => 'int(10)',
+    'count' => 'int(11)',
+    'pinyin' => 'varchar(40)',
+    'initial' => 'varchar(10)',
+  ),
+);
+?>

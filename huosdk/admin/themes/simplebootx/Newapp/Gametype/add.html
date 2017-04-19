@@ -1,0 +1,64 @@
+<admintpl file="header" />
+<!-- 公用样式 -->
+		
+		<link href="__PUBLIC__/bootstrap-fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+        <script src="__PUBLIC__/bootstrap-fileinput/js/fileinput.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/bootstrap-fileinput/js/fileinput_locale_zh.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/bootstrap-fileinput/js/fileinput_locale_es.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Newapp/Gametype/index')}">游戏类型</a></li>
+			<li class="active"><a href="{:U('Newapp/Gametype/add')}">添加游戏类型</a></li>
+		</ul>
+		<form enctype="multipart/form-data" class="form-horizontal js-ajax-form" action="{:U('Newapp/Gametype/add_post')}" method="post"> 
+			<div class="row-fluid">
+				<div class="span9">
+					<table class="table table-bordered">
+					<tr>
+						<th>游戏类型名称</th>
+						<td>
+							<input type="text" name="gt_name" id="gt_name" value="" placeholder="">
+						</td>
+					</tr>
+					
+			<!-- 		<tr>
+							<th><b>图片</b></th>
+							<td>
+								<div style="text-align: center;">
+									<input type="hidden" name="gt_image" id="thumb" value="">
+									<a href="javascript:void(0);"
+										onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','ads','','');return false;">
+										<img src="__TMPL__Public/assets/images/default-thumbnail.png"
+										id="thumb_preview" width="135" style="cursor: hand" />
+									</a> <input type="button" class="btn btn-small"
+										onclick="$('#thumb_preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;"
+										value="取消图片">
+								</div>
+							</td>
+						</tr> -->
+						
+					<tr>
+						<th>状态</th>
+						<td>
+							<label class="radio"><input type="radio" name="gt_status" value="2" checked>显示</label>
+							<label class="radio"><input type="radio" name="gt_status" value="1">隐藏</label>
+						</td>
+					</tr>
+					
+					</table>
+				</div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-primary js-ajax-submit" type="submit">添加</button>
+					<a class="btn" href="{:U('Newapp/Gametype/index')}">返回</a>
+				</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+		<script type="text/javascript"
+		src="__PUBLIC__/js/content_addtop.js?t={:time()}"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{tmpl("Public:header")}
+
+	<div class="cm-subHead">
+        <a class="cm-red-btn" href="__ADMIN_URL__/Group/add" >{lang("ADD")}</a>
+    </div>
+	
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+                <th width="20"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+                <th width="30">id</th>
+                <th width="400">{lang("NAME")}</th>
+                <th width="400">{lang("ORDER")}</th>
+                <th>{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+             <tr>
+	            <td class="td_center"><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+                <td class="td_center">{$v['id']}</td>
+                <td>{lang($v['name'])}</td>
+                <td>{$v['orderid']}</td>
+                <td class="tag5">
+                	<a href="__ADMIN_URL__/Group/edit/?id={$v['id']}">{lang("EDIT")}</a>&nbsp;
+                	<a href="__ADMIN_URL__/Group/delete/?id={$v['id']}" onclick="return confirm('{lang("SURE_TO_DEL")}')">{lang("DELETE")}</a>&nbsp;
+                </td>
+               </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <div class="cm-subFooter">
+        <div class="left fl">
+            <ul>
+                <li> <a class="cm-red-btn" href="javascript:void(0)" onclick="del_all()" value="">{lang("DELETE")}</a></li>
+            </ul>
+        </div>
+        <div class="paging fl ml220">
+            <div class="main">
+                {$pages}
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+
+     
+     
+	<script type="text/javascript">
+		function del_all(){
+			if(confirm("{lang('SURE_TO_DEL')}")){
+				var ids = document.getElementsByName("ids[]");
+				idArray = new Array();
+				for(var i=0;i<ids.length;i++){
+					if(ids[i].checked == true){
+						idArray.push(ids[i].value);
+					}
+				}
+				if(idArray.length == 0){
+					alert("请选择删除项");
+					return false;
+				}
+				ids = idArray.join(",");
+				
+				var ajaxurl = "__ADMIN_URL__"+"/Group/delete";
+				$.ajax({
+					url: ajaxurl,
+					data:"ids="+ids,
+					type: "POST",
+					dataType: "json",
+					success: function(res){
+						if(res.result == 1){
+							alert(res.msg);
+							window.location.reload();
+						}else{
+							alert(res.msg);
+						}
+					}
+				});	
+			}
+		}
+	</script>
+
+{tmpl("Public:footer")}

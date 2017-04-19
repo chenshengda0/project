@@ -1,0 +1,75 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Data/Retain/index')}">总体数据</a></li>
+			<if condition="sp_auth_check(sp_get_current_admin_id(),'Data/Retain/agent')">
+					<li><a href="{:U('Data/Retain/agent')}">渠道留存</a></li>
+			</if>
+			<if condition="sp_auth_check(sp_get_current_admin_id(),'Data/Retain/game')">
+					<li><a href="{:U('Data/Retain/game')}">游戏留存</a></li>
+			</if>
+			<if condition="sp_auth_check(sp_get_current_admin_id(),'Data/Retain/game')">
+					<li><a href="{:U('Data/Retain/agentgame')}">留存详细</a></li>
+			</if>			
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Data/Retain/index')}">		 			 
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+						时间：
+						<input type="text" name="start_time" class="js-date" value="{$start_time|default=''}" style="width: 100px;"  autocomplete="off">-						
+						<input type="text" name="end_time"  class="js-date" value="{$end_time|default=''}" style="width: 100px;" autocomplete="off"> &nbsp; &nbsp;
+						<input type="submit" class="btn btn-warning" name='date_time' value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+					<table class="table table-hover table-bordered table-list">
+					<tr>
+						<th style='color:#f00'>*隔天数据*</th>
+					</tr>
+			</table>
+			&nbsp;&nbsp; 
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th>日期</th>
+						<th>注册人数</th>
+						<th>二日</th>
+						<th>三日</th>
+						<th>四日</th>
+						<th>五日</th>
+						<th>六日</th>
+						<th>七日</th>
+						<th>15日</th>
+						<th>30日</th>
+					</tr>
+				</thead>
+				<foreach name="pays" item="vo">
+					<tr> 
+					    <td>{$vo['date']}</td>
+						<td>{$vo['reg_cnt']}</td>
+						<td>{$vo['day2']}({$vo['day2']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day3']}({$vo['day3']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day4']}({$vo['day4']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day5']}({$vo['day5']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day6']}({$vo['day6']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day7']}({$vo['day7']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day15']}({$vo['day15']*100/$vo['reg_cnt']|number_format=2}%)</td>
+						<td>{$vo['day30']}({$vo['day30']*100/$vo['reg_cnt']|number_format=2}%)</td>
+					</tr>
+				</foreach>
+				<tfoot>
+				</tfoot>
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

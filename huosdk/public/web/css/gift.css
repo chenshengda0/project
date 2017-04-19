@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+.gift{width: 998px; margin: 0 auto; border: 1px solid #d6d6d6;}
+.gift_container{width: 998px;}
+
+.gift_nav{width: 998px; margin-top: 40px;}
+.gift_nav ul{width: 900px; margin: 0 auto; border: 1px solid #b3d7ec; background:#d1eaf9; height: 60px;}
+.gift_nav li{ height: 60px; float: left; width:40px; margin-right: 8px; line-height: 60px;}
+.gift_nav .nav_h1{ font-weight: bold; font-size: 14px; color:#333; width: 100px; text-align: right;}
+.gift_nav .now a{display: block; float: left; width: 40px; background:#7da5ed; line-height: 20px; color:#fff; height: 20px; text-align: center; margin-top: 20px; text-decoration:none; cursor:pointer;}
+.gift_nav a:hover{display: block; float: left; width: 40px; background:#7da5ed; line-height: 20px; color:#fff; height: 20px; text-align: center; margin-top: 20px; text-decoration:none; cursor:pointer;}
+.gift_nav .search{border-left:1px solid #7da5ed; height: 40px; margin-top: 10px; width:303px;}
+.search .text{width: 148px; border-color:#E0E0E0; height: 34px; line-height: 34px; border-radius:5px; padding-left: 8px; color:#ccc; margin-left: 15px; margin-top:2px; float: left;}
+.search .submit{background: url(../images/search_03.gif) no-repeat; width: 73px; height: 35px; border: none; float: left; margin-top: 2px; margin-left: 10px; cursor:pointer;}
+
+
+.gift_list{width: 978px; margin-top: 60px; padding-left: 20px;}
+.gift_list ul{width: 968px; height: 217px; margin-top: 20px; margin-left: 10px;}
+.gift_list ul li{float: left;}
+.list_img .bg{z-index:10; width:194px; height: 217px; display: block; float: left;}
+.list_img .top{display: block; float: left; width: 166px; height: 189px; border: 1px solid #F60;  margin-top:13px; margin-left: 13px; position:absolute; z-index:-1; float: left;}
+.list_comtainer{width:400px; height:197px; margin-left: 60px;}
+.list_comtainer .h_title{font-size: 18px; width: 400px; line-height: 40px; max-height:40px; color:#ff5700; font-weight: bold;}
+.list_comtainer .gifts{width:400px; height:58px; overflow:hidden;}/*礼包申明*/
+.gifts span{display: block; width: 400px;}/*礼包申明*/
+.list_comtainer .heihei{font-size: 16px; height: 18px; line-height: 18px; width:384px !important; padding-left:0px !important;}/*礼包申明*/
+.gifts .xuebao{font-size: 14px; height:40px; line-height:18px; overflow:hidden; padding-left:20px; width:380px;}/*礼包申明*/
+.list_comtainer .getme{width: 400px; height:99px; overflow: hidden;}/*领取申明*/
+.getme span{display: block; width: 380px; font-size:14px; line-height:18px; padding-left:20px;}/*领取申明*/
+.time{ width: 600px; max-height:20px; float: left; margin-left:60px;}
+.time span{display: block; font-size: 12px; color:#f60; float: left; height: 20px; line-height: 20px; margin-right: 15px;}
+.download{display: block; background: url(../images/download_03.gif) no-repeat; width: 60px; height: 20px; float: left; }
+.injoly{display: block; background: url(../images/injoly_03.gif) no-repeat; width: 60px; height: 20px; float: left; margin-left: 15px;}
+.gift_list .list_botton{width: 159px; height: 137px; padding-right: 80px; padding-top: 60px; float: right;}
+.list_botton label{display: block; float: left; height:40px; font-size: 18px; width: 175px; line-height: 40px;}
+.list_botton label .span{color:#F00;}
+.list_botton .get{background: url(../images/liji_06.gif) no-repeat; width: 102px; height: 52px; border: none; float:left; cursor: pointer;}
+.get:hover{background: url(../images/heihei_03.jpg) no-repeat;}
+
+
+.hiddle{ background: #ccc; line-height:18px; font-size: 14px; position: absolute; z-index:99;}
+.gifts:hover .hiddle{display:block;}
+/*-----------------------------------------------列表---------------------------------------*/
+.math{width: 998px; margin-top: 60px;}
+.math ul{width: 28px; margin: 0 auto; height: 60px;}
+.math li{width: 26px; height: 26px; border:1px solid #ff5700; border-radius: 2px; float: left; text-align: center; cursor:pointer}
+.math li a{color:#ff5700; line-height:26px; text-decoration:none;}
+
+
+/*---------------------------------------------tanchu---------------------*/
+.tanchu{background: url(../images/tanchuan_03.gif) no-repeat; width: 408px; height: 221px; z-index:99999; top:60%; right:40%; position:absolute;}
+.tanchu .tanchu_nav{display: block; float: left; height:62px; line-height: 62px; padding-left: 75px; font-size:16px; font-family: "微软雅黑";}
+.tanchu input{background: url(../images/open_no_03.gif) no-repeat; float: right; width: 43px; height: 32px; border: none; margin-right:42px; margin-top:5px; cursor: pointer;}
+.tanchu img{background: url(../images/open_no_03.gif) no-repeat; float: right; width: 43px; height: 32px; border: none; margin-right:42px; margin-top:5px; cursor: pointer;}
+.hehe{width:350px; height: 128px; background: #fff; margin: 0 auto; margin-top: 55px;}
+.hehe p{line-height:50px; width: 340px; padding-left:10px; font-size: 18px;}
+.hehe .p1{font-size:24px; font-family: "微软雅黑"; color:#699cd5;}
+.bgcolor{ position:fixed; *position:absolute; width:100px; height:100px; top:40%; left:60%; margin:-50px 0 0 -50px;}
+
+
+.r-cover {
+	display:none;
+	overflow:hidden;
+	z-index:100;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	background:#000;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}

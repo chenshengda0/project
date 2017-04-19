@@ -1,0 +1,56 @@
+<mobiletpl file="header"/>
+<link rel="stylesheet" href="__PUBLIC__/mobile/css/bindPhone.css"/>
+<section>
+        <div class="set">
+        <div>
+            <div class="set1 gray"> 验证身份 </div>
+            <span class="set2"></span>
+            <div class="set1 orange"> 修改密码 </div>
+            <span class="set2"></span>
+            <div class="set1 gray"> 修改完成 </div>
+        </div>
+    </div>
+    <ul class="prompt_list">
+        <p class="textTitle"><span>新密码:</span>{$Think.session.user.nickname}</p>
+        <li>
+           <div class="item">
+               <div class="icon"><img src="__PUBLIC__/mobile/images/btn_pwd.png" alt=""/></div>
+               <input type="password" id="new_pwd" name="new_pwd" placeholder="请输入新密码" class="noBtn"/>
+           </div>
+        </li>
+    </ul>
+    <ul class="prompt_list">
+        <p class="textTitle"><span>确认密码:</span></p>
+        <li>
+            <div class="item">
+                <div class="icon"><img src="__PUBLIC__/mobile/images/btn_pwd.png" alt=""/></div>
+                <input type="password" id="confirm_pwd" name="confirm_pwd" value="" placeholder="请输入确认密码" class="noBtn"/>
+            </div>
+        </li>
+    </ul>
+    <input  name="ajaxurl" id="ajaxurl" type="text" value="{:U('Mobile/Forgetpwd/uppwd_post')}" style="display:none"/>
+    <input  name="uppwdtoken" id="uppwdtoken" type="text" value="{$uppwdtoken}" style="display:none"/>
+    
+    <div class="error_box"></div>
+    <div class="confim_change">
+        <button>修改</button>
+    </div>
+</section>
+<footer class="kefuFooter">
+    <p class="help">
+    <a class="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qq}&amp;site=qq&amp;menu=yes">
+    <span>客服QQ：</span>{$qq}</a>
+	<if condition="$idkey eq ''">
+		<a class="QQgroup" target="_blank" href="javascript:void();" style="color:#adadad"><span>QQ 群：</span>{$qqgroup}</a>
+	<else />
+		<a class="QQgroup" target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey={$idkey}"><span>QQ 群：</span>{$qqgroup}</a>
+	</if>
+	</p>
+</footer>
+<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/mobile/js/jquery.js"></script>
+<script src="__PUBLIC__/mobile/js/huosdk_base.js"></script>
+<script src="__PUBLIC__/mobile/js/public.js"></script>
+<script src="__PUBLIC__/mobile/js/pwdnew.js"></script>
+</html>

@@ -1,0 +1,35 @@
+{tmpl("Public:header")}
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+               	<th width="200px">{lang("CODE")}</th>
+               	<th width="200px">{lang("NAME")}</th>
+                <th width="200px">{lang("DESCRIPTION")}</th>
+                <th width="200px">{lang("回调地址")}</th>
+                <th width="400px">{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+                <tr class="tr">
+	                <td>{$v['code']}&nbsp;</td>
+	                <td>{$v['name']}&nbsp;</td>
+	                <td>{$v['description']}&nbsp;</td>
+	                <td>{url()}index.php/User/callback/name/{$v['code']}&nbsp;</td>
+	                <td class="tag5">
+	                	{if $v['installed']}
+	                		<a href="__ADMIN_URL__/Account/uninstall/?id={$v['id']}" onclick="return confirm('{lang('SURE_TO_DEL')}')">{lang("UNINSTALL")}</a>&nbsp;
+	                		<a href="__ADMIN_URL__/Account/edit/?id={$v['id']}">{lang("EDIT")}</a>&nbsp;
+	                		{if $v['is_open'] == 1}
+	                			{lang("USING")}
+	                		{else}
+	                			<a href="__ADMIN_URL__/Account/set_effect/?id={$v['id']}">{lang("开启")}</a>
+	                		{/if}
+	                	{else}
+	                		<a href="__ADMIN_URL__/Account/install/?code={$v['code']}">{lang("INSTALL")}</a>&nbsp;
+	                	{/if}
+	                </td>
+                </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+{tmpl("Public:footer")}

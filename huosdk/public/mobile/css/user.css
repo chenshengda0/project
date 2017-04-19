@@ -1,0 +1,778 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input,
+a,
+button,
+i,
+b {
+  outline: none;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+}
+/*********主题**********/
+.clearFloat {
+  content: "";
+  display: table;
+  clear: both;
+}
+.yh {
+  font-family: "微软雅黑", "microsoft YaHei";
+}
+.white {
+  background-color: #fff;
+}
+.borderBox {
+  box-sizing: border-box;
+}
+.tagNav {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+.confim_change {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  background-color: #ebebeb;
+}
+.confim_change > button {
+  width: 100%;
+  height: 40px;
+  letter-spacing: 2px;
+  padding: 0px;
+  background: transparent;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #A5A5A5;
+}
+html {
+  font-size: 62.5%;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "microsoft YaHei", "微软雅黑";
+}
+* {
+  font-family: "microsoft YaHei", "微软雅黑";
+}
+.main_model_box {
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #EEEDED;
+  z-index: -1;
+}
+.header {
+  height: 40px;
+  line-height: 40px;
+  background-color: #393a3f;
+}
+.header > .main_layout {
+  margin: 0px 15px;
+}
+.header > .main_layout > li {
+  width: 33.33333%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.header > .main_layout > li > img {
+  width: 12px;
+  height: 12px;
+  margin-top: 14px;
+}
+.header > .main_layout > .text {
+  text-align: center;
+  font-size: 15px;
+  font-family: "微软雅黑", "microsoft YaHei";
+}
+.header > .main_layout > .backbtn > img {
+  float: left;
+}
+.header > .main_layout > .close_btn > img {
+  float: right;
+}
+.header > .main_layout:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#footer {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #EEEDED;
+  padding-bottom: 30px;
+}
+#footer > .aboutUs {
+  text-align: center;
+  display: inline-block;
+  margin: 10px 0px;
+}
+#footer > .aboutUs > li {
+  float: left;
+  padding: 0px 6px;
+}
+#footer > .aboutUs > li > a {
+  text-decoration: none;
+  color: #8A8A8A;
+}
+#footer > .aboutUs > .game_cooperation > a {
+  color: red;
+}
+#footer > p {
+  color: #8A8A8A;
+}
+#footer > .aboutUs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer_nav {
+  width: 100%;
+  max-width: 900px;
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0px;
+  border-top: 2px solid #ddd;
+}
+.footer_nav > ul {
+  height: 100%;
+}
+.footer_nav > ul > li {
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+.footer_nav > ul > li > a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #afafaf;
+  top: 0px;
+}
+.footer_nav > ul > li > a > b {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.footer_nav > ul > li > a > p {
+  height: 20px;
+  line-height: 20px;
+  font-family: "微软雅黑", "microsoft YaHei";
+}
+.footer_nav > ul > li.zh > a > b {
+  background: url("/public/mobile/images/1.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.msg > a > b {
+  background: url("/public/mobile/images/2.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.lb > a > b {
+  background: url("/public/mobile/images/3.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.dt > a > b {
+  background: url("/public/mobile/images/4.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.zh.active > a > b {
+  background: url("/public/mobile/images/user_green.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.msg.active > a > b {
+  background: url("/public/mobile/images/22.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.lb.active > a > b {
+  background: url("/public/mobile/images/33.png");
+  background-size: 100% 100% ;
+}
+.footer_nav > ul > li.dt.active > a > b {
+  background: url("/public/mobile/images/44.png");
+  background-size: 100% 100%;
+}
+.footer_nav > ul > li.active > a > p {
+  color: #43bf17;
+}
+.footer_info {
+  margin-top: 15px;
+}
+.footer_info > p {
+  line-height: 20px;
+  color: #828282;
+  text-align: center;
+}
+.funcList {
+  box-sizing: border-box;
+  padding: 0px 20px;
+  background-color: #fff;
+}
+.funcList > .list {
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.funcList > .list > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.funcList > .list > a > div {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.funcList > .list > a > .left > b {
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-right: 6px;
+  float: left;
+}
+.funcList > .list > a > .right {
+  text-align: right;
+}
+.funcList > .list > a > .right > i {
+  color: #909090;
+  letter-spacing: 1px;
+}
+.funcList > .list > a > .right > i > b {
+  color: #ff0000;
+}
+.funcList > .list > a > .right > s {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+  margin-left: 5px;
+  background: url("/public/mobile/images/arrow_r.png");
+  background-size: 100% 100%;
+}
+.funcList > li:last-child {
+  border-bottom: none;
+}
+.loading_more {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ebebeb;
+}
+.loading_more > .loadBtn {
+  width: 60%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+.loading_more > .loadBtn > li {
+  width: 33.3%;
+  height: 100%;
+  float: left;
+  color: #AAAAAA;
+}
+.loading_more > .loadBtn > .line {
+  position: relative;
+}
+.loading_more > .loadBtn > .line > b {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #DBDBDB;
+  position: absolute;
+  top: 50%;
+}
+.loading_more > .btn_top {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+.loading_more > .btn_top > img {
+  width: 100%;
+}
+.orange {
+  color: #f68336;
+}
+.infoMsg {
+  box-sizing: border-box;
+  padding: 0px 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.kefuFooter {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 0px;
+}
+.kefuFooter > .help {
+  padding-bottom: 10px;
+  text-align: center;
+  margin-top: 15px;
+}
+.kefuFooter > .help > a {
+  color: #A5A5A5;
+}
+.kefuFooter > .help > .QQ {
+  float: left;
+}
+.kefuFooter > .help > .QQgroup {
+  float: right;
+}
+.set {
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+}
+.set > div {
+  width: 260px;
+  margin: 0px auto;
+  height: 30px;
+  padding-top: 4px;
+}
+.set > div >div{
+  font-size:14px;
+}
+.set > div > span {
+  display: block;
+}
+.set1 {
+  float: left;
+  width: 60px;
+  line-height: 30px;
+}
+.set2 {
+  border-bottom: solid 1px #e0e0e0;
+  padding-top: 15px;
+  display: block;
+  float: left;
+  width: 40px;
+}
+.prompt {
+  margin: 10px;
+  font-size: 0.875em;
+}
+.prompt > form > ul > li {
+  line-height: 25px;
+  font-size: 0.875em;
+}
+.prompt1 {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  background-color: #0c9de0;
+  border: none;
+  color: #ffffff;
+  font-size: 0.875em;
+  border-radius: 4px;
+}
+.prompt2 {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.875em;
+}
+.prompt2 > a {
+  cursor: none;
+}
+@media screen and (min-width: 400px) {
+  .header {
+    height: 50px;
+    line-height: 50px;
+    background-color: #393a3f;
+  }
+  .header > .main_layout {
+    margin: 0px 15px;
+  }
+  .header > .main_layout > li {
+    width: 33.33333%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    color: #fff;
+  }
+  .header > .main_layout > li > img {
+    width: 16px;
+    height: 16px;
+    margin-top: 17px;
+  }
+  .header > .main_layout > .text {
+    text-align: center;
+    font-size: 16px;
+  }
+  .header > .main_layout > .backbtn > img {
+    float: left;
+  }
+  .header > .main_layout > .close_btn > img {
+    float: right;
+  }
+  .header > .main_layout:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .funcList > .list {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .funcList > .list > div {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .funcList > .list > .left > b {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: left;
+  }
+  .funcList > .list > .left > span {
+    font-size: 16px;
+  }
+  .funcList > .list > .right > i {
+    font-size: 1.4rem;
+  }
+  .funcList > .list > .right > s {
+    margin-top: 17px;
+  }
+}
+section > .tenGrayBox {
+  width: 100%;
+  height: 10px;
+  background-color: #f5f5f5;
+}
+section>.bindWay{
+  height:40px;
+  line-height:40px;
+  text-indent:20px;
+  font-size:14px;
+}
+section > .user_header {
+  height: 80px;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  background-color: #fff;
+}
+section > .user_header > .img {
+  height: 80px;
+  line-height: 80px;
+  width: calc(100% - 20px);
+  float: left;
+}
+section > .user_header > .img > img {
+  display:block;
+  width:60px;
+  height: 60px;
+  margin-top: 10px;
+  transform: translateX(-5px);
+  float: left;
+}
+section > .user_header > .img > span {
+  float: left;
+  line-height: 20px;
+  margin-top: 20px;
+}
+section > .user_header > .img > span > i {
+  font-size: 15px;
+}
+section > .user_header > .img > span > b {
+  font-size: 13px;
+}
+section > .user_header > b {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 32px;
+  background: url("/public/mobile/images/arrow_r.png");
+  background-size: 100% 100%;
+}
+section .funcList {
+  box-sizing: border-box;
+  padding: 0px 20px;
+  background-color: #fff;
+}
+section .funcList > .list {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #d9d9d9;
+}
+section .funcList > .list > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 36px;
+}
+section .funcList > .list > a > div {
+  width: 50%;
+  height: 100%;
+  line-height:50px;
+  float: left;
+}
+section .funcList > .list > a > .left > b {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  margin-right: 10px;
+  float: left;
+  background: url("/public/mobile/images/icon_list2.png");
+}
+section .funcList > .list > a > .left > span {
+  color: #353535;
+  font-size:16px;
+  font-family: "微软雅黑", "microsoft YaHei";
+}
+section .funcList > .list > a > .right {
+  text-align: right;
+  line-height:50px;
+}
+section .funcList > .list > a > .right > i {
+  color: #909090;
+  letter-spacing: 1px;
+  font-family: "微软雅黑", "microsoft YaHei";
+}
+section .funcList > .list > a > .right > i > b {
+  color: #ff0000;
+    font-size:16px;
+}
+section .funcList > .list > a > .right > s {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 17px;
+  margin-left: 5px;
+  background: url("/public/mobile/images/arrow_r.png");
+  background-size: 100% 100%;
+}
+section .funcList > .list > a:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+section .funcList > .phone > a > .left > b {
+  background-position: 0px -24px;
+}
+section .funcList > .pwd > .left > b {
+  background-position: 0px -50px;
+}
+section .funcList > .lb > a > .left > b {
+  background-position: 0px -73px;
+}
+section .funcList > .sc > a > .left > b {
+  background-position: 0px -96px;
+}
+section .funcList > .wgdyx > a > .left > b {
+  background-position: 0px -120px;
+}
+section .funcList > .xfjl > a > .left > b {
+  background-position: 0px -147px;
+}
+section .funcList > .lxkf > a > .left > b {
+  background-position: 0px -171px;
+}
+section .funcList > li:last-child {
+  border-bottom: none;
+}
+.footer {
+  box-sizing: border-box;
+  padding: 15px 20px;
+  background-color: #ebebeb;
+  margin-top: 23px;
+}
+.footer > a {
+  display: block;
+  border: 1px solid #ddd;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #aaa;
+}
+@media screen and (min-width: 370px) {
+  section > .user_header > .img > span {
+    font-size: 1.4rem;
+  }
+  section .funcList > .list {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  section .funcList > .list > a {
+    line-height: 50px;
+  }
+  section .funcList > .list > a > div {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+    section .funcList > .list > a > .left {
+      height:50px;
+      line-height:50px;
+    }
+  section .funcList > .list > a > .left > b {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-right: 10px;
+    float: left;
+  }
+  section .funcList > .list > a > .left > span {
+    font-size: 1.4rem;
+  }
+  section .funcList > .list > a > .right > i {
+    font-size: 1.4rem;
+  }
+  section .funcList > .list > a > .right > s {
+    margin-top: 17px;
+  }
+  .footer {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-height: 375px) {
+  body {
+    padding-bottom: 50px;
+  }
+}
+@media screen and (min-width: 370px) and (max-width: 400px) {
+  .footer {
+    padding-top: 15px;
+  }
+}

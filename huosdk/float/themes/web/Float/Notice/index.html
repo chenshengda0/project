@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=1" />
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="__PUBLIC__/float/css/mymsg.css" />
+</head>
+<body>
+	<!-- <header class="header">
+		<ul class="main_layout">
+			<li class="back_btn"></li>
+			<li class="text">我的消息</li>
+			<li class="close_btn"><img src="__PUBLIC__/float/images/closebtn.png" alt="" /></li>
+		</ul>
+	</header>-->
+	<div class="msg_box">
+		<ul class="box">
+		<if condition="$noticedata eq ''">
+			<div style="text-align: center;margin-top: 40%;font-size: 24px;">
+				亲，现在暂无公告哦...
+			</div>	
+		<else />
+		<volist name='noticedata' id='vo'>
+			<li class="item">
+				<a href="{:U('Float/Notice/notice',array('id'=>$vo['id']))}">
+					<div class="left">
+						<img src="__PUBLIC__/float/images/test.png" alt="" />
+					</div>
+					<div class="right">
+						<h3>管理员</h3>
+						<p>
+							{$vo.title}
+						</p>
+						<span>{$vo.update_time|date='Y-m-d  H:i:s',###}</span>
+					</div>
+				</a>
+			</li>
+			</volist>
+			</if>
+		</ul>
+	</div>
+	<div class="loading_more">
+		<ul class="loadBtn loadBtn2">
+			<li class="line"><b></b></li>
+			<li class="text">加载更多</li>
+			<li class="line"><b></b></li>
+		</ul>
+		<div class="btn_top">
+			<img src="__PUBLIC__/float/images/btn_top.png" alt="" />
+		</div>
+	</div>
+	<!-- <footer class="footer_nav">
+		<ul>
+			<li class="zh"><a href="user.html"><b></b>
+				<p>帐户</p></a></li>
+			<li class="msg active"><a href="mymsg.html"><b></b>
+				<p>消息</p></a></li>
+			<li class="lb"><a href="libao.html"><b></b>
+				<p>礼包</p></a></li>
+			<li class="dt"><a href="#"><b></b>
+				<p>大厅</p></a></li>
+		</ul>
+	</footer> -->
+	<div class="main_model_box"></div>
+</body>
+<script src="__PUBLIC__/float/js/jquery.js"></script>
+<script src="__PUBLIC__/float/js/public.js"></script>
+<script src="__PUBLIC__/float/js/mymsg.js"></script>
+</html>

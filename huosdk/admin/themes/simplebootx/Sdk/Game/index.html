@@ -1,0 +1,104 @@
+﻿<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Game/index')}">游戏列表</a></li>
+			<li><a href="{:U('Game/delindex')}">删除列表</a></li>
+			<li><a href="{:U('Game/add')}">添加游戏</a></li>
+		</ul>
+
+		<form class="well form-search" method="post" action="{:U('Game/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20">
+					         状态： 
+						<select class="select_2" name="status" id="selected_id">
+							<foreach name="gamestatues"  key="k" item="vo">
+								<php>$g_select=$k==$status ?"selected":"";</php>
+								<option value="{$k}"{$g_select}>{$vo}</option>
+							</foreach>
+						</select>
+						游戏名称： 
+						<input type="text" name="name" style="width: 200px;" value="{$name}" placeholder="请输入游戏名...">
+						<input type="submit" name="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width=50>游戏ID (APPID)</th>
+						<th width=100>游戏名称</th>
+						<th width=50>APPKEY</th>
+						<th width=50>状态</th>
+						<th width=100>上线时间</th>
+						<th width=150>回调地址</th>
+						<th width=150>母包地址</th>
+						<th width=120>管理操作</th>
+					</tr>
+				</thead>
+				<foreach name="games" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.app_key}</td>
+					<td>
+							 {$gamestatues[$vo[status]]}
+					</td>
+					<td>
+						<if condition="$vo['status'] eq 1 OR $vo['status'] eq 3">
+							 <a href="{:U('Game/set_status',array('id'=>$vo['id'],'status'=>2))}" class="js-ajax-dialog-btn" data-msg="确定上线游戏？">上线游戏</a>
+						<else />
+							{$vo.run_time|date='Y-m-d  H:i:s',###}<br/>
+							<a  href="{:U('Game/set_status',array('id'=>$vo['id'],'status'=>3))}" class="js-ajax-dialog-btn" data-msg="确定下线游戏？">下线游戏</a>
+						</if>
+					</td>
+					<td style="word-wrap:break-word;word-break:break-all;">
+					    <if condition="empty($vo['cpurl'])">
+							暂无回调<br/>
+							<a href="{:U('Game/addurl',array('appid'=>$vo['id']))}">点击添加回调</a>
+						<else /> 
+							{$vo.cpurl}<br/>
+							<a href="{:U('Game/editurl',array('appid'=>$vo['id']))}">点击修改回调</a>
+						</if> 
+					</td>
+					
+					<td style="word-wrap:break-word;word-break:break-all; ">
+					    <if condition="empty($vo['packageurl'])">
+							暂无母包({$vo['initial']})
+							<br/><a href="{:U('Game/addpackageurl',array('appid'=>$vo['id']))}">生成母包</a>
+						<else /> 
+							{:DOWNSITE}/{$vo.packageurl}
+							<!-- <a href="{:U('Game/editpackageurl',array('appid'=>$vo['id']))}">点击更新母包</a> -->
+						</if> 
+					</td>
+					
+					<td >
+						<a href="{:U('Game/get_param',array('appid'=>$vo['id']))}">对接参数 </a>
+						<a href="{:U('Game/edit',array('appid'=>$vo['id']))}">| 编辑 </a>
+						<if condition="$vo['status'] neq 0">
+							<a href="{:U('Game/delGame',array('id'=>$vo['id']))}" class="js-ajax-delete"> | 删除</a>
+						</if>
+					</td>
+				</tr>
+				</foreach>
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		$(function() {
+
+			$("#navcid_select").change(function() {
+				$("#mainform").submit();
+			});
+
+		});
+	</script>
+</body>
+</html>

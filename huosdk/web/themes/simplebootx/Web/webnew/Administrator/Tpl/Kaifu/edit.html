@@ -1,0 +1,56 @@
+{tmpl("Public:header")}
+<script language="javascript" type="text/javascript" src="__TMPL__Common/My97DatePicker/WdatePicker.js"></script>
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('游戏')}:</div>
+				<div class="right">
+					<select class="cm-select require" name="game_id">
+						<option value="0">选择游戏</option>
+						{foreach from=$games item=v}
+						<option value="{$v.id}" {if $detail.game_id eq $v.id}selected{/if}>{$v.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('服务器名称')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="name" value="{$detail.name}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('开服类型')}:</div>
+				<div class="right">
+					<select name="type" class="sm-select">
+						<option value="0" {if $detail.type eq 0}selected{/if}>正常开服</option>
+						<option value="1" {if $detail.type eq 1}selected{/if}>内测开服</option>
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('开服时间')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="open_time" value="{date('Y-m-d H:i:00',$detail.open_time)}" onFocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm' })">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('游戏地址')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="url" value="{$detail.url}">
+					<i>http://开头</i>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{tmpl("Public:footer")}

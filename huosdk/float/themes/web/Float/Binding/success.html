@@ -1,0 +1,23 @@
+<include file="float/themes/web/Float/header.html" />
+ <div class="set">
+        <div>
+               <div  class="set1 gray"> 验证身份 </div>
+              <span  class="set2"></span>
+               <div  class="set1 gray"> 设置 </div>
+                <span  class="set2"></span>
+               <div  class="set1 orange"> 设置完成 </div>
+        </div>
+</div>
+<div class="set_statu">
+    <div class="find show">
+        <div><img src="__PUBLIC__/float/images/tick.png"></div>
+        <div>{$msg}</div>
+    </div>
+</div>
+</body>
+<script>
+    var main_title=document.getElementsByClassName("main_title")[0];
+    main_title.style.transform="translateX(-"+parseInt(window.getComputedStyle(main_title).width)/2+"px)";
+</script>
+ </html>
+ 

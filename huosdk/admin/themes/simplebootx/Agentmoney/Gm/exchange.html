@@ -1,0 +1,89 @@
+﻿<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+		<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Gm/give')}">游戏币转账</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal" action="{:U('Gm/give_verify')}">
+				<fieldset>
+					<input type="hidden"  id="takeclass" class="radio" name="takeclass" value="1" />
+					<div class="control-group">
+					<label class="control-label">游戏:</label>
+						<div class="controls">
+							<select class="select_2" id="app_id" name="app_id" id="selected_id">
+								<foreach name="gamemoneys"  key="k" item="vo">
+									<php>$g_select=$k==$app_id ?"selected":"";</php>
+									<option value="{$k}"{$g_select}>{$vo}</option>
+								</foreach>
+							</select>	
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">拥有游戏币数量:</label>
+						<div class="controls">
+							<input type="text" class="input" name="remain" id="remain" style="color:blue;" value="{$remain}" readonly="readonly" >
+						</div>
+					</div>
+										
+					<div class="control-group">
+						<label class="control-label">请填写账号:</label>
+						<div class="controls">
+							<input type="text" class="input" name="username" id="username" value="">
+							<span id="usernamespan" style="color:#00F;display:none;">账号不存在</span>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">请填写转账游戏币数量:</label>
+						<div class="controls">
+							<input type="text" class="input" name="newgm" value="" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写充值金额:</label>
+						<div class="controls">
+							<input type="text" class="input" name="amount" value="" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写备注:</label>
+						<div class="controls">
+							<input type="text" class="input" name="beizhu" value="" autocomplete="off">
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<input name="adminsite" type="hidden"  id="adminsite" value="{:U('Gm/ajaxGetgm')}">
+					<button type="submit"	class="btn btn-primary btn_submit">确认</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		$(function(){
+			$("#username").bind("blur",function(){
+				var username = $("#username").val();
+				var app_id = $("#app_id").val();
+				var takeclass = $("#takeclass").val();
+				
+				var adminsite = $("#adminsite").val() + "?username="+username+"&app_id="+app_id+"&takeclass="+takeclass;
+				$.ajax({
+					url: adminsite,
+					type: "GET",
+					success: function(data) {
+						if (data == "noexit") {
+							$("#usernamespan").show();	
+						} else {
+							$("#usernamespan").hide();
+							$("#remain").val(data);
+						}
+					} 	
+				});		
+			});
+		});
+	</script>	
+</body>
+</html>

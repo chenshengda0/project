@@ -1,0 +1,72 @@
+<webtpl file="Pay/header" />
+	<div class="main">
+        <div id="main_payFor">
+            <div class="main_title">充值到哪里:</div>
+			<p>{:C('CURRENCY_NAME')}是{:C('BRAND_NAME')}游戏平台发行的虚拟商品，游戏中的元宝钻石等商品可使用{:C('CURRENCY_NAME')}兑换 兑换比例1元=10 {:C('CURRENCY_NAME')}
+            <div class="main_payFor">
+                <a id="pay_for_platform" val="platform" class="main_payFor_a on">充值到{:C('CURRENCY_NAME')}</a>
+                <!--
+                <a id="pay_for_game" val="game" class="main_payFor_a ">默认充值到游戏</a>
+                -->
+            </div>
+        </div>
+        <div id="main_ptNotice" class="main_ptNotice">
+            什么是{:C('CURRENCY_NAME')}？<a target="_blank" href="{:U('Web/Pay/payBi')}">[查看详情]------{:C('CURRENCY_NAME')}兑换比例 1元=10 {:C('CURRENCY_NAME')}</a>
+        </div>
+            
+        <div id="main_user" class="main_title main_user">
+            
+            <div class="main_user_input" style="display: block;">
+                <span>充值帐号:</span><input type="text" value="{$Think.session.user.sdkuser}" id="username" class="user_input" name="username"><span class="change_user" id="change_user">[请填写账号]</span>	
+				<input id="userPay" name="userPay"  type="hidden" value="{:U('Web/Pay/userTtb')}" />
+				<input id="website" name="website"  type="hidden" value="{$website}" />				
+            </div>
+        </div>
+        <div id="main_money">
+            <div class="main_title">选择金额: 
+                <span style="display:none; color:red;" id="paltform_coin_balance">您的帐户还有0{:C('CURRENCY_NAME')}</span>
+            </div>
+				
+				<div id="main_money_list" class="main_money">
+					<a id="money_0" val="10" class="main_money_a">10元</a>
+					<a id="money_1" val="30" class="main_money_a">30元</a>
+					<a id="money_2" val="50" class="main_money_a">50元</a>
+					<a id="money_3" val="100" class="main_money_a on">100元</a>
+					<a id="money_4" val="200" class="main_money_a">200元</a>
+					<a id="money_5" val="500" class="main_money_a">500元</a>
+					<a id="money_6" val="1000" class="main_money_a">1000元</a>
+					<a id="money_7" val="2000" class="main_money_a">2000元</a>
+					<a id="money_8" val="5000" class="main_money_a">5000元</a>
+					<a id="money_9" val="10000" class="main_money_a">10000元</a>
+				</div>
+				<div id="main_other_money" class="main_other_money">
+                	<a id="money_9999"></a>
+                    <label for="other_money">其他金额:</label>
+                    <input type="text" value="" id="other_money" class="other_money" name="other_money">
+                    <span id="money_unit">元</span>
+                </div>
+                <input type="hidden" id="moneyrate" value="{$moneyrate[$paytypeid].rate}">
+                <input type="hidden" id="money" value="{$moneyrate[$paytypeid].money}">
+				<div class="main_money_convert">对应<span id="coin_name">{:C('CURRENCY_NAME')}</span>数量:<span id="money_convert"></span>&nbsp;&nbsp;&nbsp;<span id="zengsong" style="display:none;">赠送<span id="give"></span><span>个{:C('CURRENCY_NAME')}</span></span>
+                <!--</div>
+                <div id="cz_ptNotice" class="main_ptNotice" style="display:none;">详细充值返利说明<a target="_blank" href="{$WEBSITE}/template/html/news_119.html">[查看详情]</a>
+        		</div> -->
+                
+			</div>
+            <input type="hidden" id="orderid" value="{$orderid}">
+            <input type="hidden" id="url" value="{$url}">
+            <input type="hidden" id="paytypeid" value="{$paytypeid}">
+            <input type="hidden" id="paytype" value="{$payarr[$paytypeid]}">
+			<div class="main_confirm"><a id="pay_submit" href="javascript:void(0)" onclick="check_sub();" ></a></div>
+            
+			<div class="main_explain">{$_content}</div>
+			
+		</div>
+        
+		<div style="clear"></div>
+		
+	</div>
+	<div class="clear"></div>
+	
+</div>
+<webtpl file="Pay/footer" />

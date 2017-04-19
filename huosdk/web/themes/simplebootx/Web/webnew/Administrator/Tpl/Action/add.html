@@ -1,0 +1,56 @@
+{tmpl("Public:header")}
+	<div class="subBody">
+	    <div class="cm-input-wrap-box">
+		    <form action="" class="jqtransform" method="POST">
+		        <div class="cm-input-wrap cf">
+		            <div class="left">{lang("CODE_NAME")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text require" type="text" name="name"  >
+		                <i>{lang("CODE_NAME_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("VIEW_NAME")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text require" type="text"  name="view_name" >
+		                <i>{lang("VIEW_NAME_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("MODULE_NAME")}:</div>
+		            <div class="right">
+		                <select name="moduleid" class="cm-select">
+							{foreach from=$modules item=v key=k}
+								<option value="{$v['id']}">{lang($v['name'])}</option>
+							{/foreach}
+						</select>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("FUNC_NAME")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text"  name="func" >
+		                <i>{lang("FUNC_NAME_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("ORDER")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text require" type="text" name="orderid" value="0" >
+		                <i>{lang("ORDER_TIP")}</i>
+		            </div>
+		        </div>
+		        
+		        <div class="cm-input-wrap cf mt20 ">
+		            <div class="right">
+		                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+		                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+		            </div>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+	
+	
+
+{tmpl("Public:footer")}

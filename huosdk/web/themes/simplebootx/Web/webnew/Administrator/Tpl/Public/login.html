@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>联系我们</title>
+    <link rel="stylesheet" type="text/css" href="__TMPL__Common/css/common.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Common/css/style.css">
+    <script src="__TMPL__Common/js/jquery-1.7.min.js"></script>
+    <script src="__TMPL__Common/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__TMPL__Common/js/module.js"></script>
+    
+    <script src="__TMPL__Common/js/global.js"></script>
+</head>
+<style>
+html,body{ height:100%; }
+</style>
+<body>
+    <div class="loginPage">
+        <div class="mainWrap">
+            <h1><img src="__TMPL__Common/images/login_h1.png"  alt=""></h1>
+            <div class="main">
+                <div class="left">
+                    <img src="__TMPL__Common/images/login_pic.jpg" height="257" width="374" alt="">
+                </div>
+                <div class="right">
+                    <h2>登录系统</h2>
+                    <ul>
+	                    <form method="post" action="__ADMIN_URL__/Index/dologin">
+	                        <li class="li1">
+	                            <em class="icon-name"></em>
+	                            <input class="cm-input-text jq_btn_showhide" type="text" name="username" tabindex="1" placeholder="{lang("USERNAME")}">
+	                        </li>
+	                        <li class="li1">
+	                            <em class="icon-password"></em>
+	                            <input class="cm-input-text" type="password" name="password" tabindex="2" placeholder="{lang("PASSWORD")}">
+	                        </li>
+	                        <li class="li4">
+	                            <input class="cm-blue-btn" type="submit" name="submit" value="{lang("LOGIN")}">
+	                            <input class="cm-input-text jq_btn_showhide" type="text" tabindex="3" name="verify" placeholder="输入验证码">
+	                            <img src="__ADMIN_URL__/Verify/index?width=80&height=40&length=4&rand={rand(10000,99999)}" style="width:80px;height:40px;" onclick="javascript:this.src='__ADMIN_URL__/Verify/index?width=80&height=40&length=4&rand='+ Math.random();" autocomplete="off"  />
+	                        </li>
+	                    </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+

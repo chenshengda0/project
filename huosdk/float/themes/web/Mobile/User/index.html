@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1"/>
+    <meta charset="UTF-8">
+    <title>帐户</title>
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/user.css"/>
+</head>
+<body>
+<header class="header">
+    <ul class="main_layout">
+        <li class="back_btn"></li>
+        <li class="text">帐户</li>
+        <li class="close_btn"><img src="__PUBLIC__/mobile/images/closebtn.png" alt=""/></li>
+    </ul>
+</header>
+<section>
+    <div class="tenGrayBox"></div>
+    <div class="user_header" onclick="user_setting()">
+        <div class="img">
+         <if condition = "substr($user['head_img'],0,4) eq 'http'" >
+			<img src="{$user.head_img}">	
+		<elseif condition = "$user['head_img'] neq ''" />
+			<img id="showimg" src="{:H5ISITE}/upload/logo/{$user.head_img}">
+		<else />
+        	<img src="__PUBLIC__/mobile/images/game8.jpg" alt=""/>
+		</if>
+            <span>个人信息</span>
+        </div>
+        <b></b>
+    </div>
+    <div class="tenGrayBox"></div>
+    <ul class="funcList">
+        <li class="list qb"><a href="{:U('Mobile/Wallet/index')}"><div  class="left"><b></b><span>钱包</span></div><div class="right"><i><b>{$memptb.amount|default=0}</b>{:C('CURRENCY_NAME')}</i><s></s></div></a></li>
+        <li class="list phone"><a href="{:U('User/Float/bindPhone')}"><div  class="left"><b></b><span>手机</span></div><div class="right"><i>{$mobileflag}</i><s></s></div></a></li>
+        <li class="list pwd"><a href="{:U('User/Float/changePwd')}"><div  class="left"><b></b><span>修改密码</span></div><div class="right"><s></s></div></a></li>
+        <!-- <li class="list "><a href="{:U('User/Float/forgetPwd')}"><div  class="left"><b class="forgetPwd"></b><span>忘记密码</span></div><div class="right"><s></s></div></a></li>  -->
+    </ul>
+    <div class="tenGrayBox"></div>
+    <ul class="funcList">
+        <li class="list lb"><a href="{:U('User/Float/myLibao')}"><div  class="left"><b></b><span>我的礼包</span></div><div class="right"><i><b>{$giftnumber|default=0}</b>个</i><s></s></div></a></li>
+        <li class="list sc"><a href="{:U('User/Float/myCollection')}"><div  class="left"><b></b><span>我的收藏</span></div><div class="right"><i>{$myCollercionCount|default=0}款</i><s></s></div></a></li>
+        <li class="list wgdyx"><a href="{:U('User/Float/myPlayed')}"><div  class="left"><b></b><span>玩过的游戏</span></div><div class="right"><s></s></div></a></li>
+    </ul>
+    <div class="tenGrayBox"></div>
+    <ul class="funcList">
+        <li class="list lxkf"><a href="{:U('User/Float/kefu')}"><div  class="left"><b></b><span>联系客服</span></div><div class="right"><s></s></div></a></li>
+    </ul>
+</section>
+<div class="main_model_box"></div>
+<footer class="footer">
+    <a href="{:U('User/Float/logout')}">退出</a>
+</footer>
+<footer class="footer_nav">
+    <ul>
+        <li class="zh active"><a href="{:U('User/Float/userinfo')}"><b></b><p>帐户</p></a></li>
+        <li class="msg"><a href="{:U('User/Float/mymsg')}"><b></b><p>消息</p></a></li>
+        <li class="lb"><a href="{:U('User/Float/gift')}"><b></b><p>礼包</p></a></li>
+        <li class="dt"><a href="{:U('User/Float/dt')}"><b></b><p>大厅</p></a></li>
+    </ul>
+</footer>
+</body>
+<script src="__PUBLIC__/sdk/js/sdk/jquery.js"></script>
+<script src="__PUBLIC__/sdk/js/sdk/public.js"></script>
+<script src="__PUBLIC__/sdk/js/sdk/user.js"></script>
+<script>
+	//跳转到用户信息编辑
+	function user_setting(){
+		window.location.href="{:U('User/Float/user_setting')}";
+	}
+</script>
+</html>

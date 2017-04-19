@@ -1,0 +1,148 @@
+{tmpl("Public:header")}
+
+<div class="subBody">
+	{if $nav.module neq 'nav'}
+	<div class="cm-input-wrap-box" id="1F">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">站内栏目:</div>
+	            <div class="right">
+	                <!-- <input class="cm-input-text" type="text"  name="url" > -->
+	                <select class="cm-select" name="nav_menu" id="nav_menu">
+	                	<option value="">请您选择链接项目</option>
+	                	{$tree}
+	                </select>
+	                
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("NAV_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name" id="name" value="{$nav.name}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("NAV_TYPE")}:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	{foreach from=$_LANG['NAV_TYPES'] item=v key=k}
+	                	<option value="{$k}" {if $nav.type eq $k}selected{/if}>{$v}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" value="{$nav.orderid}">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_BLANK")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_blank" value="1" {if $nav.is_blank eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_blank" value="0" {if $nav.is_blank eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_show" value="1" {if $nav.is_show eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_show" value="0" {if $nav.is_show eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+    	var nav_menu = '{$nav.module},{$nav.guide}';
+    	$("#nav_menu").val(nav_menu);
+    	$("#nav_menu").change(function(){
+    		var name = $(this).find("option:selected").text();
+    		if($(this).val() != ""){
+    			var names = name.split('├─ ');
+    			name = names.join('');
+    			$("#name").val(name);
+    		}else{
+    			$("#name").val('');
+    		}
+    		
+    	});
+    })
+    </script>
+	{else}
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("NAV_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="name"  value="{$nav.name}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("NAV_URL")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="guide" value="{$nav.guide}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf ">
+	            <div class="left">{lang("NAV_TYPE")}:</div>
+	            <div class="right">
+	                <select class="cm-select" name="type">
+	                	{foreach from=$_LANG['NAV_TYPES'] item=v key=k}
+	                	<option value="{$k}" {if $nav.type eq $k}selected{/if}>{$v}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text" name="orderid" value="{$nav.orderid}">
+	                <i>{lang("ORDER_TIP")}</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_BLANK")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_blank" value="1" {if $nav.is_blank eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_blank" value="0" {if $nav.is_blank eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="is_show" value="1" {if $nav.is_show eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="is_show" value="0" {if $nav.is_show eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	            	<input type="hidden" name="nav_menu" value="{$nav.module},{$nav.guide}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+    {/if}
+</div>
+
+
+
+
+
+
+    
+{tmpl("Public:footer")}

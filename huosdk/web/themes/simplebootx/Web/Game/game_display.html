@@ -1,0 +1,77 @@
+﻿{include  file="header.html"}
+
+
+<div class="clear"></div>
+
+<div class="banner4">
+{literal}
+<script>
+	function showpic(e){
+		var img = document.getElementById(e);
+		document.getElementById("showPic").src = img.src;
+	}
+</script>
+<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+{/literal}
+
+ <div class="banner4_2">
+  <div class="banner4_main">
+    <div class="game_banner"><div style="background:url(__UPLOAD__/image/{$gameinfo[0].bigimage}); width:974px; height:357px;">
+	  <div class="game_pic">
+	    <div class="game_pic_main">
+		  <div class="game_pic_main_l">
+		    <div class="sub_xiaot">
+	<div class="sub_xdt"><img src="__UPLOAD__/image/{$gameinfo[0].bigimage}" id="showPic" height="256" width="396"></div>
+	<div class="sub_small">
+	  <ul>
+	   		<li><a href="javascript:showpic('img_0')"><img src="__UPLOAD__/image/{$arimage[0]}" id="img_0" height="55" width="87"></a></li>
+	   		<li class="sub_tian"><a href="javascript:showpic('img_1')"><img src="__UPLOAD__/image/{$arimage[1]}" id="img_1" height="55" width="87"></a></li>
+	   		<li class="sub_tian"><a href="javascript:showpic('img_2')"><img src="__UPLOAD__/image/{$arimage[2]}" id="img_2" height="55" width="87"></a></li>
+	   		<li class="sub_tian"><a href="javascript:showpic('img_3')"><img src="__UPLOAD__/image/{$arimage[3]}" id="img_3" height="55" width="87"></a></li>
+	  </ul>
+	</div>
+</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div></div>
+</div></div>
+<div class="clear"></div>
+  <div class="main">
+    <div class="newsbox">
+	  <div class="cont_l">
+	    <div class="game_abut">
+		  <div class="game_abut_nav">游戏介绍</div>
+		  <div class="game_abut_m">
+		    <div class="game_abut_main">
+			 {$gameinfo[0].description}
+			</div>
+		  </div>
+		  <div class="game_abut_b"></div>
+		</div>
+	  </div>
+	  <div class="cont_l">
+	    <div class="game_abut">
+		  <div class="game_abut_nav">功能介绍</div>
+		  <div class="game_abut_m">
+		    <div class="game_abut_main">
+			   {$gameinfo[0].function}
+			</div>
+		    
+		  </div>
+		  <div class="game_abut_b"></div>
+		</div>
+	  </div>
+	  <div class="cont_r">
+	    <div class="game_r">
+		   <p><a href="{$gameinfo[0].url}" target="_blank"><img src="__PUBLIC__/web/images/komri.gif" border="0" /></a></p>
+		  <p><a href=""><img src="__PUBLIC__/web/images/ios.gif" /></a></p>
+		  <p><a href=""><img src="__PUBLIC__/web/images/d.gif" /></a></p>
+		</div>
+	  </div>
+	</div>
+   <div class="clear"></div> 
+   </div>
+<div class="clear"></div>
+{include file="footer.html"}

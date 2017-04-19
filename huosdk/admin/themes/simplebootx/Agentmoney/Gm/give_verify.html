@@ -1,0 +1,80 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+		<div class="wrap jj">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Gm/give')}">游戏币发放</a></li>
+			<li class="active"><a href="#">游戏币币发放确认</a></li>
+		</ul>
+		
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Gm/give_post')}">
+				<fieldset>
+					<div class="control-group">
+						<if condition="$takeclass eq 1">
+							<input type="hidden" id="takeclass" name="takeclass" value="1"   checked="checked"/>
+						<else />
+							<input type="hidden" id="takeclass" name="takeclass" value="2"  checked="checked"/>
+						</if>
+					<input type='hidden' name='app_id' value='{$app_id}'>
+					
+					<div class="control-group">
+							<label class="control-label">游戏  (游戏币):</label>
+							<div class="controls">
+								<label class="control-label" style="text-align:left">{$games[$app_id]} ({$gamemoneys[$app_id]})</label>
+							</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">充值账号:</label>
+						<div class="controls">
+							<input type="hidden" class="input" name="username" readonly="readonly" id="username" value="{$username}">	
+							<label class="control-label" style="text-align:left">{$username}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">拥有{$gamemoneys[$app_id]}数量:</label>
+						<div class="controls">
+							<input type="hidden" class="input" name="oldgm" id="oldgm" style="color:blue;" value="{$remain}" readonly="readonly" >
+							<label class="control-label" style="text-align:left">{$remain}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">发放{$gamemoneys[$app_id]}数量:</label>
+						<div class="controls">
+							<input type="hidden" class="input" name="newgm" value="{$newgm}" readonly="readonly" autocomplete="off">
+							<label class="control-label" style="text-align:left">{$newgm}</label>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">充值金额:</label>
+						<div class="controls">
+							<input type="hidden" class="input" name="amount" value="{$amount}" readonly="readonly" autocomplete="off">
+							<label class="control-label" style="text-align:left">{$amount}</label>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">备注:</label>
+						<div class="controls">
+							<input type="text" class="input" name="beizhu" value="{$beizhu}" autocomplete="off">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">请填写二级密码:</label>
+						<div class="controls">
+							<input type="password" class="input" name="password" value="" autocomplete="off">
+						</div>
+					</div>
+					
+				</fieldset>
+				<div class="form-actions">
+					<input name="action" type="hidden" value="add">
+					<button type="submit" class="btn btn-primary btn_submit js-ajax-submit">发放</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

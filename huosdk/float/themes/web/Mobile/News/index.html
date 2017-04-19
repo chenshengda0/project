@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta charset="UTF-8">
+    <title>{$postdata.post_title}</title>
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/css_reset.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/mobile/css/info_detail.css"/>
+</head>
+<body>
+<header class="header">
+    <h3 class="news_title">{$postdata.post_title}</h3>
+    <p><span>{$postdata.post_modified|date='Y-m-d  H:i:s',###}</span><a href="#">{$gamename}</a></p>
+</header>
+<div class="text_intro">
+{$postdata.post_content}
+</div>
+
+</body>
+</html>

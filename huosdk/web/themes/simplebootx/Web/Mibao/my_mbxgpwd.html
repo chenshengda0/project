@@ -1,0 +1,75 @@
+<webtpl file="Index/headertwo" />
+
+<script type="text/javascript" src="{$WEBSITE}/js/regformchk3.js"></script>
+	<script type="text/javascript" src="{$WEBSITE}/js/regformchk2.js"></script>
+	<script type="text/javascript" src="{$WEBSITE}/js/user.js"></script>
+	<div class="gg_game_hu">
+		<!--<div class="ggs_xx"></div>-->
+		
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="zhmia">
+			<div class="user_r_box" style="margin:50px auto;">
+	    <div class="user_r_box_nav">修改密码</div>
+		<form name="myform" id="myform" action="{:U('Mibao/my_mbuser')}" method="post" >
+		<div class="user_r_box_main">
+		  <div class="user_r_box_list">
+		    <ul>
+				<li></li>
+				<!-- 密码 开始 -->
+			    <div class="clearfix yw_mreg_item">
+                    <div class="yw_mreg_label">输入新密码：</div>
+                    <div class="yw_mreg_int" style="position: relative">
+                        <input class="login_input" onblur=ChkPwd(); onFocus="jQuery('#pwdspan').show();" type='password' maxLength=16 name="usrpwd" id="usrpwd" autocomplete="off"> 
+                    </div><!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id='pwdspan' style="DISPLAY: none">6-16位的字符!建议使用大小写字母和数字混合</div>
+                    </div><!-- //验证信息 --></div>
+                <!-- //密码 结束 -->
+
+			   <!-- 确认密码 开始 -->
+                <div class="clearfix yw_mreg_item">
+                    <div class=yw_mreg_label>确认密码：</div>
+                    <div class=yw_mreg_int>
+                        <input class="login_input" id="usrpwdc" onblur=ChkPwdc(); onfocus="jQuery('#pwdcspan').show();" type=password name="usrpwdc" autocomplete="off"> 
+                    </div>
+    
+                    <!-- 验证信息 -->
+                    <div class=yw_mreg_info>
+                        <div class=default id=pwdcspan style="DISPLAY: none">再次输入密码，确保密码输入正确。</div>
+                    </div>
+                    <!-- //验证信息 -->
+    
+                </div>
+                <!-- //确认密码 结束 -->
+		       
+			 </ul>
+		  </div>
+		  
+		  		  <div class="clear"></div>
+		  <div class="user_r_box_line"></div>
+		  <div class="user_r_box_tj">
+		    <input type="submit" id="update_pwd" value="确定" class="que_btn">
+			<input name="action" type="hidden" value="updatepwd" />
+			<input name="username" type="hidden" value="{$username}" />
+		    <!--
+		    <ul>
+			  <li><a href="#" class="que_btn">确 定</a></li>
+			</ul>
+		  -->
+		  </div>
+		 </form>
+		  <div class="clear"></div>
+		</div>
+		
+
+
+	  </div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+
+<webtpl file="Index/footertwo" />

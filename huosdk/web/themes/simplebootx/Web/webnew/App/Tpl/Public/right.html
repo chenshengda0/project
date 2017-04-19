@@ -1,0 +1,52 @@
+<!--右栏目start-->
+    <li class="right fr">
+      <!--广告位start-->
+      <div class="ad">
+      	{adv(5,2)}
+     </div>
+      <!--广告位end-->
+      
+      <!--推荐游戏start-->
+      <div class="recommned-game">
+        <h2>推荐游戏</h2>
+        <ul class="clearfix">
+        {assign var='tj' value=push('id,name,logo',6,9)}
+        {foreach from=$tj item=v}
+          <li><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /><p>{$v.name}</p></a></li>
+        {/foreach}
+        </ul>
+      </div>
+      <!--推荐游戏end-->
+      
+      <!--游戏排行start-->
+      <div class="game-comapre mt20">
+        <h2>游戏排行</h2>
+        <ul>
+        	{assign var='ph' value=paihang()}
+        	{foreach from=$ph item=v key=k}
+          <li class="clearfix">
+            <div class="tair01 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>  
+              <ul class="con fl"><h4>{$v.name}</h4></ul>
+              <ul class="fl"><p>{$v.typename}</p></ul>
+              <ul class="fr"><p><em>{$v.down_num}</em></p></ul>
+            </div>
+            <div class="tair02 clearfix">
+              <ul class="num fl"><i>{$k+1}</i></ul>
+              <ul class="img fl"><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank"><img src="{$v.logo}" alt="" /></a></ul>
+              <ul class="con fl">
+                <h4><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+                <p>{$v.typename}</p>
+              </ul>
+              <ul class="fr down">
+                <span>{$v.down_num}</span>
+                <a href="{url('Game#download','id='|cat:$v.id)}" title="">立即下载</a>
+              </ul>
+            </div>
+          </li>
+          {/foreach}
+        </ul>
+      </div>
+      <!--游戏排行end-->
+    </li>
+    <!--右栏目end-->

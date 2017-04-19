@@ -1,0 +1,95 @@
+﻿<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Newapp/Version/index')}">APP版本列表</a></li>
+			<li><a href="{:U('Newapp/Version/add')}">添加APP版本</a></li>
+		</ul>
+
+<!-- 		<form class="well form-search" method="post"
+			action="{:U('Newapp/Version/index')}">
+			<div class="search_type cc mb10">
+				<div class="mb10">
+					<span class="mr20"> 当前状态： <select class="select_2"
+						name="gstatus" id="gstatus">
+							<foreach name="gamestatus" key="k" item="vo"> <php>$gs_select=$k==$formget['gstatus']
+							?"selected":"";</php>
+							<option value="{$k}"{$gs_select}>{$vo}</option>
+							</foreach>
+					</select>&nbsp;&nbsp; 游戏标签： <select class="select_2" name="gtype" id="gtype">
+							<foreach name="gtypes" key="k" item="vo"> <php>$gt_select=$k==$formget['gtype']
+							?"selected":"";</php>
+							<option value="{$k}"{$gt_select}>{$vo}</option>
+							</foreach>
+					</select>&nbsp;&nbsp; 游戏名称： <input type="text" name="gname"
+						style="width: 200px;" value="{$formget['gname']}"
+						placeholder="请输入游戏名..."> <input type="submit"
+						name="submit" class="btn btn-primary" value="搜索" />
+					</span>
+				</div>
+			</div>
+		</form> -->
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<!-- <th>版本ID</th>-->
+						<th>版本ID</th>
+						<th>版本名称</th>
+						<th>添加时间</th>
+						<th>更新时间</th>
+						<th>下载地址</th>
+						<th>大小</th>
+						<th>状态</th>
+						<th>管理操作</th>
+					</tr>
+				</thead>
+				<foreach name="versions" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.version}</td>
+					<td>{$vo.create_time|date='Y-m-d H:i:s',###}</td>
+					<td>{$vo.update_time|date='Y-m-d H:i:s',###}</td>
+					<td style="word-wrap:break-word;word-break:break-all; ">
+					    <if condition="empty($vo['packageurl'])">
+							暂未上传app
+							<br/><a href="{:U('Version/addpackageurl',array('id'=>$vo['id']))}">添加app</a>
+						<else /> 
+							{$vo.packageurl}
+						</if> 
+					</td>
+					<td>{$vo.size|format_file_size}</td>
+					<td>
+					<if condition="$vo['status'] eq 1 OR $vo['status'] eq 3">
+							 <a href="{:U('Version/set_status',array('id'=>$vo['id'],'status'=>2))}" class="js-ajax-dialog-btn" data-msg="确定上线版本？">上线版本</a>
+						<else />
+							已上线
+					</if>
+					</td>
+					<td >
+						<a href="{:U('Version/get_param',array('id'=>$vo['id']))}">版本参数 </a>
+						<a href="{:U('Version/edit',array('id'=>$vo['id']))}">| 编辑 </a>
+						<if condition="$vo['status'] lt 3">
+							<a href="{:U('Version/del',array('id'=>$vo['id']))}" class="js-ajax-delete"> | 删除</a>
+						</if>
+					</td>
+				</tr>
+				</foreach>
+			</table>
+			<div class="pagination">{$Page}</div>
+
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		$(function() {
+
+			$("#navcid_select").change(function() {
+				$("#mainform").submit();
+			});
+
+		});
+	</script>
+</body>
+</html>

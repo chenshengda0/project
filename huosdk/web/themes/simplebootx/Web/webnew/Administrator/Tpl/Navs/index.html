@@ -1,0 +1,73 @@
+{tmpl("Public:header")}
+<div class="cm-subHead">
+        <a class="cm-red-btn" href="__ADMIN_URL__/Navs/add" >{lang("ADD")}</a>
+        <form action="" method="GET" >
+     <ul>
+     	<li>
+             {lang("CATEGORY")}
+             <select name="type" class="cm-select">
+				<option value="-1">{lang("ALL")}</option>
+				{foreach from=$_LANG['NAV_TYPES'] item=v key=k}
+               	<option value="{$k}" {if $type eq $k}selected{/if}>{$v}</option>
+               	{/foreach}
+			</select>
+         </li>
+         <li>
+             <input class="cm-blue-btn" type="submit" value="确定">
+         </li>
+     </ul>
+    </form>
+    </div>
+	<div class="subBody jq-last-border-bottom">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="first">
+            	<th width="20"><input type="checkbox" onclick="sel_all(this)" autocomplated="off" /></th>
+            	<th width="30">id</th>
+               	<th width="200px">{lang("NAV_NAME")}</th>
+                <th width="400px">{lang("NAV_URL")}</th>
+                <th width="200px">{lang("NAV_TYPE")}</th>
+                <th width="100px">{lang("IS_BLANK")}</th>
+                <th width="100px">{lang("IS_SHOW")}</th>
+                <th width="400px">{lang("ACTION")}</th>
+            </tr>
+            {foreach from=$list item=v key=k}
+                <tr class="tr">
+                	<td><input type="checkbox" name="ids[]" value="{$v['id']}" autocomplated="off" /></td>
+	                <td>{$v['id']}&nbsp;</td>
+	                <td>{$v['name']}&nbsp;</td>
+	                <td>{$v['url']}&nbsp;</td>
+	                <td>{$_LANG['NAV_TYPES'][$v.type]}</td>
+	                <td>{$_LANG['SHIFO'][$v.is_blank]}&nbsp;</td>
+	                <td><a href="javascript:void(0)" onclick="change_show({$v['id']},this)">{$_LANG['SHIFO'][$v.is_show]}</a></td>
+	                <td class="tag5">
+                		<a href="__ADMIN_URL__/Navs/edit/?id={$v['id']}">{lang("EDIT")}</a>&nbsp;
+                		<a href="__ADMIN_URL__/Navs/delete/?id={$v['id']}" onclick="return confirm('{lang('SURE_TO_DEL')}')">{lang("DELETE")}</a>&nbsp;
+	                </td>
+                </tr>
+            {/foreach}
+            
+        </table>
+    </div>
+    <script type="text/javascript">
+		function change_show(id,obj){
+			var ajaxurl = '__ADMIN_URL__'+"/Navs/change_show?isajax=1";
+			
+			$.ajax({
+				url: ajaxurl,
+				data:"id="+id,
+				type: "POST",
+				dataType: "json",
+				success: function(res){
+					if(res.result == 1){
+						obj.innerHTML = "{lang("YES")}";
+					}else if(res.result == 0){
+						obj.innerHTML = "{lang("NO")}";
+					}else{
+						alert(res.msg);
+						return false;
+					}
+				}
+			});	
+		}
+	</script>
+{tmpl("Public:footer")}

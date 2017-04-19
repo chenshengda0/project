@@ -1,0 +1,61 @@
+{tmpl("Public:header")}
+	<div class="subBody">
+	    <div class="cm-input-wrap-box">
+		    <form action="" class="jqtransform" method="POST">
+		        <div class="cm-input-wrap cf">
+		            <div class="left">{lang("NAME")}:</div>
+		            <div class="right">
+		                <span>{$data['name']}</span>
+		                <input type="hidden" name="name" value="{$data['name']}" />
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("CLASS_NAME")}:</div>
+		            <div class="right">
+		                <span>{$data['class_name']}</span>
+				      <input type="hidden" name="class_name" value="{$data['class_name']}" />
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("SMS_USERID")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="userid" value="{$data['userid']}">
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("SMS_AUTH")}:</div>
+		            <div class="right">
+		                <input type="text" name="username" class="cm-input-text" value="{$data['username']}" size="20">
+				      	<i>{lang("SMS_AUTH_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("SMS_KEY")}:</div>
+		            <div class="right">
+		                <input type="password" name="password" class="cm-input-text" value="{$data['password']}" size="20">
+				      	<i>{lang("SMS_KEY_TIP")}</i>
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("DESCRIPTION")}:</div>
+		            <div class="right">
+		                <textarea name="description" id="" cols="30" rows="10" class="cm-textarea">{$data['description']}</textarea>
+				      	<i>{lang("DESCRIPTION")}</i>
+		            </div>
+		        </div>
+		        
+		        <div class="cm-input-wrap cf mt20 ">
+		            <div class="right">
+		            	<input type="hidden" name="id" value="{$data['id']}" />
+				     	<input type="hidden" name="server_url" value="{$data['server_url']}" />
+		                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+		                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+		            </div>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+	
+	
+	
+{tmpl("Public:footer")}

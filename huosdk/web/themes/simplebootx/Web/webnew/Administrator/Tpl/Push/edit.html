@@ -1,0 +1,74 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<div class="cm-input-wrap-box">
+		<form action="" class="jqtransform" method="POST">
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('推送类型')}:</div>
+				<div class="right">
+					<select class="sm-select require" name="typeid">
+						{foreach from=$types item=v key=k}
+						<option value="{$v.id}" {if $detail.typeid eq $v.id}selected{/if} data-module="{$v.module}">{$v.name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('推送项搜索')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" id="keyword">
+					<input class="cm-blue-btn" type="button" id="sreach" value="搜索">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('推送项')}:</div>
+				<div class="right">
+					<select class="sm-select require" name="itemid">
+						<option value="{$detail.itemid}">{$detail.item_name}</option>
+					</select>
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('排序')}:</div>
+				<div class="right">
+					<input class="cm-input-text require" type="text" name="sort"  value="{$detail.sort}">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf mt20 ">
+				<div class="right">
+					<input type="hidden" name="id" value="{$id}">
+					<input class="cm-blue-btn ml80 mr20" type="submit" name="commit"
+						value="保存">
+					<input class="cm-gray-btn" type="reset" name="button" value="重置">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$("#sreach").click(function(){
+		var keyword = $("#keyword").val();
+		var typeid = $("select[name='typeid']").find("option:selected").val();
+		/* if(keyword == ""){
+			alert("输入查询关键词");
+			return false;
+		} */
+		$.ajax({
+			url:"__ADMIN_URL__"+"/Push/push_sreach",
+			type:"post",
+			data:{ keyword:keyword,typeid:typeid },
+			dataType:"json",
+			success:function(data){
+				if(data){
+					var str = '<option value="0">选择推送项</option>';
+					$.each(data,function(k,v){
+						str += '<option value="'+v.id+'">'+v.name+'</option>';
+					});
+					$("select[name='itemid']").html(str);
+				}
+			}
+		});
+	});
+})
+</script>
+{tmpl("Public:footer")}

@@ -1,0 +1,46 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("WEB_NAME")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" value="{$link.name}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("LOGO")}:</div>
+	            <div class="right">
+	                {uploadfile_html("logo",1,1,$link.logo)}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("URL")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="site_name" value="{$link.site_name}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("IS_SHOW")}:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="disabled" value="1" {if $link.disabled eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="disabled" value="0" {if $link.disabled eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("ORDER")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="orderid" value="{$link.orderid}">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

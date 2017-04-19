@@ -1,0 +1,576 @@
+[ 2017-03-13T05:06:14+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3 [运行时间：0.016527s][吞吐率：60.51req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:14+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3 [运行时间：0.031276s][吞吐率：31.97req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T05:06:16+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=4df3c777028c2e4&from=3&verid=40&vername=2.0
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=4df3c777028c2e4&from=3&verid=40&vername=2.0 [运行时间：0.016425s][吞吐率：60.88req/s] [内存消耗：1,568.26kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:16+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=4df3c777028c2e4&from=3&verid=40&vername=2.0
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=4df3c777028c2e4&from=3&verid=40&vername=2.0 [运行时间：0.032641s][吞吐率：30.64req/s] [内存消耗：2,805.05kb] [文件加载：45]
+
+[ 2017-03-13T05:06:16+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=a0a824b000f964e&from=3&offset=40&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=a0a824b000f964e&from=3&offset=40&page=1 [运行时间：0.016751s][吞吐率：59.70req/s] [内存消耗：1,536.20kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:16+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=a0a824b000f964e&from=3&offset=40&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=a0a824b000f964e&from=3&offset=40&page=1 [运行时间：0.032490s][吞吐率：30.78req/s] [内存消耗：2,753.98kb] [文件加载：44]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=da7f07374712d94&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=da7f07374712d94&from=3 [运行时间：0.016380s][吞吐率：61.05req/s] [内存消耗：1,541.09kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=da7f07374712d94&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=da7f07374712d94&from=3 [运行时间：0.033740s][吞吐率：29.64req/s] [内存消耗：2,731.41kb] [文件加载：43]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=484d29adc0a3d39&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=484d29adc0a3d39&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.016288s][吞吐率：61.39req/s] [内存消耗：1,605.17kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=484d29adc0a3d39&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=484d29adc0a3d39&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.034553s][吞吐率：28.94req/s] [内存消耗：2,846.00kb] [文件加载：44]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=7ed6da340fa41a4&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=7ed6da340fa41a4&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.015638s][吞吐率：63.95req/s] [内存消耗：1,605.43kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=7ed6da340fa41a4&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=7ed6da340fa41a4&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.034476s][吞吐率：29.01req/s] [内存消耗：2,847.72kb] [文件加载：44]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=b305db4d92b2582&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=b305db4d92b2582&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.016140s][吞吐率：61.96req/s] [内存消耗：1,605.43kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=b305db4d92b2582&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=b305db4d92b2582&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.033841s][吞吐率：29.55req/s] [内存消耗：2,846.47kb] [文件加载：44]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40 [运行时间：0.023110s][吞吐率：43.27req/s] [内存消耗：1,606.43kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=a1f7447e4fa7b44&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=a1f7447e4fa7b44&from=3&offset=20&page=1 [运行时间：0.030232s][吞吐率：33.08req/s] [内存消耗：1,604.54kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40 [运行时间：0.043903s][吞吐率：22.78req/s] [内存消耗：2,821.53kb] [文件加载：44]
+
+[ 2017-03-13T05:06:17+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0a85ab5aa8f3b02&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0a85ab5aa8f3b02&from=3 [运行时间：0.028762s][吞吐率：34.77req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:18+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=a1f7447e4fa7b44&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=a1f7447e4fa7b44&from=3&offset=20&page=1 [运行时间：0.055342s][吞吐率：18.07req/s] [内存消耗：2,866.28kb] [文件加载：44]
+
+[ 2017-03-13T05:06:18+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0a85ab5aa8f3b02&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0a85ab5aa8f3b02&from=3 [运行时间：0.043613s][吞吐率：22.93req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T05:06:18+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3 [运行时间：0.016262s][吞吐率：61.49req/s] [内存消耗：1,568.13kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:18+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=0d997c22a623f1e&from=3 [运行时间：0.030038s][吞吐率：33.29req/s] [内存消耗：2,753.83kb] [文件加载：43]
+
+[ 2017-03-13T05:06:20+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=232512331608871&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=232512331608871&from=3&offset=20&page=1 [运行时间：0.015855s][吞吐率：63.07req/s] [内存消耗：1,604.97kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:20+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=232512331608871&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=232512331608871&from=3&offset=20&page=1 [运行时间：0.034876s][吞吐率：28.67req/s] [内存消耗：2,866.98kb] [文件加载：44]
+
+[ 2017-03-13T05:06:20+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=34a0187491a2e20&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=34a0187491a2e20&from=3&offset=20&page=1 [运行时间：0.016680s][吞吐率：59.95req/s] [内存消耗：1,536.20kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:20+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=34a0187491a2e20&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=34a0187491a2e20&from=3&offset=20&page=1 [运行时间：0.032403s][吞吐率：30.86req/s] [内存消耗：2,753.98kb] [文件加载：44]
+
+[ 2017-03-13T05:06:21+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40 [运行时间：0.017078s][吞吐率：58.56req/s] [内存消耗：1,606.42kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:21+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/down?agent=&appid=100&clientid=49&deviceid=c9ed85493cbf7fb&devicetype=&from=3&gameid=100&idfa=&idfv=&mac=&network=WIFI&openudid=&resolution=1024*768&userua=Mozilla%2F5.0+%28Linux%3B+Android+4.4.2%3B+virtual+machine+Build%2FJDQ39E%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Version%2F4.0+Chrome%2F30.0.0.0+Mobile+Safari%2F537.36&verid=40 [运行时间：0.035383s][吞吐率：28.26req/s] [内存消耗：2,821.55kb] [文件加载：44]
+
+[ 2017-03-13T05:06:25+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=c4859de4d86ddaf&from=3&offset=40&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=c4859de4d86ddaf&from=3&offset=40&page=1 [运行时间：0.016428s][吞吐率：60.87req/s] [内存消耗：1,536.20kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:25+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=c4859de4d86ddaf&from=3&offset=40&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/type_list?agent=&appid=100&clientid=49&deviceid=c4859de4d86ddaf&from=3&offset=40&page=1 [运行时间：0.031664s][吞吐率：31.58req/s] [内存消耗：2,753.98kb] [文件加载：44]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=35373df4ccd49cd&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=35373df4ccd49cd&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.016710s][吞吐率：59.84req/s] [内存消耗：1,605.17kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=35373df4ccd49cd&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&cnt=3&deviceid=35373df4ccd49cd&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.039367s][吞吐率：25.40req/s] [内存消耗：2,845.99kb] [文件加载：44]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=1838e7f3824a90b&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=1838e7f3824a90b&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.015757s][吞吐率：63.46req/s] [内存消耗：1,605.43kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=1838e7f3824a90b&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=1&clientid=49&cnt=3&deviceid=1838e7f3824a90b&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.034905s][吞吐率：28.65req/s] [内存消耗：2,847.72kb] [文件加载：44]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=f82edb0fda0940d&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=f82edb0fda0940d&from=3 [运行时间：0.015543s][吞吐率：64.34req/s] [内存消耗：1,541.09kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=f82edb0fda0940d&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/slide/list?agent=&appid=100&clientid=49&deviceid=f82edb0fda0940d&from=3 [运行时间：0.030915s][吞吐率：32.35req/s] [内存消耗：2,731.41kb] [文件加载：43]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=75e93fbb08cc415&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=75e93fbb08cc415&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.018453s][吞吐率：54.19req/s] [内存消耗：1,605.43kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1 [运行时间：0.025299s][吞吐率：39.53req/s] [内存消耗：1,604.54kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=75e93fbb08cc415&from=3&hot=1&offset=3&page=1&rand=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&cnt=3&deviceid=75e93fbb08cc415&from=3&hot=1&offset=3&page=1&rand=1 [运行时间：0.048194s][吞吐率：20.75req/s] [内存消耗：2,846.45kb] [文件加载：44]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1 [运行时间：0.044984s][吞吐率：22.23req/s] [内存消耗：2,866.28kb] [文件加载：44]
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=f7386fd98f46b56&from=3&verid=40&vername=2.0
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=f7386fd98f46b56&from=3&verid=40&vername=2.0 [运行时间：0.015372s][吞吐率：65.05req/s] [内存消耗：1,568.26kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:26+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=f7386fd98f46b56&from=3&verid=40&vername=2.0
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/has_new_version?agent=&appid=100&clientid=49&deviceid=f7386fd98f46b56&from=3&verid=40&vername=2.0 [运行时间：0.031674s][吞吐率：31.57req/s] [内存消耗：2,805.05kb] [文件加载：45]
+
+[ 2017-03-13T05:06:31+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=a1a2abbd41ab9f5&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=a1a2abbd41ab9f5&from=3&offset=20&page=1 [运行时间：0.019231s][吞吐率：52.00req/s] [内存消耗：1,604.97kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:31+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=a1a2abbd41ab9f5&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&category=2&clientid=49&deviceid=a1a2abbd41ab9f5&from=3&offset=20&page=1 [运行时间：0.040638s][吞吐率：24.61req/s] [内存消耗：2,866.98kb] [文件加载：44]
+
+[ 2017-03-13T05:06:32+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/detail?agent=&appid=100&clientid=49&deviceid=1a74936ab2fc16e&from=3&gameid=60028
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/detail?agent=&appid=100&clientid=49&deviceid=1a74936ab2fc16e&from=3&gameid=60028 [运行时间：0.016640s][吞吐率：60.10req/s] [内存消耗：1,604.46kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:32+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/detail?agent=&appid=100&clientid=49&deviceid=1a74936ab2fc16e&from=3&gameid=60028
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/detail?agent=&appid=100&clientid=49&deviceid=1a74936ab2fc16e&from=3&gameid=60028 [运行时间：0.039357s][吞吐率：25.41req/s] [内存消耗：2,829.03kb] [文件加载：43]
+
+[ 2017-03-13T05:06:34+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1 [运行时间：0.018154s][吞吐率：55.08req/s] [内存消耗：1,604.45kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T05:06:34+08:00 ] 120.25.104.229 183.232.175.5 GET /api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/game/list?agent=&appid=100&clientid=49&deviceid=293cbdea3afc63c&from=3&offset=20&page=1 [运行时间：0.038835s][吞吐率：25.75req/s] [内存消耗：2,866.05kb] [文件加载：44]
+
+[ 2017-03-13T08:46:10+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015077s][吞吐率：66.33req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T08:46:10+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030496s][吞吐率：32.79req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T08:51:42+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017182s][吞吐率：58.20req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T08:51:42+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031511s][吞吐率：31.74req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T09:10:47+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.018714s][吞吐率：53.44req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T09:10:47+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.034172s][吞吐率：29.26req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T09:23:54+08:00 ] 120.25.104.229 27.205.175.84 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015696s][吞吐率：63.71req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T09:23:54+08:00 ] 120.25.104.229 27.205.175.84 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.033724s][吞吐率：29.65req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T09:34:47+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.021963s][吞吐率：45.53req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T09:34:47+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.036209s][吞吐率：27.62req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T10:25:38+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.019611s][吞吐率：50.99req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T10:25:38+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.034948s][吞吐率：28.61req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T10:52:13+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.017026s][吞吐率：58.73req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T10:52:13+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.030557s][吞吐率：32.73req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T10:56:45+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016305s][吞吐率：61.33req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T10:56:45+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030558s][吞吐率：32.72req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T11:01:24+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017783s][吞吐率：56.23req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T11:01:24+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.032990s][吞吐率：30.31req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T11:05:14+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016466s][吞吐率：60.73req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T11:05:14+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030480s][吞吐率：32.81req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T11:06:16+08:00 ] 120.25.104.229 27.205.175.84 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015477s][吞吐率：64.61req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T11:06:16+08:00 ] 120.25.104.229 27.205.175.84 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.028588s][吞吐率：34.98req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T11:30:43+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.021181s][吞吐率：47.21req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T11:30:43+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.035781s][吞吐率：27.95req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T12:03:19+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015538s][吞吐率：64.36req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T12:03:19+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029286s][吞吐率：34.15req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T12:33:26+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017028s][吞吐率：58.73req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T12:33:26+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031104s][吞吐率：32.15req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T12:45:28+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016809s][吞吐率：59.49req/s] [内存消耗：1,567.85kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T12:45:28+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.036556s][吞吐率：27.36req/s] [内存消耗：2,753.39kb] [文件加载：43]
+
+[ 2017-03-13T13:04:25+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016843s][吞吐率：59.37req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T13:04:25+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.032526s][吞吐率：30.74req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T13:18:41+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016697s][吞吐率：59.89req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T13:18:41+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031279s][吞吐率：31.97req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T13:33:52+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016027s][吞吐率：62.39req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T13:33:52+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030247s][吞吐率：33.06req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T13:49:05+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015850s][吞吐率：63.09req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T13:49:05+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029026s][吞吐率：34.45req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:10:52+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017496s][吞吐率：57.16req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:10:52+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.033957s][吞吐率：29.45req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:13:37+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016895s][吞吐率：59.19req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:13:37+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031558s][吞吐率：31.69req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:17:25+08:00 ] 120.25.104.229 119.129.123.31 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3 [运行时间：0.015882s][吞吐率：62.96req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:17:25+08:00 ] 120.25.104.229 119.129.123.31 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3 [运行时间：0.033592s][吞吐率：29.77req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T14:17:40+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017684s][吞吐率：56.55req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:17:40+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.033176s][吞吐率：30.14req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:20:06+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017157s][吞吐率：58.29req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:20:06+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031763s][吞吐率：31.48req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:25:54+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015856s][吞吐率：63.07req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:25:54+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029490s][吞吐率：33.91req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:30:46+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016116s][吞吐率：62.05req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:30:46+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030433s][吞吐率：32.86req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:33:22+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016585s][吞吐率：60.30req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:33:22+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.032980s][吞吐率：30.32req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:35:23+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016439s][吞吐率：60.83req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:35:23+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.035323s][吞吐率：28.31req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:38:44+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016473s][吞吐率：60.71req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:38:44+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030612s][吞吐率：32.67req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:40:51+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015621s][吞吐率：64.02req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:40:51+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029252s][吞吐率：34.19req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:47:14+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016680s][吞吐率：59.95req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:47:14+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031660s][吞吐率：31.59req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T14:50:05+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015457s][吞吐率：64.70req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T14:50:05+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.028751s][吞吐率：34.78req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T15:20:15+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015120s][吞吐率：66.14req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T15:20:15+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030763s][吞吐率：32.51req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T15:50:21+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.018260s][吞吐率：54.76req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T15:50:21+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.032775s][吞吐率：30.51req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T16:20:32+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015667s][吞吐率：63.83req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T16:20:32+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029980s][吞吐率：33.36req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T16:50:04+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.016676s][吞吐率：59.97req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T16:50:04+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.030816s][吞吐率：32.45req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T16:50:37+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016054s][吞吐率：62.29req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T16:50:37+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.029996s][吞吐率：33.34req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T17:10:26+08:00 ] 120.25.104.229 119.129.123.31 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3 [运行时间：0.017162s][吞吐率：58.27req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T17:10:26+08:00 ] 120.25.104.229 119.129.123.31 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=008796752675900&from=3 [运行时间：0.031386s][吞吐率：31.86req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T17:20:45+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016139s][吞吐率：61.96req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T17:20:45+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031387s][吞吐率：31.86req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T17:50:51+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017629s][吞吐率：56.72req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T17:50:51+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031892s][吞吐率：31.36req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T18:13:21+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016914s][吞吐率：59.12req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T18:13:21+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031240s][吞吐率：32.01req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T18:13:34+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016409s][吞吐率：60.94req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T18:13:34+08:00 ] 120.25.104.229 117.158.75.185 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030107s][吞吐率：33.21req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T21:11:24+08:00 ] 120.25.104.229 36.104.18.166 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016652s][吞吐率：60.05req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T21:11:24+08:00 ] 120.25.104.229 36.104.18.166 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030815s][吞吐率：32.45req/s] [内存消耗：2,753.34kb] [文件加载：43]
+
+[ 2017-03-13T22:23:10+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.015719s][吞吐率：63.62req/s] [内存消耗：1,567.93kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T22:23:10+08:00 ] 120.25.104.229 59.40.201.227 GET /api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3
+[ log ] www.shouyoucun.cn/api/public/index.php/v1/system/get_server_time?agent=&appid=100&clientid=49&deviceid=864394010742122&from=3 [运行时间：0.029199s][吞吐率：34.25req/s] [内存消耗：2,753.82kb] [文件加载：43]
+
+[ 2017-03-13T23:20:15+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.015730s][吞吐率：63.57req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T23:20:15+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.028911s][吞吐率：34.59req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T23:39:01+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017256s][吞吐率：57.95req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T23:39:01+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031932s][吞吐率：31.32req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T23:42:55+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.017210s][吞吐率：58.11req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T23:42:55+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.031580s][吞吐率：31.67req/s] [内存消耗：2,753.36kb] [文件加载：43]
+
+[ 2017-03-13T23:44:12+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.016233s][吞吐率：61.60req/s] [内存消耗：1,567.72kb] [文件加载：29]
+[ error ] array (
+)
+
+[ 2017-03-13T23:44:12+08:00 ] 120.25.104.229 60.213.7.190 GET /api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3
+[ log ] www.shouyoucun.cn/api/public/v1/system/get_server_time?agent=&appid=100&clientid=49&from=3 [运行时间：0.030041s][吞吐率：33.29req/s] [内存消耗：2,753.36kb] [文件加载：43]
+

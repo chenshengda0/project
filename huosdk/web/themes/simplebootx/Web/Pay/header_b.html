@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="{$keywords}"/>
+<meta name="description" content="{$description}"/>
+<title>充值中心_{:C('BRAND_NAME')}手游联运平台</title>
+<link href="css/toper.css" rel="stylesheet" type="text/css">
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" charset="UTF-8" href="css/style.css" type="text/css">
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a-min.js" language="javascript"></script>
+<script type="text/javascript" language="javascript">DD_belatedPNG.fix('div, ul, img, li, input , a');</script>
+<![endif]--> 
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+{literal}
+<!--游戏中心js-->
+<script type="text/javascript">
+// JavaScript Document
+function showNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="";
+}
+function hideNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="none";
+}
+
+function addfavorite() {
+	var url = location.href;
+	var title = document.title;
+	
+	if (window.sidebar) { // Mozilla Firefox
+        window.sidebar.addPanel(title, url, "");
+    } else if (window.external && !window.chrome) { // IE
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) {
+        window.external.AddFavorite(url, title);
+    } else {
+        alert("加入收藏失败，请使用Ctrl+D进行添加");
+    }
+}
+
+function setHomePage(){
+	var url = '';
+	if (document.all) {
+		document.body.style.behavior = 'url(#default#homepage)';
+		document.body.setHomePage(url);
+	} else if (window.sidebar) {
+		if (window.netscape) {
+			try {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			}
+			catch (e) {
+				alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+			}
+		}
+		var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+		prefs.setCharPref('browser.startup.homepage', url);
+	}else{
+		alert("您的浏览器不支持自动设置首页, 请使用浏览器菜单手动设置!");
+	}
+}
+</script>
+{/literal}
+<div id="toper">
+	<div class="clearfix" id="top">
+    	<h1 class="head_left">{:C('BRAND_NAME')}欢迎您！</h1>
+            <ul class="game_link clearfix">
+            	{if $username == ''}
+                    <li>[<a href="{:U('Login/index')}">登录</a>]</li>
+                    <li>[<a href="{:U('Register/index')}">免费注册</a>]</li>
+                {else}
+                	<li>{$username}</li>
+                    <li><a href="{$WEBSITE}/user/userinfo.php?userinfo=info">进入用户中心</a></li>
+                    <li><a href="{$WEBSITE}/user/login.php?action=loginout">退出</a></li>
+                {/if}
+            </ul>
+            <ul class="menu_right clearfix">
+            	<li><a rel="sidebar" href="javascript:addfavorite();">加入收藏</a></li>
+                <!--<li><a rel="nofollow" href="#">保存到桌面</a></li>-->
+                <li style="margin-left:10px;">
+                	<div onmouseout="hideNav('game_down', 'drop_game_href', 'game');" onmouseover="showNav('game_down', 'drop_game_href', 'game_h');" class="game_center clearfix">
+						<a rel="nofollow" href="{$WEBSITE}/game/game.php" target="_blank" class="game" id="drop_game_href">游戏中心</a>
+						<div style="display:none;" id="game_down">
+							<div class="game_center_top"></div>
+							
+						</div>
+               	 	</div>
+                </li>
+           </ul>
+    </div>
+</div>
+<div id="header">
+	<div class="clearfix" id="head">
+    	<div class="logo"><a href="{$WEBSITE}"><img alt="{:C('BRAND_NAME')}平台" src="__UPLOAD__/image/logo.png" width="320px;"></a></div>
+        <div class="nav">
+        	<ul class="clearfix">
+				<li><a href="{$WEBSITE}" class="menu0_on" style="width:65px;"><i class="navIco navIco_1"></i>首页</a></li>
+				<li><a href="{$WEBSITE}/game/game.php" class="menu1"><i class="navIco navIco_2"></i>游戏中心</a></li>
+				<li><a href="{$PAYWEBSITE}" class="menu3"><i class="navIco navIco_4"></i>充值中心</a></li>
+				<li><a href="{$WEBSITE}/user/userinfo.php?userinfo=info" class="menu2"><i class="navIco navIco_3"></i>个人中心</a></li>
+				<li><a href="{$WEBSITE}/user/kefu.php?item=zhongxin" class="menu4"><i class="navIco navIco_5"></i>客服中心</a></li>
+				<li><a href="{:BBSSITE}" target="_blank" class="menu5"><i class="navIco navIco_6"></i>玩家社区</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="gg_game_hu">
+	<div class="ggs_xx"></div>
+</div>
+<input type="hidden" id="website" value="{$PAYWEBSITE}">
+<div id="middle">
+	<div class="wrap"> 
+		<ul id="left_menu" class="w_left">
+			<li class="left_li {if $paytypeid eq 2} left_li_state_on{/if}">
+				<span class="left_li_span"><a href="{$PAYWEBSITE}/index.php">支付宝</a></span>
+			</li>
+		</ul>

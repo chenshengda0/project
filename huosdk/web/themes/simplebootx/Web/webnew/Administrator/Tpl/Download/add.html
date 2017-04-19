@@ -1,0 +1,116 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	    	<div class="cm-input-wrap cf">
+	            <div class="left">{lang("游戏")}:</div>
+	            <div class="right">
+	                <select name="game_id" class="cm-select require">
+	                	<option value="0">选择游戏</option>
+	                	{foreach from=$games item=v}
+	                	    <option value="{$v.id}">{$v.name}</option>
+	                	{/foreach}
+	                </select>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("名称")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text" name="name" id="name“>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">{lang("横幅")}:</div>
+	            <div class="right">
+	                {uploadfile_html("banner",1,1)}
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("终端")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="终端" value="">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("QQ交流群")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="qq" >
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("已入驻人数")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="num" value="0">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("标签")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text" type="text"  name="tags" value="">
+	                <i>使用|分隔</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("软件大小")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="size" value="0">
+	                <i>单位M，最多保留2位小数点</i>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf  ">
+	            <div class="left">{lang("下载地址")}:</div>
+	            <div class="right">
+	                <input class="cm-input-text require" type="text"  name="download_url">
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_TITLE')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_title">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_KEYWORDS')}:</div>
+				<div class="right">
+					<input class="cm-input-text" type="text" name="seo_keywords">
+				</div>
+			</div>
+			<div class="cm-input-wrap cf">
+				<div class="left">{lang('SEO_DESCRIPTION')}:</div>
+				<div class="right">
+					<textarea name="seo_description" class="cm-textarea"></textarea>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf">
+				<div class="left">{lang('CONTENT')}:</div>
+				<div class="right">
+					<textarea name="content"  style="width:600px;height:400px;visibility:hidden;"></textarea>
+		       		<script type="text/javascript">
+				   		var root="__ROOT__";
+				   		var path="__APP__";
+				   		var editor1;
+				   		var editor2;
+				   		KindEditor.ready(function(K) {
+								editor1 = K.create('textarea[name="content"]', {
+									allowFileManager : true
+								});
+							});
+				   </script>
+				</div>
+			</div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+	$("select[name='game_id']").change(function(){
+		var name = $(this).find("option:selected").text();
+		$("input[name='name]").val(name);
+	});
+</script>
+{tmpl("Public:footer")}

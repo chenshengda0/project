@@ -1,0 +1,63 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location bt">
+  <ul class="wrap">
+    <li><h2>{$game.name}</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+<!--游戏资讯start-->
+<div class="main-list wrap">
+  <ul class="clearfix">
+    <!--左栏目start-->
+    <li class="left fl">
+      <!--游戏明细start-->
+      <div class="detial-game">
+        <ul class="top clearfix">
+          <li class="img fl"><img src="{$game.logo}" w alt="140" height="140" /></li>
+          <li class="con fr">
+            <h1>{$game.name}</h1>
+            <p>终端：安卓<i>大小：{$game.size}M</i></p>
+            <p>游戏类型：{$game.typename}</p>
+            <div class="clearfix">
+              <a href="javascript:void(0)" class="and"><img src="__TMPL__Common/images/25.jpg" alt="" /></a>
+              <a href="javascript:void(0)"><img src="__TMPL__Common/images/26.jpg" alt="" /></a>
+              <ul>
+                 <li class="fl code"><img src="/public/tow_wei_ma.php?data={urlencode(url('Game#download')|cat:'?id='|cat:$game.id)}&size=116x116" width="116" height="116" alt="" /></li>
+                 <li class="fl infos">
+                   <b>{$game.name}</b>
+                   <p>版本：{$game.banben}</p>
+                   <a href="{url('Game#download','id='|cat:$game.id)}" title="">立即下载</a>
+                 </li>
+              </ul>
+            </div>
+          </li>
+        </ul> 
+        
+        <ul class="content">
+         {$game.content}
+        </ul>
+          
+        <ul class="detial-link">
+          <li><p>上一篇：{if $prev}<a href="{url('Game#show','id='|cat:$prev.id)}" title="">{$prev.name}</a>{else}<a href="javascript:alert('第一篇');" title="">第一篇</a>{/if}</p></li>
+          <li><p>下一篇：{if $next}<a href="{url('Game#show','id='|cat:$next.id)}" title="">{$next.name}</a>{else}<a href="javascript:alert('最后一篇');" title="">最后一篇</a>{/if}</p></li>
+        </ul>  
+      </div>
+      <!--游戏明细end-->
+    </li>
+    <!--左栏目end-->
+    
+    {tmpl("Public:right")}
+  </ul>
+</div>
+<!--游戏资讯end-->
+{tmpl("Public:footer")}
+<script>
+$(".and").hover(function(){
+  $(".detial-game .top .con div ul").show(); 	  
+});
+$(".detial-game .top .con div ul").mouseleave(function(){
+  $(this).hide(); 		
+});
+</script>

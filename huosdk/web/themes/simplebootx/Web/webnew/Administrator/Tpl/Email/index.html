@@ -1,0 +1,100 @@
+{tmpl("Public:header")}
+	
+	<div class="subBody">
+	    <div class="cm-input-wrap-box">
+		    <form action="" class="jqtransform" method="POST" id="form_table">
+		    	<input type="hidden" name="id" id="id" value="{$email_arr['id']}" />
+		        <div class="cm-input-wrap cf">
+		            <div class="left">{lang("MAIL_SERVER")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="mail_server" id="mail_server" value="{$email_arr['mail_server']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf ">
+		            <div class="left">{lang("MAIL_PORT")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="mail_port" id="mail_port" value="25" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("MAIL_FROM")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="mail_from" id="mail_from" value="{$email_arr['mail_from']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("MAIL_USER")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="mail_user" id="mail_user" value="{$email_arr['mail_user']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("MAIL_PASSWORD")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="password" name="mail_password" id="mail_password" value="{$email_arr['mail_password']}" >
+		            </div>
+		        </div>
+		        <div class="cm-input-wrap cf  ">
+		            <div class="left">{lang("MAIL_TO")}:</div>
+		            <div class="right">
+		                <input class="cm-input-text" type="text" name="mail_to" id="mail_to" value="" >
+		                <input type="button" name="commit" class="cm-gray-btn" value="测试发送" onclick="public_test_email()" >
+		            </div>
+		        </div>
+		        
+		        <div class="cm-input-wrap cf mt20 ">
+		            <div class="right">
+		                <input class="cm-blue-btn ml80 mr20" type="button" name="commit" value="保存" onclick="save_email_conf()">
+		                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+		            </div>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+	
+
+<script>
+function save_email_conf(){
+	var url = '__ADMIN_URL__'+'/Email/save_conf';
+	//获取所有input的值和name
+	var query  = $("form#form_table").serialize();
+	
+	$.ajax({ 
+		url: url,
+		dataType: "json",
+		type: "POST",
+		data:query+"&email_conf=1",
+		success: function(msg){
+			alert(msg.info);
+			if(msg.success == 1){
+				location.reload();
+			}
+		}
+	});	
+}
+
+function public_test_email(){
+	var url = '__ADMIN_URL__'+'/Email/public_test_email';
+	//获取所有input的值和name
+	var query  = $("form#form_table").serialize();
+	var email = document.getElementById("mail_to").value;
+	
+	if($.trim(email) == ""){
+		alert("请填写测试邮箱地址！");
+		return false;
+	}
+	
+	$.ajax({ 
+		url: url,
+		dataType: "json",
+		type: "POST",
+		data:query+"&email_conf=1",
+		success: function(msg){
+			alert(msg.info);
+			
+		}
+	});	
+}
+</script>
+
+{tmpl("Public:footer")}

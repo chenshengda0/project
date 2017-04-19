@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>邮箱更换</title>
+    <meta name="viewport" content="width=device-dpi, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="__PUBLIC__/float/css/bootstrap.css" rel="stylesheet" />
+	
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/float/js/util.js"></script>
+	<script src="__PUBLIC__/float/js/emailsafe.js"></script>
+
+<body >
+      <form  id="safe-email" name="safe-email" action="{:U('Admin/Binding/usermail_post')}" method="post" style="width: 80%; margin: 20px auto 30px;">
+		 <div class="form-group">
+			<label for="exampleInputEmail">邮箱</label>
+			<input type="text" class="form-control" id="email" name="email" placeholder="请输入要绑定邮箱">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmai">账号密码</label>
+			<input type="password" class="form-control" id="pwd" name="pwd" placeholder="请输入平台账号密码">
+		</div>
+		<div id="message"></div>
+		<div style="width: 100%; text-align: center;margin-top: 10px;">
+			<input id="action" name="action" type="hidden" value="safeemail">
+			<input id="url" name="url" type="hidden" value="{:U('Admin/Binding/ajaxEmail')}">
+			<button type="button" class="btn btn-primary btn-lg btn-block" id="safe" style="padding:5px 16px">确定</button>
+		</div>
+      </form>
+
+	  <div class="alert alert-info">绑定邮箱后可以在忘记密码或账号被盗时通过邮箱找回密码。</div>
+
+</body>
+</html>

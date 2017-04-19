@@ -1,0 +1,119 @@
+{tmpl("Public:header")}
+<div class="subBody">
+	<form action="" class="jqtransform" method="POST">
+	<!-- 基本信息start -->
+   	<div class="cm-input-wrap-box" id="1F">
+   		<div class="cm-input-wrap cf">
+            <div class="left">{lang("CATNAME")}:</div>
+            <div class="right">
+                <input class="cm-input-text require" type="text" name="catname" >
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+        	<div class="left">{lang("CATDIR")}:</div>
+        	<div class="right">
+                <input class="cm-input-text require" type="text" name="catdir" >
+                <span>网站伪静态必须</span>
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("EN_NAME")}:</div>
+            <div class="right">
+                <input class="cm-input-text" type="text" name="en_name"  >
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+	        <div class="left">上级分类:</div>
+	        <div class="right">
+	        	<select class="cm-select" name="parentid">
+	        		<option value="0">最为顶级栏目</option>
+	        		{$tree}
+	        	</select>
+	        	<span>分类下存在文章,则该分类无法作为父级分类</span>
+	        </div>
+        </div>
+        <div class="cm-input-wrap cf">
+	        <div class="left">模型:</div>
+	        <div class="right">
+	        	<select class="cm-select" name="tablename">
+	        		{foreach from=$GLOBALS['action']['module'] item=v key=k}
+	        		<option value="{$k}">{$v}</option>
+	        		{/foreach}
+	        	</select>
+	        </div>
+        </div>
+        <div class="cm-input-wrap cf">
+        	<div class="left">{lang("SEO_TITLE")}:</div>
+        	<div class="right">
+                <input class="cm-input-text" type="text" name="title" >
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+        	<div class="left">{lang("SEO_KEYWORDS")}:</div>
+        	<div class="right">
+                <input class="cm-input-text" type="text" name="keywords" >
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+        	<div class="left">{lang("SEO_DESCRIPTION")}:</div>
+        	<div class="right">
+        		<textarea class="cm-textarea" name="description"></textarea>
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("ORDER")}:</div>
+            <div class="right">
+                <input class="cm-input-text require" type="text" name="orderid" value="0" >
+            </div>
+        </div><!-- 
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("LIST_TEMPLATE_NAME")}:</div>
+            <div class="right">
+				<select class="cm-select" name="list_template">
+					{foreach from=$_LANG['NEWS_LIST_TEMPLATES'] item=v key=k}
+						<option value="{$k}">{$v}</option>
+					{/foreach}
+				</select>
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("SHOW_TEMPLATE_NAME")}:</div>
+            <div class="right">
+				<select class="cm-select" name="show_template">
+                {foreach from=$_LANG['NEWS_SHOW_TEMPLATES'] item=v key=k}
+					<option value="{$k}">{$v}</option>
+				{/foreach}
+				</select>
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("WAP_LIST_TEMPLATE_NAME")}:</div>
+            <div class="right">
+            	<select class="cm-select require" name="list_template">
+            		{foreach from=$GLOBALS['lang']['WAP_NEWS_LIST_TEMPLATES'] item=v key=k}
+            		<option value="{$k}">{$v}</option>
+            		{/foreach}
+            	</select>
+            </div>
+        </div>
+        <div class="cm-input-wrap cf">
+            <div class="left">{lang("WAP_SHOW_TEMPLATE_NAME")}:</div>
+            <div class="right">
+            	<select class="cm-select require" name="show_template">
+            		{foreach from=$GLOBALS['lang']['WAP_NEWS_SHOW_TEMPLATES'] item=v key=k}
+            		<option value="{$k}">{$v}</option>
+            		{/foreach}
+            	</select>
+            </div>
+        </div> -->
+        <div class="cm-input-wrap cf mt20 ">
+            <div class="right">
+                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+            </div>
+        </div>
+	</div>
+	</form>
+</div>
+	<!-- 基本信息end -->
+{tmpl("Public:footer")}

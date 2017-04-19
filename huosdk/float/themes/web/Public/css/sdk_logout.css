@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;}
+ol,ul,li,dd,dl,dt{list-style:none;}
+*:focus{outline:0;}
+em,i{ font-style:normal;}
+body{ margin:0 auto !important; position:relative;}
+.content_box{background:rgba(245,245,245,0.95); position:absolute; width:84%; top:20%; left:8%; z-index:1000; margin:0 auto;}
+.con_tit{height:48px; line-height:48px; background:rgba(245,245,245,1.0); text-align:center; font-size:15px; color:#333; border-bottom:1px solid #d9d9d9;}
+.content_box ul{padding:2px 18px 0 18px; clear:both;}
+.content_box ul li{clear:both; margin-top:10px; background:#fff; box-shadow:0 0 1px 0 rgba(0,0,0,0.1); position:relative; height:46px;}
+.content_box ul li span{position:absolute; left:0; top:10px;width:40px; height:26px; display:inline-block; border-right:1px solid #e0e0e0;}
+.content_box ul li span.user{background:url(../images/sdk/user.png) no-repeat center; background-size:24px auto;}
+.content_box ul li span.password{background:url(../images/sdk/ps.png) no-repeat center; background-size:24px auto;}
+.content_box ul li span.yzm{background:url(../images/sdk/yzm.png) no-repeat center; background-size:24px auto;}
+.content_box ul li p{position:absolute; left:50px; top:0; right:10px;}
+.content_box ul li p .input_1,.input_2{background:none; border:0; width:100%; color:#8c8c8c; font-size:14px; line-height:16px; padding:15px 0;}
+.content_box ul li p .input_2{width:60%;}
+.content_box ul li .send_yzm{position:absolute; right:0; top:0; height:16px; padding:15px 10px;font-size:14px;background:#00b1fd; color:#fff; display:inline-block; cursor:pointer;}
+.content_box .tishi{clear:both; margin:5px 0 0 18px;}
+.content_box .tishi span{background:url(../images/sdk/warn2.png) left no-repeat; background-size:18px auto; padding-left:20px; font-size:13px; color:#ea0303; line-height:18px;}
+.content_box .button{margin:10px 18px 20px 18px; height:42px; clear:both;}
+.content_box .button a{float:left; width:32%; margin-right:2%; color:#fff; height:16px; font-size:15px; text-align:center; border-radius:3px; text-decoration:none; padding:13px 0;}
+.content_box .button a:last-child{margin-right:0;}
+.content_box .button a.SW{background:#00b1fd;}
+.content_box .button a.SW:hover{background:#01a3e8;}
+.content_box .button a.RG{background:#ffc000;}
+.content_box .button a.RG:hover{background:#edb200;}
+.content_box .button a.LG{background:#5ac845;}
+.content_box .button a.LG:hover{background:#42bb2b;}
+.content_box .button a.both{float:right;}
+.content_box .other_Lg{clear:both; position:relative; margin:10px;}
+.content_box .other_Lg .tit{height:30px; line-height:30px; clear:both;}
+.content_box .other_Lg .tit span{float:left;}
+.content_box .other_Lg .tit .left,.right{width:32%; height:1px; background:#d9d9d9; margin-top:14px;}
+.content_box .other_Lg .tit .middle{width:36%; text-align:center; font-size:14px; color:#8c8c8c;}
+.content_box .other_Lg .style{clear:both; margin:10px 0; height:32px;}
+.content_box .other_Lg .style a{float:left; width:33.3%; height:32px; display:inline-block; text-align:center;}
+.content_box .other_Lg .style a.sina{background:url(../images/sdk/sina.png) no-repeat center center; background-size:32px auto; }
+.content_box .other_Lg .style a.sina:hover{background:url(../images/sdk/sina_on.png) no-repeat center center; background-size:32px auto; }
+.content_box .other_Lg .style a.QQ{background:url(../images/sdk/QQ.png) no-repeat center center; background-size:32px auto; }
+.content_box .other_Lg .style a.QQ:hover{background:url(../images/sdk/QQ_on.png) no-repeat center center; background-size:32px auto; }
+.content_box .other_Lg .style a.wx{background:url(../images/sdk/wx.png) no-repeat center center; background-size:32px auto; }
+.content_box .other_Lg .style a.wx:hover{background:url(../images/sdk/wx_on.png) no-repeat center center; background-size:32px auto; }
+.content_box .text{padding:18px 18px 6px; font-size:14px; line-height:22px; color:#333;}
+
+.opacity_sdk{background:rgba(0,0,0,0.5); position:fixed; left:0; top:0; width:100%; height:100%; z-index:999;}
+@media all and (min-width: 240px) and (max-width: 320px) { 
+.content_box .button a.both{width:34%;}
+}

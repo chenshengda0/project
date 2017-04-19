@@ -1,0 +1,6 @@
+[ 2017-04-09T17:33:36+08:00 ] 117.174.46.238 /admin.php/Data/Game/gameindex.html?app_id=60154&start_time=&end_time=&date_time=30%E5%A4%A9
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( `app_id` = '60154' AND date>='2017-03-11' AND date<='2017-04-09' ) LIMIT 1  
+ERR: 1054:Unknown column 'date' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(distinct(mem_id)) AS tp_count FROM `c_day_pay_user` WHERE ( `app_id` = '60154' AND date>='2017-03-11' AND date<='2017-04-09' ) LIMIT 1  
+

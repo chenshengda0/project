@@ -1,0 +1,119 @@
+<webtpl file="Index/headertwo" />
+<link href="__PUBLIC__/web/css/gift.css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/web/js/jquery-1.js"></script>
+<literal>
+<script language="javascript" type="text/javascript"> 
+		function closeW(){
+			  $("#fechPopBox").hide();
+			  $("#r-cover").hide();
+			  //如果领号成功了且号只运行领一次，关闭提示框的时候，刷新当前页面
+			  var sceneSole = "1";
+			  var	getSuccess	= true;
+			  if(getSuccess && sceneSole == "1") {
+				  window.location.reload();
+			  }
+			  
+			  if(bookSuccess) {
+				  window.location.reload();
+			  }
+		}
+		function linqu(infoid){
+			 var web = $('#website').val();
+			 var image = $('#public').val();
+			  var giftid = infoid;
+				$.ajax({
+						  type: 'POST',
+						  url: web,
+						  data:{giftid:giftid},
+						  error:function(d,t){
+							alert('网络错误');
+						  },
+						  success: function(data){
+							  var resJson = $.parseJSON($.trim(data));
+							  var code = resJson.a;
+								if(code.length > 2){						
+									 var htmlStr = "<div class='tanchu'><span class='tanchu_nav'>领取礼包成功</span>";
+										htmlStr += "<img src='"+image+"/web/images/open_no_03.gif' onclick='closeW();' alt='' />";
+										htmlStr += "<div class='hehe'><p class='p1'>领取成功</p><p class='p2'>";
+										htmlStr += "序列号:<div style='text-align:center'>"+code+"</div></p></div></div>";
+									 
+									  $("#fetch_con").html(htmlStr);
+									  $("#fechPopBox").show();
+									  $("#r-cover").show();
+								}else if (code == 2){
+									alert('请先登录');
+								}else if (code == 3){
+									alert('礼包已经发放完');
+								}else if (code == 1){
+									alert('该礼包您已领取');
+								}
+						  }
+				});
+		}
+		
+</script>
+</literal>
+<div class="gg_game">
+	<div class="ggs_xx"></div>
+	<div id="banner_game">
+		<a href="#" target="_blank"><img
+			src="__PUBLIC__/web/images/game_1.jpg" alt="{$BRAND_NAME}"></a>
+	</div>
+</div>
+
+<div id="middle">
+	<div class="content2 mt">
+		<div class="contp_tit">
+			<ul id="tags">
+				<li class="selectTag"><a
+					href="{:U('Web/Gift/index')}">礼包中心</a></li>
+			</ul>
+		</div>
+		<div class="gift_container">
+			<div class="gift_nav">
+				<ul>
+					<li class="nav_h1">游戏名称：</li>
+					<li class="search">
+						<form method="post" action="{:U('Web/Gift/index')}">
+							<input id="gamename" name="gamename" type="text" class="text"
+								value="" /> <input type="submit" value="" class="submit" />
+						</form>
+					</li>
+				</ul>
+			</div>
+			<input id="public" type="hidden" value="__PUBLIC__">
+			<input id="website" type="hidden" value="{:U('Web/Gift/pcajax')}">
+			<div class="gift_list">
+				<volist name='giftlist' id='vo'>
+					<ul>
+						<li class="list_img"><img class="bg"
+							src="__PUBLIC__/web/images/hot.png" alt="" /><img class="top"
+							src="__UPLOAD__/image/{$vo.icon}" alt="" /></li>
+						<li class="list_comtainer">
+							<p class="h_title">{$vo.title}</p>
+							<p>礼包内容：</p>
+							<p>{$vo.content}</p>
+						</li>
+						<li class="list_botton"><label>剩余：<span class="span">{$vo.gsum}</span></label>
+							<a id="getLink" class="get" onclick="linqu({$vo.id})"></a>
+						</li>
+						<li class="time"><span>{$vo.start_time|date="Y-m-d H:i:s",###}-{$vo.end_time|date="Y-m-d H:i:s",###}</span>
+							<a href="{$vo.androidurl}" class="download"></a> <a
+							href="{$vo.url}" class="injoly"></a></li>
+					</ul>
+				</volist>
+			</div>
+			<div class="mnbv">{$showpage}</div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div id="fechPopBox" style="display: none" class="bgcolor">
+	<div id="fetch_con"></div>
+
+</div>
+</div>
+
+<webtpl file="Index/footertwo" />

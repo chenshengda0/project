@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="__TMPL__Common/css/style.css" rel="stylesheet" />
+<title>{$seo.title}</title>
+</head>
+
+<body>
+<!--头部start-->
+<div class="wrap header-search">
+  <ul class="clearfix">
+    <li class="fl logo"><a href="{url()}" target="_self"><img src="{$site.logo}" alt="" /></a></li>
+    <li class="fl"><b>注册</b></li>
+    <li class="fr resigers"><p>已有手游村账号！<a href="{url('User#login')}" target="_self">前往登录</a></p></li>
+  </ul>
+</div>
+<!--头部end-->
+
+<!--登录start-->
+<div class="form-main">
+  <div class="title">
+    <h2>注册</h2>
+  </div>
+  
+  <div class="success">
+    <ul>
+      <h3><i>恭喜您，成功注册手游村</i></h3>
+      <p>点此进入<a href="{url()}" title="">首页</a></p>
+    </ul>
+  </div>
+</div>
+<!--登录end-->
+{tmpl("Public:footer")}

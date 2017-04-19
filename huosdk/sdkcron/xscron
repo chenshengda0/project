@@ -1,0 +1,2 @@
+0 0 * * * /usr/bin/php -q /var/www/html/day_reset.php
+0 0 1 * * /usr/bin/php -q /var/www/html/month_reset.php

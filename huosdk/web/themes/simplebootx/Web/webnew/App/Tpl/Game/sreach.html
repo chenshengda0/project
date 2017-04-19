@@ -1,0 +1,38 @@
+{tmpl("Public:header")}
+<!--当前位置start-->
+<div class="location">
+  <ul class="wrap">
+    <li><h2>游戏搜索</h2></li>
+  </ul>
+</div>
+<!--当前位置end-->
+
+
+<!--游戏大全列表start-->
+<div class="wrap game-list">
+  <ul class="clearfix list">
+  	{foreach from=$list item=v}
+    <li>
+      <a href="{url('Game#show','id='|cat:$v.id)}" target="_blank" class="fl"><img src="{$v.logo}" width="103" height="103" alt="{$v.name}" class="img" /></a>
+      <div class="con fr">
+        <h4><a href="{url('Game#show','id='|cat:$v.id)}" target="_blank">{$v.name}</a></h4>
+        <p><i>游戏类型：{$v.typename}</i><i>大小：{$v.size}M</i></p>
+        <p>简介：{$v.description}</p>
+        <ul class="clearfix">
+          <a href="##" title="" class="upload"><i>已经上线</i></a>
+          <a href="{url('Gamecard')}?game_id={$v.id}" title="" class="get-goods"><i>礼包领取</i></a>
+          <a href="{url('Game#download','id='|cat:$v.id)}" title="" class="game-down"><i>游戏下载</i></a> 
+        </ul>
+      </div>
+    </li>
+    {/foreach}
+  </ul>
+  <!--分页start-->
+  <ul class="page">
+  	{$pages}
+	</ul>
+  <!--分页end-->
+  
+</div>
+<!--游戏大全列表end-->
+{tmpl("Public:footer")}

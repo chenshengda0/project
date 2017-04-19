@@ -1,0 +1,52 @@
+{tmpl("Public:header")}
+<div class="subBody">
+    <div class="cm-input-wrap-box">
+	    <form action="" class="jqtransform" method="POST">
+	        <div class="cm-input-wrap cf">
+	            <div class="left">姓名:</div>
+	            <div class="right">
+	               {$order.name}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">电话:</div>
+	            <div class="right">
+	                {$order.mobile}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">网站名称:</div>
+	            <div class="right">
+	                {$order.site_name}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">网站地址:</div>
+	            <div class="right">
+	                {$order.url}
+	            </div>
+	        </div>
+	         <div class="cm-input-wrap cf  ">
+	            <div class="left">QQ:</div>
+	            <div class="right">
+	                {$order.qq}
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf">
+	            <div class="left">是否处理:</div>
+	            <div class="right">
+	                {lang("YES")}&nbsp;<input type="radio" name="status" value="1" {if $order.status eq 1}checked="true"{/if}>&nbsp;&nbsp;
+			        {lang("NO")}&nbsp;<input type="radio" name="status" value="0" {if $order.status eq 0}checked="true"{/if}>
+	            </div>
+	        </div>
+	        <div class="cm-input-wrap cf mt20 ">
+	            <div class="right">
+	            	<input type="hidden" name="id" value="{$id}">
+	                <input class="cm-blue-btn ml80 mr20" type="submit" name="commit" value="保存">
+	                <input class="cm-gray-btn" type="reset" name="button" value="重置">
+	            </div>
+	        </div>
+        </form>
+    </div>
+</div>
+{tmpl("Public:footer")}

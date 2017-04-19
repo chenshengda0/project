@@ -1,0 +1,323 @@
+<admintpl file="header" />
+<style type="text/css">
+.pic-list li {
+	margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Newapp/Game/index')}">游戏列表</a></li>
+			<li class="active"><a href="{:U('Newapp/Game/add')}"
+				target="_self">添加游戏</a></li>
+		</ul>
+		<form action="{:U('Newapp/Game/add_post')}" method="post"
+			class="form-horizontal js-ajax-forms" enctype="multipart/form-data">
+			<div class="row-fluid">
+				<div class="span9">
+					<table class="table table-bordered">
+						<tr>
+							<th>游戏名称</th>
+							<td><input type="text" style="width: 400px;" name="gamename"
+								id="gamename" required value="" placeholder="请输入游戏名称"> <span
+								class="form-required">*</span></td>
+						</tr>
+						<tr>
+							<th width="80">游戏标签</th>
+							<td><foreach name="gtypes" key="k" item="v"> <label
+									class="checkbox inline"> <input value="{$k}"
+									type="checkbox" name="gtype[]">{$v}
+								</label> </foreach></td>
+						</tr>
+						<tr>
+							<th>一句话描述</th>
+							<td><input type="text" name="oneword" id="oneword" value=""
+								style="width: 400px" placeholder="请输入关键字"> 70字以内</td>
+						</tr>
+						<tr>
+							<th>游戏描述</th>
+							<td><textarea name="description" id="description" style="width: 98%; height: 50px;" placeholder="请填写游戏描述"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>ANDROID下载地址</th>
+							<td><textarea name="androidurl" id="androidurl"  style="width: 98%; height: 50px;" placeholder="请填写下载地址"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th>适用系统</th>
+							<td><input type="text" name="adxt" id="adxt" value="" style="width: 400px" placeholder="app适用环境">*最低适用版本</td>
+						</tr>
+						<tr>
+							<th>游戏大小</th>
+							<td><input type="text" name="size" id="size" value="" style="width: 400px" placeholder="请输入游戏版本">*例如: 100M</td>
+						</tr>
+						<tr>
+							<th>游戏版本</th>
+											<td><input type="text" name="version" id="version"
+							onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d.]/g,'')"
+								value="" style="width: 400px"
+								placeholder="请输入游戏版本">*数字与小数点组合</td>
+						</tr>
+						<tr>
+							<th>游戏语言</th>
+							<td><input type="text" name="lang" id="lang" value="中文" style="width: 400px" placeholder="请输入游戏语言">*默认为中文</td>
+						</tr>
+						<tr>
+							<th>游戏截图</th>
+							<td>
+								<fieldset>
+									<legend>图片列表 (地址 图片名称)</legend>
+									<ul id="photos" class="pic-list unstyled"></ul>
+								</fieldset> <a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','shot','','')" class="btn btn-small">选择图片</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="span3">
+					<table class="table table-bordered">
+						<tr>
+							<th><b>游戏ICON</b></th>
+						</tr>
+						<tr>
+							<td>
+								<div style="text-align: center;">
+									<input type="hidden" name="logo" id="thumb" value="">
+									<a href="javascript:void(0);"
+										onclick="flashupload('thumb_images', '附件上传','thumb',thumb_images,'1,jpg|jpeg|gif|png|bmp,1,,,1','logo','','');return false;">
+										<img src="__TMPL__Public/assets/images/default-thumbnail.png"
+										id="thumb_preview" width="135" style="cursor: hand" />
+									</a> <input type="button" class="btn btn-small"
+										onclick="$('#thumb_preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb').val('');return false;"
+										value="取消图片">
+								</div>
+							</td>
+						</tr>
+	<!-- 					<tr>
+							<th><b>创建时间</b></th>
+						</tr>
+						<tr>
+							<td><input type="text" name="createtime"
+								value="{:date('Y-m-d H:i:s',time())}" class="js-datetime"
+								style="width: 160px;"></td>
+						</tr> -->
+						<tr>
+							<th><b>排序(数字,值越大,排序靠前)</b></th>
+						</tr>
+						<tr>
+							<td><input type="text" name="listorder"
+							onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"
+								value="{$game.listorder|default=0}" style="width: 160px;"></td>
+						</tr>
+						<tr>
+							<th><b>下载次数</b></th>
+						</tr>
+						<tr>
+							<td><input type="text" name="count"
+							onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"
+								value="0" style="width: 160px;"></td>
+						</tr>
+						<tr>
+							<td><label class="radio"><input type="radio"
+									name="gcategory" value="1" checked>单机</label> <label
+								class="radio"><input type="radio"
+									name="gcategory" value="2">网游</label></td>
+						</tr>
+						<!-- <tr>
+							<td><label class="radio"><input type="radio"
+									name="gclassify" value="1" checked>正版</label> <label class="radio"><input
+									type="radio" name="gclassify" value="4" >破解</label></td>
+						</tr>-->
+						<tr>
+							<td><label class="radio"><input type="radio"
+									name="hot" value="1">热门</label> <label
+								class="radio"><input type="radio"
+									name="hot" value="0" checked>不热门</label></td>
+						</tr>
+		<!-- 				<tr>
+							<td>
+								<foreach name="gamestatus" key="k" item="v"> 
+									<php>$gs_select=$k==1?"checked":"";</php> 
+									<label class="radio" for="active_true">
+										<input type="radio" name="gstatus" value="{$k}" {$gs_select}  id="gstatus">{$v}</input>
+									</label> 
+								</foreach>
+							</td>
+						</tr> -->
+														
+			<!-- 			<tr>
+							<td><label class="radio"><input type="radio"
+									name="recommended" value="1">推荐</label> <label
+								class="radio"><input type="radio"
+									name="recommended" value="0" checked>未推荐</label></td>
+						</tr> -->
+					</table>
+				</div>
+			</div>
+			<div class="form-actions">
+				<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+				<a class="btn" href="{:U('Newapp/Game/index')}">返回</a>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+	<script type="text/javascript">
+		//编辑器路径定义
+		var editorURL = GV.DIMAUB;
+	</script>
+<script type="text/javascript"
+		src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript"
+		src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".js-ajax-close-btn").on('click', function(e) {
+				e.preventDefault();
+				Wind.use("artDialog", function() {
+					art.dialog({
+						id : "question",
+						icon : "question",
+						fixed : true,
+						lock : true,
+						background : "#CCCCCC",
+						opacity : 0,
+						content : "您确定需要关闭当前页面嘛？",
+						ok : function() {
+							setCookie("refersh_time", 1);
+							window.close();
+							return true;
+						}
+					});
+				});
+			});
+			/////---------------------
+			Wind.use('validate', 'ajaxForm', 'artDialog', function() {
+				//javascript
+				//编辑器
+				editorcontent = new baidu.editor.ui.Editor();
+				editorcontent.render('content');
+				try {
+					editorcontent.sync();
+				} catch (err) {
+				}
+				//增加编辑器验证规则
+				jQuery.validator.addMethod('editorcontent', function() {
+					try {
+						editorcontent.sync();
+					} catch (err) {
+					}
+					return editorcontent.hasContents();
+				});
+				var form = $('form.js-ajax-forms');
+				//ie处理placeholder提交问题
+				if ($.browser.msie) {
+					form.find('[placeholder]').each(function() {
+						var input = $(this);
+						if (input.val() == input.attr('placeholder')) {
+							input.val('');
+						}
+					});
+				}
+
+				var formloading = false;
+				//表单验证开始
+				form.validate({
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//是否在敲击键盘时验证
+					onkeyup : false,
+					//当鼠标掉级时验证
+					onclick : false,
+					//验证错误
+					showErrors : function(errorMap, errorArr) {
+						//errorMap {'name':'错误信息'}
+						//errorArr [{'message':'错误信息',element:({})}]
+						try {
+							$(errorArr[0].element).focus();
+							art.dialog({
+								id : 'error',
+								icon : 'error',
+								lock : true,
+								fixed : true,
+								background : "#CCCCCC",
+								opacity : 0,
+								content : errorArr[0].message,
+								cancelVal : '确定',
+								cancel : function() {
+									$(errorArr[0].element).focus();
+								}
+							});
+						} catch (err) {
+						}
+					},
+					//验证规则
+					rules : {
+						'name' : {
+							required : 1
+						},
+					},
+					//验证未通过提示消息
+					messages : {
+						'name' : {
+							required : '请输入游戏名称'
+						},
+					},
+					//给未通过验证的元素加效果,闪烁等
+					highlight : false,
+					//是否在获取焦点时验证
+					onfocusout : false,
+					//验证通过，提交表单
+					submitHandler : function(forms) {
+						if (formloading)
+							return;
+						$(forms).ajaxSubmit({
+							url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
+							dataType : 'json',
+							beforeSubmit : function(arr, $form, options) {
+								formloading = true;
+							},
+							success : function(data, statusText, xhr, $form) {
+								formloading = false;
+								if (data.status) {
+									setCookie("refersh_time", 1);
+									//添加成功
+									Wind.use("artDialog", function() {
+										art.dialog({
+											id : "succeed",
+											icon : "succeed",
+											fixed : true,
+											lock : true,
+											background : "#CCCCCC",
+											opacity : 0,
+											content : data.info,
+											button : [ {
+												name : '继续添加？',
+												callback : function() {
+													reloadPage(window);
+													return true;
+												},
+												focus : true
+											}, {
+													name : '返回游戏列表',
+													callback : function() {
+													location = "{:U('Newapp/Game/index')}";
+													return true;
+												}
+											} ]
+										});
+									});
+								} else {
+									isalert(data.info);
+								}
+							}
+						});
+					}
+				});
+			});
+			////-------------------------
+		});
+	</script>
+</body>
+</html>

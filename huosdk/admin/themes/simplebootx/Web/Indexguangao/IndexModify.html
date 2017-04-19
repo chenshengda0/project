@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta name="robots" content="noindex, nofollow">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+	<span >当前位置：首页管理->首页广告</span>
+	<div style="clear:both"></div>
+</div>
+<div></div>
+
+<div class=alt_descript></div>
+<span >首页广告</span>
+<hr/>
+<form action='' method=post enctype="multipart/form-data">
+<div class="list-div">
+<table cellspacing='1' cellpadding='3' id="table1" width="100%" border frame="box" rules="all">
+   <tr>
+      <td align="right" style="font-family: arial">图片主题：</td>
+      <td align="" style="font-family: arial">
+		<input type="text" name="title" size="45" value='<{$indexdata.title}>' ></td>
+	</tr>
+	<tr>
+     <td align="right" style="font-family: arial">广告图：</td>
+      <td align="" style="font-family: arial">
+		<input type="file" name="image[]" size="45"><font color="red">*图片大小为167*167</font><br>
+		<if condition="$indexdata.img neq ''">
+		<img src="<{$GAMEHOST}>/upfiles/image/<{$indexdata.img}>">
+		</if>
+	</td>
+    </tr>
+     <tr>
+      <td align="right" style="font-family: arial">跳转路径：</td>
+      <td align="" style="font-family: arial">
+		<input type="text" name="url" size="45" value='<{$indexdata.url}>' ></td>
+    </tr>
+    <tr>
+    <td align="right" style="font-family: arial" width="13%">&nbsp;</td>
+    <td align="" style="font-family: arial" width="86%">
+	<input type="submit" value="提交" name="B1"></td>
+  </tr>
+    </table>
+</div>
+<input type="hidden" name="action" value="index"> 
+<input type="hidden" name="indexid" value="<{$indexdata.id}>">
+</form>
+</body>
+</html>

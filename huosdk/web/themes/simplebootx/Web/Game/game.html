@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="{$keywords}"/>
+<meta name="description" content="{$description}"/>
+<title>游戏中心_{:C('BRAND_NAME')}手游联运平台</title>
+<link href="/css/index2.css" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" src="{$WEBSITE}/js/jquery-1.js"></script>
+
+</head>
+<body>
+{literal}
+<script type="text/javascript">
+	document.domain={:DOCDOMAIN};
+</script>
+<!--游戏中心js-->
+<script type="text/javascript">
+// JavaScript Document
+function showNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="";
+}
+function hideNav(down_id, id, cls)
+{
+	document.getElementById(id).className = cls;
+	document.getElementById(down_id).style.display="none";
+}
+
+function addfavorite() {
+	var url = location.href;
+	var title = document.title;
+	if (window.sidebar) { // Mozilla Firefox
+        window.sidebar.addPanel(title, url, "");
+    } else if (window.external && !window.chrome) { // IE
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) {
+        window.external.AddFavorite(url, title);
+    } else {
+        alert("加入收藏失败，请使用Ctrl+D进行添加");
+    }
+}
+
+function setHomePage(){
+	var url = '';
+	if (document.all) {
+		document.body.style.behavior = 'url(#default#homepage)';
+		document.body.setHomePage(url);
+	}
+	else if (window.sidebar) {
+		if (window.netscape) {
+			try {
+				netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+			}
+			catch (e) {
+				alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+			}
+		}
+		var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+		prefs.setCharPref('browser.startup.homepage', url);
+	}else{
+		alert("您的浏览器不支持自动设置首页, 请使用浏览器菜单手动设置!");
+	}
+}
+</script>
+<script language="javascript" type="text/javascript"> 
+$(document).ready(function(){ 
+    var name = escape("sdkuser");  
+    var allcookies = document.cookie;         
+    name += "=";  
+    var pos = allcookies.indexOf(name);      
+	
+    if (pos != -1){                                           
+        var start = pos + name.length;                  
+        var end = allcookies.indexOf(";",start);    
+        if (end == -1) end = allcookies.length;      
+        var value = allcookies.substring(start,end); 
+		if(value != ''){
+			document.getElementById("log").style.display='block';
+			document.getElementById("loged").style.display='none';
+		
+			var div=document.getElementById("divid");  
+			var span=document.createElement("span");  
+			span.id="spanid";  
+			span.innerHTML=value;  
+			div.appendChild(span);  
+		}
+    }else{  
+        document.getElementById("loged").style.display='block';
+		document.getElementById("log").style.display='none'; 
+    }  
+}  )
+</script>
+{/literal}
+
+<div id="toper">
+	<div class="clearfix" id="top">
+    	<h1 class="head_left">{:C('BRAND_NAME')}欢迎您！</h1>
+            <ul class="game_link clearfix">
+				<div id="loged" style="display:block">
+					<li>[<a href="{$WEBSITE}/user/login.php" >登录</a>]</li>
+            		<li>[<a href="{$WEBSITE}/user/register.php" target="_blank">免费注册</a>]</li>
+				</div>
+				<div id="log" style="display:none">
+					<li>[<a id="divid" href="{$WEBSITE}/user/userinfo.php?userinfo=info"></a>]</li>
+            		<li>[<a href="{$WEBSITE}/user/login.php?action=loginout">退出</a>]</li>
+				</div>
+            </ul>
+    </div>
+</div>
+<div id="header">
+	<div class="clearfix" id="head">
+    	<div class="logo"><a href="{$WEBSITE}/index.php"><img alt="手游平台" src="__UPLOAD__/image/{$logo.img}" width="320px;"></a></div>
+        <div class="nav">
+        	<ul class="clearfix">
+				<li><a href="{$WEBSITE}" class="menu0_on" style="width:65px;"><i class="navIco navIco_1"></i>首页</a></li>
+				<li><a href="{$WEBSITE}/game/game.php" class="menu1"><i class="navIco navIco_2"></i>游戏中心</a></li>
+				<li><a href="{$PAYWEBSITE}" class="menu3" target="_blank"><i class="navIco navIco_4"></i>充值中心</a></li>
+				<li><a href="{$WEBSITE}/user/userinfo.php?userinfo=info" class="menu2"><i class="navIco navIco_3"></i>个人中心</a></li>
+				<li><a href="{$WEBSITE}/user/kefu.php?item=zhongxin" class="menu4"><i class="navIco navIco_5"></i>客服中心</a></li>
+				<li><a href="{:BBSSITE}"  target="_blank" class="menu5"><i class="navIco navIco_6"></i>玩家社区</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+	<div class="gg_game">
+		<div class="ggs_xx"></div>
+		<div id="banner_game"><a href="{$gameimg.url}" target="_blank"><img width="100%" height="250px" style="background-size:cover;"  src="__UPLOAD__/image/{$gameimg.img}" alt="{$gameimg.title}"></a></div>
+</div>
+<div id="middle">
+	<div class="content mt">
+		<div class="contp">
+			<div class="contp_tit">
+				<ul id="tags">
+					<li {if $typeid =='0' || $typeid ==''} class="selectTag" {/if}>
+					<a href="{$WEBSITE}/game/game.php?typeid=0">所有游戏</a></li>
+					{section name=i loop=$typelist}
+					<li {if $typeid ==$typelist[i].id} class="selectTag" {/if}><a href="{$WEBSITE}/game/game.php?typeid={$typelist[i].id}"		title="{$typelist[i].name}">{$typelist[i].name}</a></li>
+					{/section}
+				</ul>
+			</div>
+			<div id="tagContent0" class="tagContent selectTag">
+			{section name=i loop=$gamelist}
+				<div class="y_box">
+					<div class="box_l"><img src="__UPLOAD__/image/{$gamelist[i].image}" alt="{$gamelist[i].name}"><div class="hott"><img src="__PUBLIC__/web/images/game_03.png"></div></div>
+					<div class="box_r">
+						<div class="box_r_t">
+							<div class="iosload"><img src="__PUBLIC__/web/images/game_b-t.png" alt="{$gamelist[i].name}"><a title="IOS正版下载" target="_blank" href="{$gamelist[i].iosurl}">IOS正版下载</a><a title="IOS正版下载" target="_blank" href="{$gamelist[i].iosurl}">IOS越狱版下载</a>
+							</div>
+							<h2><b>{$gamelist[i].name}</b><span>类型: {$gamelist[i].typename} </span></h2>
+							<p><a title="安卓版下载" target="_blank" {if $gamelist[i].androidurl neq ""} class="azxa2"  href="{$gamelist[i].androidurl}"{else}  class="azxa" {/if}>安卓版下载</a>
+							<a title="iOS下载" {if $gamelist[i].iosurl neq ""} class="ios2"  href="{$gamelist[i].iosurl}"{else}  class="ios" {/if}>iOS下载</a>
+							<a  {if $gamelist[i].url neq ""} class="jrgw2"  href="{$gamelist[i].url}"{else}  class="jrgw" {/if} title="{$gamelist[i].typename}" target="_blank">进入官网</a></p>
+						</div>
+						<div class="box_r_b">
+							<div class="box_r_b_l"><p>{$gamelist[i].description}</p></div>
+							<div class="box_r_b_r">
+								<p>
+									{if $gamelist[i].adcode != ''}
+									<span title="安卓下载"><img src="__PUBLIC__/web/images/code/{$gamelist[i].adcode}" alt="{$gamelist[i].name}" height="130" width="130" ></span>
+									{/if}
+									{if $gamelist[i].ioscode != ''}
+									<span title="iOS下载"><img src="__PUBLIC__/web/images/code/{$gamelist[i].ioscode}" alt="{$gamelist[i].name}" height="130" width="130" ></span>
+									{/if}
+								</p>
+								{if ($gamelist[i].ioscode != '') and ($gamelist[i].adcode != '')}
+								<p>扫描二维码直接下载游戏</p>
+								{elseif ($gamelist[i].ioscode != '') or ($gamelist[i].adcode != '')}
+								<p style="margin-left:160px;">扫描二维码直接下载游戏</p>
+								{/if}
+							</div>
+						</div>
+					</div>
+				</div>
+				{/section}
+<div class="mnbv">
+{$showpage}</div></div></div>
+	</div>
+	<div class="clear"></div>
+	
+</div>
+{include file="footertwo.html"}
+</html>

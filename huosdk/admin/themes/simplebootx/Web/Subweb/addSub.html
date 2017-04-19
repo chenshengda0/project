@@ -1,0 +1,205 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Subweb/webList')}">子站列表</a></li>
+			<li class="active"><a href="{:U('Subweb/addSub')}">子站添加</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Subweb/addSub_post')}" enctype="multipart/form-data">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">游戏:</label>
+					<div class="controls">
+						<select name="appid">
+							<foreach name="gamelist" item="vo">
+								<option value="{$vo.id}">{$vo.name}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<!-- <div class="control-group">
+					<label class="control-label">游戏访问域名</label>
+					<div class="controls">
+						<input type="text" name="website">
+						<span class="form-required">*</span>
+					</div>
+				</div> -->
+				<div class="control-group">
+					<label class="control-label">页面banner大图:</label>
+					<div class="controls">
+						<input type="file" class="input" name="banner[]"><font color="red">*图片显示大小(w*h)为1920*1070</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">轮播图一:</label>
+					<div class="controls">
+						<input type="file"  name="image[]"><font color="red">*图片显示大小为(w*h)546*243</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">轮播图路径一</label>
+					<div class="controls">
+						<input type="text" name="lboneurl">
+						<span class="form-required" style="color:red">*例如：http://www.shouyoucun.cn</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">轮播图二:</label>
+					<div class="controls">
+						<input type="file" name="image[]"><font color="red">*图片显示大小为(w*h)546*243</font>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">轮播图路径二</label>
+					<div class="controls">
+						<input type="text" name="lbtwourl">
+						<span class="form-required" style="color:red">*例如：http://www.shouyoucun.cn</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">轮播图三:</label>
+					<div class="controls">
+						<input type="file" class="input" name="image[]"><font color="red">*图片显示大小为(w*h)546*243</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">轮播图路径三</label>
+					<div class="controls">
+						<input type="text" name="lbthreeurl">
+						<span class="form-required" style="color:red">*例如：http://www.shouyoucun.cn</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">轮播图四:</label>
+					<div class="controls">
+						<input type="file" class="input" name="image[]"><font color="red">*图片显示大小为(w*h)546*243</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">轮播图路径四</label>
+					<div class="controls">
+						<input type="text" name="lbfoururl">
+						<span class="form-required" style="color:red">*例如：http://www.shouyoucun.cn</span>
+					</div>
+				</div>				
+				<div class="control-group">
+					<label class="control-label">论坛路径</label>
+					<div class="controls">
+						<input type="text" name="luntanurl">
+						<span class="form-required" style="color:red">*例如：http://www.bbs.com</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">礼包链接地址</label>
+					<div class="controls">
+						<input type="text" name="libao">
+						<span class="form-required" style="color:red">*例如：http://www.shouyoucun.cn/index.php/Web/Gift/index/gameid/1</span>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label">攻略图一:</label>
+					<div class="controls">
+						<input type="file" class="input" name="gonglue[]"><font color="red">*图片显示大小为(w*h)273*87</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">攻略图路径一</label>
+					<div class="controls">
+						<input type="text" name="glurlone">
+						<span class="form-required">*</span>
+					</div>
+				</div>				
+				
+				<div class="control-group">
+					<label class="control-label">攻略图二:</label>
+					<div class="controls">
+						<input type="file" class="input" name="gonglue[]"><font color="red">*图片显示大小为(w*h)273*87</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">攻略图路径二</label>
+					<div class="controls">
+						<input type="text" name="glurltwo">
+						<span class="form-required">*</span>
+					</div>
+				</div>				
+				
+				<div class="control-group">
+					<label class="control-label">攻略图三:</label>
+					<div class="controls">
+						<input type="file" class="input" name="gonglue[]"><font color="red">*图片显示大小为(w*h)273*87</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">攻略图路径三</label>
+					<div class="controls">
+						<input type="text" name="glurlthree">
+						<span class="form-required">*</span>
+					</div>
+				</div>				
+				
+				<div class="control-group">
+					<label class="control-label">攻略图四:</label>
+					<div class="controls">
+						<input type="file" class="input" name="gonglue[]"><font color="red">*图片显示大小为(w*h)273*87</font>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">攻略图路径四</label>
+					<div class="controls">
+						<input type="text" name="glurlfour">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">公会入驻</label>
+					<div class="controls">
+						<input type="text" name="guildurl">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">推广福利</label>
+					<div class="controls">
+						<input type="text" name="tgurl">
+						<span class="form-required">*</span>
+					</div>
+				</div>				
+				<div class="control-group">
+					<label class="control-label">活动中心</label>
+					<div class="controls">
+						<input type="text" name="activityurl">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">新手引导</label>
+					<div class="controls">
+						<input type="text" name="noviceurl">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">游戏截图</label>
+					<div class="controls">
+						<input type="text" name="screenshoturl">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="{:U('Subweb/webList')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

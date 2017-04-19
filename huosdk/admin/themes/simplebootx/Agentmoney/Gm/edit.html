@@ -1,0 +1,53 @@
+<admintpl file="header" />
+</head>
+<body class="J_scroll_fixed">
+		<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Gm/index')}">游戏币列表</a></li>
+			<li class="active"><a href="#">编辑游戏币</a></li>
+		</ul>
+		<div class="common-form">
+			<form method="post" class="form-horizontal js-ajax-form" action="{:U('Gm/edit_post')}">
+				<fieldset>
+					<input type='hidden' name='app_id' value='{$app_id}'>
+					<div class="control-group">
+							<label class="control-label">游戏名称:</label>
+							<div class="controls">
+								<label class="control-label" style="text-align:left">{$games[$app_id]}</label>
+							</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">游戏币名称</label>
+						<div class="controls">
+							<input type="text"  class="input" name="payname" value="{$payname}">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">单次发放最大限额:</label>
+						<div class="controls">
+							<input type="text"  class="input" name="give_max_cnt" value="{$give_max_cnt}">
+							* 官方发放时单次最大限额,默认为10000
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<label class="control-label">备注:</label>
+						<div class="controls">
+							<input type="text"  class="input" name="dis" value="{$description}">
+						</div>
+					</div>
+				</fieldset>
+				<div class="form-actions">
+					<button type="submit"
+						class="btn btn-primary btn_submit js-ajax-submit">更新</button>
+					<a class="btn" href="{:U('Gm/index')}">返回列表</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	
+</body>
+</html>

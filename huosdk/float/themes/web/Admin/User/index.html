@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="qinuoli">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="__PUBLIC__/float/css/user.css" type="text/css" />
+<title>用户中心</title>
+<link href="__PUBLIC__/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="wx_wrap">
+	<div class="my_head">
+		<div class="my_user" >
+			<div class="image"><img id="qqimg4notbin" src="__PUBLIC__/images/float/40.png" width="50" height="50"></div>
+			<p class="name">昵称：{$users.nickname}</p>
+			<p class="name">用户名：{$users.username}</p>
+			
+			<if condition="sp_auth_check(sp_get_current_user(),'ptb')">
+					<p class="des" >{$ptbname}：<span>{$ttb}</span><span style="color:#000000">个</span></p>
+            </if>
+		</div>
+	</div>
+
+	<div class="my_menu">
+		<ul>
+		<if condition = "$strshow eq '未设置'">
+			<li class="tiao">账户完全 : <span>极低</span></li>
+		<else />
+			<li class="tiao">账户完全 : <span>一般</span></li>
+		</if>
+		</ul>
+	</div>
+
+
+	<ul class="my_list"> 
+		<li class="tiao" ><a href="{:U('Admin/User/uppwd')}"><i class="fa fa-lock fa-lg fa-fw" style="color:#1AB8DA" width="20" height="20"></i>&nbsp&nbsp密码修改</a></li>
+		<li class="tiao" ><a href="{:U('Admin/Binding/index')}"><i class="fa fa-envelope fa-lg fa-fw" style="color:#8AA716" width="20" height="20"></i>&nbsp&nbsp密保邮箱<span style="float:left">{$strshow}</span></a></li>
+		<li class="tiao" ><a href="{:U('Admin/Binding/mobile')}"><i class="fa fa-envelope fa-lg fa-fw" style="color:#8AA716" width="20" height="20"></i>&nbsp&nbsp密保手机<span style="float:left">{$strshowphone}</span></a></li>
+	</ul>
+
+</div>
+
+</body>
+</html>
