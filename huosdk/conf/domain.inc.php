@@ -6,5 +6,5 @@ define("DOCDOMAIN", 'shouyoucun.cn');
 define("WEBSITE", HTTP.'www'.DOMAIN);
 define("SDKSITE", HTTP.'www'.DOMAIN);
 define("ADMINSITE", HTTP.'admin'.DOMAIN);
-define("DOWNSITE", HTTP.'down'.DOMAIN);
+define("DOWNSITE", HTTP.'bt76'.DOMAIN);
 define("BBSSITE", HTTP.'bbs'.DOMAIN);
