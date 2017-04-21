@@ -184,8 +184,8 @@ class PtbController extends AdminbaseController {
      * 平台币手充
      */
     public function setPtb_post(){
-		data_log("top_first_ptb.log",$ptb_str);
-		die;
+		//data_log("top_first_ptb.log",$ptb_str);
+		//die;
 		$action = I('action');
 		if (isset($action) && isset($action) == 'add') {
     		$username = I('post.username','');
@@ -287,17 +287,17 @@ class PtbController extends AdminbaseController {
     		            $prs = $p_model->save($p_data);
     		            if ($prs){
 							//玩家充值日志
-                            $ptb_str='';
-                            $mem_prs_data_log=M("ptb_mem")->where(array('id'=>$prs))->find();
-                            $mem_data_log=M("members")->M("members")->where(array("id"=>$mem_prs_data_log['mem_id']))->find();
-                            $ptb_str.=date("Y-m-d H:i:s",$mem_prs_data_log['update_time'])."=>";
-                            $ptb_str.="充值金额：".$data['ptb_cnt'];
-                            $ptb_str.="，玩家名：".$mem_data_log['username'];
-                            $ptb_str.="，游戏名：".M("game")->where(array("id"=>$mem_data_log['app_id']))->getField("name");
-                            $ptb_str.="，渠道名：".M("users")->where(array("id"=>$mem_data_log['agent_id']))->getField("user_nicename");
-                            $ptb_str.=";\n";
+                            //$ptb_str='';
+                            // $mem_prs_data_log=M("ptb_mem")->where(array('id'=>$prs))->find();
+                            // $mem_data_log=M("members")->M("members")->where(array("id"=>$mem_prs_data_log['mem_id']))->find();
+                            // $ptb_str.=date("Y-m-d H:i:s",$mem_prs_data_log['update_time'])."=>";
+                            // $ptb_str.="充值金额：".$data['ptb_cnt'];
+                            // $ptb_str.="，玩家名：".$mem_data_log['username'];
+                            // $ptb_str.="，游戏名：".M("game")->where(array("id"=>$mem_data_log['app_id']))->getField("name");
+                            // $ptb_str.="，渠道名：".M("users")->where(array("id"=>$mem_data_log['agent_id']))->getField("user_nicename");
+                            // $ptb_str.=";\n";
 
-                            data_log("top_up_ptb.log",$ptb_str);
+                            // data_log("top_up_ptb.log",$ptb_str);
     		                $this->success("充值成功",U('Ptb/setPtb'));
     		                exit;
     		            }
@@ -311,17 +311,17 @@ class PtbController extends AdminbaseController {
     		            $prs = $p_model->add($p_data);
     		            if ($prs){
 							 //玩家首充日志
-                            $ptb_str='';
-                            $mem_prs_data_log=M("ptb_mem")->where(array('id'=>$prs))->find();
-                            $mem_data_log=M("members")->M("members")->where(array("id"=>$mem_prs_data_log['mem_id']))->find();
-                            $ptb_str.=date("Y-m-d H:i:s",$mem_prs_data_log['update_time'])."=>";
-                            $ptb_str.="充值金额：".$data['ptb_cnt'];
-                            $ptb_str.="，玩家名：".$mem_data_log['username'];
-                            $ptb_str.="，游戏名：".M("game")->where(array("id"=>$mem_data_log['app_id']))->getField("name");
-                            $ptb_str.="，渠道名：".M("users")->where(array("id"=>$mem_data_log['agent_id']))->getField("user_nicename");
-                            $ptb_str.=";\n";
+                            // $ptb_str='';
+                            // $mem_prs_data_log=M("ptb_mem")->where(array('id'=>$prs))->find();
+                            // $mem_data_log=M("members")->M("members")->where(array("id"=>$mem_prs_data_log['mem_id']))->find();
+                            // $ptb_str.=date("Y-m-d H:i:s",$mem_prs_data_log['update_time'])."=>";
+                            // $ptb_str.="充值金额：".$data['ptb_cnt'];
+                            // $ptb_str.="，玩家名：".$mem_data_log['username'];
+                            // $ptb_str.="，游戏名：".M("game")->where(array("id"=>$mem_data_log['app_id']))->getField("name");
+                            // $ptb_str.="，渠道名：".M("users")->where(array("id"=>$mem_data_log['agent_id']))->getField("user_nicename");
+                            // $ptb_str.=";\n";
 
-                            data_log("top_first_ptb.log",$ptb_str);
+                            // data_log("top_first_ptb.log",$ptb_str);
 							
     		                $this->success("充值成功",U('Ptb/setPtb'));
     		                exit;
